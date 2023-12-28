@@ -60,7 +60,7 @@
                                 <h3 class="card-title">カテゴリー</h3>
                             </div>
                             <div class="card-body">
-                                @each('layouts.partials.project', $projects, 'project', 'partials.projects-none')
+                                @each('layouts.partials.project', $projects, 'project', 'layouts.partials.projects-none')
                             </div>
                         </div>
 
