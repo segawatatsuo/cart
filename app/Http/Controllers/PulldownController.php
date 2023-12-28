@@ -81,7 +81,7 @@ class PulldownController extends Controller
     public function store2(Request $request)
     {
 
-        
+
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'inside_name' => ['required'],
@@ -93,7 +93,7 @@ class PulldownController extends Controller
 
         //$pulldown = new Pulldown();
         //$pulldown->store($request);
-        
+
         $result = false;
 
         DB::beginTransaction();
@@ -108,15 +108,15 @@ class PulldownController extends Controller
             $pulldown->input_column2 = $request->input_column2;
             $pulldown->input_column3 = $request->input_column3;
             $pulldown->save();
-            
-            $n=0;
+
+            $n = 0;
             foreach ($request->ingredients as $ingredient_name) {
                 $detail = new Pulldown_detail();
                 $detail->pulldown_id = $pulldown->id;
                 $detail->name = $ingredient_name;
-                $detail->price = mb_convert_kana($request->prices[$n],"n");//半角に変換
+                $detail->price = mb_convert_kana($request->prices[$n], "n"); //半角に変換
                 $detail->save();
-                $n+=1;
+                $n += 1;
             }
 
             DB::commit();
@@ -127,7 +127,6 @@ class PulldownController extends Controller
         }
 
         return ['result' => $result];
-
     }
 
 
@@ -177,7 +176,7 @@ class PulldownController extends Controller
     public function setlist()
     {
         $pulldown_sets = Pulldown_set::all();
-        return view('pulldown.setlist',compact('pulldown_sets'));
+        return view('pulldown.setlist', compact('pulldown_sets'));
     }
 
     public function set_show($id)
@@ -186,25 +185,33 @@ class PulldownController extends Controller
         $name = $set_show->name;
         $leftside = unserialize($set_show->leftside);
         $rightside = unserialize($set_show->rightside);
-        foreach($leftside as $n){
-            $left[]=Pulldown::find($n);
+        if ($leftside !== null) {
+            foreach ($leftside as $n) {
+                $left[] = Pulldown::find($n);
+            }
+        } else {
+            $left = "";
         }
-        foreach($rightside as $n){
-            $right[]=Pulldown::find($n);
+        if ($rightside !== null) {
+            foreach ($rightside as $n) {
+                $right[] = Pulldown::find($n);
+            }
+        }else{
+            $right="";
         }
         //return view('pulldown.set_show', compact('name','leftside','rightside'));
-        return view('pulldown.set_show', compact('name','left','right'));
+        return view('pulldown.set_show', compact('name', 'left', 'right'));
     }
 
 
 
     public function set_store(Request $request)
     {
-        $record_id = $request->record_id;
+        //$record_id = $request->record_id;
         $name = $request->setname;
-        $rightside=serialize($request->rightside);
-        $leftside=serialize($request->leftside);
-        $pulldown_set = Pulldown_set::create(['name'=>$name,'rightside'=>$rightside,'leftside'=>$leftside]);
+        $rightside = serialize($request->rightside);
+        $leftside = serialize($request->leftside);
+        $pulldown_set = Pulldown_set::create(['name' => $name, 'rightside' => $rightside, 'leftside' => $leftside]);
 
         //publicにテキストが書き出しされる
         /*
@@ -261,21 +268,21 @@ class PulldownController extends Controller
         );
         $pulldown->save();
 
-        $details = $request->detail;//名前だけの配列
-        $prices = $request->price;//価格だけの配列
-        $lines = $request->line;//レコードIDだけの配列
+        $details = $request->detail; //名前だけの配列
+        $prices = $request->price; //価格だけの配列
+        $lines = $request->line; //レコードIDだけの配列
 
-        $n=0;
-        foreach($details as $item){
-            $data[]=[
+        $n = 0;
+        foreach ($details as $item) {
+            $data[] = [
                 'id' => $lines[$n],
                 'name' => $item,
-                'price' =>mb_convert_kana($prices[$n],"n"),//半角数字に変換
+                'price' => mb_convert_kana($prices[$n], "n"), //半角数字に変換
                 'pulldown_id' => $request->id,
             ];
-            $n+=1;
+            $n += 1;
         }
-        Pulldown_detail::upsert( $data, ['id'],['name','price'] );//レコードIDが同じもので比較して$dataで更新、レコードIDが無ければ追加
+        Pulldown_detail::upsert($data, ['id'], ['name', 'price']); //レコードIDが同じもので比較して$dataで更新、レコードIDが無ければ追加
 
         return redirect('pulldown/list')->with('flash_message', '更新しました');
     }

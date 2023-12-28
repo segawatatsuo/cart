@@ -64,7 +64,7 @@
 
                 </div>
             </div>
-            <input type="hidden" name="record_id" class="record_id" value="{{ $pulldown->id }}">
+            <input type="hidden" name="record_id" class="record_id" value="{{-- $pulldown->id --}}">
             <!--<button class="changebtn">変更確定</button>-->
         </div>
     </section>
@@ -148,7 +148,7 @@
 
         $('.changebtn').on('click', function() {
 
-            var record_id = $('.record_id').val(); //レコードID
+            //var record_id = $('.record_id').val(); //レコードID
             var setname = $('input[name="setname"]').val(); //セット名
 
             if (setname == null || setname == "") {
@@ -161,7 +161,7 @@
             var rightside = JSON.parse(serializedArray);
 
             var obj = {
-                "record_id": record_id,
+                //"record_id": record_id,
                 "leftside": leftside,
                 "rightside": rightside,
                 "setname": setname,
@@ -180,7 +180,7 @@
                 dataType: "text",
                 data: obj,
                 data: {
-                    "record_id": record_id,
+                    //"record_id": record_id,
                     "leftside": leftside,
                     "rightside": rightside,
                     "setname" : setname,

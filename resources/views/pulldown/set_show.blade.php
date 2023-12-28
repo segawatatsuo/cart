@@ -46,23 +46,27 @@
                                     <div class="col-6 pt-3 pb-3">
                                         <label for="name">プルダウン</label>
                                         <div id="LeftSide" class="list-group col sortable">
-                
+                                            @if(is_array($left))
                                             @php $n=1; @endphp
                                             @foreach ($left as $item)
                                                 <div class="list-group-item" data-id="{{ $item->id }}">{{ $item->name }}</div>
                                                 @php $n+=1; @endphp
                                             @endforeach
+                                            @endif
+
                                         </div>
                                     </div>
                 
                                     <div class="col-6 pt-3 pb-3">
                                         <label for="name">セット内容(ここにドラッグしてください)</label>
                                         <div id="RightSide" class="list-group col sortable">
+                                            @if(is_array($right))
                                             @php $n=1; @endphp
                                             @foreach ($right as $item)
                                                 <div class="list-group-item" data-id="{{ $item->id }}">{{ $item->name }}</div>
                                                 @php $n+=1; @endphp
                                             @endforeach
+                                            @endif
                                         </div>
 
                                         <div id="p1" class="pt-3">

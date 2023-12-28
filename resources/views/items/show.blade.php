@@ -178,20 +178,23 @@
                                     <div class="row">
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="LeftSide" class="list-group col sortable">
+                                                @if(is_array($left))
                                                     @foreach ($left as $item)
                                                         <div class="list-group-item" data-id="{{ optional($item)->id }}">
                                                             {{ optional($item)->name }}</div>
                                                     @endforeach
-
+                                                @endif
                                             </div>
                                         </div>
 
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="RightSide" class="list-group col sortable">
+                                                @if(is_array($right))
                                                 @foreach ($right as $item)
                                                     <div class="list-group-item" data-id="{{ optional($item)->id }}">
                                                         {{ optional($item)->name }}</div>
                                                 @endforeach
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

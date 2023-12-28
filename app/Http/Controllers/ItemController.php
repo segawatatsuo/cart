@@ -173,14 +173,14 @@ class ItemController extends Controller
         $rightside = unserialize($set_show->pulldown_rightside);
 
         if ($leftside == null) {
-            $left[] = "";
+            $left = "";
         } else {
             foreach ($leftside as $n) {
                 $left[] = Pulldown_set::find($n);
             }
         }
         if ($rightside == null) {
-            $right[] = "";
+            $right = "";
         } else {
             foreach ($rightside as $n) {
                 $right[] = Pulldown_set::find($n);
