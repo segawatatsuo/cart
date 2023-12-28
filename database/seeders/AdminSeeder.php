@@ -18,6 +18,7 @@ class AdminSeeder extends Seeder
         //
         if (app()->isLocal()) {
             // 開発環境のみレコードを追加
+            /*
             Admin::factory()
                 ->count(10)
                 ->sequence(function ($sequence) {
@@ -29,6 +30,20 @@ class AdminSeeder extends Seeder
                     ];
                 })
                 ->create();
+            */
+
+                Admin::factory()
+                ->count(1)
+                ->sequence(function ($sequence) {
+                    return [
+                        'name' => 'dcast',
+                        'password' => Hash::make('ayame2310'), // パスワード: admin  ※ 開発環境用のパスワードのためソース埋め込み
+                        'created_at' => '2023-12-28 11:22:33',
+                        'updated_at' => '2022-12-28 23:58:59',
+                    ];
+                })
+                ->create();
+
         }
     }
 }
