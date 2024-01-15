@@ -390,6 +390,17 @@ return [
             'icon_color' => 'yellow',
             'url'        => 'item/list',
         ],
+        [
+            'text'    => 'SKU',
+            'icon'    => 'fa fa-align-justify',
+            'submenu' => [
+                [
+                    'text'       => '一覧',
+                    'url'        => 'sku/list',
+                ],
+            ]
+        ],
+
 
         [
             'text'    => 'プルダウン',

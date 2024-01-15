@@ -11,6 +11,7 @@ use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ImageUploadController;
+use App\Http\Controllers\SkuController;
 use App\Models\Pulldown;
 
 /*
@@ -84,6 +85,8 @@ Route::middleware('auth:admin')->group(function () {
     //商品画像アップロード(item)
     Route::post('image/upload/store',[ImageUploadController::class,'fileStore']);
     Route::post('image/delete',[ImageUploadController::class,'fileDestroy']);
+
+    Route::get('sku/list',[SkuController::class,'list'])->name('sku.list');
 
 });
 
