@@ -15,6 +15,7 @@ class CreateSkusTable extends Migration
     {
         Schema::create('skus', function (Blueprint $table) {
             $table->id();
+            $table->string("item_number")->comment('商品番号');
             $table->string("maker_item_number")->comment('メーカーの商品番号');
             $table->string("maker_color_number")->comment('メーカーの色番号');
             $table->string("size")->comment('サイズ');

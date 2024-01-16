@@ -86,8 +86,11 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('image/upload/store',[ImageUploadController::class,'fileStore']);
     Route::post('image/delete',[ImageUploadController::class,'fileDestroy']);
 
+    //skuインポート＆エクスポート
     Route::get('sku/list',[SkuController::class,'list'])->name('sku.list');
-
+    Route::post('sku/sku_import',[SkuController::class,'import'])->name('sku.import');
+    Route::get('sku/show',[SkuController::class,'show'])->name('sku.show');
+    Route::post('sku/sku_export',[SkuController::class,'export'])->name('sku.export'); //追加
 });
 
 

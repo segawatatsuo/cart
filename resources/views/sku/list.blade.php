@@ -35,28 +35,73 @@
                         </div>
 
                         <div class="card-body">
+
+                            <form method="post" action="sku_import" enctype="multipart/form-data">
+                                @csrf
+                                <div style="padding-bottom: 2px"><input type="file" name="excel_file"></div>
+                                <div  style="padding-bottom: 2px"><input type="submit" value="インポート"></div>
+                                <div  style="padding-bottom: 2px"><a href="/sku_excel_template/sku_template.xlsx">テンプレートをダウンロード</a></div>
+                            </form>
+
                             <table class="table">
                                 <tbody>
+                                    <tr>
+                                        <th>商品番号</th>
+                                        <th>メーカー商品番号</th>
+                                        <th>メーカー色番号</th>
+                                        <th>サイズ</th>
+                                        <th>顧客表示用色名</th>
+                                        <th>在庫数</th>
+                                    </tr>
                                     @foreach ($list as $line)
                                         <tr>
                                             <td>
-                                                <a href={{ route('sku.show', $line->id) }}>
-                                                    {{ $line->name }}</a>
+                                                <a
+                                                    href={{ route('sku.show', $line->id) }}>{{ $line->item_number }}</a>
                                             </td>
+                                            <td>
+                                                {{ $line->maker_item_number }}</a>
+                                            </td>
+
+                                            <td>
+                                                {{ $line->maker_color_number }}
+                                            </td>
+                                            <td>
+                                                {{ $line->size }}
+                                            </td>
+                                            <td>
+                                                {{ $line->color_display_name }}
+                                            </td>
+                                            <td>
+                                                {{ $line->stock }}
+                                            </td>
+
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
+
+                            <form method="post" action="sku_export" style="padding-bottom: 2px">
+                                @csrf
+                                <input type="submit" value="ダウンロード">
+                            </form>
+
                         </div>
                     </div>
+
+
                     <div class="card-tools">
                         {{ $list->links('pagination::bootstrap-4') }}
                     </div>
                 </div>
+            </div>
             @stop
+
+            <!--
+                これがあると左横の黒バーが途切れる
         </div>
 </section>
-
+-->
 
 @section('css')
     {{-- ページごとCSSの指定
@@ -71,12 +116,12 @@
             padding: 1px 10px;
         }
 
-        .table td.nopm {
-            padding: 0em;
-            margin: 0em;
-        }
-    </style>
 
+        .table td{
+            width: 5%;
+        }
+
+    </style>
 @stop
 
 @section('js')

@@ -182,6 +182,8 @@ return [
 
         App\Providers\TaxServiceProvider::class,
 
+        Maatwebsite\Excel\ExcelServiceProvider::class, //追加
+
     ],
 
     /*
@@ -240,6 +242,8 @@ return [
         'Cart' => Darryldecode\Cart\Facades\CartFacade::class,
 
         'UserService' => App\Facades\TaxService::class,
+
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,//追加
 
     ],
 
