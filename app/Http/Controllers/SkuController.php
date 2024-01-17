@@ -33,7 +33,9 @@ class SkuController extends Controller
         $excel_file = $request->file('excel_file');
         $excel_file->store('excels');
         Excel::import(new SkuImport, $excel_file);
-        return view('sku.index');
+        //return view('sku.index');
+        $list=Sku::paginate(15);
+        return redirect()->route('sku.list',compact('list'))->with('successMessage', 'エクセルをインポートしました');
     }
 
     public function export(){ //追加
@@ -67,9 +69,10 @@ class SkuController extends Controller
      * @param  \App\Models\Sku  $sku
      * @return \Illuminate\Http\Response
      */
-    public function show(Sku $sku)
+    public function show($id)
     {
-        //
+        $sku = Sku::find($id);
+        return view('sku.show',compact('sku'));
     }
 
     /**
@@ -90,9 +93,22 @@ class SkuController extends Controller
      * @param  \App\Models\Sku  $sku
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSkuRequest $request, Sku $sku)
+    public function update(Request $request)
     {
-        //
+        $id=$request->id;
+        $sku_item = Sku::find($id);
+        $sku_item->fill (
+        [
+            'item_number' => $request->item_number,
+            'maker_item_number' => $request->maker_item_number,
+            'maker_color_number' => $request->maker_color_number,
+            'size' => $request->size,
+            'color_display_name' => $request->color_display_name,
+            'stock' => $request->stock,
+        ]);
+        $sku_item->save();
+
+        return redirect()->route('sku.show',compact('id'))->with('successMessage', '更新しました');
     }
 
     /**

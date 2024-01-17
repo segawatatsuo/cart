@@ -89,8 +89,10 @@ Route::middleware('auth:admin')->group(function () {
     //skuインポート＆エクスポート
     Route::get('sku/list',[SkuController::class,'list'])->name('sku.list');
     Route::post('sku/sku_import',[SkuController::class,'import'])->name('sku.import');
-    Route::get('sku/show',[SkuController::class,'show'])->name('sku.show');
     Route::post('sku/sku_export',[SkuController::class,'export'])->name('sku.export'); //追加
+    Route::get('sku/show/{id}',[SkuController::class,'show'])->name('sku.show');
+    Route::get('sku/update/{id}',[SkuController::class,'update'])->name('sku.update'); //追加
+    Route::post('sku/update/{id}',[SkuController::class,'update'])->name('sku.update'); //追加
 });
 
 

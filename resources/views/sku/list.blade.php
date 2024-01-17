@@ -44,6 +44,13 @@
                                         href="/sku_excel_template/sku_template.xlsx">テンプレートをダウンロード</a></div>
                             </form>
 
+                            @if (session('successMessage'))
+                                <div class="alert alert-info">
+                                    {{ session('successMessage') }}
+                                </div>
+                            @endif
+
+
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <p>エクセルを確認してください</p>
@@ -54,6 +61,8 @@
                                     </ul>
                                 </div>
                             @endif
+
+
 
                             <table class="table">
                                 <tbody>
