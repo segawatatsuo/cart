@@ -39,9 +39,21 @@
                             <form method="post" action="sku_import" enctype="multipart/form-data">
                                 @csrf
                                 <div style="padding-bottom: 2px"><input type="file" name="excel_file"></div>
-                                <div  style="padding-bottom: 2px"><input type="submit" value="インポート"></div>
-                                <div  style="padding-bottom: 2px"><a href="/sku_excel_template/sku_template.xlsx">テンプレートをダウンロード</a></div>
+                                <div style="padding-bottom: 2px"><input type="submit" value="インポート"></div>
+                                <div style="padding-bottom: 2px"><a
+                                        href="/sku_excel_template/sku_template.xlsx">テンプレートをダウンロード</a></div>
                             </form>
+
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <p>エクセルを確認してください</p>
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
 
                             <table class="table">
                                 <tbody>
@@ -56,8 +68,7 @@
                                     @foreach ($list as $line)
                                         <tr>
                                             <td>
-                                                <a
-                                                    href={{ route('sku.show', $line->id) }}>{{ $line->item_number }}</a>
+                                                <a href={{ route('sku.show', $line->id) }}>{{ $line->item_number }}</a>
                                             </td>
                                             <td>
                                                 {{ $line->maker_item_number }}</a>
@@ -95,50 +106,49 @@
                     </div>
                 </div>
             </div>
-            @stop
+        @stop
 
-            <!--
+        <!--
                 これがあると左横の黒バーが途切れる
         </div>
 </section>
 -->
 
-@section('css')
-    {{-- ページごとCSSの指定
+        @section('css')
+            {{-- ページごとCSSの指定
         <link rel="stylesheet" href="/css/xxx.css">
         --}}
-    <style>
-        .txt {
-            display: inline-block;
-            width: 100%;
-            border: 1px solid #ffffff;
-            box-sizing: border-box;
-            padding: 1px 10px;
-        }
-
-
-        .table td{
-            width: 5%;
-        }
-
-    </style>
-@stop
-
-@section('js')
-    <script>
-        $("#btn3").click(function() {
-            var data = [];
-            var tr = $("table tbody tr td input:text"); //tbody以下の全行を取得
-            for (var i = 0, l = tr.length; i < l; i++) {
-                var cells = tr.eq(i).children(); //1行目から順にtbody内の列を取得
-                for (var j = 0, m = cells.length; j < m; j++) {
-                    if (typeof data[i] == "undefined")
-                        data[i] = [];
-                    data[i][j] = cells.eq(j).text(); //i行目j列の文字列を取得
+            <style>
+                .txt {
+                    display: inline-block;
+                    width: 100%;
+                    border: 1px solid #ffffff;
+                    box-sizing: border-box;
+                    padding: 1px 10px;
                 }
-            }
-            alert(data);
-        });
-    </script>
 
-@stop
+
+                .table td {
+                    width: 5%;
+                }
+            </style>
+        @stop
+
+        @section('js')
+            <script>
+                $("#btn3").click(function() {
+                    var data = [];
+                    var tr = $("table tbody tr td input:text"); //tbody以下の全行を取得
+                    for (var i = 0, l = tr.length; i < l; i++) {
+                        var cells = tr.eq(i).children(); //1行目から順にtbody内の列を取得
+                        for (var j = 0, m = cells.length; j < m; j++) {
+                            if (typeof data[i] == "undefined")
+                                data[i] = [];
+                            data[i][j] = cells.eq(j).text(); //i行目j列の文字列を取得
+                        }
+                    }
+                    alert(data);
+                });
+            </script>
+
+        @stop

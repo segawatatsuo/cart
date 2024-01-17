@@ -20,7 +20,7 @@ class CreateSkusTable extends Migration
             $table->string("maker_color_number")->comment('メーカーの色番号');
             $table->string("size")->comment('サイズ');
             $table->string("color_display_name")->comment('顧客用色表示名');
-            $table->integer("stock")->nullable()->comment('在庫数');
+            $table->string("stock")->nullable()->comment('在庫数');
             $table->timestamps();
         });
     }
