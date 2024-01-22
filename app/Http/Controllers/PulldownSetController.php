@@ -90,9 +90,20 @@ class PulldownSetController extends Controller
      * @param  \App\Models\pulldown_set  $pulldown_set
      * @return \Illuminate\Http\Response
      */
-    public function update(Updatepulldown_setRequest $request, pulldown_set $pulldown_set)
+    public function update(Request $request)
     {
-        //
+        $pulldown_set = Pulldown_set::find($request->record_id);
+        $rightside = serialize($request->rightside);
+        $leftside = serialize($request->leftside);
+        $pulldown_set->fill(
+            [
+                'leftside' => $leftside,
+                'rightside' => $rightside,
+                'setname' => $request->setname,
+            ]
+        );
+        $pulldown_set->save();
+        return redirect('pulldown/list')->with('flash_message', '更新しました');
     }
 
     /**

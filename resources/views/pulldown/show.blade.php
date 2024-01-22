@@ -47,8 +47,10 @@
                             <h3 class="card-title">プルダウン名</h3>
                         </div>
 
-                        <form method="POST" action="{{ route('pulldown.update', $post->id) }}">
+                        <form method="POST" action="{{ route('pulldown.update', $post->id) }}" id="form1">
+                       
                             @csrf
+
                             <div class="card-body">
 
                                 <div class="form-group">
@@ -105,24 +107,35 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ( $details as $detail  )
-                                    <tr>
-                                        <td class=""><input type="text" name="detail[]" class="txt" value="{{ $detail->name }}"></td>
-                                        <td class=""><input type="text" name="price[]" class="txt" value="{{ $detail->price }}"></td>
-                                        <input type="hidden" name="line[]" value="{{ $detail->id }}">
-                                    </tr>
+                                    @foreach ($details as $detail)
+                                        <tr>
+                                            <td class="">
+                                                <input type="text" name="detail[]" class="txt"
+                                                    value="{{ $detail->name }}">
+                                            </td>
+                                            <td class="">
+                                                <input type="text" name="price[]" class="txt"
+                                                    value="{{ $detail->price }}">
+                                            </td>
+                                            <td>
+                                                <input type="hidden" name="ids[]" class="txt"
+                                                value="{{ $detail->id }}">
+                                            </td>
+
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                         <div class="card-footer">
-                            <button type="submit" class="btn btn-primary">更新</button>
-                            <input type="hidden" name="id" value="{{ $post->id }}">
+                            <button type="submit" class="btn btn-primary mr-2" form="form1">更新</button>
+                            <input type="hidden" name="id" value="{{ $post->id }}" form="form1">
+                            </form>
                         </div>
                     </div>
 
                 </div>
-                </form>
+
             </div>
         </div>
     </section>

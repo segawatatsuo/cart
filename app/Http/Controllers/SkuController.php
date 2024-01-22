@@ -9,7 +9,7 @@ use App\Models\Sku;
 use App\Imports\SkuImport;
 use App\Exports\SkuExport;
 use Maatwebsite\Excel\Facades\Excel;
-
+use App\Http\Requests\SkuRequest;
 
 class SkuController extends Controller
 {
@@ -75,6 +75,28 @@ class SkuController extends Controller
         return view('sku.show',compact('sku'));
     }
 
+    public function search(Request $request)
+    {
+        $keyword = $request->input('keyword');
+
+        $query = Sku::query();
+
+        if(!empty($keyword)) {
+            $query->where('item_number', 'LIKE', "%{$keyword}%")
+                ->orWhere('maker_item_number', 'LIKE', "%{$keyword}%")
+                ->orWhere('maker_color_number', 'LIKE', "%{$keyword}%")
+                ->orWhere('size', 'LIKE', "%{$keyword}%")
+                ->orWhere('color_display_name', 'LIKE', "%{$keyword}%")
+                ->orWhere('stock', 'LIKE', "%{$keyword}%");
+        }
+
+        //dd($query->tosql());
+
+        $list = $query->paginate(15);
+
+        return view('sku.list', compact('list', 'keyword'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -93,7 +115,7 @@ class SkuController extends Controller
      * @param  \App\Models\Sku  $sku
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(Request $request, SkuRequest $varidate)
     {
         $id=$request->id;
         $sku_item = Sku::find($id);
@@ -121,4 +143,12 @@ class SkuController extends Controller
     {
         //
     }
+
+    public function remove_multi(Request $request){
+
+        // eloquentによる複数削除
+        Sku::destroy($request->id);    //複数データ削除（IDは配列で複数）
+
+    }  //end funtion 
+
 }

@@ -34,14 +34,26 @@
                             <h3 class="card-title">登録されているSKU一覧</h3>
                         </div>
 
+
+
+
                         <div class="card-body">
+
+                            <form method="post" action="{{ 'search' }}" class="form-inline"
+                                style="padding-bottom: 2px">
+                                @csrf
+                                <div class="form-group">
+                                    <input type="search" class="form-control mr-1" id="keyword" name="keyword"
+                                        placeholder="検索" value="{{-- $keyword --}}">
+                                    <button type="submit" class="btn btn-primary">検索</button>
+                                </div>
+                            </form>
 
                             <form method="post" action="sku_import" enctype="multipart/form-data">
                                 @csrf
                                 <div style="padding-bottom: 2px"><input type="file" name="excel_file"></div>
-                                <div style="padding-bottom: 2px"><input type="submit" value="インポート"></div>
-                                <div style="padding-bottom: 2px"><a
-                                        href="/sku_excel_template/sku_template.xlsx">テンプレートをダウンロード</a></div>
+                                <div style="padding-bottom: 20px"><input type="submit" value="インポート"></div>
+
                             </form>
 
                             @if (session('successMessage'))
@@ -64,9 +76,14 @@
 
 
 
+
                             <table class="table">
                                 <tbody>
                                     <tr>
+                                        <th>
+                                            選択
+                                            <input type="checkbox" name="all_check" id="all">
+                                        </th>
                                         <th>商品番号</th>
                                         <th>メーカー商品番号</th>
                                         <th>メーカー色番号</th>
@@ -76,6 +93,10 @@
                                     </tr>
                                     @foreach ($list as $line)
                                         <tr>
+                                            <td>
+                                                <input type="checkbox" name="chk_todo[]" class="check"
+                                                    value="{{ $line->id }}">
+                                            </td>
                                             <td>
                                                 <a href={{ route('sku.show', $line->id) }}>{{ $line->item_number }}</a>
                                             </td>
@@ -101,10 +122,18 @@
                                 </tbody>
                             </table>
 
+                            <a id="chkdel" href="javascript:void(0);" class="black">削除</a>
+
+                            <div style="padding-bottom: 2px"><a
+                                    href="/sku_excel_template/sku_template.xlsx">テンプレートをダウンロード</a>
+                            </div>
+
                             <form method="post" action="sku_export" style="padding-bottom: 2px">
                                 @csrf
                                 <input type="submit" value="ダウンロード">
                             </form>
+
+
 
                         </div>
                     </div>
@@ -157,6 +186,91 @@
                         }
                     }
                     alert(data);
+                });
+            </script>
+
+
+            <script>
+                $('#all').on('click', function() {
+                    $('input[name="chk_todo[]"]').prop('checked', this.checked);
+                });
+
+                $('input[name="chk_todo[]"]').on('click', function() {
+                    if ($('.check :checked').length == $('.check input').length) {
+                        $('#all').prop('checked', true);
+                    } else {
+                        $('#all').prop('checked', false);
+                    }
+                });
+            </script>
+
+            <meta name="csrf-token" content="{{ csrf_token() }}">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+            <script>
+                $(function() {
+                    $("#chkdel").click(function() {
+
+                        /// チェックされたvalue値を配列として取得
+                        var vals = $('[class="check"]:checked').map(function() {
+                            return $(this).val();
+                        }).get();
+
+                        console.log(vals);
+                        console.log(vals.length)
+
+
+                        if (vals.length == 0) {
+                            alert('チェックされていません');
+                            return false; //処理中断
+                        }
+
+                        var deleteConfirm = confirm('チェックを削除してよろしいですか？');
+                        if (deleteConfirm == true) {
+                            $.ajaxSetup({
+                                headers: {
+                                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                                },
+                            });
+                            $.ajax({
+                                    //POST通信
+                                    type: "POST",
+                                    //ここでデータの送信先URLを指定します。
+                                    url: "/sku/del_multi",
+                                    dataType: "text",
+                                    data: {
+                                        id: vals,
+                                    },
+                                })
+                                // 成功
+                                .done(function(results) {
+                                    // alert('成功');
+
+                                    // 通信成功時の処理
+                                    console.log("results : " + results);
+                                    window.location.href = "/sku/list"; //削除後に画面を遷移
+
+                                })
+                                // 失敗
+                                .fail(function(jqXHR, textStatus, errorThrown) {
+                                    alert('失敗');
+                                    console.log("ajax通信に失敗しました");
+                                    console.log("jqXHR          : " + jqXHR.status); // HTTPステータスが取得
+                                    console.log("textStatus     : " + textStatus); // タイムアウト、パースエラー
+                                    console.log("errorThrown    : " + errorThrown.message); // 例外情報
+                                    console.log("URL            : " + url);
+                                });
+                        }
+
+                    });
+                });
+            </script>
+            <script>
+                $(function() {
+                    $('#upfiles').on('change', function(e) {
+                        console.log($(this).get(0).files.length);
+                        console.log($(this)[0].files.length);
+                        console.log(e.target.files.length);
+                    });
                 });
             </script>
 

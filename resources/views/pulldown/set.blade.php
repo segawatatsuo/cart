@@ -3,7 +3,6 @@
 
 @section('title', 'Dashboard')
 
-
 @section('content_header')
     <section class="content-header">
         <div class="container-fluid">
@@ -22,8 +21,6 @@
             </div>
         </div>
     </section>
-
-
 
     <section class="content">
         <div class="container-fluid" id="app">
@@ -65,7 +62,6 @@
                 </div>
             </div>
             <input type="hidden" name="record_id" class="record_id" value="{{-- $pulldown->id --}}">
-            <!--<button class="changebtn">変更確定</button>-->
         </div>
     </section>
 
@@ -114,8 +110,6 @@
                     // DBのソート順を更新する処理
                 });
             },
-
-
         });
 
         new Sortable(LeftSide, {
@@ -147,7 +141,6 @@
 
 
         $('.changebtn').on('click', function() {
-
             //var record_id = $('.record_id').val(); //レコードID
             var setname = $('input[name="setname"]').val(); //セット名
 

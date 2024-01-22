@@ -13,6 +13,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\SkuController;
 use App\Models\Pulldown;
+use App\Models\Pulldown_detail;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +65,10 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('pulldown/set_store',[PulldownController::class,'set_store'])->name('pulldown.set_store');
     Route::post('pulldown/update',[PulldownController::class,'update'])->name('pulldown.update');
     Route::get('pulldown/set_show/{id}',[PulldownController::class,'set_show'])->name('pulldown.set_show');
+    Route::post('pulldown/destroy{id}', [PulldownController::class, 'destroy'])->name('pulldown.destroy');
+
+    Route::post('pulldown_detail/destroy/{id}', [Pulldown_detail::class, 'destroy'])->name('pulldown_detail.destroy');
+    Route::post('pulldown_set/update',[PulldownSetController::class,'update'])->name('pulldown_set.update');
 
     Route::get('color',[ColorController::class,'index'])->name('color');
     Route::post('color/store',[ColorController::class,'store'])->name('color.store');
@@ -93,6 +98,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('sku/show/{id}',[SkuController::class,'show'])->name('sku.show');
     Route::get('sku/update/{id}',[SkuController::class,'update'])->name('sku.update'); //追加
     Route::post('sku/update/{id}',[SkuController::class,'update'])->name('sku.update'); //追加
+
+    Route::post('sku/del_multi', [SkuController::class,'remove_multi'])->name(('sku.remove_multi'));
+    Route::post('sku/search', [SkuController::class,'search'])->name('sku.search');
 });
 
 

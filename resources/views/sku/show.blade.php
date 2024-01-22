@@ -36,6 +36,8 @@
                         </div>
                     @endif
 
+                    @if($errors->has('item_number'))<span>{{ $errors->first('item_number') }}</span>@endif
+
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">SKU</h3>

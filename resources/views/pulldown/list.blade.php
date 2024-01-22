@@ -29,10 +29,20 @@
         <div class="container-fluid" id="app">
             <div class="row">
                 <div class="col-md-12">
+
+                    <!-- フラッシュメッセージ -->
+                    @if (session('flash_message'))
+                        <div class="alert alert-success">
+                            {{ session('flash_message') }}
+                        </div>
+                    @endif
+
+
                     <div class="card card-primary">
                         <div class="card-header">
                             <h3 class="card-title">登録されているプルダウン一覧</h3>
                         </div>
+
 
                         <div class="card-body">
                             <table class="table">

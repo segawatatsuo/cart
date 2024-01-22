@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Foundation\Http\FormRequest;
 use App\Http\Requests\StorePulldown_detailRequest;
 use App\Http\Requests\UpdatePulldown_detailRequest;
 use App\Models\Pulldown_detail;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB; //トランザクション
 
 class PulldownDetailController extends Controller
 {
@@ -79,8 +82,16 @@ class PulldownDetailController extends Controller
      * @param  \App\Models\Pulldown_detail  $pulldown_detail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pulldown_detail $pulldown_detail)
+    public function destroy(Request $request)
     {
-        //
+        dd("");
+        DB::beginTransaction();
+        try {
+          $pulldown = Pulldown_detail::where('id', $request->id)->first();
+          $pulldown->delete(); // このタイミングでpulldown_detailも一緒に削除されます。
+          DB::commit();
+        } catch (\Exception $e) {
+          // 省略
+        }
     }
 }

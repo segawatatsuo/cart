@@ -12,6 +12,15 @@ class Pulldown extends Model
     use HasFactory;
     protected $guarded = ['id',];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function ($pulldown) {
+            $pulldown->pulldown_detail()->delete();
+        });
+    }
+
     public function pulldown_detail()
     {
         return $this->hasMany(Pulldown_detail::class);

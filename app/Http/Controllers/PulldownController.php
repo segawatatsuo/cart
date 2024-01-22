@@ -80,26 +80,18 @@ class PulldownController extends Controller
 
     public function store2(Request $request)
     {
-
-
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'inside_name' => ['required'],
             'attribution' => ['required'],
             'ingredients.*' => ['distinct'],
-
         ]);
-
-
-        //$pulldown = new Pulldown();
-        //$pulldown->store($request);
 
         $result = false;
 
         DB::beginTransaction();
 
         try {
-
             $pulldown = new Pulldown();
             $pulldown->name = $request->name;
             $pulldown->inside_name = $request->inside_name;
@@ -125,7 +117,6 @@ class PulldownController extends Controller
 
             DB::rollBack();
         }
-
         return ['result' => $result];
     }
 
@@ -144,23 +135,8 @@ class PulldownController extends Controller
      */
     public function show($id)
     {
-        //Pulldownのデータ
         $post = Pulldown::where('id', $id)->with('pulldown_detail')->first();
-        //Pulldown_detailのデータ
-        /*
-        $detail_count = count($post->pulldown_detail);
-        for ($i = 0; $i < 15; $i++) {
-            if ($i < $detail_count) {
-                $detail[$i]['name'] = $post->pulldown_detail[$i]->name;
-                $detail[$i]['price'] = $post->pulldown_detail[$i]->price;
-            } else {
-                $detail[$i]['name'] = "";
-                $detail[$i]['price'] = "";
-            }
-        }
-        */
         $details = $post->pulldown_detail;
-        //dd($detail);
         return view('pulldown.show', compact('post', 'details'));
     }
 
@@ -169,8 +145,6 @@ class PulldownController extends Controller
         $pulldowns = Pulldown::all();
         return view('pulldown.set', compact('pulldowns'));
     }
-
-
 
 
     public function setlist()
@@ -185,6 +159,7 @@ class PulldownController extends Controller
         $name = $set_show->name;
         $leftside = unserialize($set_show->leftside);
         $rightside = unserialize($set_show->rightside);
+        $record_id = $id;
         if ($leftside !== null) {
             foreach ($leftside as $n) {
                 $left[] = Pulldown::find($n);
@@ -200,7 +175,7 @@ class PulldownController extends Controller
             $right="";
         }
         //return view('pulldown.set_show', compact('name','leftside','rightside'));
-        return view('pulldown.set_show', compact('name', 'left', 'right'));
+        return view('pulldown.set_show', compact('name', 'left', 'right' ,'record_id'));
     }
 
 
@@ -212,21 +187,6 @@ class PulldownController extends Controller
         $rightside = serialize($request->rightside);
         $leftside = serialize($request->leftside);
         $pulldown_set = Pulldown_set::create(['name' => $name, 'rightside' => $rightside, 'leftside' => $leftside]);
-
-        //publicにテキストが書き出しされる
-        /*
-        $filename = 'filestream.txt'; 
-        $fp = fopen($filename, 'wa');
-        fwrite($fp, "record_id:");
-        fwrite($fp, $record_id."¥n");
-        fwrite($fp, "setname:");
-        fwrite($fp, $name."¥n");
-        fwrite($fp, "rightside:");
-        fwrite($fp, $rightside."¥n");
-        fwrite($fp, "leftside:");
-        fwrite($fp, $leftside);
-        fclose($fp);
-        */
     }
 
 
@@ -252,8 +212,6 @@ class PulldownController extends Controller
      */
     public function update(Request $request)
     {
-
-
         $pulldown = Pulldown::find($request->id);
         $pulldown->fill(
             [
@@ -268,14 +226,14 @@ class PulldownController extends Controller
         );
         $pulldown->save();
 
-        $details = $request->detail; //名前だけの配列
-        $prices = $request->price; //価格だけの配列
-        $lines = $request->line; //レコードIDだけの配列
+        $details = $request->detail; //セット名の配列
+        $prices = $request->price; //価格の配列
+        $ids = $request->ids; //レコードIDの配列
 
         $n = 0;
         foreach ($details as $item) {
             $data[] = [
-                'id' => $lines[$n],
+                'id' => $ids[$n],
                 'name' => $item,
                 'price' => mb_convert_kana($prices[$n], "n"), //半角数字に変換
                 'pulldown_id' => $request->id,
@@ -293,8 +251,15 @@ class PulldownController extends Controller
      * @param  \App\Models\Pulldown  $pulldown
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pulldown $pulldown)
+    public function destroy(Request $request)
     {
-        //
+        DB::beginTransaction();
+        try {
+          $pulldown = Pulldown::where('id', $request->id)->first();
+          $pulldown->delete(); // このタイミングでpulldown_detailも一緒に削除されます。
+          DB::commit();
+        } catch (\Exception $e) {
+          // 省略
+        }
     }
 }
