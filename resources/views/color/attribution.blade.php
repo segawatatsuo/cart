@@ -60,10 +60,10 @@
 
                         <ul class="list-group pt-2" style="max-width: 400px;">
                             @foreach ($attributions as $attribution)
-                            <form method="POST" action="{{ route('color.attribution.destroy') }}" enctype="multipart/form-data">
+                            <form method="POST" action="{{ route('color.attribution.destroy',['id' => $attribution->id]) }}" enctype="multipart/form-data">
                                 @csrf
                                 
-                                <li class="list-group-item"> {{ $attribution->attribution }}<button type="button" class="btn btn-outline-danger ml-4">削除</button></li>
+                                <li class="list-group-item"><button type="submit" class="btn btn-outline-danger mr-4">削除</button> {{ $attribution->attribution }}</li>
                                 
                             </form>
                             @endforeach

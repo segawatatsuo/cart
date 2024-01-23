@@ -64,8 +64,10 @@ class ColorAttributionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Color_attribution $color_attribution)
+    public function destroy($id)
     {
-        //
+        $pulldown = Color_attribution::where('id', $id)->first();
+        $pulldown->delete(); // このタイミングでpulldown_detailも一緒に削除されます。
+        return redirect()->route("color.attribution")->with(['flash_message' => '削除しました']);
     }
 }

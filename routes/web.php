@@ -79,7 +79,7 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::get('color/attribution',[ColorAttributionController::class,'index'])->name('color.attribution');
     Route::post('color/attribution/store',[ColorAttributionController::class,'store'])->name('color.attribution.store');
-    Route::post('color/attribution/destroy',[ColorAttributionController::class,'destroy'])->name('color.attribution.destroy');
+    Route::post('color/attribution/destroy/{id}',[ColorAttributionController::class,'destroy'])->name('color.attribution.destroy');
 
 
     Route::get('image',[ImageController::class,'index'])->name('image');

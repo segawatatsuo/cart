@@ -28,12 +28,12 @@
     <section class="content">
         <div class="container-fluid" id="app">
 
-                                                                        <!-- フラッシュメッセージ -->
-                                                                        @if (session('flash_message'))
-                                                                        <div class="alert alert-success">
-                                                                            {{ session('flash_message') }}
-                                                                        </div>
-                                                                    @endif
+            <!-- フラッシュメッセージ -->
+            @if (session('flash_message'))
+                <div class="alert alert-success">
+                    {{ session('flash_message') }}
+                </div>
+            @endif
 
 
             <div class="row">
@@ -48,23 +48,28 @@
                         <form method="POST" action="{{ route('color.store') }}" enctype="multipart/form-data">
                             @csrf
 
-                        <div class="card-body">
+                            <div class="card-body">
 
-                            <div class="form-group">
-                                <label for="name">名前</label>
-                                <input type="text" class="form-control" name="name">
-                            </div>
+                                <div class="form-group">
+                                    <label for="name">名前</label>
+                                    <input type="text" class="form-control" name="name">
+                                </div>
 
-                            <div class="form-group">
-                                <label for="attribution">帰属先</label>
-                                <input type="text" class="form-control" name="attribution" placeholder="">
-                            </div>
+                                <div class="form-group">
+                                    <label for="select1a">帰属先</label>
+                                    <select id="select1a" class="form-control" name="attribution">
+                                        @foreach ($attributions as $attribution)
+                                            <option>{{ $attribution->attribution }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="name">価格</label>
-                                <input type="text" class="form-control" name="price" placeholder="">
+
+                                <div class="form-group">
+                                    <label for="name">価格</label>
+                                    <input type="text" class="form-control" name="price" placeholder="">
+                                </div>
                             </div>
-                        </div>
                     </div>
                 </div>
 
@@ -75,12 +80,12 @@
                             <h3 class="card-title">画像</h3>
                         </div>
 
-                            <div class="card-body">
-                                <input type="file" name="img_path" id="input_file">
-                                <button>アップロード</button>
-                                <div class="pt-3"><img id="image"></div>
-                            </div>
-                            
+                        <div class="card-body">
+                            <input type="file" name="img_path" id="input_file">
+                            <button>アップロード</button>
+                            <div class="pt-3"><img id="image"></div>
+                        </div>
+
                         </form>
 
                     </div>
@@ -111,21 +116,21 @@
 @stop
 
 @section('js')
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-        $("#input_file").change(function (e) {
-        const file = e.target.files[0];
-        const reader = new FileReader();
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $("#input_file").change(function(e) {
+            const file = e.target.files[0];
+            const reader = new FileReader();
 
-        reader.addEventListener("load", function () {
-            $("#image").attr("src", reader.result);
-        }, false);
+            reader.addEventListener("load", function() {
+                $("#image").attr("src", reader.result);
+            }, false);
 
-        if (file) {
-            reader.readAsDataURL(file);
-        }
-    });
-</script>
+            if (file) {
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 
 
 

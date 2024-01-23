@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\StoreColorRequest;
 use App\Http\Requests\UpdateColorRequest;
 use App\Models\Color;
-
+use App\Models\Color_attribution;
 
 class ColorController extends Controller
 {
@@ -16,8 +16,10 @@ class ColorController extends Controller
      */
     public function index()
     {
-        return view('color.index');
+        $attributions=Color_attribution::all();
+        return view('color.index',compact('attributions'));
     }
+
     public function list()
     {
         $lists = Color::paginate(15);
