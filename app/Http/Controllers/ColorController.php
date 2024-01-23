@@ -75,7 +75,7 @@ class ColorController extends Controller
                 'path' => $path,
             ]);
         }
-        return redirect()->route('color');
+        return redirect()->route('color')->with('flash_message','登録しました');
 
     }
 

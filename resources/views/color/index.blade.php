@@ -27,10 +27,17 @@
 
     <section class="content">
         <div class="container-fluid" id="app">
+
+                                                                        <!-- フラッシュメッセージ -->
+                                                                        @if (session('flash_message'))
+                                                                        <div class="alert alert-success">
+                                                                            {{ session('flash_message') }}
+                                                                        </div>
+                                                                    @endif
+
+
             <div class="row">
-
                 <div class="col-md-6">
-
                     <div class="card card-primary">
 
                         <div class="card-header">

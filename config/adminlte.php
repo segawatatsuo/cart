@@ -440,6 +440,10 @@ return [
             'icon'    => 'fa fa-align-justify',
             'submenu' => [
                 [
+                    'text'       => '帰属先',
+                    'url'        => 'color/attribution',
+                ],
+                [
                     'text'       => '登録',
                     'url'        => 'color',
                 ],

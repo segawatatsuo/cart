@@ -14,6 +14,7 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\SkuController;
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
+use App\Http\Controllers\ColorAttributionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,10 +74,13 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('color',[ColorController::class,'index'])->name('color');
     Route::post('color/store',[ColorController::class,'store'])->name('color.store');
     Route::get('color/list',[ColorController::class,'list'])->name('color.list');
-
-
     Route::get('color/set',[ColorController::class,'set'])->name('color.set');
     Route::get('color/setlist',[ColorController::class,'setlist'])->name('color.setlist');
+
+    Route::get('color/attribution',[ColorAttributionController::class,'index'])->name('color.attribution');
+    Route::post('color/attribution/store',[ColorAttributionController::class,'store'])->name('color.attribution.store');
+    Route::post('color/attribution/destroy',[ColorAttributionController::class,'destroy'])->name('color.attribution.destroy');
+
 
     Route::get('image',[ImageController::class,'index'])->name('image');
     Route::get('image/set',[ImageController::class,'set'])->name('image.set');

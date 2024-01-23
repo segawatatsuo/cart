@@ -10,14 +10,27 @@
 @section('content')
     {{-- コンテンツ --}}
 
+<!-- bootstrap image gallery 1 -->
+<div class="container-fluid">
+  <div class="row">
 
+    @for ($val = 0; $val <= 10; $val++)
+    <div class="col-sm-6 col-md-4 col-lg-3">
+      <figure>
+        <img src="{{ asset('images/1703390984877green.jpg') }}" class="img-thumbnail grayscale">
+        <figcaption>Mountain 1</figcaption>
+      </figure>
+    </div>
+    @endfor
+
+  </div><!-- row -->
+</div><!-- container-fluid -->
 
 @stop
 
 @section('css')
     {{-- ページごとCSSの指定--}}
 
-@stop
 
 @section('js')
 
