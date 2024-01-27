@@ -9,4 +9,5 @@ class Pulldown_set extends Model
 {
     use HasFactory;
     protected $guarded = ['id',];
+
 }
