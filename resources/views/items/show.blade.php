@@ -370,7 +370,8 @@
                         'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
                     },
                     type: 'POST',
-                    url: 'http://127.0.0.1:8000/image/delete',
+                    //url: 'http://127.0.0.1:8000/image/delete',
+                    url: "{{ url('/image/delete') }}",
                     data: {
                         filename: name
                     },
@@ -412,7 +413,8 @@
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content"),
                     //'Content-Type': 'application/json'
                 },
-                url: "/item/create",
+                //url: "/item/create",
+                url: "{{ url('/item/create') }}",
                 method: "post",
                 dataType: "text",
                 data: obj,

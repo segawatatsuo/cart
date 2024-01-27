@@ -378,7 +378,8 @@
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content"),
                     //'Content-Type': 'application/json'
                 },
-                url: "/item/create",
+                //url: "/item/create",
+                url: "{{ url('/item/create') }}",
                 method: "post",
                 dataType: "text",
                 data: obj,
