@@ -169,7 +169,7 @@
                 },
                 //url: "/item/store",
                 //url: "/pulldown/set_store",
-                url: "{{ url('/pulldown_set/set_store') }}",
+                url: "{{ url('/pulldown/set_store') }}",
                 method: "post",
                 dataType: "text",
                 data: obj,
