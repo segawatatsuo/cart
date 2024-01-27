@@ -168,7 +168,8 @@
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")
                 },
                 //url: "/item/store",
-                url: "/pulldown/set_store",
+                //url: "/pulldown/set_store",
+                url: {{ url('/pulldown_set/set_store') }}
                 method: "post",
                 dataType: "text",
                 data: obj,

@@ -173,7 +173,8 @@
                 headers: {
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")
                 },
-                url: "/pulldown_set/update",
+                //url: "/pulldown_set/update",
+                url: {{ url('/pulldown_set/update') }}
                 method: "post",
                 dataType: "text",
                 data: obj,
