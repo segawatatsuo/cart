@@ -37,13 +37,13 @@
                                 <div class="row">
 
                                     <div class="form-group">
-                                        <label for="name">プルダウンのセット名</label>
+                                        <label for="setname">プルダウンのセット名</label>
                                         <input type="text" name="setname" class="form-control"
                                             value="{{ $name }}">
                                     </div>
 
                                     <div class="col-6 pt-3 pb-3">
-                                        <label for="name">プルダウン</label>
+                                        <label for="LeftSide">プルダウン</label>
                                         <div id="LeftSide" class="list-group col sortable">
                                             @if(is_array($left))
                                             @php $n=1; @endphp
@@ -56,7 +56,7 @@
                                     </div>
                 
                                     <div class="col-6 pt-3 pb-3">
-                                        <label for="name">セット内容(ここにドラッグしてください)</label>
+                                        <label for="RightSide">セット内容(ここにドラッグしてください)</label>
                                         <div id="RightSide" class="list-group col sortable">
                                             @if(is_array($right))
                                             @php $n=1; @endphp
