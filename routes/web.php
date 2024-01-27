@@ -70,6 +70,7 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::post('pulldown_detail/destroy/{id}', [Pulldown_detail::class, 'destroy'])->name('pulldown_detail.destroy');
     Route::post('pulldown_set/update',[PulldownSetController::class,'update'])->name('pulldown_set.update');
+    Route::get('pulldown_set/update',[PulldownSetController::class,'update'])->name('pulldown_set.update');
 
     Route::get('color',[ColorController::class,'index'])->name('color');
     Route::post('color/store',[ColorController::class,'store'])->name('color.store');
