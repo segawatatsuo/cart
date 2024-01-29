@@ -34,6 +34,13 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'maker_color_number' => $row['maker_color_number'],
             'size' => $row['size'],
             'color_display_name' => $row['color_display_name'],
+            
+            'maker' => $row['maker'],
+            'purchase' => $row['purchase'],
+            'price' => $row['price'],
+            'maker_price' => $row['maker_price'],
+            'purchase_price' => $row['purchase_price'],
+
             'stock' => $row['stock'],
 
         ]);
@@ -68,6 +75,12 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'maker_color_number' => 'required',
             'size' => 'required',
             'color_display_name' => 'required',
+
+            'maker' => 'required',
+            'purchase' => 'required',
+            'price' => 'required',
+            'purchase_price' => 'required',
+
             'stock' => 'required',
         ];
     }
@@ -87,6 +100,13 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'maker_color_number.required' => 'メーカーカラー番号は必須です',
             'size.required' => 'サイズは必須です',
             'color_display_name.required' => '顧客表示用色名は必須です',
+
+            'maker.required'=>'メーカー名は必須です',
+            'purchase.required'=>'仕入れ先は必須です',
+            'price.required'=>'販売価格は必須です',
+            'purchase_price.required'=>'仕入れ価格は必須です',
+
+            
             'stock.required' => '在庫数は必須です',
 
         ];
