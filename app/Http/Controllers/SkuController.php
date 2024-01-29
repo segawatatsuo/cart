@@ -160,7 +160,7 @@ class SkuController extends Controller
         // eloquentによる複数削除
         Sku::destroy($request->id);    //複数データ削除（IDは配列で複数）
         $list=Sku::paginate(15);
-        return view('sku.list',compact('list'))->with('successMessage', '削除しました');
+        return redirect()->route('sku.list',compact('list'))->with('successMessage', '削除しました');
 
     }  //end funtion 
 
