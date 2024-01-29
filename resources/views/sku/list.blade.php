@@ -258,7 +258,8 @@
                                     //POST通信
                                     type: "POST",
                                     //ここでデータの送信先URLを指定します。
-                                    url: "/sku/del_multi",
+                                    //url: "/sku/del_multi",
+                                    url: "{{ url('/sku/del_multi') }}",
                                     dataType: "text",
                                     data: {
                                         id: vals,
