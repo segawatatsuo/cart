@@ -85,10 +85,16 @@
                                             <input type="checkbox" name="all_check" id="all">
                                         </th>
                                         <th>商品番号</th>
+                                        <th>メーカー</th>
+                                        <th>仕入れ先</th>
                                         <th>メーカー商品番号</th>
                                         <th>メーカー色番号</th>
                                         <th>サイズ</th>
                                         <th>顧客表示用色名</th>
+                                        <th>販売価格</th>
+                                        <th>希望小売価格</th>
+                                        <th>仕入れ価格</th>
+
                                         <th>在庫数</th>
                                     </tr>
                                     @foreach ($list as $line)
@@ -100,6 +106,16 @@
                                             <td>
                                                 <a href={{ route('sku.show', $line->id) }}>{{ $line->item_number }}</a>
                                             </td>
+                                            <td>
+                                                {{ $line->maker }}</a>
+                                            </td>
+
+                                            <td>
+                                                {{ $line->purchase }}</a>
+                                            </td>
+
+
+
                                             <td>
                                                 {{ $line->maker_item_number }}</a>
                                             </td>
@@ -113,6 +129,13 @@
                                             <td>
                                                 {{ $line->color_display_name }}
                                             </td>
+
+
+                                            <td>{{ $line->price }}</td>
+                                            <td>{{ $line->maker_price }}</td>
+                                            <td>{{ $line->purchase_price }}</td>
+
+
                                             <td>
                                                 {{ $line->stock }}
                                             </td>
@@ -125,7 +148,7 @@
                             <a id="chkdel" href="javascript:void(0);" class="black">削除</a>
 
                             <div style="padding-bottom: 2px"><a
-                                    href="/sku_excel_template/sku_template.xlsx">テンプレートをダウンロード</a>
+                                    href="{{ route('sku.excel') }}">テンプレートをダウンロード</a>
                             </div>
 
                             <form method="post" action="sku_export" style="padding-bottom: 2px">

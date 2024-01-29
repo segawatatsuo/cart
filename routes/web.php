@@ -15,6 +15,7 @@ use App\Http\Controllers\SkuController;
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
 use App\Http\Controllers\ColorAttributionController;
+use App\Models\Sku;
 
 /*
 |--------------------------------------------------------------------------
@@ -106,6 +107,8 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::post('sku/del_multi', [SkuController::class,'remove_multi'])->name(('sku.remove_multi'));
     Route::post('sku/search', [SkuController::class,'search'])->name('sku.search');
+
+    Route::get('sku/excel',[SkuController::class,'excel'])->name('sku.excel');//excelテンプレートダウンロード
 });
 
 

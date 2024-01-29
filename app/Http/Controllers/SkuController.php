@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreSkuRequest;
 use App\Http\Requests\UpdateSkuRequest;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Sku;
 use App\Imports\SkuImport;
@@ -131,6 +132,16 @@ class SkuController extends Controller
         $sku_item->save();
 
         return redirect()->route('sku.show',compact('id'))->with('successMessage', '更新しました');
+    }
+
+    public function excel(){
+
+        $filePath = Storage::path('public/sku_excel_template/sku_template.xlsx');
+        $fileName = 'sku_template.xlsx';
+        $mimeType = Storage::mimeType($filePath);
+        $headers = [['Content-Type' => $mimeType]];
+        return response()->download($filePath, $fileName, $headers);
+
     }
 
     /**
