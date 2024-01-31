@@ -24,7 +24,6 @@
     </section>
 
 
-
     <section class="content">
         <div class="container-fluid" id="app">
             <div class="row">
@@ -78,13 +77,13 @@
         @stop
 
         <!--
-                これがあると左横の黒バーが途切れる
+                If this happens, the black bar on the left side will be cut off.
         </div>
-</section>
--->
+        </section>
+        -->
 
         @section('css')
-            {{-- ページごとCSSの指定
+        {{-- ページごとCSSの指定
         <link rel="stylesheet" href="/css/xxx.css">
         --}}
             <style>
@@ -95,8 +94,6 @@
                     box-sizing: border-box;
                     padding: 1px 10px;
                 }
-
-
                 .table td {
                     width: 5%;
                 }

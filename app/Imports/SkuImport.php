@@ -45,21 +45,8 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'jan' => $row['jan'],
             'country' => $row['country'],
             'classification' => $row['classification']
-
-            /*
-            
-            
-            
-            
-            */
         ]);
     }
-    /*
-    public function chunkSize(): int
-    { //50件づつ取り込む
-        return 50;
-    }
-    */
 
     public function startRow(): int //取り込み開始行(2行目から)
     {
@@ -94,12 +81,6 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'jan' => 'required',
             'country' => 'required',
             'classification' => 'required'
-            /*
-            
-            
-            
-            */
-
         ];
     }
 	public function customValidationMessages()
@@ -118,27 +99,14 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'maker_color_number.required' => 'メーカーカラー番号は必須です',
             'size.required' => 'サイズは必須です',
             'color_display_name.required' => '顧客表示用色名は必須です',
-
             'maker.required'=>'メーカー名は必須です',
             'purchase.required'=>'仕入れ先は必須です',
             'price.required'=>'販売価格は必須です',
             'purchase_price.required'=>'仕入れ価格は必須です',
-
-            
             'stock.required' => '在庫数は必須です',
             'jan.required' => 'JANコードは必須です。',
             'country.required' => '原産国は必須です',
             'classification.required' => '大分類は必須です',
-
-            /*
-            
-            
-            
-            */
-
-
         ];
     }
-
-
 }

@@ -104,10 +104,6 @@
                                         value="{{ $sku->purchase_price }}">
                                 </div>
 
-
-
-
-
                                 <div class="form-group">
                                     <label for="stock">在庫数</label>
                                     <input type="text" class="form-control" id="stock" name="stock" value="{{ $sku->stock }}">
@@ -136,10 +132,10 @@
         @stop
 
         <!--
-                これがあると左横の黒バーが途切れる
+        If this happens, the black bar on the left side will be cut off.
         </div>
-</section>
--->
+        </section>
+        -->
 
         @section('css')
             {{-- ページごとCSSの指定
@@ -153,8 +149,6 @@
                     box-sizing: border-box;
                     padding: 1px 10px;
                 }
-
-
                 .table td {
                     width: 5%;
                 }

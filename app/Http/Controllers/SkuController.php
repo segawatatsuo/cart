@@ -88,7 +88,12 @@ class SkuController extends Controller
                 ->orWhere('maker_color_number', 'LIKE', "%{$keyword}%")
                 ->orWhere('size', 'LIKE', "%{$keyword}%")
                 ->orWhere('color_display_name', 'LIKE', "%{$keyword}%")
-                ->orWhere('stock', 'LIKE', "%{$keyword}%");
+                ->orWhere('stock', 'LIKE', "%{$keyword}%")
+                ->orWhere('jan', 'LIKE', "%{$keyword}%")
+                ->orWhere('maker', 'LIKE', "%{$keyword}%")
+                ->orWhere('purchase', 'LIKE', "%{$keyword}%")
+                ->orWhere('country', 'LIKE', "%{$keyword}%")
+                ->orWhere('classification', 'LIKE', "%{$keyword}%");  
         }
 
         //dd($query->tosql());

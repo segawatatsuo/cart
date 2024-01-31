@@ -24,7 +24,6 @@
     </section>
 
 
-
     <section class="content">
         <div class="container-fluid" id="app">
             <div class="row">
@@ -33,9 +32,6 @@
                         <div class="card-header">
                             <h3 class="card-title">登録されているSKU一覧</h3>
                         </div>
-
-
-
 
                         <div class="card-body">
 
@@ -53,7 +49,6 @@
                                 @csrf
                                 <div style="padding-bottom: 2px"><input type="file" name="excel_file"></div>
                                 <div style="padding-bottom: 20px"><input type="submit" value="インポート"></div>
-
                             </form>
 
                             @if (session('successMessage'))
@@ -73,8 +68,6 @@
                                     </ul>
                                 </div>
                             @endif
-
-
 
 
                             <table class="table">
@@ -97,7 +90,6 @@
                                         <th>販売価格</th>
                                         <th>希望小売価格</th>
                                         <th>仕入れ価格</th>
-
                                         <th>在庫数</th>
                                     </tr>
                                     @foreach ($list as $line)
@@ -119,8 +111,6 @@
                                                 {{ $line->purchase }}</a>
                                             </td>
 
-
-
                                             <td>
                                                 {{ $line->maker_item_number }}</a>
                                             </td>
@@ -138,10 +128,9 @@
                                             <td>{{ $line->country }}</td>
                                             <td>{{ $line->classification }}</td>
 
-                                            <td>{{ $line->price }}</td>
-                                            <td>{{ $line->maker_price }}</td>
-                                            <td>{{ $line->purchase_price }}</td>
-
+                                            <td>{{ number_format($line->price) }}</td>
+                                            <td>{{ number_format($line->maker_price) }}</td>
+                                            <td>{{ number_format($line->purchase_price) }}</td>
 
                                             <td>
                                                 {{ $line->stock }}
@@ -160,11 +149,8 @@
 
                             <form method="post" action="sku_export" style="padding-bottom: 2px">
                                 @csrf
-                                <input type="submit" value="ダウンロード">
+                                <input type="submit" value="全件ダウンロード">
                             </form>
-
-
-
                         </div>
                     </div>
 
@@ -177,15 +163,15 @@
         @stop
 
         <!--
-                これがあると左横の黒バーが途切れる
+        If this happens, the black bar on the left side will be cut off.
         </div>
-</section>
--->
+        </section>
+        -->
 
         @section('css')
             {{-- ページごとCSSの指定
-        <link rel="stylesheet" href="/css/xxx.css">
-        --}}
+            <link rel="stylesheet" href="/css/xxx.css">
+            --}}
             <style>
                 .txt {
                     display: inline-block;
@@ -194,8 +180,6 @@
                     box-sizing: border-box;
                     padding: 1px 10px;
                 }
-
-
                 .table td {
                     width: 5%;
                 }
@@ -219,7 +203,6 @@
                 });
             </script>
 
-
             <script>
                 $('#all').on('click', function() {
                     $('input[name="chk_todo[]"]').prop('checked', this.checked);
@@ -239,21 +222,16 @@
             <script>
                 $(function() {
                     $("#chkdel").click(function() {
-
                         /// チェックされたvalue値を配列として取得
                         var vals = $('[class="check"]:checked').map(function() {
                             return $(this).val();
                         }).get();
-
-                        console.log(vals);
-                        console.log(vals.length)
-
-
+                        //console.log(vals);
+                        //console.log(vals.length)
                         if (vals.length == 0) {
                             alert('チェックされていません');
                             return false; //処理中断
                         }
-
                         var deleteConfirm = confirm('チェックを削除してよろしいですか？');
                         if (deleteConfirm == true) {
                             $.ajaxSetup({
@@ -262,9 +240,7 @@
                                 },
                             });
                             $.ajax({
-                                    //POST通信
                                     type: "POST",
-                                    //ここでデータの送信先URLを指定します。
                                     //url: "/sku/del_multi",
                                     url: "{{ url('/sku/del_multi') }}",
                                     dataType: "text",
@@ -272,16 +248,10 @@
                                         id: vals,
                                     },
                                 })
-                                // 成功
                                 .done(function(results) {
-                                    // alert('成功');
-
-                                    // 通信成功時の処理
                                     console.log("results : " + results);
-                                    window.location.href = "/sku/list"; //削除後に画面を遷移
-
+                                    window.location.href = "{{ url('/sku/list') }}"; //削除後に画面を遷移
                                 })
-                                // 失敗
                                 .fail(function(jqXHR, textStatus, errorThrown) {
                                     alert('失敗');
                                     console.log("ajax通信に失敗しました");
@@ -291,7 +261,6 @@
                                     console.log("URL            : " + url);
                                 });
                         }
-
                     });
                 });
             </script>
@@ -304,5 +273,4 @@
                     });
                 });
             </script>
-
         @stop
