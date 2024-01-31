@@ -77,18 +77,50 @@
                                         value="{{ $sku->color_display_name }}">
                                 </div>
 
+
+                                <div class="form-group">
+                                    <label for="maker">メーカー</label>
+                                    <input type="text" class="form-control" id="maker" name="maker"
+                                        value="{{ $sku->maker }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="purchase">メーカー</label>
+                                    <input type="text" class="form-control" id="purchase" name="purchase"
+                                        value="{{ $sku->purchase }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">価格</label>
+                                    <input type="text" class="form-control" id="price" name="price"
+                                        value="{{ $sku->price }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="maker_price">メーカー希望小売価格</label>
+                                    <input type="text" class="form-control" id="maker_price" name="maker_price"
+                                        value="{{ $sku->maker_price }}">
+                                </div>
+                                <div class="form-group">
+                                    <label for="purchase_price">仕入価格</label>
+                                    <input type="text" class="form-control" id="purchase_price" name="purchase_price"
+                                        value="{{ $sku->purchase_price }}">
+                                </div>
+
+
+
+
+
                                 <div class="form-group">
                                     <label for="stock">在庫数</label>
                                     <input type="text" class="form-control" id="stock" name="stock" value="{{ $sku->stock }}">
                                 </div>
 
-
+                                <!--
                                 <div class="form-group form-check">
                                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                     <label class="form-check-label" for="exampleCheck1">Check me out</label>
                                 </div>
+                            -->
 
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">更新</button>
 
                             </form>
 

@@ -249,6 +249,10 @@ class ItemController extends Controller
         Item::where('id', $id)->update(['pulldown_leftside' => $pulldown_leftside]);
     }
 
+    public function select(){
+        return view('items.select');
+    }
+
     /**
      * Remove the specified resource from storage.
      *

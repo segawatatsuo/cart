@@ -128,13 +128,22 @@ class SkuController extends Controller
             'size' => $request->size,
             'color_display_name' => $request->color_display_name,
             'stock' => $request->stock,
+            'maker' => $request->maker,
+            'purchase' => $request->purchase,
+            'price' => $request->price,
+            'maker_price' => $request->maker_price,
+            'purchase_price' => $request->purchase_price,
+            'jan' => $request->jan,
+            'country' => $request->country,
+            'classification' => $request->classification
+
         ]);
         $sku_item->save();
 
         return redirect()->route('sku.show',compact('id'))->with('successMessage', '更新しました');
     }
 
-    public function excel(){
+    public function excel(){ //ダウンロード
 
         $filePath = Storage::path('public/sku_excel_template/sku_template.xlsx');
         $fileName = 'sku_template.xlsx';

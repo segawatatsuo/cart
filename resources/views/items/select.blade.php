@@ -8,14 +8,14 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>商品登録</h1>
+                    <h1>商品カテゴリ一覧</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">商品登録</li>
+                        <li class="breadcrumb-item active">商品カテゴリ一覧</li>
                     </ol>
                 </div>
             </div>
@@ -36,22 +36,7 @@
                                 <h3 class="card-title">商品名</h3>
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <label for="display">表示/非表示</label>
-                                    <select class="custom-select form-control-border" id="exampleSelectBorder"
-                                        name="display">
-                                        <option>表示</option>
-                                        <option>非表示</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <label for="number">商品番号</label>
-                                    <input type="text" class="form-control" id="number" name="number" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">商品名</label>
-                                    <input type="text" class="form-control" id="name" placeholder="" name="name">
-                                </div>
+
                             </div>
                         </div>
 
@@ -59,28 +44,8 @@
                             <div class="card-header">
                                 <h3 class="card-title">カテゴリー</h3>
                             </div>
-                            <div class="card-body">
-                                @each('layouts.partials.project', $projects, 'project', 'layouts.partials.projects-none')
-                            </div>
                         </div>
 
-                        <!--
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">サイズ・カラー</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>サイズ(複数の場合はカンマ区切りで入力してください)</label>
-                                    <textarea class="form-control" rows="3" placeholder="" name="size"></textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>カラー(複数の場合はカンマ区切りで入力してください)</label>
-                                    <textarea class="form-control" rows="3" placeholder="" name="color"></textarea>
-                                </div>
-                            </div>
-                        </div>
-                        -->
 
                         <div class="card card-primary">
                             <div class="card-header">
@@ -116,126 +81,10 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-6">
-                        <!--
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">価格</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="price">販売価格</label>
-                                    <input type="text" class="form-control" id="price" name="price" placeholder="">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="maker_price">メーカー希望小売価格</label>
-                                    <input type="text" class="form-control" id="maker_price" name="maker_price"
-                                        placeholder="">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">メーカー</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="maker">メーカー</label>
-                                    <input type="text" class="form-control" id="maker" name="maker"
-                                        placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="purchase">仕入れ先</label>
-                                    <input type="text" class="form-control" id="purchase" name="purchase"
-                                        placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="purchase_price">仕入れ価格</label>
-                                    <input type="text" class="form-control" id="purchase_price" name="purchase_price"
-                                        placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                    -->
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">プルダウン</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <div class="row">
-                                        <div class="col-6 pt-3 pb-3">
-                                            <div id="LeftSide" class="list-group col sortable">
-                                                @php $n=1; @endphp
-                                                @foreach ($pulldown_sets as $pulldown)
-                                                    <div class="list-group-item" data-id="{{ $pulldown->id }}">
-                                                        {{ $pulldown->name }}</div>
-                                                    @php $n+=1; @endphp
-                                                @endforeach
-                                            </div>
-                                        </div>
-
-                                        <div class="col-6 pt-3 pb-3">
-                                            <div id="RightSide" class="list-group col sortable">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">カラー</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="form-group">
-                                        <label for="hidden">カラーグループ選択</label>
-                                        <select class="custom-select form-control-border" id="color_group"
-                                            name="color_group">
-                                            <option>なし</option>
-                                            <option>野球用</option>
-                                            <option>サッカー用</option>
-                                            <option>バスケ用</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
     </form>
 
-    <div class="card card-primary">
-        <div class="card-header">
-            <h3 class="card-title">画像</h3>
-        </div>
-        <div class="card-body">
-            <div class="form-group">
-                <div class="row">
-                    <label for="">
-                        <form method="post" action="{{ url('image/upload/store') }}" enctype="multipart/form-data"
-                            class="dropzone" id="dropzone">
-                            @csrf
-                        </form>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <form>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-3">
-                    <button type="submit" class="btn btn-primary register" name="register"
-                        form="data">データ登録</button>
-                </div>
-            </div>
-        </div>
-    </form>
+
 
     </div>
     </div>

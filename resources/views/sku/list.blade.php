@@ -85,12 +85,15 @@
                                             <input type="checkbox" name="all_check" id="all">
                                         </th>
                                         <th>商品番号</th>
+                                        <th>JANコード</th>
                                         <th>メーカー</th>
                                         <th>仕入れ先</th>
                                         <th>メーカー商品番号</th>
                                         <th>メーカー色番号</th>
                                         <th>サイズ</th>
                                         <th>顧客表示用色名</th>
+                                        <th>原産国</th>
+                                        <th>大分類</th>
                                         <th>販売価格</th>
                                         <th>希望小売価格</th>
                                         <th>仕入れ価格</th>
@@ -106,6 +109,8 @@
                                             <td>
                                                 <a href={{ route('sku.show', $line->id) }}>{{ $line->item_number }}</a>
                                             </td>
+
+                                            <td>{{ $line->jan }}</td>
                                             <td>
                                                 {{ $line->maker }}</a>
                                             </td>
@@ -130,6 +135,8 @@
                                                 {{ $line->color_display_name }}
                                             </td>
 
+                                            <td>{{ $line->country }}</td>
+                                            <td>{{ $line->classification }}</td>
 
                                             <td>{{ $line->price }}</td>
                                             <td>{{ $line->maker_price }}</td>

@@ -42,7 +42,16 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'purchase_price' => $row['purchase_price'],
 
             'stock' => $row['stock'],
+            'jan' => $row['jan'],
+            'country' => $row['country'],
+            'classification' => $row['classification']
 
+            /*
+            
+            
+            
+            
+            */
         ]);
     }
     /*
@@ -82,6 +91,15 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
             'purchase_price' => 'required',
 
             'stock' => 'required',
+            'jan' => 'required',
+            'country' => 'required',
+            'classification' => 'required'
+            /*
+            
+            
+            
+            */
+
         ];
     }
 	public function customValidationMessages()
@@ -108,6 +126,16 @@ class SkuImport implements ToModel,WithValidation,WithHeadingRow
 
             
             'stock.required' => '在庫数は必須です',
+            'jan.required' => 'JANコードは必須です。',
+            'country.required' => '原産国は必須です',
+            'classification.required' => '大分類は必須です',
+
+            /*
+            
+            
+            
+            */
+
 
         ];
     }

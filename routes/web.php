@@ -16,6 +16,7 @@ use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
 use App\Http\Controllers\ColorAttributionController;
 use App\Models\Sku;
+use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('item/create',[ItemController::class,'create'])->name('item.create');
     Route::get('item/store',[ItemController::class,'store'])->name('item.store');
     Route::post('item/store',[ItemController::class,'store'])->name('item.store');
+
+    Route::get('item/select',[ItemController::class,'select'])->name('item.select');
+    
     Route::get('item/list',[ItemController::class,'list'])->name('item.list');
     Route::get('item/show/{id}',[ItemController::class,'show'])->name('item.show');
     Route::post('item/update/{id}',[ItemController::class,'update'])->name('item.update');
