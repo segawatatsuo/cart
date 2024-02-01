@@ -148,6 +148,20 @@ class SkuController extends Controller
         return redirect()->route('sku.show',compact('id'))->with('successMessage', '更新しました');
     }
 
+    //line row edit
+    public function update2(Request $request)
+    {
+        if ($request->ajax()) {
+            Sku::find($request->pk)->update(['title' => $request->value]);
+            return response()->json(['success' => true]);
+        }
+    }
+
+
+
+
+
+
     public function excel(){ //ダウンロード
 
         $filePath = Storage::path('public/sku_excel_template/sku_template.xlsx');

@@ -105,6 +105,25 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="jan">JANコード</label>
+                                    <input type="text" class="form-control" id="jan" name="jan"
+                                        value="{{ $sku->jan }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="country">原産国</label>
+                                    <input type="text" class="form-control" id="country" name="country"
+                                        value="{{ $sku->country }}">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="classification">大分類</label>
+                                    <input type="text" class="form-control" id="classification" name="classification"
+                                        value="{{ $sku->classification }}">
+                                </div>
+
+
+                                <div class="form-group">
                                     <label for="stock">在庫数</label>
                                     <input type="text" class="form-control" id="stock" name="stock" value="{{ $sku->stock }}">
                                 </div>
