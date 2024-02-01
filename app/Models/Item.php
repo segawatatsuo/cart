@@ -34,6 +34,6 @@ class Item extends Model
 
     public function skus()
     {
-        return $this->hasMany( Sku::class, 'number' );
+        return $this->hasMany( Sku::class, 'item_number' );
     }
 }
