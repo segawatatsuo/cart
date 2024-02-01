@@ -141,7 +141,7 @@ class ItemController extends Controller
 
     public function list()
     {
-        $list = Item::paginate(15);
+        $list = Item::paginate(50);
         return view('items.list', compact('list'));
     }
 
@@ -158,6 +158,7 @@ class ItemController extends Controller
         \App\Models\Item_pulldown_temporarily::truncate();
 
         $item = Item::find($id);
+
         //カテゴリー
         $projects = Category::get()->toTree(); //ツリー形式
         //プルダウンセット
@@ -187,7 +188,10 @@ class ItemController extends Controller
             }
         }
 
-        return view('items.show', compact('item', 'projects', 'pulldown_sets', 'selected_category', 'left', 'right'));
+        //関連テーブルのimagesに登録された画像一覧配列
+        $images=$item->images;
+
+        return view('items.show', compact('item', 'projects', 'pulldown_sets', 'selected_category', 'left', 'right', 'images'));
     }
 
     /**
@@ -217,8 +221,17 @@ class ItemController extends Controller
         $tempo = new Item_pulldown_temporarily();
         $lastId = $tempo->latest('id')->first();
         $pulldown = $tempo::find($lastId);
-        $pulldown_rightside = $pulldown[0]['rightside'];
-        $pulldown_leftside = $pulldown[0]['leftside'];
+        if($pulldown[0]['rightside']!=null){
+            $pulldown_rightside = $pulldown[0]['rightside'];
+        }else{
+            $pulldown_rightside ="";
+        }
+
+        if($pulldown[0]['leftside']!=null){
+            $pulldown_leftside = $pulldown[0]['leftside'];
+        }else{
+            $pulldown_leftside = "";
+        }
 
 
         $item = Item::find($id);
@@ -247,6 +260,10 @@ class ItemController extends Controller
 
         Item::where('id', $id)->update(['pulldown_rightside' => $pulldown_rightside]);
         Item::where('id', $id)->update(['pulldown_leftside' => $pulldown_leftside]);
+
+        $list = Item::paginate(50);
+        return view('items.list', compact('list'));
+
     }
 
     public function select(){
@@ -259,8 +276,13 @@ class ItemController extends Controller
      * @param  \App\Models\Item  $item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Item $item)
+    public function destroy($id)
     {
-        //
+        $item = Item::find($id);
+        dd($item);
+        $item->delete();
+        //$list = Item::paginate(50);
+        //return view('items.list', compact('list'));
+
     }
 }

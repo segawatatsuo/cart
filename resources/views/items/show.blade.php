@@ -223,6 +223,8 @@
                         </div>
     </form>
 
+
+
     <div class="card card-primary">
         <div class="card-header">
             <h3 class="card-title">画像</h3>
@@ -248,8 +250,12 @@
         <div class="card-body">
             <div class="form-group">
                 <div class="row">
+                    @foreach ( $images as $image )
+                    <img src="{{ asset('/images/'.$image->filename) }}" alt="">
+                    @endforeach
+                    
 
-                    <img src="{{-- asset('storage/images/'.$post->image) --}}" alt="">
+
 
                 </div>
             </div>
@@ -260,13 +266,25 @@
     <form>
         <div class="form-group">
             <div class="row">
-                <div class="col-3">
-                    <button type="submit" class="btn btn-primary register" name="register"
+                <div class="col-6 d-flex">
+                    <button type="submit" class="btn btn-primary register mr-2" name="register"
                         form="data">データ更新</button>
                 </div>
             </div>
         </div>
     </form>
+
+    <form>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-6 d-flex">
+                    <button type="submit" class="btn btn-danger destory mr-2" name="destory"
+                        form="data">データ削除</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
 
     </div>
     </div>
