@@ -192,8 +192,7 @@ class ItemController extends Controller
         $images=$item->images;
 
         //関連するSKUを取得
-        $hoge=$item->sku;
-        dd($hoge);
+
 
 
         return view('items.show', compact('item', 'projects', 'pulldown_sets', 'selected_category', 'left', 'right', 'images'));
