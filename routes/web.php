@@ -110,7 +110,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('sku/update/{id}',[SkuController::class,'update'])->name('sku.update'); //追加
 
     Route::post('sku/del_multi', [SkuController::class,'remove_multi'])->name(('sku.remove_multi'));
+    
     Route::post('sku/search', [SkuController::class,'search'])->name('sku.search');
+    Route::get('sku/search', [SkuController::class,'search'])->name('sku.search');
 
     Route::get('sku/excel',[SkuController::class,'excel'])->name('sku.excel');//excelテンプレートダウンロード
 });

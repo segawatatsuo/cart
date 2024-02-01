@@ -124,6 +124,23 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">SKU</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group">
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
                     </div>
 
                     <div class="col-md-6">
@@ -252,11 +269,7 @@
                 <div class="row">
                     @foreach ( $images as $image )
                     <img src="{{ asset('/images/'.$image->filename) }}" alt="">
-                    @endforeach
-                    
-
-
-
+                    @endforeach        
                 </div>
             </div>
         </div>

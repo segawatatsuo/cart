@@ -26,4 +26,9 @@ class Sku extends Model
         'classification',
     ];
 
+    public function skus()
+    {
+        return $this->belongsTo( Item::class, 'number' )->withDefault();
+    }
+
 }

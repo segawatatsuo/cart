@@ -32,4 +32,8 @@ class Item extends Model
         return $this->hasMany(Item_pulldown::class);
     }
 
+    public function skus()
+    {
+        return $this->hasMany( Sku::class, 'number' );
+    }
 }
