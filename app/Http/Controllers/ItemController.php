@@ -226,13 +226,13 @@ class ItemController extends Controller
         $tempo = new Item_pulldown_temporarily();
         $lastId = $tempo->latest('id')->first();
         $pulldown = $tempo::find($lastId);
-        if($pulldown[0]['rightside']!=null){
+        if(isset($pulldown[0]['rightside']) && $pulldown[0]['rightside']!=null){
             $pulldown_rightside = $pulldown[0]['rightside'];
         }else{
             $pulldown_rightside ="";
         }
 
-        if($pulldown[0]['leftside']!=null){
+        if(isset($pulldown[0]['leftside']) && $pulldown[0]['leftside']!=null){
             $pulldown_leftside = $pulldown[0]['leftside'];
         }else{
             $pulldown_leftside = "";
