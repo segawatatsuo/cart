@@ -58,7 +58,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('item/list',[ItemController::class,'list'])->name('item.list');
     Route::get('item/show/{id}',[ItemController::class,'show'])->name('item.show');
     Route::post('item/update/{id}',[ItemController::class,'update'])->name('item.update');
-
+    Route::post('item/destroy/{id}',[ItemController::class,'destroy'])->name('item.destroy');
 
     //プルダウン登録ページ
     Route::get('pulldown',[PulldownController::class,'index'])->name('pulldown.index');
