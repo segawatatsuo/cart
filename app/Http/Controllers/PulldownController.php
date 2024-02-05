@@ -282,4 +282,23 @@ class PulldownController extends Controller
 
         //return redirect('pulldown.show')->with('flash_message', '更新しました');
     }
+
+
+
+    public function update2(Request $request)
+    {
+        $pulldown_set = Pulldown_set::find($request->record_id);
+        $rightside = serialize($request->rightside);
+        $leftside = serialize($request->leftside);
+        $pulldown_set->fill(
+            [
+                'leftside' => $leftside,
+                'rightside' => $rightside,
+                'setname' => $request->setname,
+            ]
+        );
+        $pulldown_set->save();
+        return redirect('pulldown/list')->with('flash_message', '更新しました');
+    }
+
 }

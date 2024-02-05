@@ -174,7 +174,7 @@
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")
                 },
                 //url: "/pulldown_set/update",
-                url: "{{ url('/pulldown_set/update') }}",
+                url: "{{ url('/pulldown/update2') }}",
                 method: "post",
                 dataType: "text",
                 data: obj,

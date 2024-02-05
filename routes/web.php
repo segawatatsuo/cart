@@ -70,6 +70,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('pulldown/setlist',[PulldownController::class,'setlist'])->name('pulldown.setlist');
     Route::post('pulldown/set_store',[PulldownController::class,'set_store'])->name('pulldown.set_store');
     Route::post('pulldown/update',[PulldownController::class,'update'])->name('pulldown.update');
+    Route::post('pulldown/update2',[PulldownController::class,'update2'])->name('pulldown.update2');
     Route::get('pulldown/set_show/{id}',[PulldownController::class,'set_show'])->name('pulldown.set_show');
     Route::post('pulldown/destroy{id}', [PulldownController::class, 'destroy'])->name('pulldown.destroy');
 
