@@ -21,11 +21,8 @@ use App\Models\Tax;
 use App\Models\Item_pulldown_temporarily;
 
 
-
 class ItemController extends Controller
 {
-
-
     /**
      * Display a listing of the resource.
      *
@@ -54,9 +51,9 @@ class ItemController extends Controller
     {
         $rightside = serialize($request->rightside);
         $leftside = serialize($request->leftside);
+        
         $Item_pulldown_temporarily = Item_pulldown_temporarily::create(['rightside' => $rightside, 'leftside' => $leftside]);
     }
-
 
 
     /**
@@ -67,24 +64,6 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        /*
-        $filename = 'filestream.txt'; //publicにテキストが書き出しされる
-        $fp = fopen($filename, 'wa');
-
-        fwrite($fp, "recoedID:");
-        $content = $request->record_id;
-        fwrite($fp, $content);
-
-        fwrite($fp, "rightside:");
-        $right = serialize($request->rightside);
-        fwrite($fp, $right);
-
-        fwrite($fp, "leftside:");
-        $left = serialize($request->leftside);
-        fwrite($fp, $left);
-
-        fclose($fp);
-        */
 
         //消費税 from app/Services/TaxService.php & config/constants.php
         $tody = new Carbon('today');
@@ -195,7 +174,6 @@ class ItemController extends Controller
         $hoge = $item;
         //dd($hoge);
 
-
         return view('items.show', compact('item', 'projects', 'pulldown_sets', 'selected_category', 'left', 'right', 'images'));
     }
 
@@ -219,25 +197,27 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //カテゴリ
+        //カテゴリーのチェックされている番号
         $categorys = $request->input('category');
         $categorys = json_encode($categorys);
+
         //Item_pulldown_temporarilyにインポートされたpulldownのAJAXデータを取り出す
         $tempo = new Item_pulldown_temporarily();
         $lastId = $tempo->latest('id')->first();
         $pulldown = $tempo::find($lastId);
+        //dd($pulldown);
+
         if(isset($pulldown[0]['rightside']) && $pulldown[0]['rightside']!=null){
             $pulldown_rightside = $pulldown[0]['rightside'];
         }else{
-            $pulldown_rightside ="";
+            $pulldown_rightside ="N;";
         }
 
         if(isset($pulldown[0]['leftside']) && $pulldown[0]['leftside']!=null){
             $pulldown_leftside = $pulldown[0]['leftside'];
         }else{
-            $pulldown_leftside = "";
+            $pulldown_leftside = "N;";
         }
-
 
         $item = Item::find($id);
         $item->display = $request->display;
@@ -249,25 +229,23 @@ class ItemController extends Controller
         $item->head_copy = $request->head_copy;
         $item->description = $request->description;
         $item->recommend = $request->recommend;
-        $non_kugiri_number = str_replace(',', '', $request->price);
-        $item->price = $non_kugiri_number;
-        $non_kugiri_number = str_replace(',', '', $request->maker_price);
-        $item->maker_price = $non_kugiri_number;
-        $item->maker = $request->maker;
-        $item->purchase = $request->purchase;
-        $non_kugiri_number = str_replace(',', '', $request->purchase_price);
-        $item->purchase_price = $non_kugiri_number;
+        //$non_kugiri_number = str_replace(',', '', $request->price);
+        //$item->price = $non_kugiri_number;
+        //$non_kugiri_number = str_replace(',', '', $request->maker_price);
+        //$item->maker_price = $non_kugiri_number;
+        //$item->maker = $request->maker;
+        //$item->purchase = $request->purchase;
+        //$non_kugiri_number = str_replace(',', '', $request->purchase_price);
+        //$item->purchase_price = $non_kugiri_number;
         $item->color_group = $request->color_group;
         $item->save();
-
-        //$item->pulldown_rightside = $pulldown_rightside;
-        //$item->pulldown_leftside = $pulldown_leftside;
 
         Item::where('id', $id)->update(['pulldown_rightside' => $pulldown_rightside]);
         Item::where('id', $id)->update(['pulldown_leftside' => $pulldown_leftside]);
 
-        $list = Item::paginate(50);
-        return view('items.list', compact('list'));
+        //$list = Item::paginate(50);
+        //return view('items.list', compact('list'))->with('flash_message', '更新しました');
+        return redirect()->route('item.show',['id'=>$id])->with('successMessage', '更新しました');
 
     }
 
@@ -284,10 +262,10 @@ class ItemController extends Controller
     public function destroy($id)
     {
         $item = Item::find($id);
-        dd($item);
         $item->delete();
-        //$list = Item::paginate(50);
-        //return view('items.list', compact('list'));
-
+        //return redirect()->route('item');
+        $list = Item::paginate(50);
+        //return view('items.list', compact('list'))->with('successMessage', '削除しました');
+        return redirect()->route('item.list',compact('list'))->with('successMessage', '削除しました');
     }
 }

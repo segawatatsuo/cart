@@ -10,6 +10,7 @@
                 <div class="col-sm-6">
                     <h1>商品内容</h1>
                 </div>
+
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
@@ -19,6 +20,15 @@
                     </ol>
                 </div>
             </div>
+
+                <!-- フラッシュメッセージ -->
+                @if (session('successMessage'))
+                    <div class="alert alert-success">
+                        {{ session('successMessage') }}
+                    </div>
+                @endif
+
+
         </div>
     </section>
 @stop
@@ -73,22 +83,6 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">サイズ・カラー</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>サイズ(複数の場合はカンマ区切りで入力してください)</label>
-                                    <textarea class="form-control" rows="3" placeholder="" name="size"> {{ $item->size }}</textarea>
-                                </div>
-                                <div class="form-group">
-                                    <label>カラー(複数の場合はカンマ区切りで入力してください)</label>
-                                    <textarea class="form-control" rows="3" placeholder="" name="color">{{ $item->color }}</textarea>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-primary">
-                            <div class="card-header">
                                 <h3 class="card-title">商品説明</h3>
                             </div>
                             <div class="card-body">
@@ -124,67 +118,9 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">SKU</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="form-group">
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-                        </div>
-
-
                     </div>
 
                     <div class="col-md-6">
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">価格</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="price">販売価格</label>
-                                    <input type="text" class="form-control" id="price" name="price" placeholder=""
-                                        value="{{ number_format($item->price) }}">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="maker_price">メーカー希望小売価格</label>
-                                    <input type="text" class="form-control" id="maker_price" name="maker_price"
-                                        placeholder="" value="{{ number_format($item->maker_price) }}">
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">メーカー</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="maker">メーカー</label>
-                                    <input type="text" class="form-control" id="maker" name="maker"
-                                        placeholder="" value="{{ $item->maker }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="purchase">仕入れ先</label>
-                                    <input type="text" class="form-control" id="purchase" name="purchase"
-                                        placeholder="" value="{{ $item->purchase }}">
-                                </div>
-                                <div class="form-group">
-                                    <label for="purchase_price">仕入れ価格</label>
-                                    <input type="text" class="form-control" id="purchase_price" name="purchase_price"
-                                        placeholder="" value="{{ number_format($item->purchase_price) }}">
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="card card-primary">
                             <div class="card-header">
@@ -195,10 +131,10 @@
                                     <div class="row">
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="LeftSide" class="list-group col sortable">
-                                                @if(is_array($left))
-                                                    @foreach ($left as $item)
-                                                        <div class="list-group-item" data-id="{{ optional($item)->id }}">
-                                                            {{ optional($item)->name }}</div>
+                                                @if (is_array($left))
+                                                    @foreach ($left as $lt)
+                                                        <div class="list-group-item" data-id="{{ $lt->id }}">
+                                                            {{ $lt->name }}</div>
                                                     @endforeach
                                                 @endif
                                             </div>
@@ -206,18 +142,23 @@
 
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="RightSide" class="list-group col sortable">
-                                                @if(is_array($right))
-                                                @foreach ($right as $item)
-                                                    <div class="list-group-item" data-id="{{ optional($item)->id }}">
-                                                        {{ optional($item)->name }}</div>
-                                                @endforeach
+                                                @if (is_array($right))
+                                                    @foreach ($right as $rt)
+                                                        <div class="list-group-item" data-id="{{ $rt->id }}">
+                                                            {{ $rt->name }}</div>
+                                                    @endforeach
                                                 @endif
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
+
+
 
                         <div class="card card-primary">
                             <div class="card-header">
@@ -267,9 +208,9 @@
         <div class="card-body">
             <div class="form-group">
                 <div class="row">
-                    @foreach ( $images as $image )
-                    <img src="{{ asset('/images/'.$image->filename) }}" alt="">
-                    @endforeach        
+                    @foreach ($images as $image)
+                        <img src="{{ asset('/images/' . $image->filename) }}" alt="">
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -280,7 +221,7 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-6 d-flex">
-                    <button type="submit" class="btn btn-primary register mr-2" name="register"
+                    <button type="submit" class="btn btn-primary register mr-2" name="update"
                         form="data">データ更新</button>
                 </div>
             </div>
@@ -288,13 +229,14 @@
     </form>
 
 
-    
-    <form method="POST" id="data" action="{{ route( 'item.destroy', ['id'=> $item->id] ) }}">
+
+    <form action="{{ route('item.destroy', ['id' => $item->id]) }}" method="POST" id="destroy">
+        @csrf
         <div class="form-group">
             <div class="row">
                 <div class="col-6 d-flex">
-                    <button type="submit" class="btn btn-danger destory mr-2" name="destory"
-                        form="data">データ削除</button>
+                    <button type="submit" class="btn btn-danger destory mr-2" name="destory" form="destroy"
+                        onclick='return confirm("本当に削除しますか？")'>データ削除</button>
                 </div>
             </div>
         </div>

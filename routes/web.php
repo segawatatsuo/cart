@@ -73,6 +73,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('pulldown/set_show/{id}',[PulldownController::class,'set_show'])->name('pulldown.set_show');
     Route::post('pulldown/destroy{id}', [PulldownController::class, 'destroy'])->name('pulldown.destroy');
 
+    Route::post('pulldown/detailsdestroy/{detailId}/{postId}', [PulldownController::class, 'detailsdestroy'])->name('pulldown.detailsdestroy');
+
+    Route::post('pulldown_detail/index', [Pulldown_detail::class, 'index'])->name('pulldown_detail.index');
     Route::post('pulldown_detail/destroy/{id}', [Pulldown_detail::class, 'destroy'])->name('pulldown_detail.destroy');
     Route::post('pulldown_set/update',[PulldownSetController::class,'update'])->name('pulldown_set.update');
     Route::get('pulldown_set/update',[PulldownSetController::class,'update'])->name('pulldown_set.update');

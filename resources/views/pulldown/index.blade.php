@@ -100,9 +100,6 @@
                                 </div>
                                 </div>
                             </div>
-
-
-
                             <!--追加ボタン -->
                             <button type="button" class="btn btn-outline-primary btn-sm" @click="addIngredient">+</button>
                         </div>

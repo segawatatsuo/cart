@@ -39,10 +39,9 @@
                     </div>
                 @endif
 
+
                 <div class="col-md-6">
-
                     <div class="card card-primary">
-
                         <div class="card-header">
                             <h3 class="card-title">プルダウン名</h3>
                         </div>
@@ -101,9 +100,7 @@
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>内容</th>
-                                        <th>価格</th>
-                                        <th></th>
+                                        <th>内容</th><th>価格</th><th>削除</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -118,10 +115,12 @@
                                                     value="{{ $detail->price }}">
                                             </td>
                                             <td>
+
                                                 <input type="hidden" name="ids[]" class="txt"
                                                 value="{{ $detail->id }}">
-                                            </td>
 
+                                                <input type="submit" onclick='return confirm("本当に削除しますか？")' formmethod="post" value="削除" formaction="{{ route('pulldown.detailsdestroy',['detailId'=>$detail->id,'postId'=>$post->id ]) }}">
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

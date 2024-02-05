@@ -65,22 +65,22 @@
                         </div>
 
                         <!--
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">サイズ・カラー</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label>サイズ(複数の場合はカンマ区切りで入力してください)</label>
-                                    <textarea class="form-control" rows="3" placeholder="" name="size"></textarea>
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">サイズ・カラー</h3>
                                 </div>
-                                <div class="form-group">
-                                    <label>カラー(複数の場合はカンマ区切りで入力してください)</label>
-                                    <textarea class="form-control" rows="3" placeholder="" name="color"></textarea>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>サイズ(複数の場合はカンマ区切りで入力してください)</label>
+                                        <textarea class="form-control" rows="3" placeholder="" name="size"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>カラー(複数の場合はカンマ区切りで入力してください)</label>
+                                        <textarea class="form-control" rows="3" placeholder="" name="color"></textarea>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        -->
+                            -->
 
                         <div class="card card-primary">
                             <div class="card-header">
@@ -106,8 +106,7 @@
                                 <div class="row">
                                     <div class="form-group">
                                         <label for="hidden">表示/非表示</label>
-                                        <select class="custom-select form-control-border" id="recommend"
-                                            name="recommend">
+                                        <select class="custom-select form-control-border" id="recommend" name="recommend">
                                             <option>表示</option>
                                             <option>非表示</option>
                                         </select>
@@ -119,47 +118,47 @@
 
                     <div class="col-md-6">
                         <!--
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">価格</h3>
-                            </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="price">販売価格</label>
-                                    <input type="text" class="form-control" id="price" name="price" placeholder="">
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">価格</h3>
                                 </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="price">販売価格</label>
+                                        <input type="text" class="form-control" id="price" name="price" placeholder="">
+                                    </div>
 
-                                <div class="form-group">
-                                    <label for="maker_price">メーカー希望小売価格</label>
-                                    <input type="text" class="form-control" id="maker_price" name="maker_price"
-                                        placeholder="">
+                                    <div class="form-group">
+                                        <label for="maker_price">メーカー希望小売価格</label>
+                                        <input type="text" class="form-control" id="maker_price" name="maker_price"
+                                            placeholder="">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card card-primary">
-                            <div class="card-header">
-                                <h3 class="card-title">メーカー</h3>
+                            <div class="card card-primary">
+                                <div class="card-header">
+                                    <h3 class="card-title">メーカー</h3>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label for="maker">メーカー</label>
+                                        <input type="text" class="form-control" id="maker" name="maker"
+                                            placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="purchase">仕入れ先</label>
+                                        <input type="text" class="form-control" id="purchase" name="purchase"
+                                            placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="purchase_price">仕入れ価格</label>
+                                        <input type="text" class="form-control" id="purchase_price" name="purchase_price"
+                                            placeholder="">
+                                    </div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <div class="form-group">
-                                    <label for="maker">メーカー</label>
-                                    <input type="text" class="form-control" id="maker" name="maker"
-                                        placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="purchase">仕入れ先</label>
-                                    <input type="text" class="form-control" id="purchase" name="purchase"
-                                        placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="purchase_price">仕入れ価格</label>
-                                    <input type="text" class="form-control" id="purchase_price" name="purchase_price"
-                                        placeholder="">
-                                </div>
-                            </div>
-                        </div>
-                    -->
+                        -->
                         <div class="card card-primary">
                             <div class="card-header">
                                 <h3 class="card-title">プルダウン</h3>
@@ -381,14 +380,13 @@
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content"),
                     //'Content-Type': 'application/json'
                 },
-                //url: "/item/create",
                 url: "{{ url('/item/create') }}",
                 method: "post",
                 dataType: "text",
                 data: obj,
             }).done(function(res) {
                 console.log(res);
-                //alert("保存しました");
+                alert("保存しました");
             }).fail(function() {
                 alert('通信の失敗をしました');
             });

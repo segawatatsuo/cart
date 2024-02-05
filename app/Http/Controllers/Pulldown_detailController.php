@@ -9,7 +9,7 @@ use App\Models\Pulldown_detail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB; //トランザクション
 
-class PulldownDetailController extends Controller
+class Pulldown_detailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +18,7 @@ class PulldownDetailController extends Controller
      */
     public function index()
     {
-        //
+        view("sku.index");
     }
 
     /**
@@ -82,16 +82,9 @@ class PulldownDetailController extends Controller
      * @param  \App\Models\Pulldown_detail  $pulldown_detail
      * @return \Illuminate\Http\Response
      */
+    /*
     public function destroy(Request $request)
     {
-        dd("");
-        DB::beginTransaction();
-        try {
-          $pulldown = Pulldown_detail::where('id', $request->id)->first();
-          $pulldown->delete(); // このタイミングでpulldown_detailも一緒に削除されます。
-          DB::commit();
-        } catch (\Exception $e) {
-          // 省略
-        }
     }
+    */
 }

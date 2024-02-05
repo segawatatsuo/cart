@@ -11,6 +11,8 @@
                 <div class="col-sm-6">
                     <h1>商品一覧</h1>
                 </div>
+
+
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
@@ -20,9 +22,16 @@
                     </ol>
                 </div>
             </div>
+
+            <!-- フラッシュメッセージ -->
+            @if (session('successMessage'))
+                <div class="alert alert-success">
+                    {{ session('successMessage') }}
+                </div>
+            @endif
+
         </div>
     </section>
-
 
 
     <section class="content">
@@ -33,15 +42,13 @@
                         <div class="card-header">
                             <h3 class="card-title">登録されている商品一覧</h3>
                         </div>
-
                         <div class="card-body">
                             <table class="table">
                                 <tbody>
                                     @foreach ($list as $line)
                                         <tr>
                                             <td>
-                                                <a href={{ route('item.show', $line->id) }}>
-                                                    {{ $line->name }}</a>
+                                                <a href={{ route('item.show', $line->id) }}>{{ $line->name }}</a>
                                             </td>
                                         </tr>
                                     @endforeach

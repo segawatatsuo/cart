@@ -251,15 +251,35 @@ class PulldownController extends Controller
      * @param  \App\Models\Pulldown  $pulldown
      * @return \Illuminate\Http\Response
      */
+    /*
     public function destroy(Request $request)
     {
         DB::beginTransaction();
         try {
           $pulldown = Pulldown::where('id', $request->id)->first();
-          $pulldown->delete(); // このタイミングでpulldown_detailも一緒に削除されます。
+          $pulldown->delete(); 
           DB::commit();
         } catch (\Exception $e) {
-          // 省略
+
         }
+    }
+    */
+
+    public function detailsdestroy($detailId,$postId)
+    {
+ 
+        DB::beginTransaction();
+        try {
+          $pulldown_detail = Pulldown_detail::where('id', $detailId)->first();
+          $pulldown_detail->delete(); 
+          DB::commit();
+        } catch (\Exception $e) {
+
+        }
+        $post = Pulldown::where('id', $postId)->with('pulldown_detail')->first();
+        $details = $post->pulldown_detail;
+        return view('pulldown.show', compact('post', 'details'))->with('flash_message', '削除しました');
+
+        //return redirect('pulldown.show')->with('flash_message', '更新しました');
     }
 }

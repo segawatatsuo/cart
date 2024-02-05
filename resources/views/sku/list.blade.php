@@ -86,7 +86,7 @@
                                         <th>サイズ</th>
                                         <th>顧客表示用色名</th>
                                         <th>原産国</th>
-                                        <th>大分類</th>
+
                                         <th>販売価格</th>
                                         <th>希望小売価格</th>
                                         <th>仕入れ価格</th>
@@ -126,7 +126,7 @@
                                             </td>
 
                                             <td>{{ $line->country }}</td>
-                                            <td>{{ $line->classification }}</td>
+
 
                                             <td>{{ number_format($line->price) }}</td>
                                             <td>{{ number_format($line->maker_price) }}</td>
