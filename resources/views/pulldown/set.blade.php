@@ -174,7 +174,6 @@
                 dataType: "text",
                 data: obj,
                 data: {
-                    //"record_id": record_id,
                     "leftside": leftside,
                     "rightside": rightside,
                     "setname" : setname,
