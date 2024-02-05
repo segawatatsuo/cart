@@ -58,9 +58,9 @@
                                                 <select class="form-control" id="parent_name" name="parent_name">
 
                                                     @foreach ($flatCategory as $category)
-                                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                        <!--<option value="{{ $category->id }}">{{ $category->name }}</option>-->
+                                                        <option type="text" value="{{ $category->id }}" @if( $category->name == old('parent_name')) selected @endif >{{ $category->name }}</option>
                                                     @endforeach
-
 
                                                 </select>
                                             </div>

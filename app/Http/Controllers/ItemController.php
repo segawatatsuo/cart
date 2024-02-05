@@ -51,7 +51,7 @@ class ItemController extends Controller
     {
         $rightside = serialize($request->rightside);
         $leftside = serialize($request->leftside);
-        
+
         $Item_pulldown_temporarily = Item_pulldown_temporarily::create(['rightside' => $rightside, 'leftside' => $leftside]);
     }
 
@@ -82,19 +82,19 @@ class ItemController extends Controller
         Item::create([
             'display' => $request->display,
             'number' => $request->number,
-            'name' => $request->name,
-            'size' => $request->size,
-            'color' => $request->color,
+            //'name' => $request->name,
+            //'size' => $request->size,
+            //'color' => $request->color,
             'head_copy' => $request->head_copy,
             'description' => $request->description,
             'recommend' => $request->recommend,
-            'price' => $request->price,
-            'price_in_tax' => round($request->price * (1 + $tax / 100)),
-            'maker_price' => $request->maker_price,
-            'maker' => $request->maker,
-            'purchase' => $request->purchase,
-            'purchase_price' => $request->purchase_price,
-            'purchase_price_in_tax' => round($request->purchase_price * (1 + $tax / 100)),
+            //'price' => $request->price,
+            //'price_in_tax' => round($request->price * (1 + $tax / 100)),
+            //'maker_price' => $request->maker_price,
+            //'maker' => $request->maker,
+            //'purchase' => $request->purchase,
+            //'purchase_price' => $request->purchase_price,
+            //'purchase_price_in_tax' => round($request->purchase_price * (1 + $tax / 100)),
             'color_group' => $request->color_group,
             'category' => $categorys,
             'pulldown_rightside' => $pulldown_rightside,
@@ -152,27 +152,19 @@ class ItemController extends Controller
         $leftside = unserialize($set_show->pulldown_leftside);
         $rightside = unserialize($set_show->pulldown_rightside);
 
-        if ($leftside == null) {
-            $left = "";
-        } else {
-            foreach ($leftside as $n) {
-                $left[] = Pulldown_set::find($n);
-            }
+        foreach ($leftside as $n) {
+            $left[] = Pulldown_set::find($n);
         }
-        if ($rightside == null) {
-            $right = "";
-        } else {
-            foreach ($rightside as $n) {
-                $right[] = Pulldown_set::find($n);
-            }
+
+        foreach ($rightside as $n) {
+            $right[] = Pulldown_set::find($n);
         }
 
         //関連テーブルのimagesに登録された画像一覧配列を取得
-        $images=$item->images;
+        $images = $item->images;
 
         //関連するSKUを取得
         $hoge = $item;
-        //dd($hoge);
 
         return view('items.show', compact('item', 'projects', 'pulldown_sets', 'selected_category', 'left', 'right', 'images'));
     }
@@ -205,17 +197,16 @@ class ItemController extends Controller
         $tempo = new Item_pulldown_temporarily();
         $lastId = $tempo->latest('id')->first();
         $pulldown = $tempo::find($lastId);
-        //dd($pulldown);
 
-        if(isset($pulldown[0]['rightside']) && $pulldown[0]['rightside']!=null){
+        if (isset($pulldown[0]['rightside']) && $pulldown[0]['rightside'] != null) {
             $pulldown_rightside = $pulldown[0]['rightside'];
-        }else{
-            $pulldown_rightside ="N;";
+        } else {
+            $pulldown_rightside = "N;";
         }
 
-        if(isset($pulldown[0]['leftside']) && $pulldown[0]['leftside']!=null){
+        if (isset($pulldown[0]['leftside']) && $pulldown[0]['leftside'] != null) {
             $pulldown_leftside = $pulldown[0]['leftside'];
-        }else{
+        } else {
             $pulldown_leftside = "N;";
         }
 
@@ -245,11 +236,11 @@ class ItemController extends Controller
 
         //$list = Item::paginate(50);
         //return view('items.list', compact('list'))->with('flash_message', '更新しました');
-        return redirect()->route('item.show',['id'=>$id])->with('successMessage', '更新しました');
-
+        return redirect()->route('item.show', ['id' => $id])->with('successMessage', '更新しました');
     }
 
-    public function select(){
+    public function select()
+    {
         return view('items.select');
     }
 
@@ -266,6 +257,6 @@ class ItemController extends Controller
         //return redirect()->route('item');
         $list = Item::paginate(50);
         //return view('items.list', compact('list'))->with('successMessage', '削除しました');
-        return redirect()->route('item.list',compact('list'))->with('successMessage', '削除しました');
+        return redirect()->route('item.list', compact('list'))->with('successMessage', '削除しました');
     }
 }

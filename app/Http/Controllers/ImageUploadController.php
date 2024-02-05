@@ -16,13 +16,14 @@ class ImageUploadController extends Controller
     {
         $image = $request->file('file');
         $imageName = $image->getClientOriginalName();
-        $image->move(public_path('images'),$imageName);
+        $image->move(public_path('images'),$imageName);//保存先フォルダ
         
         $imageUpload = new ImageUpload();
         $imageUpload->filename = $imageName;
         $imageUpload->save();
         return response()->json(['success'=>$imageName]);
     }
+    
     public function fileDestroy(Request $request)
     {
         $filename =  $request->get('filename');
