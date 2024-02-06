@@ -66,8 +66,9 @@ class ItemController extends Controller
     {
 
         //消費税 from app/Services/TaxService.php & config/constants.php
-        $tody = new Carbon('today');
-        $tax = TaxService::getRateByDate($tody);
+        //$tody = new Carbon('today');
+        //$tax = TaxService::getRateByDate($tody);
+        
         //カテゴリ
         $categorys = $request->input('category');
         $categorys = json_encode($categorys);
@@ -82,7 +83,7 @@ class ItemController extends Controller
         Item::create([
             'display' => $request->display,
             'number' => $request->number,
-            //'name' => $request->name,
+            'name' => $request->name,
             //'size' => $request->size,
             //'color' => $request->color,
             'head_copy' => $request->head_copy,
