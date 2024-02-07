@@ -123,7 +123,9 @@
                                             </td>
                                         </tr>
                                     @endforeach
+
                                 </tbody>
+
                             </table>
                         </div>
                         <div class="card-footer">
@@ -182,5 +184,73 @@
             alert(data);
         });
     </script>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/vue@3.1.1/dist/vue.global.prod.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                params: {
+                    name: '',
+                    inside_name: '',
+                    //明細部分
+                    ingredients: [],
+                    prices: []
+                }
+            }
+        },
+        methods: {
+            addIngredient() {
+
+                this.params.ingredients.push('');
+                this.params.prices.push('');
+
+            },
+            removeIngredient(removingIndex) {
+
+                this.params.ingredients.splice(removingIndex, 1);
+                this.params.prices.splice(removingIndex, 1);
+            },
+            onSubmit() {
+
+                if(confirm('保存します。よろしいですか？')) {
+
+                    const url = '{{ route('pulldown.store2') }}';
+
+                    axios.post(url, this.params)
+                        .then(response => {
+
+                            if(response.data.result === true) {
+
+                                alert('保存が完了しました。');
+
+                            }
+
+                        })
+                        .catch(error => {
+
+                            // TODO: ここでエラー処理をする
+                            console.log(error.response.data);
+                            alert('入力エラーがありました');
+
+                        });
+
+                }
+
+            }
+        }
+    }).mount('#app');
+
+</script>
 
 @stop

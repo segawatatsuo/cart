@@ -60,6 +60,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('item/update/{id}',[ItemController::class,'update'])->name('item.update');
     Route::post('item/destroy/{id}',[ItemController::class,'destroy'])->name('item.destroy');
 
+    Route::get('item/test',[ItemController::class,'test'])->name('item.test');
+
     //プルダウン登録ページ
     Route::get('pulldown',[PulldownController::class,'index'])->name('pulldown.index');
     Route::post('pulldown.store',[PulldownController::class,'store'])->name('pulldown.store');

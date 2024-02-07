@@ -30,8 +30,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        \App\Models\ImageUpload::truncate(); //商品登録にアクセスしたら画像アップテーブルを初期化する。
-        \App\Models\Item_pulldown_temporarily::truncate();
+        ImageUpload::truncate(); //商品登録にアクセスしたら画像アップテーブルを初期化する。
+        //Item_pulldown_temporarily::truncate();
         //カテゴリー
         $projects = Category::get()->toTree();
         //プルダウンセット
@@ -51,10 +51,25 @@ class ItemController extends Controller
     {
         $rightside = serialize($request->rightside);
         $leftside = serialize($request->leftside);
-
-        $Item_pulldown_temporarily = Item_pulldown_temporarily::create(['rightside' => $rightside, 'leftside' => $leftside]);
+        $Item_pulldown_temporarily = new Item_pulldown_temporarily();
+        $Item_pulldown_temporarily->create(['rightside' => $rightside, 'leftside' => $leftside]);
     }
 
+    public function test(Request $request)
+    {
+        $tempo = new Item_pulldown_temporarily();
+        $id = $tempo->latest('id')->first()->id;
+
+        $pulldown = $tempo::find($id);
+        dd($pulldown->rightside);
+        $pulldown_rightside = $pulldown[0]['rightside'];
+        $pulldown_leftside = $pulldown[0]['leftside'];
+
+
+        $pulldown_rightside = serialize($request->rightside);
+        $pulldown_leftside = serialize($request->leftside);
+        
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -64,21 +79,29 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-
         //消費税 from app/Services/TaxService.php & config/constants.php
         //$tody = new Carbon('today');
         //$tax = TaxService::getRateByDate($tody);
-        
+
         //カテゴリ
         $categorys = $request->input('category');
         $categorys = json_encode($categorys);
 
         //Item_pulldown_temporarilyにインポートされたpulldownのAJAXデータを取り出す
         $tempo = new Item_pulldown_temporarily();
-        $id = $tempo->latest('id')->first();
+        $id = $tempo->latest('id')->first()->id;
         $pulldown = $tempo::find($id);
-        $pulldown_rightside = $pulldown[0]['rightside'];
-        $pulldown_leftside = $pulldown[0]['leftside'];
+        //$pulldown_rightside = $pulldown[0]['rightside'];
+        //$pulldown_leftside = $pulldown[0]['leftside'];
+        $pulldown_rightside = $pulldown->rightside;
+        $pulldown_leftside = $pulldown->leftside;
+
+        //$pulldown_rightside = serialize($request->rightside);
+        //$pulldown_leftside = serialize($request->leftside);
+
+        //$pulldown_rightside = serialize($pulldown_rightside);
+        //$pulldown_leftside = serialize($pulldown_leftside);
+
 
         Item::create([
             'display' => $request->display,
@@ -134,8 +157,8 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        \App\Models\ImageUpload::truncate(); //商品登録にアクセスしたら画像アップテーブルを初期化する。
-        \App\Models\Item_pulldown_temporarily::truncate();
+        //\App\Models\ImageUpload::truncate(); //商品登録にアクセスしたら画像アップテーブルを初期化する。
+        //\App\Models\Item_pulldown_temporarily::truncate();
 
         $item = Item::find($id);
 
@@ -150,16 +173,49 @@ class ItemController extends Controller
 
         //プルダウンの選択されたものを送る
         $set_show = Item::where('id', $id)->first();
-        $leftside = unserialize($set_show->pulldown_leftside);
-        $rightside = unserialize($set_show->pulldown_rightside);
+        $leftside[] = unserialize($set_show->pulldown_leftside);
+        $rightside[] = unserialize($set_show->pulldown_rightside);
 
+
+        //$a = Pulldown_set::find(2);
+        //dd($a->id);
+        //dd( $leftside);
+
+        /*
+        $x=0;
+        $left=[];
+        $a = Pulldown_set::find(5);
+        $hoge=array("id"=>$a->id,"name"=>$a->name);
+        array_push( $left , $hoge );
+        dd($left);
+        */
+
+        $left=[];
+        $right=[];
+
+        $x=0;
         foreach ($leftside as $n) {
-            $left[] = Pulldown_set::find($n);
+            //$left[] = Pulldown_set::find($n);
+            $a = Pulldown_set::find($n);
+            //dd($a[$x]->id);
+            $hoge=array("id"=>$a[$x]->id,"name"=>$a[$x]->name);
+            //$hoge=array("id"=>$a->id,"name"=>$a->name);
+            array_push( $left , $hoge );
+            $x+=1;
         }
 
+
+        $x=0;
         foreach ($rightside as $n) {
-            $right[] = Pulldown_set::find($n);
+            //$right[] = Pulldown_set::find($n);
+            $b = Pulldown_set::find($n);
+            $hoge=array("id"=>$b[$x]->id,"name"=>$b[$x]->name);
+            array_push( $right , $hoge );
+            $x+=1;
         }
+
+
+        //dd($left);
 
         //関連テーブルのimagesに登録された画像一覧配列を取得
         $images = $item->images;

@@ -188,7 +188,7 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">カラー</h3>
+                                <h3 class="card-title">マーキングカラー</h3>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -205,6 +205,31 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">フォント</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="hidden">フォント選択</label>
+                                        <select class="custom-select form-control-border" id="color_group"
+                                            name="color_group">
+                                            <option>なし</option>
+                                            <option>野球用</option>
+                                            <option>サッカー用</option>
+                                            <option>バスケ用</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
     </form>
 
     <div class="card card-primary">
@@ -229,8 +254,11 @@
         <div class="form-group">
             <div class="row">
                 <div class="col-3">
-                    <button type="submit" class="btn btn-primary register" name="register"
-                        form="data">データ登録</button>
+                    <!--
+                    <button type="submit" class="btn btn-primary register" name="register" form="data">データ登録</button>
+                    -->
+
+                    <button type="submit" class="btn btn-primary register" name="register" form="data">データ登録</button>
                 </div>
             </div>
         </div>
@@ -327,11 +355,12 @@
             var leftside = JSON.parse(serializedArray);
             var serializedArray = localStorage.getItem('RightSide');
             var rightside = JSON.parse(serializedArray);
+            /*
             var obj = {
                 "leftside": leftside,
                 "rightside": rightside,
             };
-
+            */
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content"),
@@ -340,12 +369,16 @@
                 url: "{{ url('/item/create') }}",
                 method: "post",
                 dataType: "text",
-                data: obj,
+                data: {
+                    leftside:leftside,
+                    rightside:rightside
+                },
             }).done(function(res) {
                 console.log(res);
                 alert("保存しました");
+                //alert(leftside);
             }).fail(function() {
-                alert('通信の失敗をしました');
+                alert('通信に失敗しました/item/create');
             });
         });
     </script>

@@ -131,23 +131,27 @@
                                     <div class="row">
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="LeftSide" class="list-group col sortable">
+                                                <!--
                                                 @if (is_array($left))
                                                     @foreach ($left as $lt)
-                                                        <div class="list-group-item" data-id="{{ $lt->id }}">
-                                                            {{ $lt->name }}</div>
+                                                        <div class="list-group-item" data-id="{{-- $lt->id --}}">
+                                                            {{-- $lt->name --}}</div>
                                                     @endforeach
                                                 @endif
+                                                        -->
                                             </div>
                                         </div>
 
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="RightSide" class="list-group col sortable">
+                                                <!--
                                                 @if (is_array($right))
                                                     @foreach ($right as $rt)
-                                                        <div class="list-group-item" data-id="{{ $rt->id }}">
-                                                            {{ $rt->name }}</div>
+                                                        <div class="list-group-item" data-id="{{-- $rt->id --}}">
+                                                            {{-- $rt->name --}}</div>
                                                     @endforeach
                                                 @endif
+                                                        -->
                                             </div>
                                         </div>
                                     </div>
@@ -162,7 +166,7 @@
 
                         <div class="card card-primary">
                             <div class="card-header">
-                                <h3 class="card-title">カラー</h3>
+                                <h3 class="card-title">マーキングカラー</h3>
                             </div>
                             <div class="card-body">
                                 <div class="row">
@@ -179,6 +183,29 @@
                                 </div>
                             </div>
                         </div>
+
+
+
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title">フォント</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <label for="hidden">フォント選択</label>
+                                        <select class="custom-select form-control-border" id="color_group"
+                                            name="color_group">
+                                            <option>なし</option>
+                                            <option>野球用</option>
+                                            <option>サッカー用</option>
+                                            <option>バスケ用</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
     </form>
 
 
