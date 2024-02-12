@@ -131,27 +131,25 @@
                                     <div class="row">
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="LeftSide" class="list-group col sortable">
-                                                <!--
+
                                                 @if (is_array($left))
                                                     @foreach ($left as $lt)
-                                                        <div class="list-group-item" data-id="{{-- $lt->id --}}">
-                                                            {{-- $lt->name --}}</div>
+                                                        <div class="list-group-item" data-id="{{ $lt['id'] }}">
+                                                            {{ $lt['name'] }}</div>
                                                     @endforeach
                                                 @endif
-                                                        -->
+
                                             </div>
                                         </div>
 
                                         <div class="col-6 pt-3 pb-3">
                                             <div id="RightSide" class="list-group col sortable">
-                                                <!--
                                                 @if (is_array($right))
-                                                    @foreach ($right as $rt)
-                                                        <div class="list-group-item" data-id="{{-- $rt->id --}}">
-                                                            {{-- $rt->name --}}</div>
+                                                    @foreach ($right as $lt)
+                                                        <div class="list-group-item" data-id="{{ $lt['id'] }}">
+                                                            {{ $lt['name'] }}</div>
                                                     @endforeach
                                                 @endif
-                                                        -->
                                             </div>
                                         </div>
                                     </div>
@@ -181,7 +179,7 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
+          a                  </div>
                         </div>
 
 

@@ -173,8 +173,9 @@ class ItemController extends Controller
 
         //プルダウンの選択されたものを送る
         $set_show = Item::where('id', $id)->first();
-        $leftside[] = unserialize($set_show->pulldown_leftside);
-        $rightside[] = unserialize($set_show->pulldown_rightside);
+
+        $leftside = unserialize($set_show->pulldown_leftside);//配列
+        $rightside = unserialize($set_show->pulldown_rightside);//配列
 
 
         //$a = Pulldown_set::find(2);
@@ -190,29 +191,26 @@ class ItemController extends Controller
         dd($left);
         */
 
-        $left=[];
-        $right=[];
-
         $x=0;
+        $left= [];
         foreach ($leftside as $n) {
-            //$left[] = Pulldown_set::find($n);
-            $a = Pulldown_set::find($n);
-            //dd($a[$x]->id);
-            $hoge=array("id"=>$a[$x]->id,"name"=>$a[$x]->name);
-            //$hoge=array("id"=>$a->id,"name"=>$a->name);
-            array_push( $left , $hoge );
-            $x+=1;
+            $name = Pulldown_set::find($n)->name;
+            $id = Pulldown_set::find($n)->id;
+            $data=array('id'=>$id,'name'=>$name);
+            array_push( $left , $data );
         }
 
 
         $x=0;
+        $right= [];
         foreach ($rightside as $n) {
-            //$right[] = Pulldown_set::find($n);
-            $b = Pulldown_set::find($n);
-            $hoge=array("id"=>$b[$x]->id,"name"=>$b[$x]->name);
-            array_push( $right , $hoge );
-            $x+=1;
+            $name = Pulldown_set::find($n)->name;
+            $id = Pulldown_set::find($n)->id;
+            $data=array('id'=>$id,'name'=>$name);
+            array_push( $right , $data );
         }
+
+
 
 
         //dd($left);
