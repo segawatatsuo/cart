@@ -48,7 +48,7 @@
                             <form method="post" action="sku_import" enctype="multipart/form-data">
                                 @csrf
                                 <div style="padding-bottom: 2px"><input type="file" name="excel_file"></div>
-                                <div style="padding-bottom: 20px"><input type="submit" value="インポート"></div>
+                                <div style="padding-bottom: 20px"><input type="submit" value="インポート"> ( 文字コードはUTF-8 )</div>
                             </form>
 
                             @if (session('successMessage'))

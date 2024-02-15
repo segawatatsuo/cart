@@ -139,8 +139,7 @@ class SkuController extends Controller
             'purchase_price' => $request->purchase_price,
             'jan' => $request->jan,
             'country' => $request->country,
-            'classification' => $request->classification
-
+            //'classification' => $request->classification
         ]);
         $sku_item->save();
 
@@ -157,18 +156,12 @@ class SkuController extends Controller
     }
 
 
-
-
-
-
     public function excel(){ //ダウンロード
-
         $filePath = Storage::path('public/sku_excel_template/sku_template.xlsx');
         $fileName = 'sku_template.xlsx';
         $mimeType = Storage::mimeType($filePath);
         $headers = [['Content-Type' => $mimeType]];
         return response()->download($filePath, $fileName, $headers);
-
     }
 
     /**
@@ -188,5 +181,4 @@ class SkuController extends Controller
         $list=Sku::paginate(50);
         return redirect()->route('sku.list',compact('list'))->with('successMessage', '削除しました');
     }
-
 }

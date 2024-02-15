@@ -47,12 +47,6 @@
 
                                         <fieldset>
 
-                                            <!--
-                                                    <div class="form-group">
-                                                        <label for="slug">スラッグ(英語名)</label>
-                                                        <input type="text" class="form-control" name="slug" id="slug" value="">
-                                                    </div>
-                                                    -->
                                             <div class="form-group">
                                                 <label for="parent_category">親カテゴリ</label>
                                                 <select class="form-control" id="parent_name" name="parent_name">
@@ -72,13 +66,6 @@
                                                 <input type="checkbox" name="tops" value="tops">トップカテゴリーにする
                                             </div>
 
-                                            <!--
-                                                    <div class="form-group">
-                                                        <label for="explanation">説明</label>
-                                                        <input type="text" class="form-control" name="explanation" id="explanation" value="">
-                                                    </div>
-                                                    -->
-
                                             <input type="submit" value="保存" class="btn btn-primary">
                                         </fieldset>
                                     </div>
@@ -95,7 +82,9 @@
                             <h3 class="card-title">カテゴリー</h3>
                         </div>
                         <div class="card-body">
+                            <details>
                             @each('layouts.partials.project', $categories, 'project', 'layouts.partials.projects-none')
+                            </details>
                         </div>
                     </div>
                 </div>

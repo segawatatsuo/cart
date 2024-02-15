@@ -20,6 +20,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
+
         $categories = Category::get()->toTree();
         $flatCategory = Category::get()->toFlatTree();
         return view('/category/index', compact('categories', 'flatCategory'));

@@ -27,19 +27,15 @@ class SkuRequest extends FormRequest
             'maker_color_number' => 'required',
             'size' => 'required',
             'color_display_name' => 'required',
-            'stock' => 'required',
+            //'stock' => 'required',
             'maker' => 'required',
             'purchase' => 'required',
             'price' => 'required',
             'maker_price' => 'required',
             'purchase_price' => 'required',
             'jan' => 'required',
-            'country' => 'required',
-            'classification' => 'required',
-            /*
-            
-
-            */
+            //'country' => 'required',
+            //'classification' => 'required',
           ];
     }
     /**
@@ -55,20 +51,15 @@ class SkuRequest extends FormRequest
             'maker_color_number' => 'メーカー色番号',
             'size' => 'サイズ',
             'color_display_name' => '顧客表示用色名',
-            'stock' => '在庫数',
+            //'stock' => '在庫数',
             'maker' => 'メーカー',
             'purchase' => '	仕入れ先',
             'price' => '販売価格',
             'maker_price' => 'メーカー希望小売価格	',
             'purchase_price' => '仕入れ価格',
             'jan' => 'JANコード',
-            'country' => '原産国',
-            'classification' => '大分類',  
-            /*
-            
-
-            */
-
+            //'country' => '原産国',
+            //'classification' => '大分類',  
         ];
     }
 
@@ -84,21 +75,15 @@ class SkuRequest extends FormRequest
             'maker_color_number.required' => ':attributeは必須項目です。',
             'size.required' => ':attributeは必須項目です。',
             'color_display_name.required' => ':attributeは必須項目です。',
-            'stock.required' => ':attributeは必須項目です。',
-
+            //'stock.required' => ':attributeは必須項目です。',
             'maker.required' => ':attributeは必須項目です。',
             'purchase.required' => ':attributeは必須項目です。',
             'price.required' => ':attributeは必須項目です。',
             'maker_price.required' => ':attributeは必須項目です。',
             'purchase_price.required' => ':attributeは必須項目です。',
             'jan.required' => ':attributeは必須項目です。',
-            'country.required' => ':attributeは必須項目です。',
-            'classification.required' => ':attributeは必須項目です。',
-            /*
-            
-            
-            
-            */
+            //'country.required' => ':attributeは必須項目です。',
+            //'classification.required' => ':attributeは必須項目です。',
         ];
     }
 }
