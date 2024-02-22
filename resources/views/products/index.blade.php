@@ -784,7 +784,7 @@
                                                                 class="select2">
 
                                                             <button id="1" type="button"
-                                                                class="btn btn-primary" data-bs-toggle="modal"
+                                                                class="btn btn-primary part" data-bs-toggle="modal"
                                                                 data-bs-target="#simpleModal">
                                                                 色見本を開く
                                                             </button>
@@ -813,7 +813,7 @@
                                                             <input type="text" id="selected_image2"
                                                                 class="select2">
                                                             <button id="2" type="button"
-                                                                class="btn btn-primary" data-bs-toggle="modal"
+                                                                class="btn btn-primary part" data-bs-toggle="modal"
                                                                 data-bs-target="#simpleModal">
                                                                 色見本を開く
                                                             </button>
@@ -1314,7 +1314,7 @@
 
 
                     //パーツ選択のボタン
-                    $('.btn').on('click', function() {
+                    $('.part').on('click', function() {
                         parts_id = $(this).attr("id");
                         //alert(parts_id);
                     });
@@ -1329,14 +1329,14 @@
                         
                         //代入先を動的に作成
                         var img = {}; //
-                        img[id] = "#selected_image" + id; //代入先id名 #selected1 #selected2
+                        img[parts_id] = "#selected_image" + parts_id; //代入先id名 #selected1 #selected2
 
                         var idNo = {}; //
-                        idNo[id] = "#selected_id" + id; //代入先id名 #selected1 #selected2
+                        idNo[parts_id] = "#selected_id" + parts_id; //代入先id名 #selected1 #selected2
 
                         //alert(img[id]);
                         $(img[id]).text(image_name); //代入先 selected_image1
-                        $(img[id]).val(image_name);
+                        $(img[parts_id]).val(image_name);
                         $(idNo[id]).text(id); //代入先
                     });
 
