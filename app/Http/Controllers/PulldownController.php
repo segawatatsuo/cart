@@ -251,7 +251,7 @@ class PulldownController extends Controller
      * @param  \App\Models\Pulldown  $pulldown
      * @return \Illuminate\Http\Response
      */
-    /*
+
     public function destroy(Request $request)
     {
         DB::beginTransaction();
@@ -259,11 +259,12 @@ class PulldownController extends Controller
           $pulldown = Pulldown::where('id', $request->id)->first();
           $pulldown->delete(); 
           DB::commit();
+          return redirect('pulldown/list')->with('flash_message', '削除しました');
         } catch (\Exception $e) {
 
         }
     }
-    */
+
 
     public function detailsdestroy($detailId,$postId)
     {
@@ -299,6 +300,15 @@ class PulldownController extends Controller
         );
         $pulldown_set->save();
         return redirect('pulldown/list')->with('flash_message', '更新しました');
+    }
+
+    //レコード複製(クローン)
+    public function clone($id)
+    {
+        $pulldown=Pulldown::findOrfail($id);
+        $new_pulldown=$pulldown->duplicate();
+        $new_pulldown->save();
+        return redirect('pulldown/list')->with('flash_message', '複製しました');
     }
 
 }

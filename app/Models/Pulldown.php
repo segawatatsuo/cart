@@ -12,6 +12,15 @@ class Pulldown extends Model
     use HasFactory;
     protected $guarded = ['id',];
 
+    //レコード複製(クローン)機能
+    use \Bkwld\Cloner\Cloneable;
+    protected $cloneable_relations = ['pulldown_detail'];//クローンするリレーション（下33行目のpulldown_detail()）を指定
+    public function onCloning($src, $child = null) { //クローン作成時にnameフィールドに文字列を追加
+        $this->name = "this is clone!-- ". $src->name;
+   }
+
+
+    //リレーション元が削除されたら子も削除する設定
     public static function boot()
     {
         parent::boot();

@@ -132,9 +132,12 @@
                             <button type="submit" class="btn btn-primary mr-2" form="form1">更新</button>
                             <input type="hidden" name="id" value="{{ $post->id }}" form="form1">
                             </form>
+
+                            <button class="btn btn-info mr-2" onclick="location.href='{{route('pulldown.clone',['id'=>$post->id])}}'"> 複製 </button>
+                            <button class="btn btn-danger mr-2" onclick="location.href='{{route('pulldown.destroy',['id'=>$post->id])}}'"> 削除 </button>
+                            
                         </div>
                     </div>
-
                 </div>
 
             </div>

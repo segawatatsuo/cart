@@ -48,7 +48,7 @@
 
                             @php $n=1; @endphp
                             @foreach ($pulldowns as $pulldown)
-                                <div class="list-group-item" data-id="{{ $n }}">{{ $pulldown->name }}</div>
+                                <div class="list-group-item" data-id="{{ $n }}">{{ $pulldown->inside_name }}</div>
                                 @php $n+=1; @endphp
                             @endforeach
                         </div>

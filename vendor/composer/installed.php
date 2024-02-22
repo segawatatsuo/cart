@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '74679f72470928916be8b13ff45d9c50a273ca69',
+        'reference' => '61ce51304eeea89b8d6127ebc89c25d7559d3c91',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -27,6 +27,15 @@
             'install_path' => __DIR__ . '/../askdkc/breezejp',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'bkwld/cloner' => array(
+            'pretty_version' => '3.11.2',
+            'version' => '3.11.2.0',
+            'reference' => 'ebce0acded4cd4aeb92eb0bdb2f946fa7e1aa9f4',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../bkwld/cloner',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'brick/math' => array(
             'pretty_version' => '0.11.0',
@@ -454,7 +463,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '74679f72470928916be8b13ff45d9c50a273ca69',
+            'reference' => '61ce51304eeea89b8d6127ebc89c25d7559d3c91',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

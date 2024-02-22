@@ -74,7 +74,8 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('pulldown/update',[PulldownController::class,'update'])->name('pulldown.update');
     Route::post('pulldown/update2',[PulldownController::class,'update2'])->name('pulldown.update2');
     Route::get('pulldown/set_show/{id}',[PulldownController::class,'set_show'])->name('pulldown.set_show');
-    Route::post('pulldown/destroy{id}', [PulldownController::class, 'destroy'])->name('pulldown.destroy');
+    Route::get('pulldown/destroy/{id}', [PulldownController::class, 'destroy'])->name('pulldown.destroy');
+    Route::get('pulldown/clone/{id}',[PulldownController::class,'clone'])->name('pulldown.clone');
 
     Route::post('pulldown/detailsdestroy/{detailId}/{postId}', [PulldownController::class, 'detailsdestroy'])->name('pulldown.detailsdestroy');
 
@@ -82,6 +83,7 @@ Route::middleware('auth:admin')->group(function () {
     Route::post('pulldown_detail/destroy/{id}', [Pulldown_detail::class, 'destroy'])->name('pulldown_detail.destroy');
     Route::post('pulldown_set/update',[PulldownSetController::class,'update'])->name('pulldown_set.update');
     Route::get('pulldown_set/update',[PulldownSetController::class,'update'])->name('pulldown_set.update');
+
 
     Route::get('color',[ColorController::class,'index'])->name('color');
     Route::post('color/store',[ColorController::class,'store'])->name('color.store');
@@ -123,7 +125,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('sku/excel',[SkuController::class,'excel'])->name('sku.excel');//excelテンプレートダウンロード
 });
 
+//--------------------商品ページ---------------------//
 
+Route::get('product/{id}',[ProductController::class,'index'])->name('product.index');//商品シングルページ
 
 //--------------------カート---------------------//
 

@@ -50,8 +50,13 @@
                                     @foreach ($list as $line)
                                         <tr>
                                             <td>
-                                                <a href={{ route('pulldown.show', $line->id) }}>
-                                                    {{ $line->name }}</a>
+                                                <a href={{ route('pulldown.show', $line->id) }}>{{ $line->name }}</a>
+                                            </td>
+                                            <td>
+                                                {{ $line->inside_name }}
+                                            </td>
+                                            <td>
+                                                {{ $line->attribution }}
                                             </td>
                                         </tr>
                                     @endforeach
@@ -64,8 +69,11 @@
                     </div>
                 </div>
             @stop
+        <!--
+                If this happens, the black bar on the left side will be cut off.
         </div>
-</section>
+        </section>
+        -->
 
 
 @section('css')

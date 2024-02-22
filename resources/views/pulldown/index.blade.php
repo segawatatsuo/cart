@@ -114,8 +114,11 @@
                 </div>
 
             </div>
+        <!--
+        If this happens, the black bar on the left side will be cut off.
         </div>
-    </section>
+        </section>
+        -->
 
 @stop
 
