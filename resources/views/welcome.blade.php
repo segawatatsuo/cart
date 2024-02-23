@@ -1866,7 +1866,7 @@
 
 		<div id="content" class="content-area page home">
 			<div class="container clearfix">
-				<h1>大文字の見出し <br><span class="grey">グレーの文字列</span></h1>
+				<h1>オリジナルデザインのチームウェアを作ろう<br><span class="grey">1枚から低価格で製作します</span></h1>
 			</div>
 
 
@@ -2117,8 +2117,7 @@
 					<div class="section-header">
 						<h2 class="section-header__title">
 							<span class="icon-market icon-market_om section-header__icon"></span>
-							<span>Freshly baked object mockups <br>and 3D Models &nbsp;/ <span class="grey">79517
-									items</span></span>
+							<span>オーダーユニフォーム</span>
 						</h2>
 
 						<a class="pill pill_black pill_arrow" href="https://yellowimages.com/all/objects">
@@ -2143,7 +2142,7 @@
 										src="./img/yimgomcatpack.png"
 										srcset="./img/yimgomcatpack.png 2x"
 										alt="Packaging PSD Mockups">
-									<div class="tile__title">Packaging / <br>branding</div>
+									<div class="tile__title">野球 / <br>baseball</div>
 									<div class="pill pill_arrow pill_round pill_transparent">
 										<svg width="24" height="24" viewBox="0 0 24 24">
 											<use xlink:href="#arrow-right"></use>
@@ -2160,7 +2159,7 @@
 										src="./img/yimgomcatapp.png"
 										srcset="./img/yimgomcatapp.png 2x"
 										alt="Clothing PSD Mockups">
-									<div class="tile__title">Apparel / <br>sport</div>
+									<div class="tile__title">サッカー / <br>soccer</div>
 									<div class="pill pill_arrow pill_round pill_transparent">
 										<svg width="24" height="24" viewBox="0 0 24 24">
 											<use xlink:href="#arrow-right"></use>
@@ -2177,7 +2176,7 @@
 										src="./img/yimgomcatveh.png"
 										srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/d86abf10-902e-42c0-17f5-93a503367b00/yimgomcatvehx2 2x"
 										alt="Vehicle PSD Mockups">
-									<div class="tile__title">Vehicle / <br>transportation</div>
+									<div class="tile__title">バレーボール / <br>volleyball</div>
 									<div class="pill pill_arrow pill_round pill_transparent">
 										<svg width="24" height="24" viewBox="0 0 24 24">
 											<use xlink:href="#arrow-right"></use>
@@ -2194,7 +2193,7 @@
 										src="./img/yimgomcatdev.png"
 										srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/154037e4-4c6d-43e8-d131-5d0dcb94e500/yimgomcatdevx2 2x"
 										alt="Devices PSD Mockups">
-									<div class="tile__title">Device / <br>technology</div>
+									<div class="tile__title">バスケットボール / <br>basketball</div>
 									<div class="pill pill_arrow pill_round pill_transparent">
 										<svg width="24" height="24" viewBox="0 0 24 24">
 											<use xlink:href="#arrow-right"></use>
@@ -3799,8 +3798,7 @@
 					<div class="section-header">
 						<h2 class="section-header__title">
 							<span class="icon-market icon-market_om section-header__icon"></span>
-							<span>Sets of object mockups handpicked <br>by authors &nbsp;/ <span class="grey">4426
-									items</span></span>
+							<span>カテゴリー</span>
 						</h2>
 					</div>
 
@@ -3813,14 +3811,14 @@
 							
 							<li class="card card_set" data-id="">
 								<div class="card__inner">
-									<a class="card__link-overlay" href="{{ route('product.index',['id'=>'p175']) }}" title="p175"></a>
-									<a class="card__link" href="{{ route('product.index',['id'=>'p175']) }}" title="p175">
+									<a class="card__link-overlay" href="{{ route('product.index',['id'=>'p175']) }}" title="Tシャツ"></a>
+									<a class="card__link" href="{{ route('product.index',['id'=>'p175']) }}" title="Tシャツ">
 										<div class="card__thumbs">
 											<!--1-->
 											<!--メイン画像-->
 											<div class="card-thumbs__left">
 
-												<div class="card__thumb card__thumb_1" data-tn1="{{ asset('storage/image/top_page/p175/p175_1.jpg') }}"><!--ここで画像を指定-->
+												<div class="card__thumb card__thumb_1" data-tn1="{{ asset('storage/image/top_page/tshirts/1.jpg') }}"><!--ここで画像を指定-->
 													
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
@@ -3856,42 +3854,42 @@
 											<!--右の3枚 -->
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/p175/p175_2.png') }}">
+													data-tn1="{{ asset('storage/image/top_page/tshirts/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="タフドライ長袖ＴシャツP175">
+														alt="Ｔシャツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/p175/p175_3.png') }}">
+													data-tn1="{{ asset('storage/image/top_page/tshirts/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="タフドライ長袖ＴシャツP175">
+														alt="Ｔシャツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/p175/p175_4.png') }}">
+													data-tn1="{{ asset('storage/image/top_page/tshirts/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="タフドライ長袖ＴシャツP175">
+														alt="Ｔシャツ">
 												</div>
 											</div>
 										</div>
 
-										<!--商品名 -->
+										<!--カテゴリー名 -->
 										<div class="card__title-wrap">
-											<div class="card__title">P175 タフドライ長袖Ｔシャツ</div>
-											<div class="card__type">P175</div>
+											<div class="card__title">Tシャツ</div>
+											<div class="card__type">T-Shirts</div>
 										</div>
 									</a>
 
@@ -3923,17 +3921,17 @@
 
 
 
-							<!--2-->
+							<!--2 polo-->
 							<!--メイン画像-->
 							<li class="card card_set" data-id="1411">
 								<div class="card__inner">
-									<a class="card__link-overlay" href="" title=""></a>
+									<a class="card__link-overlay" href="" title="ポロシャツ"></a>
 
-									<a class="card__link" href="" title="">
+									<a class="card__link" href="" title="ポロシャツ">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="{{ asset('storage/image/top_page/p110/p110_1.png') }}">
+													data-tn1="{{ asset('storage/image/top_page/polo/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#96a8c0">
@@ -3962,22 +3960,22 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="P110 タフドライＴシャツ">
+														alt="ポロシャツ">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/p110/p110_2.png')}}">
+													data-tn1="{{ asset('storage/image/top_page/polo/2.jpg')}}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="P110 タフドライＴシャツ">
+														alt="ポロシャツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/p110/p110_3.png') }}">
+													data-tn1="{{ asset('storage/image/top_page/polo/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#dedee0">
@@ -4006,24 +4004,24 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="P110 タフドライＴシャツ">
+														alt="ポロシャツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/p110/p110_4.png') }}">
+													data-tn1="{{ asset('storage/image/top_page/polo/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="P110 タフドライＴシャツ">
+														alt="ポロシャツ">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">P110 タフドライＴシャツ</div>
-											<div class="card__type">P110</div>
+											<div class="card__title">ポロシャツ</div>
+											<div class="card__type">Polo Shirt</div>
 										</div>
 									</a>
 
@@ -4057,18 +4055,18 @@
 
 
 
-
+							<!--sweat-->
 							<li class="card card_set" data-id="1311">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/1311" title="T-Shirts"></a>
+										href="" title="スウェット"></a>
 
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/1311"
-										title="T-Shirts">
+									<a class="card__link" href=""
+										title="スウェット">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1606000/1606281/2573518-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/sweat/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#d4dee4">
@@ -4097,46 +4095,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="T-Shirts">
+														alt="スウェット">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1658000/1658356/2655134-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/sweat/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="T-Shirts">
+														alt="スウェット">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1642000/1642304/2628532-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/sweat/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="T-Shirts">
+														alt="スウェット">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1632000/1632842/2614653-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/sweat/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="T-Shirts">
+														alt="スウェット">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">T-Shirts</div>
-											<div class="card__type">116</div>
+											<div class="card__title">スウェット</div>
+											<div class="card__type">sweatshirt</div>
 										</div>
 									</a>
 
@@ -4165,14 +4163,14 @@
 
 
 
-
+							<!-- ジャージ-->
 							<li class="card card_set" data-id="2366">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/2366" title="Down"></a>
+										href="" title="ジャージ"></a>
 
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/2366"
-										title="Down">
+									<a class="card__link" href=""
+										title="ジャージ">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
@@ -4205,7 +4203,7 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Down">
+														alt="ジャージ">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
@@ -4217,7 +4215,7 @@
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Down">
+														alt="ジャージ">
 												</div>
 												<div class="card__thumb"
 													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1443000/1443820/2344032-cover.jpg">
@@ -4227,7 +4225,7 @@
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Down">
+														alt="ジャージ">
 												</div>
 												<div class="card__thumb"
 													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1349000/1349213/2214764-cover.jpg">
@@ -4237,14 +4235,14 @@
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Down">
+														alt="ジャージ">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Down</div>
-											<div class="card__type">96</div>
+											<div class="card__title">ジャージ</div>
+											<div class="card__type">Jersey wear</div>
 										</div>
 									</a>
 									
@@ -4278,17 +4276,18 @@
 
 
 							<!--２行目 -->
+							<!--アウター -->
 							<li class="card card_set" data-id="2902">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/2902" title="Snack Bar"></a>
+										href="" title="outer wear"></a>
 
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/2902"
+									<a class="card__link" href=""
 										title="Snack Bar">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843443/1438418-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/outer/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#e8e2d8">
@@ -4317,46 +4316,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="outer wear">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1276000/1276325/2113187-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/outer/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="outer wear">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1258000/1258586/2087190-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/outer/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="outer werar">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/720000/720287/1238363-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/outer/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="outer wear">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Snack Bar</div>
-											<div class="card__type">18</div>
+											<div class="card__title">アウターウェア</div>
+											<div class="card__type">outerwear</div>
 										</div>
 									</a>
 
@@ -4386,14 +4385,14 @@
 							<li class="card card_set" data-id="1905">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/1905"
-										title="Apple Watch Mockup Set"></a>
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/1905"
-										title="Apple Watch Mockup Set">
+										href=""
+										title="パンツ"></a>
+									<a class="card__link" href=""
+										title="パンツ">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://s3-eu-west-1.amazonaws.com/yi-files/content/2019/03/5c8a491e41450.jpg">
+													data-tn1="{{ asset('storage/image/top_page/pants/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#bcbbbc">
@@ -4422,46 +4421,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="パンツ">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234363/2051523-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/pants/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="パンツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234340/2051466-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/pants/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="パンツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234314/2051403-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/pants/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="パンツ">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Apple Watch Mockup Set</div>
-											<div class="card__type">41</div>
+											<div class="card__title">パンツ</div>
+											<div class="card__type">pants</div>
 										</div>
 									</a>
 
@@ -4491,15 +4490,15 @@
 							<li class="card card_set" data-id="3398">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/3398"
-										title="Paper Coffee Cup"></a>
+										href=""
+										title="バッグ"></a>
 
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/3398"
-										title="Paper Coffee Cup">
+									<a class="card__link" href=""
+										title="バッグ">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095900/1832845-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/bag/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#ccc9c7">
@@ -4528,46 +4527,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
+														alt="バッグ">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095803/1832611-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/bag/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
+														alt="バッグ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095929/1833037-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/bag/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
+														alt="バッグ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095816/1832638-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/bag/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
+														alt="バッグ">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Paper Coffee Cup</div>
-											<div class="card__type">24</div>
+											<div class="card__title">バッグ</div>
+											<div class="card__type">bag</div>
 										</div>
 									</a>
 
@@ -4596,14 +4595,14 @@
 							<li class="card card_set" data-id="2732">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/2732" title="Face Mask"></a>
+										href="" title="Face Mask"></a>
 
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/2732"
+									<a class="card__link" href=""
 										title="Face Mask">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/802000/802939/1369837-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/cap/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#aeadae">
@@ -4632,46 +4631,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="キャップ">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843643/1440777-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/cap/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="キャップ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/819000/819776/1399880-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/cap/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="キャップ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/811000/811573/1386268-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/cap/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="キャップ">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Face Mask</div>
-											<div class="card__type">5</div>
+											<div class="card__title">キャップ</div>
+											<div class="card__type">cap</div>
 										</div>
 									</a>
 
@@ -4713,14 +4712,14 @@
 							<li class="card card_set" data-id="2902">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/2902" title="Snack Bar"></a>
+										href="" title="タオル"></a>
 
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/2902"
+									<a class="card__link" href=""
 										title="Snack Bar">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843443/1438418-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/towel/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#e8e2d8">
@@ -4749,46 +4748,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="タオル">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1276000/1276325/2113187-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/towel/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="タオル">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1258000/1258586/2087190-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/towel/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="タオル">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/720000/720287/1238363-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/towel/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
+														alt="タオル">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Snack Bar</div>
-											<div class="card__type">18</div>
+											<div class="card__title">タオル</div>
+											<div class="card__type">towel</div>
 										</div>
 									</a>
 
@@ -4818,14 +4817,14 @@
 							<li class="card card_set" data-id="1905">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/1905"
-										title="Apple Watch Mockup Set"></a>
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/1905"
-										title="Apple Watch Mockup Set">
+										href=""
+										title="部活"></a>
+									<a class="card__link" href=""
+										title="部活">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://s3-eu-west-1.amazonaws.com/yi-files/content/2019/03/5c8a491e41450.jpg">
+													data-tn1="{{ asset('storage/image/top_page/club/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#bcbbbc">
@@ -4854,46 +4853,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="部活">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234363/2051523-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/club/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="部活">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234340/2051466-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/club/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="部活">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234314/2051403-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/club/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
+														alt="部活">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Apple Watch Mockup Set</div>
-											<div class="card__type">41</div>
+											<div class="card__title">部活</div>
+											<div class="card__type">club activities</div>
 										</div>
 									</a>
 
@@ -4998,8 +4997,8 @@
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Paper Coffee Cup</div>
-											<div class="card__type">24</div>
+											<div class="card__title">エンブレム・ワッペン</div>
+											<div class="card__type">emblem</div>
 										</div>
 									</a>
 
@@ -5028,14 +5027,14 @@
 							<li class="card card_set" data-id="2732">
 								<div class="card__inner">
 									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/2732" title="Face Mask"></a>
+										href="" title="その他"></a>
 
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/2732"
+									<a class="card__link" href=""
 										title="Face Mask">
 										<div class="card__thumbs">
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/802000/802939/1369837-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/others/1.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#aeadae">
@@ -5064,46 +5063,46 @@
 														</g>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="その他">
 												</div>
 											</div>
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843643/1440777-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/others/2.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="その他">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/819000/819776/1399880-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/others/3.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="その他">
 												</div>
 												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/811000/811573/1386268-cover.jpg">
+													data-tn1="{{ asset('storage/image/top_page/others/4.jpg') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
 														</rect>
 													</svg>
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
+														alt="その他">
 												</div>
 											</div>
 										</div>
 
 										<div class="card__title-wrap">
-											<div class="card__title">Face Mask</div>
-											<div class="card__type">5</div>
+											<div class="card__title">その他</div>
+											<div class="card__type">others</div>
 										</div>
 									</a>
 
@@ -5135,426 +5134,6 @@
 
 
 
-							<!--４行目 -->
-							<li class="card card_set" data-id="2902">
-								<div class="card__inner">
-									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/2902" title="Snack Bar"></a>
-
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/2902"
-										title="Snack Bar">
-										<div class="card__thumbs">
-											<div class="card-thumbs__left">
-												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843443/1438418-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#e8e2d8">
-														</rect>
-														<g transform="scale(4.531250) translate(0.5 0.5)">
-															<polygon fill="#90620c" fill-opacity="0.501961"
-																points="72,98 59,10 34,108"></polygon>
-															<polygon fill="#996912" fill-opacity="0.501961"
-																points="32,23 69,60 69,30"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="-16,121 10,-16 52,143"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="102,-16 103,143 63,64"></polygon>
-															<polygon fill="#d7c69e" fill-opacity="0.501961"
-																points="31,116 62,58 33,15"></polygon>
-															<polygon fill="#f8fafe" fill-opacity="0.501961"
-																points="-15,44 6,-16 118,3"></polygon>
-															<polygon fill="#95681e" fill-opacity="0.501961"
-																points="63,106 44,98 65,66"></polygon>
-															<polygon fill="#fafdff" fill-opacity="0.501961"
-																points="118,109 78,-1 65,143"></polygon>
-															<polygon fill="#d4c4a0" fill-opacity="0.501961"
-																points="28,11 79,23 31,31"></polygon>
-															<polygon fill="#d1c7ad" fill-opacity="0.501961"
-																points="69,114 74,95 28,113"></polygon>
-														</g>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
-												</div>
-											</div>
-											<div class="card-thumbs__right">
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1276000/1276325/2113187-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1258000/1258586/2087190-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/720000/720287/1238363-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Snack Bar">
-												</div>
-											</div>
-										</div>
-
-										<div class="card__title-wrap">
-											<div class="card__title">Snack Bar</div>
-											<div class="card__type">18</div>
-										</div>
-									</a>
-
-									<div class="card__info">
-										<div class="card__avatars">
-											<!--
-											<a class="card__avatar" href="https://yellowimages.com/yi-5b031d795abf0">
-												<img class="card__avatar-img" width="30" height="30" src="data:,"
-													data-src="https://yi-files.s3.amazonaws.com/users/ava/51000/51156.jpg"
-													alt="Andrii Gapon">
-											</a>
-										-->
-										</div>
-										<!--
-										<div class="card__data">
-											<a class="card__owner"
-												href="https://yellowimages.com/yi-5b031d795abf0">Andrii Gapon</a>
-											<a class="card__category"
-												href="https://yellowimages.com/object-mockups/sets/packaging-branding-mockups">Packaging
-												/ Branding</a>
-										</div>
-									-->
-									</div>
-								</div>
-							</li>
-
-							<li class="card card_set" data-id="1905">
-								<div class="card__inner">
-									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/1905"
-										title="Apple Watch Mockup Set"></a>
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/1905"
-										title="Apple Watch Mockup Set">
-										<div class="card__thumbs">
-											<div class="card-thumbs__left">
-												<div class="card__thumb card__thumb_1"
-													data-tn1="https://s3-eu-west-1.amazonaws.com/yi-files/content/2019/03/5c8a491e41450.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#bcbbbc">
-														</rect>
-														<g transform="scale(4.531250) translate(0.5 0.5)">
-															<polygon fill="#000000" fill-opacity="0.501961"
-																points="87,51 36,130 28,9"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="90,-16 61,143 118,117"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="46,-16 -16,-16 3,143"></polygon>
-															<polygon fill="#000000" fill-opacity="0.501961"
-																points="66,14 23,79 69,111"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="87,143 1,68 -16,143"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="118,122 48,-12 108,-10"></polygon>
-															<polygon fill="#110703" fill-opacity="0.501961"
-																points="61,16 41,112 23,42"></polygon>
-															<polygon fill="#000000" fill-opacity="0.501961"
-																points="70,33 53,109 76,81"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="-16,114 118,101 89,143"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="-14,23 118,12 14,-16"></polygon>
-														</g>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
-												</div>
-											</div>
-											<div class="card-thumbs__right">
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234363/2051523-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234340/2051466-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234314/2051403-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Apple Watch Mockup Set">
-												</div>
-											</div>
-										</div>
-
-										<div class="card__title-wrap">
-											<div class="card__title">Apple Watch Mockup Set</div>
-											<div class="card__type">41</div>
-										</div>
-									</a>
-
-									<div class="card__info">
-										<div class="card__avatars">
-											<!--
-											<a class="card__avatar" href="https://yellowimages.com/snapwrap">
-												<img class="card__avatar-img" width="30" height="30" src="data:,"
-													data-src="https://yi-files.s3.amazonaws.com/users/ava/15000/15350.jpg"
-													alt="Snap Wrap">
-											</a>
-										-->
-										</div>
-										<!--
-										<div class="card__data">
-											<a class="card__owner" href="https://yellowimages.com/snapwrap">Snap
-												Wrap</a>
-											<a class="card__category"
-												href="https://yellowimages.com/object-mockups/sets/device-mockups">Devices
-												/ Tech</a>
-										</div>
-									-->
-									</div>
-								</div>
-							</li>
-
-							<li class="card card_set" data-id="3398">
-								<div class="card__inner">
-									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/3398"
-										title="Paper Coffee Cup"></a>
-
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/3398"
-										title="Paper Coffee Cup">
-										<div class="card__thumbs">
-											<div class="card-thumbs__left">
-												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095900/1832845-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#ccc9c7">
-														</rect>
-														<g transform="scale(4.531250) translate(0.5 0.5)">
-															<polygon fill="#010000" fill-opacity="0.501961"
-																points="66,114 7,98 78,24"></polygon>
-															<polygon fill="#320c00" fill-opacity="0.501961"
-																points="28,37 32,70 76,41"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="58,-16 118,4 96,143"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="-2,142 -16,-16 46,-16"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="-16,122 95,143 112,104"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="118,47 98,-16 -15,4"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="-16,87 17,-16 32,81"></polygon>
-															<polygon fill="#503420" fill-opacity="0.501961"
-																points="68,111 45,23 76,38"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="80,-5 66,143 118,88"></polygon>
-															<polygon fill="#300300" fill-opacity="0.501961"
-																points="62,111 42,112 70,82"></polygon>
-														</g>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
-												</div>
-											</div>
-											<div class="card-thumbs__right">
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095803/1832611-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095929/1833037-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095816/1832638-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Paper Coffee Cup">
-												</div>
-											</div>
-										</div>
-
-										<div class="card__title-wrap">
-											<div class="card__title">Paper Coffee Cup</div>
-											<div class="card__type">24</div>
-										</div>
-									</a>
-
-									<div class="card__info">
-										<div class="card__avatars">
-											<!--
-											<a class="card__avatar" href="https://yellowimages.com/kaxramon">
-												<img class="card__avatar-img" width="30" height="30" src="data:,"
-													data-src="https://yi-files.s3.amazonaws.com/users/ava/225000/225712.jpg"
-													alt="Kaxramon">
-											</a>
-										-->
-										</div>
-										<!--
-										<div class="card__data">
-											<a class="card__owner" href="https://yellowimages.com/kaxramon">Kaxramon</a>
-											<a class="card__category"
-												href="https://yellowimages.com/object-mockups/sets/packaging-branding-mockups">Packaging
-												/ Branding</a>
-										</div>
-									-->
-									</div>
-								</div>
-							</li>
-
-							<li class="card card_set" data-id="2732">
-								<div class="card__inner">
-									<a class="card__link-overlay"
-										href="https://yellowimages.com/object-mockups/set/2732" title="Face Mask"></a>
-
-									<a class="card__link" href="https://yellowimages.com/object-mockups/set/2732"
-										title="Face Mask">
-										<div class="card__thumbs">
-											<div class="card-thumbs__left">
-												<div class="card__thumb card__thumb_1"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/802000/802939/1369837-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#aeadae">
-														</rect>
-														<g transform="scale(4.531250) translate(0.5 0.5)">
-															<polygon fill="#000000" fill-opacity="0.501961"
-																points="72,121 8,63 76,12"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="35,143 -16,116 7,-16"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="99,-16 118,130 65,139"></polygon>
-															<polygon fill="#10100e" fill-opacity="0.501961"
-																points="32,119 24,24 65,11"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="95,-16 -16,3 118,27"></polygon>
-															<polygon fill="#090801" fill-opacity="0.501961"
-																points="24,108 62,113 88,52"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="118,108 -16,116 80,143"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="1,127 34,-16 -16,6"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="103,143 70,-16 117,-15"></polygon>
-															<polygon fill="#1c1d1d" fill-opacity="0.501961"
-																points="33,16 80,27 80,76"></polygon>
-														</g>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
-												</div>
-											</div>
-											<div class="card-thumbs__right">
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843643/1440777-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/819000/819776/1399880-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
-												</div>
-												<div class="card__thumb"
-													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/811000/811573/1386268-cover.jpg">
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
-														</rect>
-													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
-														alt="Face Mask">
-												</div>
-											</div>
-										</div>
-
-										<div class="card__title-wrap">
-											<div class="card__title">Face Mask</div>
-											<div class="card__type">5</div>
-										</div>
-									</a>
-
-									<div class="card__info">
-										<div class="card__avatars">
-											<!--
-											<a class="card__avatar" href="https://yellowimages.com/ochesnokov">
-												<img class="card__avatar-img" width="30" height="30" src="data:,"
-													data-src="https://yi-files.s3.amazonaws.com/users/ava/77000/77539.jpg"
-													alt="Oleg Chesnokov">
-											</a>
-										-->
-										</div>
-										<!--
-										<div class="card__data">
-											<a class="card__owner" href="https://yellowimages.com/ochesnokov">Oleg
-												Chesnokov</a>
-											<a class="card__category"
-												href="https://yellowimages.com/object-mockups/sets/apparel-sports-mockups">Apparel
-												/ Sports</a>
-										</div>
-									-->
-									</div>
-								</div>
-							</li>
 
 
 
