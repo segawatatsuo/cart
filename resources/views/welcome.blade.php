@@ -3818,7 +3818,7 @@
 											<!--メイン画像-->
 											<div class="card-thumbs__left">
 
-												<div class="card__thumb card__thumb_1" data-tn1="{{ asset('storage/image/top_page/tshirts/1.jpg') }}"><!--ここで画像を指定-->
+												<div class="card__thumb card__thumb_1" data-tn1="{{ asset('storage/image/top_page/tshirts/1.png') }}"><!--ここで画像を指定-->
 													
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
@@ -3854,7 +3854,7 @@
 											<!--右の3枚 -->
 											<div class="card-thumbs__right">
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/tshirts/2.jpg') }}">
+													data-tn1="{{ asset('storage/image/top_page/tshirts/2.png') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
@@ -3864,7 +3864,7 @@
 														alt="Ｔシャツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/tshirts/3.jpg') }}">
+													data-tn1="{{ asset('storage/image/top_page/tshirts/3.png') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
@@ -3874,7 +3874,7 @@
 														alt="Ｔシャツ">
 												</div>
 												<div class="card__thumb"
-													data-tn1="{{ asset('storage/image/top_page/tshirts/4.jpg') }}">
+													data-tn1="{{ asset('storage/image/top_page/tshirts/4.png') }}">
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#f7f7f7">
