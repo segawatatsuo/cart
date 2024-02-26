@@ -327,6 +327,12 @@
 </div><!--<div id="content" class="content-area page home">-->
 
 
+    @include('parts.footer')
+
+
+
+
+
     <!--モーダル-->
     <div class="modal fade" id="simpleModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
         <div class="modal-dialog modal-xl">
