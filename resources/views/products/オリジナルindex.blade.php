@@ -11,10 +11,420 @@
     <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }} ">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('/css/swiper.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/for_swiper.css') }}">
     <title>Document</title>
 
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
 
+        /*
+        .container {
+            position: relative;
+            margin: 100px auto 60px auto;
+            max-width: 1628px;
+        }
+        */
+        .container {
+            position: relative;
+            margin: 0px auto 60px auto;
+            max-width: 1628px;
+        }
+
+
+        .swiper-container {
+            text-align: center;
+            cursor: grab;
+        }
+
+        .swiper-container:active {
+            cursor: grabbing;
+        }
+
+        .swiper-container .swiper-slide img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+        }
+
+        #thumbs {
+            height: 10%;
+            box-sizing: border-box;
+            padding: 10px 0;
+
+        }
+
+        #thumbs .swiper-slide {
+            width: 16%;
+            height: auto;
+            opacity: 0.3;
+            cursor: grab;
+        }
+
+        #thumbs .swiper-slide:active {
+            cursor: grabbing;
+        }
+
+        #thumbs .swiper-slide-active {
+            opacity: 1;
+        }
+
+
+        .swiper-blind-left,
+        .swiper-blind-right {
+            position: absolute;
+            width: 11.55%;
+            height: 100%;
+            display: block;
+            top: 0;
+            background: rgba(255, 255, 255, .7);
+            z-index: 5;
+        }
+
+        .swiper-blind-left {
+            left: 0;
+        }
+
+        .swiper-blind-right {
+            right: 0;
+        }
+
+        @media (max-width: 600px) {
+
+            .swiper-blind-left,
+            .swiper-blind-right {
+                display: none;
+            }
+        }
+
+        .back {
+            width: 100%;
+            text-align: center;
+            margin: 60px 0;
+        }
+
+        .back a {
+            color: #2B59C3;
+        }
+
+        .back a:hover {
+            color: #1CCAD8;
+        }
+
+        .swiper {
+            display: block;
+            list-style: none;
+            margin: 0 auto;
+            overflow: hidden;
+            overflow: clip;
+            overscroll-behavior: none;
+            padding: 0;
+            touch-action: pan-y;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none
+        }
+
+        /*product__slider*/
+
+        /*
+        .product__slider {
+            visibility: hidden
+        }
+        */
+
+        .product__slider,
+        .product__thumbs {
+            width: 100%
+        }
+
+        .product__slider .swiper__slide,
+        .product__thumbs .swiper__slide {
+            border-radius: 16px;
+            margin: 0 12px 0 0
+        }
+
+        .product__slider .swiper__slide:last-child,
+        .product__thumbs .swiper__slide:last-child {
+            margin-right: 0
+        }
+
+        .product__slider {
+            border-radius: 16px;
+            height: 580px;
+            margin: 0 0 12px;
+            overflow: hidden
+        }
+
+        .product__slider .swiper__slide img {
+            height: 100%;
+            width: auto
+        }
+
+        @media only screen and (max-width:1280px) {
+            .product__slider {
+                height: 454px
+            }
+        }
+
+        @media only screen and (max-width:768px) {
+            .product__slider {
+                height: 406px
+            }
+        }
+
+        @media only screen and (max-width:768px) {
+            .product__slider {
+                height: 406px
+            }
+
+            .product__slider .swiper__slide {
+                margin: 0 8px 0 0
+            }
+
+            .product__thumbs {
+                display: none
+            }
+
+            .product .swiper__pagination {
+                display: flex
+            }
+
+            .product__media+.product__description {
+                margin: 20px 0 0
+            }
+
+            .product__section {
+                margin-bottom: 40px
+            }
+
+            .product .comments__form .pill,
+            .product__related>.pill {
+                height: 56px;
+                padding: 0 25px
+            }
+
+        }
+
+        @media only screen and (max-width:641px) {
+            .product__card {
+                padding: 24px 20px
+            }
+
+            .product .h1 {
+                font-size: 28px;
+                line-height: 1.3;
+                margin-bottom: 2px
+            }
+
+            .product__top {
+                margin: 0 0 10px
+            }
+
+            .product__slider {
+                margin: 0 0 5px
+            }
+        }
+
+        @media only screen and (max-width:480px) {
+
+            .product__slider {
+                height: auto
+            }
+
+            .product__slider .swiper__slide {
+                margin: 0 10px 0 0;
+                width: 100%
+            }
+
+            .product__slider .swiper__slide img {
+                height: auto;
+                width: 100%
+            }
+
+            .product__banner br {
+                display: none
+            }
+
+            .product__banner-action {
+                margin-top: 12px
+            }
+
+            .socials {
+                left: auto;
+                right: 20px
+            }
+
+            .socials__menu {
+                left: auto;
+                margin: 0 8px 0 0;
+                right: 100%
+            }
+
+            .spinner__wrap .preloader-spinner {
+                left: 20px;
+                right: auto;
+                top: 20px
+            }
+
+        }
+
+
+        /*swiper__wrapper*/
+        .swiper,
+        .swiper__wrapper {
+            position: relative;
+            z-index: 1
+        }
+
+        .swiper__wrapper {
+            display: flex;
+            height: 100%;
+            -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+            transition: -webkit-transform .2s ease;
+            transition: transform .2s ease;
+            transition: transform .2s ease, -webkit-transform .2s ease;
+            width: 100%;
+            will-change: transform
+        }
+
+        /*swiper__slide*/
+        .swiper__slide {
+            display: block;
+            flex: 0 0 auto;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+            transition-property: -webkit-transform;
+            transition-property: transform;
+            transition-property: transform, -webkit-transform;
+            width: auto
+        }
+
+        .swiper__slide-invisible-blank {
+            visibility: hidden
+        }
+
+        .product__slider .swiper__slide,
+        .product__thumbs .swiper__slide {
+            border-radius: 16px;
+            margin: 0 12px 0 0
+        }
+
+        .product__slider .swiper__slide:last-child,
+        .product__thumbs .swiper__slide:last-child {
+            margin-right: 0
+        }
+
+        .product__slider .swiper__slide img {
+            height: 100%;
+            width: auto
+        }
+
+        .product__thumbs .swiper__slide {
+            border-radius: 8px;
+            cursor: pointer
+        }
+
+        .product__thumbs .swiper__slide:before {
+            border: 2px solid #4040ff;
+            border-radius: 8px;
+            bottom: 0;
+            content: "";
+            display: block;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: opacity .1s ease;
+            z-index: 2
+        }
+
+        .product__thumbs .swiper__slide_thumb-active:before {
+            opacity: 1
+        }
+
+        @media only screen and (max-width:768px) {
+            .product__slider {
+                height: 406px
+            }
+
+            .product__slider .swiper__slide {
+                margin: 0 8px 0 0
+            }
+
+            .product__thumbs {
+                display: none
+            }
+
+            .product .swiper__pagination {
+                display: flex
+            }
+
+            .product__media+.product__description {
+                margin: 20px 0 0
+            }
+
+            .product__section {
+                margin-bottom: 40px
+            }
+
+            .product .comments__form .pill,
+            .product__related>.pill {
+                height: 56px;
+                padding: 0 25px
+            }
+
+        }
+
+        @media only screen and (max-width:480px) {
+            .product__slider {
+                height: auto
+            }
+
+            .product__slider .swiper__slide {
+                margin: 0 10px 0 0;
+                width: 100%
+            }
+
+            .product__slider .swiper__slide img {
+                height: auto;
+                width: 100%
+            }
+
+            .product__banner br {
+                display: none
+            }
+
+            .product__banner-action {
+                margin-top: 12px
+            }
+
+            .socials {
+                left: auto;
+                right: 20px
+            }
+
+            .socials__menu {
+                left: auto;
+                margin: 0 8px 0 0;
+                right: 100%
+            }
+
+            .spinner__wrap .preloader-spinner {
+                left: 20px;
+                right: auto;
+                top: 20px
+            }
+
+        }
+    </style>
 </head>
 
 <body>
