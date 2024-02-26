@@ -393,6 +393,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/polo/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#96a8c0">
@@ -420,7 +421,8 @@
 																points="75,135 77,78 94,143"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/polo/1.jpg') }}"
 														alt="ポロシャツ">
 												</div>
 											</div>
@@ -437,6 +439,7 @@
 												</div>
 												<div class="card__thumb"
 													data-tn1="{{ asset('storage/image/top_page/polo/3.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#dedee0">
@@ -464,7 +467,8 @@
 																points="198,105 214,17 68,-16"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/polo/3.jpg') }}"
 														alt="ポロシャツ">
 												</div>
 												<div class="card__thumb"
@@ -504,6 +508,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/sweat/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#d4dee4">
@@ -531,7 +536,8 @@
 																points="60,72 43,72 59,48"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/sweat/1.jpg') }}"
 														alt="スウェット">
 												</div>
 											</div>
@@ -691,6 +697,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/outer/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#e8e2d8">
@@ -718,7 +725,8 @@
 																points="69,114 74,95 28,113"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/outer/1.jpg') }}"
 														alt="outer wear">
 												</div>
 											</div>
@@ -780,6 +788,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/pants/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#bcbbbc">
@@ -807,7 +816,8 @@
 																points="-14,23 118,12 14,-16"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/pants/1.jpg') }}"
 														alt="パンツ">
 												</div>
 											</div>
@@ -870,6 +880,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/bag/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#ccc9c7">
@@ -897,7 +908,8 @@
 																points="62,111 42,112 70,82"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/bag/1.jpg') }}"
 														alt="バッグ">
 												</div>
 											</div>
@@ -959,6 +971,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/cap/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#aeadae">
@@ -986,7 +999,8 @@
 																points="33,16 80,27 80,76"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/cap/1.jpg') }}"
 														alt="キャップ">
 												</div>
 											</div>
@@ -1049,6 +1063,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/towel/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#e8e2d8">
@@ -1076,7 +1091,8 @@
 																points="69,114 74,95 28,113"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/towel/1.jpg') }}"
 														alt="タオル">
 												</div>
 											</div>
@@ -1138,6 +1154,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/club/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#bcbbbc">
@@ -1165,7 +1182,8 @@
 																points="-14,23 118,12 14,-16"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/club/1.jpg') }}"
 														alt="部活">
 												</div>
 											</div>
@@ -1228,6 +1246,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095900/1832845-cover.jpg">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#ccc9c7">
@@ -1255,6 +1274,7 @@
 																points="62,111 42,112 70,82"></polygon>
 														</g>
 													</svg>
+												-->
 													<img class="card-thumb__img" width="466" height="580" src="data:,"
 														alt="Paper Coffee Cup">
 												</div>
@@ -1317,6 +1337,7 @@
 											<div class="card-thumbs__left">
 												<div class="card__thumb card__thumb_1"
 													data-tn1="{{ asset('storage/image/top_page/others/1.jpg') }}">
+													<!--
 													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
 														version="1.1" width="466" height="580">
 														<rect x="0" y="0" width="466" height="580" fill="#aeadae">
@@ -1344,7 +1365,8 @@
 																points="33,16 80,27 80,76"></polygon>
 														</g>
 													</svg>
-													<img class="card-thumb__img" width="466" height="580" src="data:,"
+												-->
+													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/others/1.jpg') }}"
 														alt="その他">
 												</div>
 											</div>
