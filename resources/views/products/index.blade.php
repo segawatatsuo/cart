@@ -238,7 +238,7 @@
                             <div class="product__card">
                                 <form action="/cart/index" method="post">
                                     @csrf
-                                    <!-- if is err-->
+                                    <!-- if is err -->
                                     <div>
                                         @if ($errors->any())
                                             <div class="alert alert-danger">
