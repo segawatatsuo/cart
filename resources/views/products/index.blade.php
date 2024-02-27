@@ -227,8 +227,6 @@
 
 
 
-
-
             <!--右側-->
             <div class="col-md-4 col-sm-12" style="padding: 0;">
                 <div class="product__section product__info">
