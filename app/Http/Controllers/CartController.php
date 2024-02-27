@@ -22,7 +22,7 @@ class CartController extends Controller
 
         //バリデーションエラーの場合
         if ($validator->fails()) {
-            return redirect('/product/p175')	//cart（入力フォーム）にリダイレクト
+            return back()	//cart（入力フォーム）にリダイレクト
                     ->withInput()
                     ->withErrors($validator);
         }
