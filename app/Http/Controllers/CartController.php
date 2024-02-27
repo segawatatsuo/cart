@@ -10,20 +10,19 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 
-
 class CartController extends Controller
 {
     public function index(Request $request)
     {
         //バリデーションチェック
         $validator = Validator::make($request->all(), [
-            'アイテムカラー'=> 'required',	
-            '数量' => 'required|numeric|min:1|max:100',	
+            'アイテムカラー'=> 'required',
+            '数量' => 'required|numeric|min:1|max:100',
         ]);
 
         //バリデーションエラーの場合
         if ($validator->fails()) {
-                return redirect('/product/p175')	//cart（入力フォーム）にリダイレクト
+            return redirect('/product/p175')	//cart（入力フォーム）にリダイレクト
                     ->withInput()
                     ->withErrors($validator);
         }
