@@ -236,8 +236,31 @@
                         <div class="product__info-content">
 
                             <div class="product__card">
-                                <form action="/cart/index" method="get">
+                                <form action="/cart/index" method="post">
+                                    @csrf
+                                    <!-- if is err-->
+                                    <div>
+                                        @if ($errors->any())
+                                            <div class="alert alert-danger">
+                                                <ul>
+                                                    @foreach ($errors->all() as $error)
+                                                        <li>{{ $error }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        @endif
+                                    </div>
+                                    <!-- if is err-->
+                                    <div class="product__files">
+                                        <div class="h4">アイテムカラー</div>
+                                        <input type="text" class="select2" name="アイテムカラー">
+                                    </div>
 
+                                    <div class="product__files">
+                                        <div class="h4">数量</div>
+
+                                        <input type="number" class="select2" name="数量">
+                                    </div>
 
                                     <div class="product__files">
                                         <div class="h4">マーキング左片胸</div>
@@ -250,7 +273,7 @@
 
                                     <div class="product__files">
                                         <div class="h4">左片胸色名</div>
-                                        <input type="text" id="selected_image1" class="select2">
+                                        <input type="text" id="selected_image1" class="select2" name="左片胸色名">
                                         <button id="1" type="button" class="btn btn-primary part"
                                             data-bs-toggle="modal" data-bs-target="#simpleModal">
                                             色見本を開く
@@ -259,12 +282,12 @@
 
                                     <div class="product__files">
                                         <div class="h4">左片胸に入れる文字</div>
-                                        <input type="text" class="select2" id=''>
+                                        <input type="text" class="select2" name="左片胸に入れる文字">
                                     </div>
 
                                     <div class="product__files">
                                         <div class="h4">マーキング右片胸</div>
-                                        <select class="option_select">
+                                        <select class="option_select" name="マーキング右片胸">
                                             <option data-price="0" selected>なし</option>
                                             <option data-price="550">1色(15cm×15cm以内)¥550</option>
                                             <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
@@ -273,7 +296,7 @@
 
                                     <div class="product__files">
                                         <div class="h4">右片胸色名</div>
-                                        <input type="text" id="selected_image2" class="select2">
+                                        <input type="text" id="selected_image2" class="select2" name="右片胸色名">
                                         <button id="2" type="button" class="btn btn-primary part"
                                             data-bs-toggle="modal" data-bs-target="#simpleModal">
                                             色見本を開く
@@ -282,17 +305,17 @@
 
                                     <div class="product__files">
                                         <div class="h4">右片胸に入れる文字</div>
-                                        <input type="text" class="select2">
+                                        <input type="text" class="select2" name="右片胸に入れる文字">
                                     </div>
 
                                     <div class="product__files">
                                         <div class="h4">マーキング胸中央</div>
-                                        <select class="option_select">
+                                        <select class="option_select" name="マーキング胸中央">
                                             <option data-price="0" selected>なし
                                             </option>
                                             <option data-price="550">1色(15cm×15cm以内)¥550</option>
                                             <option data-price="880">1色(15cm×35cm以内)¥880</option>
-                                            <option data-price="1100">フルカラー(15cm×15cm以内)1100</option>
+                                            <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
                                             <option data-price="1650">フルカラー(15cm×35cm以内)¥1650</option>
                                         </select>
                                     </div>
@@ -300,9 +323,10 @@
 
                                     <!--値段-->
                                     <h2 class="h2 d-flex justify-content-between">
-                                    <span>価格</span>
-                                    <!--<span id="item_price_total"></span>-->
-                                    <input id="item_price_total" class="" name="小計" value="0円" readonly>
+                                        <span>価格</span>
+                                        <!--<span id="item_price_total"></span>-->
+                                        <input id="item_price_total" class="" name="価格" value="0円"
+                                            readonly>
                                     </h2>
 
                                     <div class="product__actions">
@@ -327,98 +351,188 @@
 </div><!--<div id="content" class="content-area page home">-->
 
 
-    @include('parts.footer')
+@include('parts.footer')
 
 
 
 
 
-    <!--モーダル-->
-    <div class="modal fade" id="simpleModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
-        <div class="modal-dialog modal-xl">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">色見本</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
-                </div>
+<!--色モーダル-->
+<div class="modal fade" id="simpleModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">色見本</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
 
-                <div class="modal-body">
-                    <form>
+            <div class="modal-body">
+                <form>
 
-                        <div class="row">
+                    <div class="row">
 
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/mk10.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='mk10'
-                                        data-bs-dismiss="modal">mk10を選択</button>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/me41.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='me41'
-                                        data-bs-dismiss="modal">me41を選択</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/mj03.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='mj03'
-                                        data-bs-dismiss="modal">mj03を選択</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/me55.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='me55'
-                                        data-bs-dismiss="modal">me55を選択</button>
-                                </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mk10.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mk10'
+                                    data-bs-dismiss="modal">mk10を選択</button>
                             </div>
                         </div>
 
-
-
-                        <div class="row">
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/mj09.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='mj09'
-                                        data-bs-dismiss="modal">mj09を選択</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/mj48.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='mj48'
-                                        data-bs-dismiss="modal">mj48を選択</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/mk18.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='mk18'
-                                        data-bs-dismiss="modal">mk18を選択</button>
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('colors/mk33.jpg') }}" alt="">
-                                    <button type="submit" class="btn select" id="1" data-id='mk33'
-                                        data-bs-dismiss="modal">mk33を選択</button>
-                                </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/me41.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='me41'
+                                    data-bs-dismiss="modal">me41を選択</button>
                             </div>
                         </div>
-                </div>
-                </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-                </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mj03.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mj03'
+                                    data-bs-dismiss="modal">mj03を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/me55.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='me55'
+                                    data-bs-dismiss="modal">me55を選択</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mj09.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mj09'
+                                    data-bs-dismiss="modal">mj09を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mj48.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mj48'
+                                    data-bs-dismiss="modal">mj48を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mk18.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mk18'
+                                    data-bs-dismiss="modal">mk18を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mk33.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mk33'
+                                    data-bs-dismiss="modal">mk33を選択</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
             </div>
         </div>
     </div>
-    <!--モーダル-->
+</div>
+<!--色モーダル-->
+
+
+
+
+<!--ユニフォームカラーモーダル-->
+<div class="modal fade" id="simpleModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">アイテムカラー</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+
+            <div class="modal-body">
+                <form>
+
+                    <div class="row">
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mk10.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mk10'
+                                    data-bs-dismiss="modal">mk10を選択</button>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/me41.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='me41'
+                                    data-bs-dismiss="modal">me41を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mj03.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mj03'
+                                    data-bs-dismiss="modal">mj03を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/me55.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='me55'
+                                    data-bs-dismiss="modal">me55を選択</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mj09.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mj09'
+                                    data-bs-dismiss="modal">mj09を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mj48.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mj48'
+                                    data-bs-dismiss="modal">mj48を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mk18.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mk18'
+                                    data-bs-dismiss="modal">mk18を選択</button>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-md-3">
+                            <div class="card">
+                                <img class="card-img-top" src="{{ asset('colors/mk33.jpg') }}" alt="">
+                                <button type="submit" class="btn select" id="1" data-id='mk33'
+                                    data-bs-dismiss="modal">mk33を選択</button>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            </form>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ユニフォームカラーモーダル-->
 
 
 
@@ -436,12 +550,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
 
 
-    <!--Jquery-->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"></script>
+<!--Jquery-->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
 
-    <!-- Bootstrap JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
 
 
@@ -510,7 +624,6 @@
 
 <script>
     var parts_id;
-
 
     //パーツ選択のボタン
     $('.part').on('click', function() {
