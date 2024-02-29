@@ -1,12 +1,10 @@
-@include('parts.header')
+@include('parts.header2')
 
 <div id="content" class="content-area page home"><!-- margin-top: 222px  -->
     <div class="container">
         <div class="row">
 
             <div class="col-12">
-
-
 
 
 
@@ -38,7 +36,7 @@
                                             <div class="list-order-body-in">
                                                 <figure class="list-order-figure list-cart-figure">
                                                     <a href="https://www.grail.bz/item/cu4661111/"><img
-                                                            src="./カート _ レディースファッション通販のグレイル(GRL)【公式】_files/cu466_col_11.jpg"
+                                                            src="{{ asset('images/top-images/wundou_p175_web/p175_00.png') }}"
                                                             alt=""></a>
                                                 </figure>
                                                 <div class="list-order-content list-cart-content">
@@ -271,8 +269,10 @@
                                                         </div>
                                                     </div>
                                                     <div class="list-cart-trigger">
+                                                        <!--
                                                         <a class="btn-cmn-02 btn-medium color-white btn-later"
                                                             href="javascript:addFavorite(358831)">あとで買う<span>（お気に入りに移動）</span></a>
+                                                        -->
                                                         <input type="button"
                                                             class="btn-cmn-02 btn-medium color-gray cart-item__delete"
                                                             value="削除" style="cursor: pointer;">
