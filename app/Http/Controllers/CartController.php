@@ -49,7 +49,7 @@ class CartController extends Controller
         ));
         $cartCollection = \Cart::getContent();
 
-        return view('/cart/index', compact('cartCollection'));
+        return view('/cartAdd/index', compact('cartCollection'));
     }
 
     public function destroy($id)
@@ -58,6 +58,6 @@ class CartController extends Controller
         \Cart::remove($id);
         
         // 削除したら一覧画面にリダイレクト
-        return redirect()->route('cart.index');
+        return redirect()->route('cartAdd.index');
     }
 }

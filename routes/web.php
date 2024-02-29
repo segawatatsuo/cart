@@ -162,9 +162,9 @@ Route::get('cart', function () {
 */
 
 //カートに入れる
-Route::post('cart/index', [CartController::class,'index'])->name('cart.index');
-Route::get('cart/index', [CartController::class,'index'])->name('cart.index');
+Route::post('cartAdd/index', [CartController::class,'index'])->name('cartAdd.index');
+Route::get('cartAdd/index', [CartController::class,'index'])->name('cartAdd.index');
 
 //カート全部削除
-Route::post('cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
-Route::get('cart/{id}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::post('cartAdd/{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
+Route::get('cartAdd/{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
