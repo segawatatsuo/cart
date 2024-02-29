@@ -1,0 +1,25 @@
+@media only screen and (max-width:480px){
+    .modal-body .container img{
+        size:30%;
+    }
+}
+@media only screen and (max-width:768px){
+    .modal-body .container img{
+        size:30%;
+    }
+}
+@media only screen and (min-width:1025px){
+    .container{
+        padding-top: 1600px;
+    }
+}
+@media only screen and (max-width:1280px){
+    .container{
+        padding-top: 1600px;
+    }
+}
+@media only screen and (max-width:1608px){
+    .container{
+        padding-top: 1600px;
+    }
+}

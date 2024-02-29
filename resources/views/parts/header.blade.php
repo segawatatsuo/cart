@@ -24,7 +24,9 @@
 
 	<link rel="stylesheet" id="application-css" href="{{ asset('/stylesheet/app.css') }}" type="text/css" media="all">
 	<link rel="stylesheet" id="page-home-css" href="{{ asset('/stylesheet/home.css') }}" type="text/css" media="all">
-	<link rel="stylesheet" "{{ asset('/css/hoge.css') }}">
+
+	<!--<link rel="stylesheet" href="{{ asset('/css/hoge.css') }}">-->
+
 
 	<script src="{{ asset('/javascript/app-head.js') }}"></script>
 		

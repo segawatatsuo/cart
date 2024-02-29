@@ -72,7 +72,7 @@
 
         <div class="row">
             <!-- 左側外枠-->
-            <div class="col-md-8 col-sm-12" style="padding-right: 40px;">
+            <div class="col-md-8 col-12" style="padding-right: 40px;">
                 <!-- 左側内側1-->
                 <div class="col" style="padding: 0;">
 
@@ -126,7 +126,7 @@
 
 
                 <!-- 左側内側2-->
-                <div class="col" style="padding: 0;">
+                <div class="col" style="padding: 0 0 40px 0;">
                     <div class="product__description">
                         <h3 class="h2">製品説明</h3>
 
@@ -134,7 +134,6 @@
                             <p><strong>スポーツ向け長袖ドライTシャツ</strong><br>
                                 しっかりとしたメッシュ素材で丈夫。袖口はフライス編みで伸縮性があり動きやすく着替えが楽なシャツです。吸汗速乾で丈夫な素材、激しい動きが伴うスポーツや着用頻度の高い部活動等にも向いており、スライディングなどの動きにより怪我が伴いやすいスポーツの練習着にもおすすめです。
                                 もちろん子供から大人まで豊富なサイズ展開、そして豊富なカラーパターンをラインアップしています。</p>
-
                         </div>
                     </div>
                 </div>
@@ -144,79 +143,88 @@
 
 
 
-
-                <!-- 左側内側3 おすすめ-->
-                <br>
-                <div class="col" style="padding:0;">
-
-                    <div class="product__description">
-                        <h3 class="h2">おすすめアイテム</h3>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid"" src="{{ asset('images/recommends/p950.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p950 アウトドアデオドラントロングスリーブシャツ</div>
-                                <div class="card__type"></div>
-                            </div>
+                <div class="d-none d-md-block">
+                    <!-- 左側内側3 おすすめ-->
+                    <br>
+                    <div class="col" style="padding:0;">
+                        <div class="product__description">
+                            <h3 class="h2">おすすめアイテム</h3>
                         </div>
 
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid" src="{{ asset('images/recommends/p4610.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p4610 アウトドアウインドブレーカージャケット</div>
-                                <div class="card__type"></div>
+                        <div class="row">
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid"" src="{{ asset('images/recommends/p950.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p950 アウトドアデオドラントロングスリーブシャツ</div>
+                                    <div class="card__type"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid" src="{{ asset('images/recommends/p4610.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p4610 アウトドアウインドブレーカージャケット</div>
+                                    <div class="card__type"></div>
+                                </div>
+                            </div>
+
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid" src="{{ asset('images/recommends/p3510.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p3510 ラグビーシャツ</div>
+                                    <div class="card__type"></div>
+                                </div>
+                            </div>
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid" src="{{ asset('images/recommends/p1610.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p1610 バレーボールシャツ</div>
+                                    <div class="card__type"></div>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid" src="{{ asset('images/recommends/p3510.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p3510 ラグビーシャツ</div>
-                                <div class="card__type"></div>
+                        <div class="row">
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid" src="{{ asset('images/recommends/p1810.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p1810 ベーシックバスケットシャツ</div>
+                                    <div class="card__type"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid" src="{{ asset('images/recommends/p1610.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p1610 バレーボールシャツ</div>
-                                <div class="card__type"></div>
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid" src="{{ asset('images/recommends/p1930.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p1930 ベーシックロングスリーブサッカーシャツ</div>
+                                    <div class="card__type"></div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid" src="{{ asset('images/recommends/p1810.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p1810 ベーシックバスケットシャツ</div>
-                                <div class="card__type"></div>
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid" src="{{ asset('images/recommends/p1910.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p1910 ベーシックサッカーシャツ</div>
+                                    <div class="card__type"></div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid" src="{{ asset('images/recommends/p1930.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p1930 ベーシックロングスリーブサッカーシャツ</div>
-                                <div class="card__type"></div>
-                            </div>
-                        </div>
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid" src="{{ asset('images/recommends/p1910.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p1910 ベーシックサッカーシャツ</div>
-                                <div class="card__type"></div>
-                            </div>
-                        </div>
-                        <div class="col-3 col-md-3 col-sm-6">
-                            <img class="img-fluid" src="{{ asset('images/recommends/p1940.jpg') }}" alt="">
-                            <div class="card__title-wrap">
-                                <div class="card__title">p1940 サッカーゲームシャツ</div>
-                                <div class="card__type"></div>
+                            <div class="col-3 col-md-3 col-sm-6">
+                                <img class="img-fluid" src="{{ asset('images/recommends/p1940.jpg') }}"
+                                    alt="">
+                                <div class="card__title-wrap">
+                                    <div class="card__title">p1940 サッカーゲームシャツ</div>
+                                    <div class="card__type"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
 
@@ -228,7 +236,7 @@
 
 
             <!--右側-->
-            <div class="col-md-4 col-sm-12" style="padding: 0;">
+            <div class="col-md-4 col-12" style="padding: 0;">
                 <div class="product__section product__info">
                     <div class="product__info-box">
                         <div class="product__info-content">
@@ -260,12 +268,11 @@
                                             data-bs-toggle="modal" data-bs-target="#UnifColorModal">
                                             色見本を開く
                                         </button>
-
                                     </div>
 
                                     <div class="product__files">
                                         <div class="h4">数量</div>
-                                        <input type="number" class="select2" name="数量">
+                                        <input type="number" pattern="^[0-9]+$" class="select2" name="数量">
                                     </div>
 
                                     <div class="product__files">
@@ -277,7 +284,6 @@
                                         </select>
                                     </div>
 
-
                                     <!-- 左片胸色名 -->
                                     <div class="product__files">
                                         <div class="h4">左片胸色名</div>
@@ -287,13 +293,11 @@
                                             data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
                                             色見本を開く
                                         </button>
-
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">左片胸に入れる文字</div>
                                         <input type="text" class="select2" name="左片胸に入れる文字">
                                     </div>
-
 
                                     <!-- マーキング右片胸 -->
                                     <div class="product__files">
@@ -330,23 +334,30 @@
                                         </select>
                                     </div>
 
-
-                                    <!--値段-->
+                                    <!-- アイテム代-->
                                     <h2 class="h2 d-flex justify-content-between">
                                         <span>価格</span>
-                                        <!--<span id="item_price_total"></span>-->
-                                        <input id="item_price_total" class="" name="価格" value="0円"
+                                        <input id="item_price" class="" name="アイテム価格" value="0円"
                                             readonly>
                                     </h2>
 
+
+                                    <!--オプション代-->
+                                    <h2 class="h2 d-flex justify-content-between">
+                                        <span>オプション代</span>
+                                        <input id="option_price" class="" name="オプション代" value="0円"
+                                            readonly>
+                                    </h2>
+
+                                    <h2 class="h2 d-flex justify-content-between">
+                                        <span>合計</span>
+                                        <input id="item_price_total" class="" name="合計" value="0円"
+                                            readonly>
+                                    </h2>
+
+
+
                                     <div class="product__actions">
-                                        <!--カートに入れるボタン-->
-                                        <!--
-                                        <a id="product-addtocart" rel="nofollow" href=""
-                                            class="pill pill_w100 pill_big pill_black product__actions-cart">
-                                            <span>カートに入れる</span>
-                                        </a>
-                                    -->
                                         <button type="submit"
                                             class="pill pill_w100 pill_big pill_black product__actions-cart">送信</button>
                                     </div>
@@ -380,37 +391,47 @@
                 <form>
                     <div class="container">
                         <div class="row">
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/mk10.jpg') }}"
-                                        alt="">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='mk10'
-                                        data-bs-dismiss="modal">mk10を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/mk10.jpg') }}"
+                                            alt="">
+                                        <div>mk10</div>
+                                    </button>
                                 </div>
                             </div>
 
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/me41.jpg') }}"
-                                        alt="">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='me41'
-                                        data-bs-dismiss="modal">me41を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/me41.jpg') }}"
+                                            alt="">
+                                        <div>me41</div>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/mj03.jpg') }}"
-                                        alt="">
+
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='mj03'
-                                        data-bs-dismiss="modal">mj03を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/mj03.jpg') }}"
+                                            alt="">
+                                        <div>mj03</div>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/me55.jpg') }}"
-                                        alt="">
+
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='me55'
-                                        data-bs-dismiss="modal">me55を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/me55.jpg') }}"
+                                            alt="">
+                                        <div>me55</div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -418,42 +439,54 @@
 
 
                         <div class="row">
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/mj09.jpg') }}"
-                                        alt="">
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='mj09'
-                                        data-bs-dismiss="modal">mj09を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/mj09.jpg') }}"
+                                            alt="">
+                                        <div>mj09</div>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/mj48.jpg') }}"
-                                        alt="">
+
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='mj48'
-                                        data-bs-dismiss="modal">mj48を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/mj48.jpg') }}"
+                                            alt="">
+                                        <div>mj48</div>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/mk18.jpg') }}"
-                                        alt="">
+
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='mk18'
-                                        data-bs-dismiss="modal">mk18を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/mk18.jpg') }}"
+                                            alt="">
+                                        <div>mk18</div>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="col-6 col-sm-6 col-md-3">
-                                <div class="card">
-                                    <img class="card-img-top" src="{{ asset('images/colors/mk33.jpg') }}"
-                                        alt="">
+
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card " style="border: 0; padding:0">
                                     <button type="submit" class="btn select" id="1" data-id='mk33'
-                                        data-bs-dismiss="modal">mk33を選択</button>
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top" src="{{ asset('images/colors/mk33.jpg') }}"
+                                            alt="">
+                                        <div>mk33</div>
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </form>
             </div>
-            </form>
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
             </div>
@@ -471,67 +504,71 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title">アイテムカラー</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">✖️</button>
             </div>
 
             <div class="modal-body">
                 <form>
 
                     <div class="row">
-
-                        <div class="col-6 col-sm-6 col-md-3 justify-content-center">
-                            <div class="card">
-
-                                <img class="card-img-top" width="50%" height="50%"
-                                    src="{{ asset('images/item-colors/p175/black.png') }}" alt="">
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                            <div class="card" style="border: 0; padding:0">
                                 <button type="submit" class="btn select" id="1" data-id='black'
-                                    data-bs-dismiss="modal">blackを選択</button>
-
-                                <!--
-                                <button type="submit" style="height: 250px;" id="1" data-id='black' data-bs-dismiss="modal">
-                                <img class="card-img-top" src="{{ asset('images/item-colors/p175/black.png') }}" alt="" style="height: 100%;">
-                                        blackを選択
+                                    data-bs-dismiss="modal">
+                                    <img class="card-img-top" src="{{ asset('images/item-colors/p175/black.png') }}"
+                                        alt="">
+                                    <div>black</div>
                                 </button>
-                                -->
-
                             </div>
                         </div>
 
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <div class="card">
-                                <img class="card-img-top" src="{{ asset('images/item-colors/p175/blue.png') }}"
-                                    alt="">
-                                <button type="submit" class="btn select" id="1" data-id='blue'
-                                    data-bs-dismiss="modal">blueを選択</button>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                            <div class="card" style="border: 0">
+                                <div class="card" style="border: 0">
+                                    <button type="submit" class="btn select" id="1" data-id='blue'
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('images/item-colors/p175/blue.png') }}" alt="">
+                                        <div>blue</div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <div class="card">
-                                <img class="card-img-top" src="{{ asset('images/item-colors/p175/white.png') }}"
-                                    alt="">
-                                <button type="submit" class="btn select" id="1" data-id='white'
-                                    data-bs-dismiss="modal">whiteを選択</button>
+
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                            <div class="card" style="border: 0">
+                                <div class="card" style="border: 0">
+                                    <button type="submit" class="btn select" id="1" data-id='white'
+                                        data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('images/item-colors/p175/white.png') }}" alt="">
+                                        <div>white</div>
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <div class="card">
-                                <img class="card-img-top" src="{{ asset('images/item-colors/p175/navy.png') }}"
-                                    alt="">
+
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                            <div class="card" style="border: 0">
                                 <button type="submit" class="btn select" id="1" data-id='navy'
-                                    data-bs-dismiss="modal">navyを選択</button>
+                                    data-bs-dismiss="modal">
+                                    <img class="card-img-top" src="{{ asset('images/item-colors/p175/navy.png') }}"
+                                        alt="">
+                                    <div>navy</div>
+                                </button>
                             </div>
                         </div>
                     </div>
 
-
-
-                    <div class="row">
-                        <div class="col-6 col-sm-6 col-md-3">
-                            <div class="card">
-                                <img class="card-img-top" src="{{ asset('images/item-colors/p175/red.png') }}"
-                                    alt="">
-                                <button type="submit" class="btn select justify-content-center" id="1"
-                                    data-id='red' data-bs-dismiss="modal">redを選択</button>
+                    <div class="row"> <!--justify-content-center-->
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                            <div class="card " style="border: 0; padding:0">
+                                <button type="submit" class="btn select" id="1" data-id='red'
+                                    data-bs-dismiss="modal">
+                                    <img class="card-img-top" src="{{ asset('images/item-colors/p175/red.png') }}"
+                                        alt="">
+                                    <div>red</div>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -663,6 +700,20 @@
 
 <!--金額の計算 -->
 <script>
+
+    //アイテム代
+    var item_price=1100;
+    var option_price=0;
+    var item_price_total=0;
+    //HTML読み込み時
+    $(document).ready(function(){
+        $("#item_price").val(item_price + "円");
+    });
+    $(document).ready(function(){
+        $("#item_price_total").val(item_price + option_price + "円");
+    });
+
+    //オプション代
     $(function() {
         $("select").change(function() {
             var data_array = [];
@@ -674,7 +725,8 @@
             for (var j = 0; j < data_array.length; j++) {
                 total += data_array[j];
             }
-            $("#item_price_total").val(total + "円");
+            $("#option_price").val(total + "円");
+            $("#item_price_total").val(item_price + total + "円");
         });
     });
 </script>

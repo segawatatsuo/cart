@@ -165,6 +165,6 @@ Route::get('cart', function () {
 Route::post('/cart/index', [CartController::class,'index'])->name('cart.index');
 Route::get('/cart/index', [CartController::class,'index'])->name('cart.index');
 
-//カート削除
-Route::post('/cart{name}', [CartController::class, 'destroy'])->name('cart.destroy');
-Route::get('/cart{name}', [CartController::class, 'destroy'])->name('cart.destroy');
+//カート全部削除
+Route::post('/cart{id}', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::get('/cart{id}', [CartController::class, 'destroy'])->name('cart.destroy');
