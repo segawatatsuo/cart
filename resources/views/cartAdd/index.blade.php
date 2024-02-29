@@ -20,7 +20,7 @@
                                 {{ $val }}
                             </p>
                         @endforeach
-                        <form action="{{ route('cart.destroy', ['id' => $data->id]) }}" method="POST">
+                        <form action="{{ route('cartAdd.destroy', ['id' => $data->id]) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger">削除</button>
                         </form>

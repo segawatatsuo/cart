@@ -242,7 +242,7 @@
                         <div class="product__info-content">
 
                             <div class="product__card">
-                                <form action="/cartAdd/index" method="post">
+                                <form action="{{ asset('cartAdd/index') }}" method="post">
                                     @csrf
 
                                     <!-- if is err -->
