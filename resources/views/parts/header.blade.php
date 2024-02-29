@@ -28,9 +28,10 @@
 
     <!--<link rel="stylesheet" href="{{ asset('/css/hoge.css') }}">-->
 
-
+    <!--
     <link rel="stylesheet" id="" href="{{ asset('/stylesheet/cart/cart.css') }}" type="text/css"
         media="all">
+    -->
 
     <script src="{{ asset('/javascript/app-head.js') }}"></script>
 
