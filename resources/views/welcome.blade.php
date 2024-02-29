@@ -290,46 +290,14 @@
 							
 							<li class="card card_set" data-id="">
 								<div class="card__inner">
-									<a class="card__link-overlay" href="{{ route('product.index',['id'=>'p175']) }}" title="Tシャツ"></a>
-									<a class="card__link" href="{{ route('product.index',['id'=>'p175']) }}" title="Tシャツ">
+									<a class="card__link-overlay" href="{{ route('product.index',['id'=>'1']) }}" title="Tシャツ"></a>
+									<a class="card__link" href="{{ route('product.index',['id'=>'1']) }}" title="Tシャツ">
 										<div class="card__thumbs">
 											<!--1-->
 											<!--メイン画像-->
 											<div class="card-thumbs__left">
-
 												<div class="card__thumb card__thumb_1" data-tn1="{{ asset('storage/image/top_page/tshirts/1.png') }}"><!--ここで画像を指定-->
-													<!--
-													<svg viewBox="0 0 466 580" xmlns="http://www.w3.org/2000/svg"
-														version="1.1" width="466" height="580">
-														<rect x="0" y="0" width="466" height="580" fill="#bdb08d">
-														</rect>
-														<g transform="scale(4.531250) translate(0.5 0.5)">
-															<polygon fill="#5e3f00" fill-opacity="0.501961"
-																points="8,106 98,107 46,-16"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="97,-16 116,33 -16,5"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="18,-16 9,143 -16,37"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="118,100 91,143 -16,120"></polygon>
-															<polygon fill="#550000" fill-opacity="0.501961"
-																points="18,121 16,30 63,7"></polygon>
-															<polygon fill="#ffff00" fill-opacity="0.501961"
-																points="53,121 86,26 49,21"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="89,-16 93,143 118,40"></polygon>
-															<polygon fill="#184520" fill-opacity="0.501961"
-																points="87,37 61,35 86,120"></polygon>
-															<polygon fill="#000018" fill-opacity="0.501961"
-																points="48,101 28,101 48,34"></polygon>
-															<polygon fill="#ffffff" fill-opacity="0.501961"
-																points="-5,-2 1,43 75,-13"></polygon>
-														</g>
-													</svg>
-												-->
-
 													<img class="card-thumb__img" width="466" height="580" src="{{ asset('storage/image/top_page/tshirts/1.png') }}"alt="p175">
-
 												</div>
 											</div>
 

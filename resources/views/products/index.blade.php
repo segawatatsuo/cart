@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row">
             <div class="product__top">
-                <h1 class="h1">wundou p175 タフドライ長袖Ｔシャツ</h1>
+                <h1 class="h1">{{ $item->number.' '.$item->maker.' '.$item->name }}</h1>
 
                 <ol class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList">
                     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope=""
@@ -128,19 +128,15 @@
                 <!-- 左側内側2-->
                 <div class="col" style="padding: 0 0 40px 0;">
                     <div class="product__description">
-                        <h3 class="h2">製品説明</h3>
+                        <h3 class="h2"></h3>
 
                         <div class="product__description-content clearfix">
-                            <p><strong>スポーツ向け長袖ドライTシャツ</strong><br>
-                                しっかりとしたメッシュ素材で丈夫。袖口はフライス編みで伸縮性があり動きやすく着替えが楽なシャツです。吸汗速乾で丈夫な素材、激しい動きが伴うスポーツや着用頻度の高い部活動等にも向いており、スライディングなどの動きにより怪我が伴いやすいスポーツの練習着にもおすすめです。
-                                もちろん子供から大人まで豊富なサイズ展開、そして豊富なカラーパターンをラインアップしています。</p>
+                            <p><strong>{{ $item->head_copy }}</strong><br>
+                                {{ $item->description }}
+                            </p>
                         </div>
                     </div>
                 </div>
-
-
-
-
 
 
                 <div class="d-none d-md-block">
@@ -244,7 +240,7 @@
                             <div class="product__card">
                                 <form action="{{ asset('cartAdd/index') }}" method="post">
                                     @csrf
-
+                                    <input type="hidden" name="id" value="{{ $item->id }}">
                                     <!-- if is err -->
                                     <div>
                                         @if ($errors->any())

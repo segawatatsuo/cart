@@ -28,7 +28,7 @@ class CartController extends Controller
         }
 
         /*商品番号*/
-        $productId = 3;
+        $productId = $request->id;
         $rowId = $productId;
 
         $Product = Item::find($productId);
