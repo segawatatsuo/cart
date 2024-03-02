@@ -48,6 +48,7 @@ class CartController extends Controller
             'attributes' => $options
         ));
         $cartCollection = \Cart::getContent();
+        //dd($cartCollection);
 
         return view('/cartAdd/index', compact('cartCollection'));
     }
@@ -56,7 +57,7 @@ class CartController extends Controller
     {
         // レコードを削除(商品ID)
         \Cart::remove($id);
-        
+
         // 削除したら一覧画面にリダイレクト
         return redirect()->route('cartAdd.index');
     }

@@ -13,42 +13,31 @@
                     <form class="box-shipping-wrap pt-0 cf">
                         <div class="box-shipping">
                             <div class="box-shipping-main">
-                                <!--
-                                <div class="box-cart-message-wrap">
-                                    <div class="box-cart-message">
 
-                                        <div class="box-cart-message-in"><span
-                                                class="txt-red-01">現在送料無料キャンペーン開催中です!!</span></div>
-                                    </div>
-                                </div>
-                            -->
 
+
+
+                                <!-- 繰り返し-->
+                                @foreach ( $cartCollection as $data )
+                                    
+                                
                                 <div class="list-cmn-order list-cart">
-
-                                    <div class="list-order-item list-cart-item cart-item" data-cart-seq="1"
-                                        data-att-grp-id="cu466">
+                                    <div class="list-order-item list-cart-item cart-item" data-cart-seq="1" data-att-grp-id="">
                                         <div class="list-order-body list-cart-body">
                                             <div class="list-order-ttl">
-
-                                                <a
-                                                    href="https://www.grail.bz/item/cu4661111/">ビジューストレートデニムパンツ[cu466]</a>
+                                                <a href=""> {{ $data->name }}</a>
                                             </div>
                                             <div class="list-order-body-in">
                                                 <figure class="list-order-figure list-cart-figure">
-                                                    <a href="https://www.grail.bz/item/cu4661111/"><img
-                                                            src="{{ asset('images/top-images/wundou_p175_web/p175_00.png') }}"
-                                                            alt=""></a>
+                                                    <a href=""><img src="{{ asset('images/top-images/wundou_p175_web/p175_00.png') }}" alt=""></a>
                                                 </figure>
                                                 <div class="list-order-content list-cart-content">
                                                     <div class="list-cart-column">
                                                         <dl class="mod-order-info">
-                                                            <dt>カラー:</dt>
-                                                            <dd>ブラック</dd>
-                                                            <dt>サイズ:</dt>
-                                                            <dd>XS</dd>
-                                                            <dt>価格 :</dt>
-                                                            <dd>¥2,899(税込)</dd>
 
+                                                            <dt>カラー:</dt><dd>{{ $data->attributes->アイテムカラー }}</dd>
+                                                            <dt>サイズ:</dt><dd>{{ $data->attributes->サイズ }}</dd>
+                                                            <dt>価格 :</dt><dd>¥{{ $data->attributes->合計 }}(税抜)</dd>
                                                         </dl>
                                                         <div class="mod-cart-amount">
                                                             <div class="form-cmn-select-01 box-selection">
@@ -281,16 +270,33 @@
                                             </div>
                                         </div>
                                     </div>
-
-
                                 </div>
+                                <!-- 繰り返し-->
+                                @endforeach
+
+
+
+
+
+
+
+
+
+
+
+
+                                
+
+
+
+
                             </div>
                             <div class="box-shipping-sub box-cart-sub">
 
                                 <div class="box-payment">
                                     <div class="box-payment-details">
                                         <dl class="mod-payment mod-payment-details">
-                                            <dt>商品代金合計(税込)</dt>
+                                            <dt>商品代金合計(税抜)</dt>
                                             <dd>¥2,899</dd>
 
 
@@ -324,5 +330,8 @@
             </div>
         </div>
     </div>
+
+
+
 
     @include('parts.footer')

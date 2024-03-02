@@ -258,12 +258,20 @@
                                     <!-- アイテムカラー -->
                                     <div class="product__files">
                                         <div class="h4">アイテムカラー</div>
-                                        <input type="text" class="select2" id="selected_image1" name="アイテムカラー">
-
-                                        <button id="1" type="button" class="btn btn-primary part"
+                                        <div class="d-flex justify-content-between">
+                                            <input type="text" class="select2" id="selected_image1" name="アイテムカラー" style="margin-right: 4px;">
+                                            <button id="1" type="button" class="btn btn-primary part"
                                             data-bs-toggle="modal" data-bs-target="#UnifColorModal">
                                             色見本を開く
-                                        </button>
+                                            </button>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="product__files">
+                                        <div class="h4">サイズ</div>
+                                        <input type="text" class="select2" name="サイズ">
                                     </div>
 
                                     <div class="product__files">
@@ -283,12 +291,14 @@
                                     <!-- 左片胸色名 -->
                                     <div class="product__files">
                                         <div class="h4">左片胸色名</div>
-                                        <input type="text" data-price="0" id="selected_image2" class="select2"
-                                            name="左片胸色名">
-                                        <button id="2" type="button" class="btn btn-primary part"
+                                        <div class="d-flex justify-content-between">
+                                            <input type="text" data-price="0" id="selected_image2" class="select2"
+                                            name="左片胸色名" style="margin-right: 4px;">
+                                            <button id="2" type="button" class="btn btn-primary part"
                                             data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
                                             色見本を開く
-                                        </button>
+                                            </button>
+                                        </div>
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">左片胸に入れる文字</div>
@@ -306,11 +316,13 @@
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">右片胸色名</div>
-                                        <input type="text" id="selected_image3" class="select2" name="右片胸色名">
-                                        <button id="3" type="button" class="btn btn-primary part"
+                                        <div class="d-flex justify-content-between">
+                                            <input type="text" id="selected_image3" class="select2" name="右片胸色名" style="margin-right: 4px;">
+                                            <button id="3" type="button" class="btn btn-primary part"
                                             data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
                                             色見本を開く
-                                        </button>
+                                            </button>
+                                        </div>
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">右片胸に入れる文字</div>

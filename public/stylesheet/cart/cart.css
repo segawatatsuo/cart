@@ -8909,6 +8909,8 @@ a.text-decoration-none {
   overflow: hidden;
   font-size: 0.9rem;
   line-height: 1.3;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 769px) {
