@@ -28,6 +28,7 @@ class CreateItemsTable extends Migration
             $table->text('category')->nullable()->comment('カテゴリJSON');
             $table->text('pulldown_rightside')->nullable()->comment('プルダウンJSON');
             $table->text('pulldown_leftside')->nullable()->comment('プルダウンJSON');
+            $table->timestamps();
             /*
             $table->string('size')->nullable()->comment('サイズ');
             $table->string('color')->nullable()->comment('色');
@@ -37,7 +38,6 @@ class CreateItemsTable extends Migration
             $table->integer('purchase_price')->nullable()->comment('仕入れ価格');
             $table->integer('purchase_price_in_tax')->nullable()->comment('税込仕入れ価格');
             */
-            $table->timestamps();
         });
     }
 
