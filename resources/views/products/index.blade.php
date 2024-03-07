@@ -264,8 +264,10 @@
                                     <!-- アイテムカラー -->
                                     <div class="product__files">
 
-                                        {{ $item->prie }}
+                                        {{-- $item->prie --}}
+                                        <!--
                                         <?php $item_price = '1800'; ?>
+                                        -->
 
                                         <div class="h4">アイテムカラー</div>
                                         <div class="d-flex justify-content-between">
@@ -362,7 +364,6 @@
                                                     <td>{{ $data->price }}</td>
                                                 </tr>
                                             @endforeach
-
                                         </tbody>
                                     </table>
                                     <!-- サイズ -->
@@ -671,7 +672,7 @@
     });
     slider.params.control = thumbs;
     thumbs.params.control = slider;
-    
+
     //クリックされた画像名を変数に入れて別枠に表示
     $(".swiper-button-next").click(function() {
         var currentActiveSlide = $('.swiper-slide-active img').attr('src');
