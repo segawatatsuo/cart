@@ -6,15 +6,11 @@
 
             <div class="col-12">
 
-
-
                 <main class="contents-normal pt-pc-35 pb-pc-30" >
                     <h1 class="ttl-cmn-01 mb-pc-25 mb-sp-15">ショッピングカート</h1>
                     <form class="box-shipping-wrap pt-0 cf">
                         <div class="box-shipping">
                             <div class="box-shipping-main">
-
-
 
 
                                 <!-- 繰り返し-->
@@ -34,10 +30,16 @@
                                                 <div class="list-order-content list-cart-content">
                                                     <div class="list-cart-column">
                                                         <dl class="mod-order-info">
+                                                            <!--attributes(=options)は0〜2でパーツに分かれている -->
+                                                            <dt>カラー：</dt><dd>{{ $data->attributes[0]["アイテムカラー"] }}</dd>
+                                                            <dt>サイズ：</dt><dd>{{ $data->attributes[0]["サイズ"] }}</dd>
+                                                            <dt>価格 :</dt><dd>¥{{ $data->attributes[2]["アイテム価格"] }}(税抜)</dd>
+                                                            <dt>オプション :</dt><dd>¥{{ $data->attributes[2]["オプション代"] }}(税抜)
+                                                            @foreach ($data->attributes[1] as $key=>$val )
+                                                                {{ $key.":".$val."|" }}
+                                                            @endforeach
+                                                            </dd>
 
-                                                            <dt>カラー:</dt><dd>{{ $data->attributes->アイテムカラー }}</dd>
-                                                            <dt>サイズ:</dt><dd>{{ $data->attributes->サイズ }}</dd>
-                                                            <dt>価格 :</dt><dd>¥{{ $data->attributes->合計 }}(税抜)</dd>
                                                         </dl>
                                                         <div class="mod-cart-amount">
                                                             <div class="form-cmn-select-01 box-selection">
@@ -250,7 +252,7 @@
                                                         </div>
                                                         <dl class="mod-order-info mod-order-total">
                                                             <dt>小計:</dt>
-                                                            <dd>¥2,899(税込)</dd>
+                                                            <dd>¥{{ $data->attributes[2]["合計"] }}(税抜)</dd>
                                                         </dl>
                                                         <div>
 

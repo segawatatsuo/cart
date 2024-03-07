@@ -5,7 +5,8 @@
     <div class="container">
         <div class="row">
             <div class="product__top">
-                <h1 class="h1">{{ $item->number.' '.$item->maker.' '.$item->name }}</h1>
+
+                <h1 class="h1">{{ $item->number . ' ' . $item->maker . ' ' . $item->name }}</h1>
 
                 <ol class="breadcrumbs" itemscope="" itemtype="https://schema.org/BreadcrumbList">
                     <li class="breadcrumbs__item" itemprop="itemListElement" itemscope=""
@@ -118,7 +119,8 @@
                                     src="{{ asset('images/top-images/wundou_p175_web/p175_11.png') }}" alt="">
                             </div>
                             <div class="swiper-slide"><img
-                                    src="{{ asset('images/top-images/wundou_p175_web/p175_34.png') }}" alt="">
+                                    src="{{ asset('images/top-images/wundou_p175_web/p175_34.png') }}"
+                                    alt="">
                             </div>
                         </div>
                     </div>
@@ -133,7 +135,11 @@
                         <div class="product__description-content clearfix">
                             <p><strong>{{ $item->head_copy }}</strong><br>
                                 {{ $item->description }}
+                                ( <span
+                                    id="itemNo">{{ $item->number }}</span>{{ ' ' . $item->maker . ' ' . $item->name }}
+                                )
                             </p>
+
                         </div>
                     </div>
                 </div>
@@ -257,26 +263,19 @@
 
                                     <!-- アイテムカラー -->
                                     <div class="product__files">
+
+                                        {{ $item->prie }}
+                                        <?php $item_price = '1800'; ?>
+
                                         <div class="h4">アイテムカラー</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" class="select2" id="selected_image1" name="アイテムカラー" style="margin-right: 4px;">
+                                            <input type="text" class="select2" id="selected_image1"
+                                                name="アイテムカラー" style="margin-right: 4px;">
                                             <button id="1" type="button" class="btn btn-primary part"
-                                            data-bs-toggle="modal" data-bs-target="#UnifColorModal">
-                                            色見本を開く
+                                                data-bs-toggle="modal" data-bs-target="#UnifColorModal">
+                                                色見本を開く
                                             </button>
                                         </div>
-
-
-                                    </div>
-
-                                    <div class="product__files">
-                                        <div class="h4">サイズ</div>
-                                        <input type="text" class="select2" name="サイズ">
-                                    </div>
-
-                                    <div class="product__files">
-                                        <div class="h4">数量</div>
-                                        <input type="number" pattern="^[0-9]+$" class="select2" name="数量">
                                     </div>
 
                                     <div class="product__files">
@@ -292,11 +291,11 @@
                                     <div class="product__files">
                                         <div class="h4">左片胸色名</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" data-price="0" id="selected_image2" class="select2"
-                                            name="左片胸色名" style="margin-right: 4px;">
+                                            <input type="text" data-price="0" id="selected_image2"
+                                                class="select2" name="左片胸色名" style="margin-right: 4px;">
                                             <button id="2" type="button" class="btn btn-primary part"
-                                            data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
-                                            色見本を開く
+                                                data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
+                                                色見本を開く
                                             </button>
                                         </div>
                                     </div>
@@ -317,10 +316,11 @@
                                     <div class="product__files">
                                         <div class="h4">右片胸色名</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" id="selected_image3" class="select2" name="右片胸色名" style="margin-right: 4px;">
+                                            <input type="text" id="selected_image3" class="select2"
+                                                name="右片胸色名" style="margin-right: 4px;">
                                             <button id="3" type="button" class="btn btn-primary part"
-                                            data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
-                                            色見本を開く
+                                                data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
+                                                色見本を開く
                                             </button>
                                         </div>
                                     </div>
@@ -342,18 +342,36 @@
                                         </select>
                                     </div>
 
-                                    <!-- アイテム代-->
-                                    <h2 class="h2 d-flex justify-content-between">
-                                        <span>価格</span>
-                                        <input id="item_price" class="" name="アイテム価格" value="0円"
-                                            readonly>
-                                    </h2>
+                                    <!-- サイズ -->
+                                    <table width="300" class="table" id="size">
+                                        <tbody>
+                                            <tr>
+                                                <td>サイズ</td>
+                                                <td>ご注文枚数</td>
+                                            </tr>
+                                            @foreach ($sizes as $data)
+                                                <tr>
+                                                    <td width="100">{{ $data->size }}</td>
+                                                    <td><input type="number" value="" min="0"
+                                                            class="textBox" max="100" step="1"
+                                                            data-price="{{ $data->price }}"
+                                                            data-size="{{ $data->size }}"
+                                                            name="size[{{ $data->size }}]"
+                                                            style="width:50%;display:inline-block;">
+                                                    </td>
+                                                    <td>{{ $data->price }}</td>
+                                                </tr>
+                                            @endforeach
+
+                                        </tbody>
+                                    </table>
+                                    <!-- サイズ -->
 
 
                                     <!--オプション代-->
                                     <h2 class="h2 d-flex justify-content-between">
-                                        <span>オプション代</span>
-                                        <input id="option_price" class="" name="オプション代" value="0円"
+                                        <span>オプション単価</span>
+                                        <input id="option_price" class="" name="オプション単価" value="0円"
                                             readonly>
                                     </h2>
 
@@ -362,7 +380,10 @@
                                         <input id="item_price_total" class="" name="合計" value="0円"
                                             readonly>
                                     </h2>
-
+                                    <!--
+                                    <input type="button" id="Button1">ボタン</button>
+                                    <div id="show"></div>
+                                    -->
 
 
                                     <div class="product__actions">
@@ -517,7 +538,6 @@
 
             <div class="modal-body">
                 <form>
-
                     <div class="row">
                         <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                             <div class="card" style="border: 0; padding:0">
@@ -605,14 +625,12 @@
 <link rel="stylesheet" href="{{ asset('/css/for_swiper.css') }}">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
 
-
 <!--Jquery-->
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
     crossorigin="anonymous"></script>
 
 <!-- Bootstrap JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-
 
 
 <!--検索窓がはみ出す-->
@@ -653,8 +671,7 @@
     });
     slider.params.control = thumbs;
     thumbs.params.control = slider;
-
-
+    
     //クリックされた画像名を変数に入れて別枠に表示
     $(".swiper-button-next").click(function() {
         var currentActiveSlide = $('.swiper-slide-active img').attr('src');
@@ -680,13 +697,11 @@
 
 <script>
     var parts_id;
-
     //パーツ選択のボタン
     $('.part').on('click', function() {
         parts_id = $(this).attr("id");
         //alert(parts_id);
     });
-
     //モーダル画面で画像ボタンのselectクラスを押したら
     $('.select').click(function() {
         var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
@@ -706,18 +721,65 @@
     });
 </script>
 
+<!-- Json 使わなくなった-->
+<script>
+    $('#サイズ').click(function() {
+        //alert($('#selected_image1').val());
+        if ($('#selected_image1').text() == '') {
+            alert('アイテムカラーを選択してください');
+        } else {
+            var itemNo = "";
+            var color = "";
+            itemNo = $('#itemNo').text();
+            color = $('#selected_image1').text();
+
+            $.ajax({
+                url: './product/get_size?itemNo=' + itemNo + '&color=' + color,
+                //url: './product/hoge?itemNo=p175&color=black',
+                type: 'GET',
+                dataType: "json",
+            }).done(function(data) {
+                // 取得成功
+                //取得jsonデータ
+                var data_stringify = JSON.stringify(
+                    data
+                ); //[{"size":"110"},{"size":"120"},{"size":"130"},{"size":"140"},{"size":"150"},{"size":"S"},{"size":"M"},{"size":"L"},{"size":"XL"},{"size":"XXL"}]
+                var data_json = JSON.parse(data_stringify);
+
+                //プルダウンがある場合全部削除しておかないと2重3重になる
+                var formElement = document.getElementById('サイズ');
+                while (formElement.lastChild) {
+                    formElement.removeChild(formElement.lastChild);
+                }
+
+                for (var i = 0; i < data_json.length; i++) {
+                    let opt = document.createElement("option");
+                    opt.value = data_json[i]["size"]; //value値
+                    opt.text = data_json[i]["size"]; //テキスト値
+                    document.getElementById("サイズ").appendChild(opt);
+                }
+
+            }).fail(function(data) {
+                // 取得失敗
+                alert('データ取得出来ませんでした。');
+            });
+        }
+    });
+</script>
+
+
 <!--金額の計算 -->
 <script>
-
     //アイテム代
-    var item_price=1100;
-    var option_price=0;
-    var item_price_total=0;
+    var item_price = 0;
+    var option_price = 0;
+    var quantity = 0; //数量
+    var item_price_total = 0; //小計＊数量
     //HTML読み込み時
-    $(document).ready(function(){
+    $(document).ready(function() {
         $("#item_price").val(item_price + "円");
     });
-    $(document).ready(function(){
+    $(document).ready(function() {
         $("#item_price_total").val(item_price + option_price + "円");
     });
 
@@ -740,8 +802,47 @@
 </script>
 
 
+<!-- ユニフォームの枚数＊単価で総合計 -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        //$("#Button1").click(function() {
+        $(".product__info-content").change(function() {
+            //数量*単価の配列
+            var inputText = $(".textBox").map(function(index, el) {
+                //return $(this).val();
+                return $(this).val() * $(this).data('price'); //数量*単価
+            });
+            //数量合計だけの配列
+            var countSum = $(".textBox").map(function(index, el) {
+                return $(this).val();
+            });
+            /*
+            showtext = "";
+            for (i = 0; i < inputText.length; i++) {
+                showtext += inputText[i] + "<br/>";
+            }
+            $("#show").html(showtext);
+            */
+            //ユニフォーム金額合計(枚数*単価)
+            var sumTotal = 0;
+            for (i = 0; i < inputText.length; i++) {
+                sumTotal += Math.trunc(inputText[i]);
+            }
+            //枚数合計
+            var totalQuantity=0;
+            for (i = 0; i < countSum.length; i++) {
+                totalQuantity += Math.trunc(countSum[i]);
+            }
+            //オプション単価
+            var optionUnitPrice = $('#option_price').val();
+            optionUnitPrice = optionUnitPrice.replace('円','');
+            //総合計金額
+            var totalAmount=0;
+            totalAmount = sumTotal+(totalQuantity*optionUnitPrice);
+            $("#item_price_total").val(totalAmount + "円");
+        })
+    })
+</script>
 
 </body>
-
-
 </html>

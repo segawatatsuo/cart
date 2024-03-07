@@ -127,7 +127,11 @@ Route::middleware('auth:admin')->group(function () {
 
 //--------------------商品ページ---------------------//
 
-Route::get('product/{id}', [ProductController::class,'index'])->name('product.index');//商品シングルページ
+Route::get('product{id}', [ProductController::class,'index'])->name('product.index');//商品シングルページ
+//サイズ取得のルート(ProductController)
+Route::get('product/get_size', [ProductController::class,'get_size'])->name('product.get_size');
+
+Route::get('product/hoge',[ProductController::class,'hoge'])->name('product.hoge');
 
 //--------------------カート---------------------//
 
