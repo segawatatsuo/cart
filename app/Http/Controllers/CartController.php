@@ -41,7 +41,7 @@ class CartController extends Controller
 
         $Product = Item::find($productId);
         $number = $Product->number;//商品番号(画像のパスに使用)
-        $sku = $_POST["SKU"];//SKU
+        $sku = $_POST["sku"];//sku
 
         //拡張子付きの画像名
         $image = Sku::where("image_name", "LIKE", $sku.".%");
@@ -111,8 +111,7 @@ class CartController extends Controller
         $cartCollection = \Cart::getContent();
         //商品合計
         $total=0;
-        foreach($cartCollection as $data )
-        {
+        foreach ($cartCollection as $data) {
             $total+=$data["price"];
         }
         //消費税
@@ -120,7 +119,7 @@ class CartController extends Controller
         //総合計
         $total_add_tax=$total+$tax;
 
-        return view('/cartAdd/index', compact('cartCollection', 'total','tax','total_add_tax'));
+        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax'));
     }
     //お届け先住所登録
     public function address()
@@ -187,14 +186,13 @@ class CartController extends Controller
 
         $cartCollection = \Cart::getContent();
         $total=0;
-        foreach($cartCollection as $data )
-        {
+        foreach ($cartCollection as $data) {
             $total+=$data["price"];
         }
         $tax=round($total*0.1);
         $total_add_tax=$total+$tax;
 
-        return view('/cartAdd/index', compact('cartCollection', 'total','tax','total_add_tax'));
+        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax'));
     }
 
     public function clear()
