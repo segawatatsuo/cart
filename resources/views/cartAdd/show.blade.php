@@ -7,8 +7,7 @@
             <div class="col-12">
                 <main class="contents-normal pt-pc-35 pb-pc-30">
                     <h1 class="ttl-cmn-01 mb-pc-25 mb-sp-15">ショッピングカート</h1>
-
-                    <form class="box-shipping-wrap pt-0 cf" method="？">
+                    <form class="box-shipping-wrap pt-0 cf">
                         <div class="box-shipping">
                             <div class="box-shipping-main">
                                 <!-- 繰り返し-->
@@ -23,7 +22,7 @@
                                                 <div class="list-order-body-in">
                                                     <figure class="list-order-figure list-cart-figure">
                                                         <a href=""><img
-                                                                src="{{ asset('storage/image/detail/'.$data->attributes[5].'/'.$data->attributes[4]) }}"
+                                                                src="{{ asset('storage/image/detail/'.'p175'.'/'.$data->attributes[4]) }}"
                                                                 alt=""></a>
                                                     </figure>
                                                     <div class="list-order-content list-cart-content">
@@ -42,9 +41,9 @@
                                                             </dl>
                                                         </div>
                                                         <div class="list-cart-trigger">
-                                                            <input type="submit" name="{{ $data->id }}"
+                                                            <input type="submit"
                                                                 class="btn-cmn-02 btn-medium color-gray cart-item__delete"
-                                                                value="削除" style="cursor: pointer;" formaction="destroy">
+                                                                value="削除" style="cursor: pointer;">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -60,27 +59,30 @@
                                     <div class="box-payment-details">
                                         <dl class="mod-payment mod-payment-details">
                                             <dt>商品代金合計(税抜)</dt>
-                                            <dd>¥{{ $total }}
-                                            </dd>
+                                            <dd>¥2,899</dd>
                                             <dt>消費税</dt>
-                                            <dd>¥{{ $tax }}</dd>
+                                            <dd>¥263</dd>
                                         </dl>
                                         <div class="box-payment-total pt-pc-20">
                                             <dl class="mod-payment mod-payment-total">
                                                 <dt>ご注文合計</dt>
-                                                <dd>¥{{ $total_add_tax }}</dd>
+                                                <dd>¥2,899</dd>
                                             </dl>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="box-payment-trigger">
-                                    <input type="submit"
-                                        class="btn-cmn-02 btn-large btn-cart-order" value="注文に進む"
-                                        style="cursor: pointer;" formaction="{{ route('cartAdd.address') }}"></div>
+                                <div class="box-payment-trigger"><input type="button"
+                                        class="btn-cmn-02 btn-large btn-cart-order" value="レジに進む"
+                                        style="cursor: pointer;"></div>
+
+                                        <div class="box-payment-trigger">
+                                            <input type="submit"
+                                            class="btn-cmn-02 btn-large btn-cart-order" value="カートを削除"
+                                            style="cursor: pointer;"></div>
 
 
                                 <div class="box-payment-trigger"><a class="btn-cmn-02 btn-large color-white"
-                                        href="{{ route('welcome') }}">お買い物を続ける</a></div>
+                                        href="https://www.grail.bz/item/cu4661111/">お買い物を続ける</a></div>
                             </div>
                         </div>
                     </form>

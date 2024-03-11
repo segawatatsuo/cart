@@ -12,11 +12,14 @@ use App\Http\Controllers\ImageController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\SkuController;
+use App\Http\Controllers\TopController;
+use App\Http\Controllers\MailController;
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
 use App\Http\Controllers\ColorAttributionController;
 use App\Models\Sku;
 use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -28,11 +31,14 @@ use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
 });
+*/
 
+Route::get('/', [TopController::class, 'index'])->name('welcome');
+Route::get('/flush', [TopController::class, 'flush'])->name('flish');
 
 // 管理ログイン画面
 Route::get('/admin-login', [AdminLoginController::class, 'create'])->name('admin.login');
@@ -131,7 +137,7 @@ Route::get('product{id}', [ProductController::class,'index'])->name('product.ind
 //サイズ取得のルート(ProductController)
 Route::get('product/get_size', [ProductController::class,'get_size'])->name('product.get_size');
 
-Route::get('product/hoge',[ProductController::class,'hoge'])->name('product.hoge');
+Route::get('product/hoge', [ProductController::class,'hoge'])->name('product.hoge');
 
 //--------------------カート---------------------//
 
@@ -169,6 +175,21 @@ Route::get('cart', function () {
 Route::post('cartAdd/index', [CartController::class,'index'])->name('cartAdd.index');
 Route::get('cartAdd/index', [CartController::class,'index'])->name('cartAdd.index');
 
-//カート全部削除
+//カートを見る
+Route::get('cartAdd/show', [CartController::class,'show'])->name('cartAdd.show');
+
+//住所入力
+Route::get('cartAdd/address', [CartController::class,'address'])->name('cartAdd.address');
+//確認画面
+Route::get('cartAdd/confirm', [CartController::class,'confirm'])->name('cartAdd.confirm');
+//注文確定
+Route::get('cartAdd/order', [CartController::class,'order'])->name('cartAdd.order');
+//Thanksメール送信
+Route::get('/mail/send', [MailController::class,'send'])->name('mail.send');
+
+//カート１商品づつ削除
 Route::post('cartAdd/{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
 Route::get('cartAdd/{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
+
+//カート全商品削除
+Route::get('clear', [CartController::class, 'clear'])->name('clear');

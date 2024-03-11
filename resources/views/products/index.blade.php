@@ -226,15 +226,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
-
-
-
-
-
-
 
 
             <!--右側-->
@@ -263,16 +255,11 @@
 
                                     <!-- アイテムカラー -->
                                     <div class="product__files">
-
-                                        {{-- $item->prie --}}
-                                        <!--
-                                        <?php $item_price = '1800'; ?>
-                                        -->
-
                                         <div class="h4">アイテムカラー</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" class="select2" id="selected_image1"
+                                            <input type="text" value="{{ old('アイテムカラー') }}" class="select2" id="selected_image1"
                                                 name="アイテムカラー" style="margin-right: 4px;">
+                                                
                                             <button id="1" type="button" class="btn btn-primary part"
                                                 data-bs-toggle="modal" data-bs-target="#UnifColorModal">
                                                 色見本を開く
@@ -293,8 +280,9 @@
                                     <div class="product__files">
                                         <div class="h4">左片胸色名</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" data-price="0" id="selected_image2"
+                                            <input type="text" value="{{ old('左片胸色名') }}" data-price="0" id="selected_image2"
                                                 class="select2" name="左片胸色名" style="margin-right: 4px;">
+
                                             <button id="2" type="button" class="btn btn-primary part"
                                                 data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
                                                 色見本を開く
@@ -303,7 +291,7 @@
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">左片胸に入れる文字</div>
-                                        <input type="text" class="select2" name="左片胸に入れる文字">
+                                        <input type="text" class="select2" name="左片胸に入れる文字" value="{{ old('左片胸に入れる文字') }}">
                                     </div>
 
                                     <!-- マーキング右片胸 -->
@@ -319,7 +307,8 @@
                                         <div class="h4">右片胸色名</div>
                                         <div class="d-flex justify-content-between">
                                             <input type="text" id="selected_image3" class="select2"
-                                                name="右片胸色名" style="margin-right: 4px;">
+                                                name="右片胸色名" value="{{ old('右片胸色名') }}" style="margin-right: 4px;">
+
                                             <button id="3" type="button" class="btn btn-primary part"
                                                 data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
                                                 色見本を開く
@@ -328,7 +317,7 @@
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">右片胸に入れる文字</div>
-                                        <input type="text" class="select2" name="右片胸に入れる文字">
+                                        <input type="text" class="select2" name="右片胸に入れる文字" value="{{ old('右片胸に入れる文字') }}">
                                     </div>
 
                                     <!-- マーキング胸中央 -->
@@ -350,6 +339,7 @@
                                             <tr>
                                                 <td>サイズ</td>
                                                 <td>ご注文枚数</td>
+                                                <td>単価</td>
                                             </tr>
                                             @foreach ($sizes as $data)
                                                 <tr>
@@ -358,15 +348,23 @@
                                                             class="textBox" max="100" step="1"
                                                             data-price="{{ $data->price }}"
                                                             data-size="{{ $data->size }}"
-                                                            name="size[{{ $data->size }}]"
+                                                            name="サイズ[{{ $data->size }}]"
                                                             style="width:50%;display:inline-block;">
                                                     </td>
-                                                    <td>{{ $data->price }}</td>
+                                                    <td>{{ number_format($data->price) }}円</td>
+                                                    <input type="hidden" name="price[{{ $data->size }}]"
+                                                        value="{{ $data->price }}">
                                                 </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
                                     <!-- サイズ -->
+
+
+                                    <h2 class="h2 d-flex justify-content-between">
+                                        <span>SKU</span>
+                                        <input id="sku" class="" name="SKU" value="" readonly>
+                                    </h2>
 
 
                                     <!--オプション代-->
@@ -377,15 +375,15 @@
                                     </h2>
 
                                     <h2 class="h2 d-flex justify-content-between">
+                                        <span>数量</span>
+                                        <input id="quantity" class="" name="数量" value="" readonly>
+                                    </h2>
+
+                                    <h2 class="h2 d-flex justify-content-between">
                                         <span>合計</span>
                                         <input id="item_price_total" class="" name="合計" value="0円"
                                             readonly>
                                     </h2>
-                                    <!--
-                                    <input type="button" id="Button1">ボタン</button>
-                                    <div id="show"></div>
-                                    -->
-
 
                                     <div class="product__actions">
                                         <button type="submit"
@@ -540,66 +538,20 @@
             <div class="modal-body">
                 <form>
                     <div class="row">
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                            <div class="card" style="border: 0; padding:0">
-                                <button type="submit" class="btn select" id="1" data-id='black'
-                                    data-bs-dismiss="modal">
-                                    <img class="card-img-top" src="{{ asset('images/item-colors/p175/black.png') }}"
-                                        alt="">
-                                    <div>black</div>
-                                </button>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                            <div class="card" style="border: 0">
-                                <div class="card" style="border: 0">
-                                    <button type="submit" class="btn select" id="1" data-id='blue'
-                                        data-bs-dismiss="modal">
+                        @foreach ($colors as $color)
+                            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="card" style="border: 0; padding:0">
+                                    <button type="submit" class="btn select" id="1"
+                                        data-id = '{{ $color->color_display_name }}' data-bs-dismiss="modal"
+                                        data-sku = '{{ pathinfo($color->image_name, PATHINFO_FILENAME) }}'>
                                         <img class="card-img-top"
-                                            src="{{ asset('images/item-colors/p175/blue.png') }}" alt="">
-                                        <div>blue</div>
+                                            src="{{ asset('storage/image/detail/p175/' . $color->image_name) }}"
+                                            alt="">
+                                        <div>{{ $color->color_display_name }}</div>
                                     </button>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                            <div class="card" style="border: 0">
-                                <div class="card" style="border: 0">
-                                    <button type="submit" class="btn select" id="1" data-id='white'
-                                        data-bs-dismiss="modal">
-                                        <img class="card-img-top"
-                                            src="{{ asset('images/item-colors/p175/white.png') }}" alt="">
-                                        <div>white</div>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                            <div class="card" style="border: 0">
-                                <button type="submit" class="btn select" id="1" data-id='navy'
-                                    data-bs-dismiss="modal">
-                                    <img class="card-img-top" src="{{ asset('images/item-colors/p175/navy.png') }}"
-                                        alt="">
-                                    <div>navy</div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row"> <!--justify-content-center-->
-                        <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                            <div class="card " style="border: 0; padding:0">
-                                <button type="submit" class="btn select" id="1" data-id='red'
-                                    data-bs-dismiss="modal">
-                                    <img class="card-img-top" src="{{ asset('images/item-colors/p175/red.png') }}"
-                                        alt="">
-                                    <div>red</div>
-                                </button>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
             </div>
             </form>
@@ -705,8 +657,12 @@
     });
     //モーダル画面で画像ボタンのselectクラスを押したら
     $('.select').click(function() {
+        
         var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
         var id = $(this).attr("id") //id=*を取得。1か2か3か..(何番めのプルダウンかNo)
+        
+        var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
+        $('#sku').val(sku);//SKUをテキストボックスに代入
 
         //代入先を動的に作成
         var img = {}; //
@@ -715,10 +671,14 @@
         var idNo = {}; //
         idNo[parts_id] = "#selected_id" + parts_id; //代入先id名 #selected1 #selected2
 
-        //alert(img[id]);
         $(img[id]).text(image_name); //代入先 selected_image1
         $(img[parts_id]).val(image_name);
         $(idNo[id]).text(id); //代入先
+
+
+
+
+
     });
 </script>
 
@@ -779,9 +739,15 @@
     //HTML読み込み時
     $(document).ready(function() {
         $("#item_price").val(item_price + "円");
+        
+        var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
+        $('#sku').val(sku);//SKUをテキストボックスに代入
     });
     $(document).ready(function() {
-        $("#item_price_total").val(item_price + option_price + "円");
+        var num;
+        num = item_price + option_price;
+        num.toLocaleString(); //3桁区切りの文字列に変換
+        $("#item_price_total").val(num + "円");
     });
 
     //オプション代
@@ -797,7 +763,12 @@
                 total += data_array[j];
             }
             $("#option_price").val(total + "円");
-            $("#item_price_total").val(item_price + total + "円");
+
+            var num;
+            num = item_price + option_price;
+            num.toLocaleString(); //3桁区切りの文字列に変換
+            $("#item_price_total").val(num + "円");
+            //$("#item_price_total").val(item_price + total + "円");
         });
     });
 </script>
@@ -817,33 +788,34 @@
             var countSum = $(".textBox").map(function(index, el) {
                 return $(this).val();
             });
-            /*
-            showtext = "";
-            for (i = 0; i < inputText.length; i++) {
-                showtext += inputText[i] + "<br/>";
-            }
-            $("#show").html(showtext);
-            */
             //ユニフォーム金額合計(枚数*単価)
             var sumTotal = 0;
             for (i = 0; i < inputText.length; i++) {
                 sumTotal += Math.trunc(inputText[i]);
             }
             //枚数合計
-            var totalQuantity=0;
+            var totalQuantity = 0;
             for (i = 0; i < countSum.length; i++) {
                 totalQuantity += Math.trunc(countSum[i]);
             }
             //オプション単価
             var optionUnitPrice = $('#option_price').val();
-            optionUnitPrice = optionUnitPrice.replace('円','');
+            optionUnitPrice = optionUnitPrice.replace('円', '');
+
+            //枚数
+            $("#quantity").val(totalQuantity);
+
             //総合計金額
-            var totalAmount=0;
-            totalAmount = sumTotal+(totalQuantity*optionUnitPrice);
+            var totalAmount = 0;
+            totalAmount = sumTotal + (totalQuantity * optionUnitPrice);
+            Number(totalAmount).toLocaleString(); //3桁区切りの文字列に変換
             $("#item_price_total").val(totalAmount + "円");
+
+            //$("#item_price_total").val(totalAmount + "円");
         })
     })
 </script>
 
 </body>
+
 </html>

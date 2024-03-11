@@ -14,8 +14,9 @@ class ProductController extends Controller
     {
         $item = Item::find($id);
         $itemNo = $item->number;
-        $sizes=Sku::where('item_number', $itemNo)->groupBy('size','price')->get(['size','price']);//'size', 'price'
-        return view('products.index', compact('item', 'sizes'));
+        $sizes = Sku::where('item_number', $itemNo)->orderBy('id')->groupBy('size', 'price')->get(['size','price']);//'サイズ表用にsize'と'price'でグループ化
+        $colors = Sku::where('item_number', $itemNo)->orderBy('id')->groupBy('color_display_name', 'image_name')->get(['color_display_name','image_name']);//'カラー選択用にcolor_display_name'でグループ化
+        return view('products.index', compact('item', 'sizes', 'colors'));
     }
 
     public function get_size(Request $request)
