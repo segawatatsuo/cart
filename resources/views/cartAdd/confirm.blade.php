@@ -23,7 +23,6 @@
                                     <input type="text" class="select2" name="lastname" value="{{ old('lastname') }}" placeholder="お名前 (名)">
                                 </div>
 
-
                                 <div class="product__files">
                                     <input type="text" class="select2" name="zip" value="{{ old('zip') }}" placeholder="郵便番号">
                                 </div>
@@ -43,10 +42,6 @@
                                 <div class="product__files">
                                     <input type="text" class="select2" name="tel" value="{{ old('tel') }}" placeholder="電話番号">
                                 </div>
-
-
-
-
 
                                 <div class="h4">購入者情報</div>
                                 <div class="product__files">

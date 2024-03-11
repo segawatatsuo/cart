@@ -81,6 +81,8 @@
 
                                 <div class="box-payment-trigger"><a class="btn-cmn-02 btn-large color-white"
                                         href="{{ route('welcome') }}">お買い物を続ける</a></div>
+
+                                        
                             </div>
                         </div>
                     </form>

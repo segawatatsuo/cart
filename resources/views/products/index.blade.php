@@ -257,13 +257,16 @@
                                     <div class="product__files">
                                         <div class="h4">アイテムカラー</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" value="{{ old('アイテムカラー') }}" class="select2" id="selected_image1"
-                                                name="アイテムカラー" style="margin-right: 4px;">
-                                                
+
                                             <button id="1" type="button" class="btn btn-primary part"
-                                                data-bs-toggle="modal" data-bs-target="#UnifColorModal">
+                                                data-bs-toggle="modal" data-bs-target="#UnifColorModal" style="margin-right: 4px;">
                                                 色見本を開く
                                             </button>
+
+                                            <input type="text" value="{{ old('アイテムカラー') }}" class="select2"
+                                                id="selected_image1" name="アイテムカラー">
+
+
                                         </div>
                                     </div>
 
@@ -280,18 +283,23 @@
                                     <div class="product__files">
                                         <div class="h4">左片胸色名</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" value="{{ old('左片胸色名') }}" data-price="0" id="selected_image2"
-                                                class="select2" name="左片胸色名" style="margin-right: 4px;">
-
+                                            
                                             <button id="2" type="button" class="btn btn-primary part"
-                                                data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
+                                                data-bs-toggle="modal" data-bs-target="#ColorSelectModal" style="margin-right: 4px;">
                                                 色見本を開く
                                             </button>
+
+                                            <input type="text" value="{{ old('左片胸色名') }}" data-price="0"
+                                                id="selected_image2" class="select2" name="左片胸色名">
+                                                
+
+
                                         </div>
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">左片胸に入れる文字</div>
-                                        <input type="text" class="select2" name="左片胸に入れる文字" value="{{ old('左片胸に入れる文字') }}">
+                                        <input type="text" class="select2" name="左片胸に入れる文字"
+                                            value="{{ old('左片胸に入れる文字') }}">
                                     </div>
 
                                     <!-- マーキング右片胸 -->
@@ -306,18 +314,21 @@
                                     <div class="product__files">
                                         <div class="h4">右片胸色名</div>
                                         <div class="d-flex justify-content-between">
-                                            <input type="text" id="selected_image3" class="select2"
-                                                name="右片胸色名" value="{{ old('右片胸色名') }}" style="margin-right: 4px;">
-
                                             <button id="3" type="button" class="btn btn-primary part"
-                                                data-bs-toggle="modal" data-bs-target="#ColorSelectModal">
+                                                data-bs-toggle="modal" data-bs-target="#ColorSelectModal" style="margin-right: 4px;">
                                                 色見本を開く
                                             </button>
+
+                                            <input type="text" id="selected_image3" class="select2"
+                                                name="右片胸色名" value="{{ old('右片胸色名') }}">
+
+
                                         </div>
                                     </div>
                                     <div class="product__files">
                                         <div class="h4">右片胸に入れる文字</div>
-                                        <input type="text" class="select2" name="右片胸に入れる文字" value="{{ old('右片胸に入れる文字') }}">
+                                        <input type="text" class="select2" name="右片胸に入れる文字"
+                                            value="{{ old('右片胸に入れる文字') }}">
                                     </div>
 
                                     <!-- マーキング胸中央 -->
@@ -363,7 +374,7 @@
 
                                     <h2 class="h2 d-flex justify-content-between">
                                         <span>SKU</span>
-                                        <input id="sku" class="" name="SKU" value="" readonly>
+                                        <input id="sku" class="" name="sku" value="" readonly>
                                     </h2>
 
 
@@ -541,7 +552,7 @@
                         @foreach ($colors as $color)
                             <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                 <div class="card" style="border: 0; padding:0">
-                                    <button type="submit" class="btn select" id="1"
+                                    <button type="submit" class="btn select item_color" id="1"
                                         data-id = '{{ $color->color_display_name }}' data-bs-dismiss="modal"
                                         data-sku = '{{ pathinfo($color->image_name, PATHINFO_FILENAME) }}'>
                                         <img class="card-img-top"
@@ -655,14 +666,21 @@
         parts_id = $(this).attr("id");
         //alert(parts_id);
     });
+
+    $('.item_color').click(function() {
+        var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
+        $('#sku').val(sku); //SKUをテキストボックスに代入
+
+    });
+
     //モーダル画面で画像ボタンのselectクラスを押したら
     $('.select').click(function() {
-        
+
         var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
         var id = $(this).attr("id") //id=*を取得。1か2か3か..(何番めのプルダウンかNo)
-        
-        var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
-        $('#sku').val(sku);//SKUをテキストボックスに代入
+
+        //var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
+        //$('#sku').val(sku); //SKUをテキストボックスに代入
 
         //代入先を動的に作成
         var img = {}; //
@@ -674,8 +692,6 @@
         $(img[id]).text(image_name); //代入先 selected_image1
         $(img[parts_id]).val(image_name);
         $(idNo[id]).text(id); //代入先
-
-
 
 
 
@@ -739,9 +755,9 @@
     //HTML読み込み時
     $(document).ready(function() {
         $("#item_price").val(item_price + "円");
-        
-        var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
-        $('#sku').val(sku);//SKUをテキストボックスに代入
+
+        //var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
+        //$('#sku').val(sku); //SKUをテキストボックスに代入
     });
     $(document).ready(function() {
         var num;
