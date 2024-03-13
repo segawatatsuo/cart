@@ -139,6 +139,9 @@ Route::get('product/get_size', [ProductController::class,'get_size'])->name('pro
 
 Route::get('product/hoge', [ProductController::class,'hoge'])->name('product.hoge');
 
+//戻る
+Route::get('product/back',[ProductController::class,'back'])->name('product.back');
+
 //--------------------カート---------------------//
 
 

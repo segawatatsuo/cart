@@ -14,7 +14,7 @@ class ProductController extends Controller
     {
         $item = Item::find($id);
         $itemNo = $item->number;
-        $sizes = Sku::where('item_number', $itemNo)->groupBy('size', 'price')->get(['size','price']);//'サイズ表用にsize'と'price'でグループ化
+        $sizes = Sku::where('item_number', $itemNo)->groupBy('size', 'price')->orderBy('id', 'asc')->get(['size','price']);//'サイズ表用にsize'と'price'でグループ化
         $colors = Sku::where('item_number', $itemNo)->groupBy('color_display_name', 'image_name')->get(['color_display_name','image_name']);//'カラー選択用にcolor_display_name'でグループ化
         return view('products.index', compact('item', 'sizes', 'colors'));
     }
@@ -40,5 +40,12 @@ class ProductController extends Controller
         //SELECT skus.size FROM skus WHERE skus.item_number LIKE 'p175' AND skus.image_color_name LIKE 'red'
         $users = DB::select($sql);
         return response()->json($users);
+    }
+
+    public function back()
+    {
+        $url = url()->previous();
+        dd($url);
+        return back('url');
     }
 }

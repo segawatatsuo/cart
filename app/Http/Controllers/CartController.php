@@ -15,6 +15,9 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
+        //カートに入る前のページのURL
+        $prevUrl = url()->previous();
+
         //バリデーションチェック
         $validator = Validator::make($request->all(), [
             'アイテムカラー'=> 'required',
@@ -34,6 +37,9 @@ class CartController extends Controller
         //セッションipaddressをuserIDにする
         $userID = session('ipaddress');
         //dd($userID);
+
+
+
 
         /*商品番号*/
         $productId = $request->id;
@@ -119,7 +125,7 @@ class CartController extends Controller
         //総合計
         $total_add_tax=$total+$tax;
 
-        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax'));
+        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax' ,'prevUrl'));
     }
     //お届け先住所登録
     public function address()
