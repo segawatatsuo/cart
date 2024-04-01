@@ -14,12 +14,13 @@ use App\Http\Controllers\ImageUploadController;
 use App\Http\Controllers\SkuController;
 use App\Http\Controllers\TopController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ListController;
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
 use App\Http\Controllers\ColorAttributionController;
 use App\Models\Sku;
 use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -129,7 +130,16 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('sku/search', [SkuController::class,'search'])->name('sku.search');
 
     Route::get('sku/excel', [SkuController::class,'excel'])->name('sku.excel');//excelテンプレートダウンロード
+
+    Route::get('company/info', [CompanyController::class,'info'])->name('company.info');
+    Route::post('company/info/store', [CompanyController::class,'info_store'])->name('company.info.store');
+
+    Route::get('company/mail', [CompanyController::class,'mail'])->name('company.mail');
+    Route::post('company/mail/update', [CompanyController::class,'mail_update'])->name('company.mail.update');
 });
+
+//--------------------一覧ページ---------------------//
+Route::get('list', [ListController::class,'index'])->name('list.index');
 
 //--------------------商品ページ---------------------//
 
@@ -138,9 +148,8 @@ Route::get('product{id}', [ProductController::class,'index'])->name('product.ind
 Route::get('product/get_size', [ProductController::class,'get_size'])->name('product.get_size');
 
 Route::get('product/hoge', [ProductController::class,'hoge'])->name('product.hoge');
-
 //戻る
-Route::get('product/back',[ProductController::class,'back'])->name('product.back');
+Route::get('product/back', [ProductController::class,'back'])->name('product.back');
 
 //--------------------カート---------------------//
 

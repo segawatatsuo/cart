@@ -16,7 +16,9 @@ class CartController extends Controller
     public function index(Request $request)
     {
         //カートに入る前のページのURL
-        $prevUrl = url()->previous();
+        //$prevUrl = url()->previous();
+        session(['prevUrl' => url()->previous()]);
+        $prevUrl = session('prevUrl');
 
         //バリデーションチェック
         $validator = Validator::make($request->all(), [
@@ -35,7 +37,7 @@ class CartController extends Controller
         //\Cart::clearCartConditions();//全件削除
 
         //セッションipaddressをuserIDにする
-        $userID = session('ipaddress');
+        //$userID = session('ipaddress');
         //dd($userID);
 
 
@@ -125,16 +127,27 @@ class CartController extends Controller
         //総合計
         $total_add_tax=$total+$tax;
 
-        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax' ,'prevUrl'));
+        //以降使い回すのでセッションcartsに入れる
+        $carts=['total'=>$total, 'tax'=>$tax, 'total_add_tax'=>$total_add_tax,'cartCollection'=>$cartCollection];
+        session(['carts' => $carts]);
+
+        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'prevUrl'));
+        //return view('/cartAdd/index');
     }
+
+
     //お届け先住所登録
     public function address()
     {
+        //dd(session('carts'));
+
         return view('/cartAdd/address');
     }
     //確認画面へ
-    public function confirm()
+    public function confirm(Request $request)
     {
+        $all_request = $request->all();//全ての投稿内容
+        session(['all_request' => $all_request]);//セッション化
         return view('/cartAdd/confirm');
     }
     //注文確定
@@ -181,6 +194,10 @@ class CartController extends Controller
 
     public function destroy(Request $request)
     {
+
+        //カートに入る前のページのURL
+        //$prevUrl = url()->previous();
+        $prevUrl = session('prevUrl');
         //1件削除
         //ボタンのパラメータ
         $target=$request->query();//requestを全部取り出す
@@ -198,7 +215,7 @@ class CartController extends Controller
         $tax=round($total*0.1);
         $total_add_tax=$total+$tax;
 
-        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax'));
+        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'prevUrl'));
     }
 
     public function clear()

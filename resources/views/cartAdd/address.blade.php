@@ -14,7 +14,7 @@
 
                                 <div class="h4">メールアドレス</div>
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="mail" value="{{ old('mail') }}" placeholder="メールアドレス">
+                                    <input type="text" class="select2" name="email" value="{{ old('email') }}" placeholder="メールアドレス">
                                 </div>
 
                                 <div class="h4">お届け先情報</div>
@@ -25,11 +25,11 @@
 
 
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="zip" value="{{ old('zip') }}" placeholder="郵便番号">
+                                    <input type="text" class="select2" name="postal_code" value="{{ old('postal_code') }}" placeholder="郵便番号">
                                 </div>
 
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="todofuken" value="{{ old('todofuken') }}" placeholder="都道府県">
+                                    <input type="text" class="select2" name="prefecture" value="{{ old('prefecture') }}" placeholder="都道府県">
                                 </div>
 
                                 <div class="product__files">
@@ -37,11 +37,11 @@
                                 </div>
 
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="banchi" value="{{ old('banchi') }}" placeholder="番地・建物名・部屋番号">
+                                    <input type="text" class="select2" name="street" value="{{ old('street') }}" placeholder="番地・建物名・部屋番号">
                                 </div>
 
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="tel" value="{{ old('tel') }}" placeholder="電話番号">
+                                    <input type="text" class="select2" name="phone_number" value="{{ old('phone_number') }}" placeholder="電話番号">
                                 </div>
 
 
@@ -56,7 +56,7 @@
 
 
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="kounyu_zip" value="{{ old('kounyu_zip') }}" placeholder="郵便番号">
+                                    <input type="text" class="select2" name="kounyu_postal_code" value="{{ old('kounyu_postal_code') }}" placeholder="郵便番号">
                                 </div>
 
                                 <div class="product__files">
@@ -68,12 +68,20 @@
                                 </div>
 
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="kounyu_banchi" value="{{ old('kounyu_banchi') }}" placeholder="番地・建物名・部屋番号">
+                                    <input type="text" class="select2" name="kounyu_street" value="{{ old('kounyu_street') }}" placeholder="番地・建物名・部屋番号">
                                 </div>
 
                                 <div class="product__files">
-                                    <input type="text" class="select2" name="kounyu_tel" value="{{ old('kounyu_tel') }}" placeholder="電話番号">
+                                    <input type="text" class="select2" name="kounyu_phone_number" value="{{ old('kounyu_phone_number') }}" placeholder="電話番号">
                                 </div>
+
+                                <div class="h4">お支払い方法</div>
+                                <div class="product__files">
+                                    <input type="text" id="paymethod" name="paymethod" placeholder="お支払い方法">
+                                        
+     
+                                </div>
+
 
                                 <div class="h4">備考欄</div>
                                 <div class="product__files">
@@ -92,15 +100,15 @@
                                     <div class="box-payment-details">
                                         <dl class="mod-payment mod-payment-details">
                                             <dt>商品代金合計(税抜)</dt>
-                                            <dd>¥{{-- $total --}}
+                                            <dd>¥{{ session('carts')["total"] }}
                                             </dd>
                                             <dt>消費税</dt>
-                                            <dd>¥{{-- $tax --}}</dd>
+                                            <dd>¥{{session('carts')["tax"]}}</dd>
                                         </dl>
                                         <div class="box-payment-total pt-pc-20">
                                             <dl class="mod-payment mod-payment-total">
                                                 <dt>ご注文合計</dt>
-                                                <dd>¥{{-- $total_add_tax --}}</dd>
+                                                <dd>¥{{ session('carts')["total_add_tax"] }}</dd>
                                             </dl>
                                         </div>
                                     </div>
@@ -108,10 +116,8 @@
                                 <div class="box-payment-trigger">
                                     <input type="submit"
                                         class="btn-cmn-02 btn-large btn-cart-order" value="確認画面へ"
-                                        style="cursor: pointer;" formaction="{{ route('cartAdd.confirm') }}"></div>
-
-
-
+                                        style="cursor: pointer;" formaction="{{ route('cartAdd.confirm') }}">
+                                    </div>
                             </div>
                         </div>
                     </form>

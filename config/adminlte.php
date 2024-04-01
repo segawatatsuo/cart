@@ -481,6 +481,22 @@ return [
                 ],
             ]
         ],
+
+        [
+            'text'    => '基本設定',
+            'icon'    => 'fa fa-align-justify',
+            'submenu' => [
+                [
+                    'text'       => '会社情報',
+                    'url'        => 'company/info',
+                ],
+                [
+                    'text'       => 'メール',
+                    'url'        => 'company/mail',
+                ],
+            ]
+        ],
+
     ],
 
     /*

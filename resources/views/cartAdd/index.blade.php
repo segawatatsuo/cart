@@ -1,105 +1,112 @@
-@include('parts.header2')
+@include('parts.header')
 
-<div id="content" class="content-area page home"><!-- margin-top: 222px  -->
-    <div class="container">
-        <div class="row">
+<main>
+    <div class="container py-3">
+      <div class="section-header" style="padding-top: 0px;">
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-12 col-sm-12">
+          <!--<h1>ショッピングカート</h1>-->
+            <h2 class="section-header__title">
+              <span class="icon-market icon-market_om section-header__icon"></span>
+              <span class="section-ttl">ショッピングカート</span>
+            </h2>
 
-            <div class="col-12">
-                <main class="contents-normal pt-pc-35 pb-pc-30">
-                    <h1 class="ttl-cmn-01 mb-pc-25 mb-sp-15">ショッピングカート</h1>
+          <div class="goods-page">
+            <div class="goods-data clearfix">
+              <div class="table-wrapper-responsive">
+                <table summary="Shopping cart">
+                  <tr>
+                    <th class="goods-page-image">画像</th>
+                    <th class="goods-page-description">商品内容</th>
+                    <th class="goods-page-ref-no">商品番号</th>
+                    <th class="goods-page-quantity">数量</th>
+                    <th class="goods-page-price">価格</th>
+                    <th class="goods-page-total" colspan="2">合計</th>
+                  </tr>
+                  <tr>
+                    <td class="goods-page-image">
+                      <a href="javascript:;"><img src="./image/top_page/bag/1.jpg" alt=""></a>
+                    </td>
+                    <td class="goods-page-description">
+                      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
+                      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
+                      <em>More info is here</em>
+                    </td>
+                    <td class="goods-page-ref-no">
+                      javc2133
+                    </td>
+                    <td class="goods-page-quantity">
+                      <div class="product-quantity">
+                        <input id="product-quantity" type="text" value="1" readonly class="form-control input-sm">
+                      </div>
+                    </td>
+                    <td class="goods-page-price">
+                      <strong><span>$</span>47.00</strong>
+                    </td>
+                    <td class="goods-page-total">
+                      <strong><span>$</span>47.00</strong>
+                    </td>
+                    <td class="del-goods-col">
+                      <a class="del-goods" href="javascript:;">&nbsp;</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="goods-page-image">
+                      <a href="javascript:;"><img src="./image/top_page/cap/1.jpg" alt="Berry Lace Dress"></a>
+                    </td>
+                    <td class="goods-page-description">
+                      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
+                      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
+                      <em>More info is here</em>
+                    </td>
+                    <td class="goods-page-ref-no">
+                      javc2133
+                    </td>
+                    <td class="goods-page-quantity">
+                      <div class="product-quantity">
+                        <input id="product-quantity2" type="text" value="1" readonly class="form-control input-sm">
+                      </div>
+                    </td>
+                    <td class="goods-page-price">
+                      <strong><span>$</span>47.00</strong>
+                    </td>
+                    <td class="goods-page-total">
+                      <strong><span>$</span>47.00</strong>
+                    </td>
+                    <td class="del-goods-col">
+                      <a class="del-goods" href="javascript:;">&nbsp;</a>
+                    </td>
+                  </tr>
+                </table>
+              </div>
 
-                    <form class="box-shipping-wrap pt-0 cf" method="？">
-                        <div class="box-shipping">
-                            <div class="box-shipping-main">
-                                <!-- 繰り返し-->
-                                @foreach ($cartCollection as $data)
-                                    <div class="list-cmn-order list-cart">
-                                        <div class="list-order-item list-cart-item cart-item" data-cart-seq="1"
-                                            data-att-grp-id="">
-                                            <div class="list-order-body list-cart-body">
-                                                <div class="list-order-ttl">
-                                                    <a href=""> {{ $data->name }}</a>
-                                                </div>
-                                                <div class="list-order-body-in">
-                                                    <figure class="list-order-figure list-cart-figure">
-                                                        <a href=""><img
-                                                                src="{{ asset('storage/image/detail/'.$data->attributes[5].'/'.$data->attributes[4]) }}"
-                                                                alt=""></a>
-                                                    </figure>
-                                                    <div class="list-order-content list-cart-content">
-                                                        <div class="list-cart-column">
-                                                            <div class="mod-order-info">
-                                                                カラー:{{ $data->attributes[0]['アイテムカラー'] }}<br>
-                                                                数量：{{ $data->attributes[2]['数量'] }}<br>
-                                                                {{ $data->attributes[3] }}<br>
-                                                                @foreach ($data->attributes[1] as $key => $val)
-                                                                    {{ $key . ':' . $val }}<br>
-                                                                @endforeach
-                                                            </div>
-                                                            <dl class="mod-order-info mod-order-total">
-                                                                <dt>小計:</dt>
-                                                                <dd>¥{{ $data->attributes[2]['合計'] }}(税抜)</dd>
-                                                            </dl>
-                                                        </div>
-                                                        <div class="list-cart-trigger">
-                                                            <input type="submit" name="{{ $data->id }}"
-                                                                class="btn-cmn-02 btn-medium color-gray cart-item__delete"
-                                                                value="削除" style="cursor: pointer;" formaction="destroy">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- 繰り返し-->
-                                @endforeach
-                            </div>
-                            <div class="box-shipping-sub box-cart-sub">
-
-                                <div class="box-payment">
-                                    <div class="box-payment-details">
-                                        <dl class="mod-payment mod-payment-details">
-                                            <dt>商品代金合計(税抜)</dt>
-                                            <dd>¥{{ $total }}
-                                            </dd>
-                                            <dt>消費税</dt>
-                                            <dd>¥{{ $tax }}</dd>
-                                        </dl>
-                                        <div class="box-payment-total pt-pc-20">
-                                            <dl class="mod-payment mod-payment-total">
-                                                <dt>ご注文合計</dt>
-                                                <dd>¥{{ $total_add_tax }}</dd>
-                                            </dl>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="box-payment-trigger">
-                                    <input type="submit"
-                                        class="btn-cmn-02 btn-large btn-cart-order" value="注文に進む"
-                                        style="cursor: pointer;" formaction="{{ route('cartAdd.address') }}"></div>
-
-
-                                <div class="box-payment-trigger"><a class="btn-cmn-02 btn-large color-white"
-                                        href="{{ $prevUrl }}">お買い物を続ける</a></div>
-
-                                        
-
-                                        
-                            </div>
-                        </div>
-                    </form>
-                    <span id="reco1"></span>
-                    <span id="reco17"></span>
-                </main>
-
-                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <br><br><br><br>
-
+              <div class="shopping-total">
+                <ul>
+                  <li>
+                    <em>小計</em>
+                    <strong class="price"><span>$</span>47.00</strong>
+                  </li>
+                  <li>
+                    <em>手数料</em>
+                    <strong class="price"><span>$</span>3.00</strong>
+                  </li>
+                  <li class="shopping-total-price">
+                    <em>総合計</em>
+                    <strong class="price"><span>$</span>50.00</strong>
+                  </li>
+                </ul>
+              </div>
             </div>
+            <button class="btn btn-default" type="submit">買い物を続ける <i class="fa fa-shopping-cart"></i></button>
+            <button class="btn btn-primary" type="submit">注文する <i class="fa fa-check"></i></button>
+          </div>
         </div>
+        <!-- END CONTENT -->
+      </div>
+      <!-- END SIDEBAR & CONTENT -->
+    </div>
     </div>
 
+  </main>
 
-
-
-    @include('parts.footer')
+@include('parts.footer')

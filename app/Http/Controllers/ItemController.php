@@ -20,7 +20,6 @@ use App\Models\Pulldown_set;
 use App\Models\Tax;
 use App\Models\Item_pulldown_temporarily;
 
-
 class ItemController extends Controller
 {
     /**
@@ -68,7 +67,6 @@ class ItemController extends Controller
 
         $pulldown_rightside = serialize($request->rightside);
         $pulldown_leftside = serialize($request->leftside);
-        
     }
 
     /**
@@ -85,7 +83,8 @@ class ItemController extends Controller
 
         //カテゴリ
         $categorys = $request->input('category');
-        $categorys = json_encode($categorys);
+        $categorys = json_encode($categorys, JSON_PRETTY_PRINT);
+        //$categorys = implode(",", $categorys);
 
         //Item_pulldown_temporarilyにインポートされたpulldownのAJAXデータを取り出す
         $tempo = new Item_pulldown_temporarily();
@@ -197,7 +196,7 @@ class ItemController extends Controller
             $name = Pulldown_set::find($n)->name;
             $id = Pulldown_set::find($n)->id;
             $data=array('id'=>$id,'name'=>$name);
-            array_push( $left , $data );
+            array_push($left, $data);
         }
 
 
@@ -207,7 +206,7 @@ class ItemController extends Controller
             $name = Pulldown_set::find($n)->name;
             $id = Pulldown_set::find($n)->id;
             $data=array('id'=>$id,'name'=>$name);
-            array_push( $right , $data );
+            array_push($right, $data);
         }
 
 

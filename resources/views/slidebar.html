@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" id="page-home-css" href="http://127.0.0.1:8000/stylesheet/app.css" type="text/css" media="all">
+	<link rel="stylesheet" id="page-home-css" href="http://127.0.0.1:8000/stylesheet/home.css" type="text/css" media="all">
+</head>
+<body>
+    <!--横スライド-->
+			<div id="flick-wrap" class="flicking-wrap">
+				<div class="flicking-arrow flicking-arrow-prev is-disabled">
+					<svg width="24" height="24">
+						<path fill="currentColor" d="M17.51 3.87 15.73 2.1 5.84 12l9.9 9.9 1.77-1.77L9.38 12z"></path>
+					</svg>
+				</div>
+				<div class="flicking-arrow flicking-arrow-next">
+					<svg width="24" height="24">
+						<path fill="currentColor" d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"></path>
+					</svg>
+				</div>
+				
+				<div class="container">
+					<div id="flick" class="flicking-viewport"
+						style="touch-action: none; user-select: none; -webkit-user-drag: none;">
+						<div class="d-flex flex-nowrap home-slider flicking-camera" style="transform: translate(0px);">
+							<div class="d-flex column" id="main-om-cat-banner">
+								<div class="tile home-slider__tile home-slider__tile_om">
+									<div class="tile__suptitle">Ready to use</div>
+
+									<div class="tile__title">PSD Object <br>Mockups / <span id="mockups-cats"
+											class="home-slider__cats"><span id="om-main-slider-ap-title"
+												class=" is-active" style="color: #FFA803;">Apparel</span><span
+												id="om-main-slider-pk-title" class=""
+												style="color: #F8434A;">Packaging</span><span
+												id="om-main-slider-vh-title" class=""
+												style="color: #7A18FF;">Vehicle</span><span id="om-main-slider-dv-title"
+												class="" style="color: #3ED5F8;">Device</span></span></div>
+
+									<div class="tile__text">Exclusive object mockups for <br>branding and packaging
+										design</div>
+									<div class="home-slider__middle">
+										<p><span>$1.5</span></p>
+										<p>For Membership <br><a
+												href="https://yellowimages.com/yellow-ticket">holders</a></p>
+										<div class="d-flex home-slider__bullets">
+											<div class="home-slider__bullet is-active" style="color: #FFA803;"
+												data-url="/all/objects/apparel-mockups"></div>
+											<div class="home-slider__bullet" style="color: #F8434A;"
+												data-url="/all/objects/packaging-mockups"></div>
+											<div class="home-slider__bullet" style="color: #7A18FF;"
+												data-url="/all/objects/vehicle-mockups"></div>
+											<div class="home-slider__bullet" style="color: #3ED5F8;"
+												data-url="/all/objects/device-mockups"></div>
+										</div>
+									</div>
+									<div class="home-slider__mockups">
+
+										<!--横スライドバー１-->
+										<img id="om-main-slider-ap-img"
+											class="tile__image home-slider__image home-slider__image_ap" width="286"
+											height="318" draggable="false"
+											src="http://127.0.0.1:8000/img/yimgslideom1x2.avif"
+											srcset="http://127.0.0.1:8000/img/yimgslideom1x2.avif"
+											alt="Apparel PSD Mockups">
+
+									</div>
+
+									<a id="mockups-button" class="pill pill_black"
+										href="https://yellowimages.com/all/objects/apparel-mockups">Explore now</a>
+									<a id="mockups-overlay" class="home-slider__link"
+										href="https://yellowimages.com/all/objects/apparel-mockups"></a>
+								</div>
+							</div>
+
+
+
+							<!--横スライドバー2-->
+							<div class="d-flex column" id="provisual-main-slider">
+								<a href="https://yellowimages.com/yellow-ticket" class="tile home-slider__tile">
+									<div class="tile__suptitle" style="color: rgb(143, 147, 156) !important;">Pick Scary
+										Monster plan &amp; Save!</div>
+
+									<div class="tile__title" style="color: rgb(255, 255, 255) !important;">50% OFF Scary
+										<br>Monster Plan!</div>
+
+									<div class="tile__text" style="color: rgb(143, 147, 156) !important;">Save up and
+										keep renewing<br>with 50% OFF monthly!</div>
+									<div class="pill pill_black">Treat yourself ➜</div>
+									<img class="tile__image" width="270" height="304" draggable="false"
+										src="http://127.0.0.1:8000/img/yimgpromoslider.png"
+										srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/b2017e7d-b23c-4922-ec0b-63a7a95eae00/yimgpromosliderx2 2x"
+										alt="yellow images halloween moster plan 2023 promo"
+										xmlns="http://www.w3.org/1999/xhtml"
+										style="width: 384px !important; height: 512px !important;">
+								</a>
+							</div>
+
+
+
+							<!--横スライドバー3-->
+							<div class="d-flex column" id="png-main-slider">
+								<a href="https://provisual.app/?__hstc=48318713.bfa9981391c14a9f76f3826d176277be.1698842394352.1698842394352.1698842394352.1&amp;__hssc=48318713.1.1698842394353&amp;__hsfp=3963434540"
+									class="tile home-slider__tile home-slider__tile_provisual_1" target="_blank">
+									<div class="tile__suptitle" style="color: #696C73!important;">Create. Visualize.
+										Present.</div>
+									<div class="tile__title" style="color: rgb(255, 255, 255) !important;">ProVisual.app
+										<br>is now available!</div>
+									<div class="tile__text">online 3D visualization studio <br>you can use anywhere
+									</div>
+									<div class="pill pill_black">Try for free</div> <img class="tile__image" width="382"
+										height="514" draggable="false"
+										src="http://127.0.0.1:8000/img/yimgslidepvx2.avif"
+										srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/29adbb3f-f093-4623-8a92-852559fa0700/yimgslidepvx2 2x"
+										alt="ProVisual.app is now available!">
+								</a>
+							</div>
+
+							<!--横スライドバー4-->
+							<div class="d-flex column" id="cs-main-slider">
+								<a href="https://yellowimages.com/all/store"
+									class="tile home-slider__tile home-slider__tile_cs">
+									<div class="tile__suptitle">Graphic assets</div>
+
+									<div class="tile__title">Creative <br>Store</div>
+
+									<div class="tile__text">Fonts, Graphics, Textures, <br>UI Kits, etc.</div>
+									<div class="pill pill_black pill_round">
+										<svg width="24" height="24">
+											<use xlink:href="#arrow-right"></use>
+										</svg>
+									</div>
+
+									<img class="tile__image" width="299" height="335" draggable="false"
+										src="./img/yimgslidecs.png"
+										srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/08a6f98c-98ac-4062-0c1c-d1a897950a00/yimgslidecsx2 2x"
+										alt="Creative Store">
+								</a>
+							</div>
+
+
+
+							<!--横スライドバー5-->
+							<div class="d-flex column" id="cf-main-slider">
+								<a href="https://yellowimages.com/creative-fonts/all"
+									class="tile home-slider__tile home-slider__tile_cf">
+									<div class="tile__suptitle">Every letter is awesome</div>
+
+									<div class="tile__title">PNG Alphabets <br>and Letters</div>
+
+									<div class="tile__text">Neon, food, industrial, tech, <br>sweets and more</div>
+									<div class="pill pill_black pill_round">
+										<svg width="24" height="24">
+											<use xlink:href="#arrow-right"></use>
+										</svg>
+									</div>
+
+									<img class="tile__image" width="225" height="303" draggable="false"
+										src="./img/yimgslidecf.png"
+										srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/358d6282-9095-4ee1-4339-35d1d49eb800/yimgslidecfx2 2x"
+										alt="PNG Alphabets and Letters">
+								</a>
+							</div>
+
+							<div class="d-flex column" id="cj-main-slider">
+								<a href=""
+									class="tile home-slider__tile home-slider__tile_jobs">
+									<div class="tile__suptitle">Service / Hire a pro</div>
+
+									<div class="tile__title">Can't find what <br>you need? <span class="grey">Custom job
+											service is here.</span></div>
+
+									<div class="d-flex flex-column align-items-start home-slider__jobs">
+										<div class="home-slider__job">3D Design</div>
+										<div class="home-slider__job">PSD Mockups</div>
+										<div class="home-slider__job">3D Visualization</div>
+										<div class="home-slider__job">3D Modeling</div>
+										<div class="home-slider__job">Sequences</div>
+									</div>
+
+									<div class="pill pill_black">Explore now</div>
+
+									<img class="tile__image" width="220" height="311" draggable="false"
+										src="./img/yimgslidejobs.png"
+										srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/f96b9ec9-b37b-478b-7db2-52706b176a00/yimgslidejobsx2 2x"
+										alt="Hire a pro">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<script src="http://127.0.0.1:8000/javascript/app-head.js"></script>
+			<script src="http://127.0.0.1:8000/javascript/home.js"></script>
+
+
+</body>
+</html>
