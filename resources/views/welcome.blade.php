@@ -274,33 +274,35 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/1.png') }}">
+						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/1.png') }}"
+						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}"
 						  alt="T-シャツ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/2.png') }}">
+						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/2.png') }}"
+						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}"
 						  alt="T-シャツ">
 					  </div>
+
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/3.png') }}">
+						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/3.png') }}"
+						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}"
 						  alt="T-シャツ">
 					  </div>
+
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/4.png') }}">
+						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/4.png') }}"
+						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}"
 						  alt="T-シャツ">
 					  </div>
 					</div>
@@ -324,34 +326,36 @@
 				  title="ポロシャツ">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
+
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/1.jpg') }}">
+						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-002_L.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/1.jpg') }}"
+						  src="{{ asset('storage/image/top_page/polo/00100-VP-002_L.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
+
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/2.jpg') }}">
+						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-005_L.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/2.jpg') }}"
+						  src="{{ asset('storage/image/top_page/polo/00100-VP-005_L.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/3.jpg') }}">
+						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-010_L.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/3.jpg') }}"
+						  src="{{ asset('storage/image/top_page/polo/00100-VP-010_L.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/4.jpg') }}">
+						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-011_L.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/4.jpg') }}"
+						  src="{{ asset('storage/image/top_page/polo/00100-VP-011_L.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					</div>
@@ -374,33 +378,34 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1606000/1606281/2573518-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2573518-cover.jpg"
+						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}"
 						  alt="スウェット">
 					  </div>
 					</div>
+
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1805000/1805798/2904321-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2904321-cover.jpg"
+						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}"
 						  alt="スウェット">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1804000/1804842/2902715-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2902715-cover.jpg"
+						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}"
 						  alt="スウェット">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1658000/1658356/2655134-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2655134-cover.jpg"
+						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}"
 						  alt="スウェット">
 					  </div>
 					</div>
@@ -423,33 +428,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/716000/716408/1229651-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-138_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1229651-cover.jpg"
+						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-138_L.png')}}"
 						  alt="ジャージ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/653000/653582/1132034-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-178_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1132034-cover.jpg"
+						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-178_L.png')}}"
 						  alt="ジャージ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1443000/1443820/2344032-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-182_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2344032-cover.jpg"
+						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-182_L.png')}}"
 						  alt="ジャージ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1349000/1349213/2214764-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-481_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2214764-cover.jpg"
+						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-481_L.png')}}"
 						  alt="ジャージ">
 					  </div>
 					</div>
@@ -475,33 +480,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843443/1438418-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-005_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1438418-cover.jpg"
+						  src="{{ asset('storage/image/top_page/outer/00049-FC-005_L.png')}}"
 						  alt="アウター">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1276000/1276325/2113187-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-010_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2113187-cover.jpg"
+						  src="{{ asset('storage/image/top_page/outer/00049-FC-010_L.png')}}"
 						  alt="アウター">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1258000/1258586/2087190-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-011_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2087190-cover.jpg"
+						  src="{{ asset('storage/image/top_page/outer/00049-FC-011_L.png')}}"
 						  alt="アウター">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/720000/720287/1238363-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-015_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1238363-cover.jpg"
+						  src="{{ asset('storage/image/top_page/outer/00049-FC-015_L.png')}}"
 						  alt="アウター">
 					  </div>
 					</div>
@@ -528,33 +533,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://s3-eu-west-1.amazonaws.com/yi-files/content/2019/03/5c8a491e41450.jpg">
+						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-030_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/5c8a491e41450.jpg"
+						  src="{{ asset('storage/image/top_page/pants/00220-MHP-030_L.png')}}"
 						  alt="パンツ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234363/2051523-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-037_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2051523-cover.jpg"
+						  src="{{ asset('storage/image/top_page/pants/00220-MHP-037_L.png')}}"
 						  alt="パンツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234340/2051466-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-039_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2051466-cover.jpg"
+						  src="{{ asset('storage/image/top_page/pants/00220-MHP-039_L.png')}}"
 						  alt="パンツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234314/2051403-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-112_L.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2051403-cover.jpg"
+						  src="{{ asset('storage/image/top_page/pants/00220-MHP-112_L.png')}}"
 						  alt="パンツ">
 					  </div>
 					</div>
@@ -577,33 +582,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095900/1832845-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/bag/00778-TCC-010_SM.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1832845-cover.jpg"
+						  src="{{ asset('storage/image/top_page/bag/00778-TCC-010_SM.png')}}"
 						  alt="バッグp">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095803/1832611-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/bag/00778-TCC-031_SM.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1832611-cover.jpg"
+						  src="{{ asset('storage/image/top_page/bag/00778-TCC-031_SM.png')}}"
 						  alt="バッグ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095929/1833037-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/bag/00778-TCC-034_S.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1833037-cover.jpg"
+						  src="{{ asset('storage/image/top_page/bag/00778-TCC-034_S.png')}}"
 						  alt="バッグ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1095000/1095816/1832638-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/bag/00778-TCC-037_SM.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1832638-cover.jpg"
+						  src="{{ asset('storage/image/top_page/bag/00778-TCC-037_SM.png')}}"
 						  alt="バッグ">
 					  </div>
 					</div>
@@ -629,33 +634,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/802000/802939/1369837-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-302_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1369837-cover.jpg"
+						  src="{{ asset('storage/image/top_page/cap/00700-EVM-302_F.png')}}"
 						  alt="キャップ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843643/1440777-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-303_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1440777-cover.jpg"
+						  src="{{ asset('storage/image/top_page/cap/00700-EVM-303_F.png')}}"
 						  alt="キャップ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/819000/819776/1399880-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-304_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1399880-cover.jpg"
+						  src="{{ asset('storage/image/top_page/cap/00700-EVM-304_F.png')}}"
 						  alt="キャップ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/811000/811573/1386268-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-305_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1386268-cover.jpg"
+						  src="{{ asset('storage/image/top_page/cap/00700-EVM-305_F.png')}}"
 						  alt="キャップ">
 					  </div>
 					</div>
@@ -680,33 +685,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843443/1438418-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/towel/00522-FT-024_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1438418-cover.jpg"
+						  src="{{ asset('storage/image/top_page/towel/00522-FT-024_F.png')}}"
 						  alt="タオル">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1276000/1276325/2113187-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/towel/00522-FT-132_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2113187-cover.jpg"
+						  src="{{ asset('storage/image/top_page/towel/00522-FT-132_F.png')}}"
 						  alt="タオル">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1258000/1258586/2087190-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/towel/00522-FT-133_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2087190-cover.jpg"
+						  src="{{ asset('storage/image/top_page/towel/00522-FT-133_F.png')}}"
 						  alt="タオル">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/720000/720287/1238363-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/towel/00522-FT-134_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1238363-cover.jpg"
+						  src="{{ asset('storage/image/top_page/towel/00522-FT-134_F.png')}}"
 						  alt="タオル">
 					  </div>
 					</div>
@@ -730,33 +735,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://s3-eu-west-1.amazonaws.com/yi-files/content/2019/03/5c8a491e41450.jpg">
+						data-tn1="{{ asset('storage/image/top_page/club/00775-NSB-010_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/5c8a491e41450.jpg"
+						  src="{{ asset('storage/image/top_page/club/00775-NSB-010_F.png')}}"
 						  alt="部活">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234363/2051523-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/club/00775-NSB-015_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2051523-cover.jpg"
+						  src="{{ asset('storage/image/top_page/club/00775-NSB-015_F.png')}}"
 						  alt="部活">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234340/2051466-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/club/00775-NSB-030_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2051466-cover.jpg"
+						  src="{{ asset('storage/image/top_page/club/00775-NSB-030_F.png')}}"
 						  alt="部活">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1234000/1234314/2051403-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/club/00775-NSB-033_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/2051403-cover.jpg"
+						  src="{{ asset('storage/image/top_page/club/00775-NSB-033_F.png')}}"
 						  alt="部活">
 					  </div>
 					</div>
@@ -831,33 +836,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/802000/802939/1369837-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/others/00800-NEH-010_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1369837-cover.jpg"
+						  src="{{ asset('storage/image/top_page/others/00800-NEH-010_F.png')}}"
 						  alt="その他">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/843000/843643/1440777-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/others/00800-NEH-015_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1440777-cover.jpg"
+						  src="{{ asset('storage/image/top_page/others/00800-NEH-015_F.png')}}"
 						  alt="その他">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/819000/819776/1399880-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/others/00800-NEH-020_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1399880-cover.jpg"
+						  src="{{ asset('storage/image/top_page/others/00800-NEH-020_F.png')}}"
 						  alt="その他">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/811000/811573/1386268-cover.jpg">
+						data-tn1="{{ asset('storage/image/top_page/others/00800-NEH-025_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/1386268-cover.jpg"
+						  src="{{ asset('storage/image/top_page/others/00800-NEH-025_F.png')}}"
 						  alt="その他">
 					  </div>
 					</div>

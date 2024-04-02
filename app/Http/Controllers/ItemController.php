@@ -83,7 +83,10 @@ class ItemController extends Controller
 
         //カテゴリ
         $categorys = $request->input('category');
-        $categorys = json_encode($categorys, JSON_PRETTY_PRINT);
+        //$categorys = json_encode($categorys, JSON_PRETTY_PRINT);
+        $categorys = str_replace("\r\n", '', $categorys);
+        $categorys = serialize($categorys);
+        //dd($categorys);
         //$categorys = implode(",", $categorys);
 
         //Item_pulldown_temporarilyにインポートされたpulldownのAJAXデータを取り出す
