@@ -53,6 +53,7 @@ class PulldownController extends Controller
                 'input_column1' => $request->input_column1,
                 'input_column2' => $request->input_column2,
                 'input_column3' => $request->input_column3,
+                'with_color_button' => $request->with_color_button,
             ]));
             //メインを保存
             $pulldown->save();
@@ -99,6 +100,7 @@ class PulldownController extends Controller
             $pulldown->input_column1 = $request->input_column1;
             $pulldown->input_column2 = $request->input_column2;
             $pulldown->input_column3 = $request->input_column3;
+            $pulldown->with_color_button = $request->with_color_button;
             $pulldown->save();
 
             $n = 0;
@@ -157,9 +159,15 @@ class PulldownController extends Controller
     {
         $set_show = Pulldown_set::where('id', $id)->first();
         $name = $set_show->name;
+
         $leftside = unserialize($set_show->leftside);
+        $leftside = Pulldown::all();
+        $left=$leftside;
+
         $rightside = unserialize($set_show->rightside);
+
         $record_id = $id;
+        /*
         if ($leftside !== null) {
             foreach ($leftside as $n) {
                 $left[] = Pulldown::find($n);
@@ -167,15 +175,16 @@ class PulldownController extends Controller
         } else {
             $left = "";
         }
+        */
         if ($rightside !== null) {
             foreach ($rightside as $n) {
                 $right[] = Pulldown::find($n);
             }
-        }else{
-            $right="";
+        } else {
+            $right = "";
         }
         //return view('pulldown.set_show', compact('name','leftside','rightside'));
-        return view('pulldown.set_show', compact('name', 'left', 'right' ,'record_id'));
+        return view('pulldown.set_show', compact('name', 'left', 'right', 'record_id'));
     }
 
 
@@ -222,6 +231,7 @@ class PulldownController extends Controller
                 'input_column3' => $request->input_column3,
                 'sequence' => $request->sequence,
                 'attribution' => $request->attribution,
+                'with_color_button' => $request->with_color_button,
             ]
         );
         $pulldown->save();
@@ -231,16 +241,20 @@ class PulldownController extends Controller
         $ids = $request->ids; //レコードIDの配列
 
         $n = 0;
-        foreach ($details as $item) {
-            $data[] = [
-                'id' => $ids[$n],
-                'name' => $item,
-                'price' => mb_convert_kana($prices[$n], "n"), //半角数字に変換
-                'pulldown_id' => $request->id,
-            ];
-            $n += 1;
+
+        //左片胸色名などプルダウンの内容がない場合もある
+        if ($details != null) {
+            foreach ($details as $item) {
+                $data[] = [
+                    'id' => $ids[$n],
+                    'name' => $item,
+                    'price' => mb_convert_kana($prices[$n], "n"), //半角数字に変換
+                    'pulldown_id' => $request->id,
+                ];
+                $n += 1;
+            }
+            Pulldown_detail::upsert($data, ['id'], ['name', 'price']); //レコードIDが同じもので比較して$dataで更新、レコードIDが無ければ追加
         }
-        Pulldown_detail::upsert($data, ['id'], ['name', 'price']); //レコードIDが同じもので比較して$dataで更新、レコードIDが無ければ追加
 
         return redirect('pulldown/list')->with('flash_message', '更新しました');
     }
@@ -256,26 +270,24 @@ class PulldownController extends Controller
     {
         DB::beginTransaction();
         try {
-          $pulldown = Pulldown::where('id', $request->id)->first();
-          $pulldown->delete(); 
-          DB::commit();
-          return redirect('pulldown/list')->with('flash_message', '削除しました');
+            $pulldown = Pulldown::where('id', $request->id)->first();
+            $pulldown->delete();
+            DB::commit();
+            return redirect('pulldown/list')->with('flash_message', '削除しました');
         } catch (\Exception $e) {
-
         }
     }
 
 
-    public function detailsdestroy($detailId,$postId)
+    public function detailsdestroy($detailId, $postId)
     {
- 
+
         DB::beginTransaction();
         try {
-          $pulldown_detail = Pulldown_detail::where('id', $detailId)->first();
-          $pulldown_detail->delete(); 
-          DB::commit();
+            $pulldown_detail = Pulldown_detail::where('id', $detailId)->first();
+            $pulldown_detail->delete();
+            DB::commit();
         } catch (\Exception $e) {
-
         }
         $post = Pulldown::where('id', $postId)->with('pulldown_detail')->first();
         $details = $post->pulldown_detail;
@@ -305,10 +317,9 @@ class PulldownController extends Controller
     //レコード複製(クローン)
     public function clone($id)
     {
-        $pulldown=Pulldown::findOrfail($id);
-        $new_pulldown=$pulldown->duplicate();
+        $pulldown = Pulldown::findOrfail($id);
+        $new_pulldown = $pulldown->duplicate();
         $new_pulldown->save();
         return redirect('pulldown/list')->with('flash_message', '複製しました');
     }
-
 }

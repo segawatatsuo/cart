@@ -48,6 +48,11 @@
                                     @foreach ($list as $line)
                                         <tr>
                                             <td>
+                                                <a href={{ route('item.show', $line->id) }}>
+                                                {{ $line->number }}
+                                                </a>
+                                            </td>
+                                            <td>
                                                 <a href={{ route('item.show', $line->id) }}>{{ $line->name }}</a>
                                             </td>
                                         </tr>
@@ -61,8 +66,11 @@
                     </div>
                 </div>
             @stop
+        <!--
+        If this happens, the black bar on the left side will be cut off.
         </div>
-</section>
+        </section>
+        -->
 
 
 @section('css')

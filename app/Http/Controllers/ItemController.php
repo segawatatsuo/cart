@@ -83,6 +83,7 @@ class ItemController extends Controller
 
         //カテゴリ
         $categorys = $request->input('category');
+        dd($categorys);
         //$categorys = json_encode($categorys, JSON_PRETTY_PRINT);
         $categorys = str_replace("\r\n", '', $categorys);
         $categorys = serialize($categorys);
@@ -159,63 +160,45 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        //\App\Models\ImageUpload::truncate(); //商品登録にアクセスしたら画像アップテーブルを初期化する。
-        //\App\Models\Item_pulldown_temporarily::truncate();
-
         $item = Item::find($id);
-
         //カテゴリー
         $projects = Category::get()->toTree(); //ツリー形式
         //プルダウンセット
         $pulldown_sets = Pulldown_set::all();
 
         $selected_category = $item->category;
-        $selected_category = str_replace('"', '', $selected_category); //"を削除
-        $selected_category = json_encode($selected_category); //JSON
+        //$selected_category = str_replace('"', '', $selected_category); //"を削除
+        //$selected_category = json_encode($selected_category); //JSON
+
 
         //プルダウンの選択されたものを送る
         $set_show = Item::where('id', $id)->first();
 
-        $leftside = unserialize($set_show->pulldown_leftside);//配列
-        $rightside = unserialize($set_show->pulldown_rightside);//配列
+        $leftside = unserialize($set_show->pulldown_leftside); //配列
+        $rightside = unserialize($set_show->pulldown_rightside); //配列
 
+        if ($leftside != "" and $rightside != "") {
+            $x = 0;
+            $left = [];
+            foreach ($leftside as $n) {
+                $name = Pulldown_set::find($n)->name;
+                $id = Pulldown_set::find($n)->id;
+                $data = array('id' => $id, 'name' => $name);
+                array_push($left, $data);
+            }
 
-        //$a = Pulldown_set::find(2);
-        //dd($a->id);
-        //dd( $leftside);
-
-        /*
-        $x=0;
-        $left=[];
-        $a = Pulldown_set::find(5);
-        $hoge=array("id"=>$a->id,"name"=>$a->name);
-        array_push( $left , $hoge );
-        dd($left);
-        */
-
-        $x=0;
-        $left= [];
-        foreach ($leftside as $n) {
-            $name = Pulldown_set::find($n)->name;
-            $id = Pulldown_set::find($n)->id;
-            $data=array('id'=>$id,'name'=>$name);
-            array_push($left, $data);
+            $x = 0;
+            $right = [];
+            foreach ($rightside as $n) {
+                $name = Pulldown_set::find($n)->name;
+                $id = Pulldown_set::find($n)->id;
+                $data = array('id' => $id, 'name' => $name);
+                array_push($right, $data);
+            }
+        } else {
+            $left="";
+            $right="";
         }
-
-
-        $x=0;
-        $right= [];
-        foreach ($rightside as $n) {
-            $name = Pulldown_set::find($n)->name;
-            $id = Pulldown_set::find($n)->id;
-            $data=array('id'=>$id,'name'=>$name);
-            array_push($right, $data);
-        }
-
-
-
-
-        //dd($left);
 
         //関連テーブルのimagesに登録された画像一覧配列を取得
         $images = $item->images;
@@ -272,8 +255,8 @@ class ItemController extends Controller
         $item->number = $request->number;
         $item->name = $request->name;
         $item->category = $categorys;
-        $item->size = $request->size;
-        $item->color = $request->color;
+        //$item->size = $request->size;
+        //$item->color = $request->color;
         $item->head_copy = $request->head_copy;
         $item->description = $request->description;
         $item->recommend = $request->recommend;

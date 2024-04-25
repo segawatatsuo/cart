@@ -17,4 +17,13 @@ class Sku extends Model
         return $this->belongsTo( Item::class,'item_number','number' );
     }
 
+    public function skusortorder()
+    {
+        return $this->hasMany( SkuSortOrder::class,'size','size' );
+    }
+
+    public function items()
+    {
+        return $this->belongsTo(Item::class,'number');
+    }
 }

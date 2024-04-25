@@ -42,7 +42,6 @@
                     <div class="col-6 pt-3 pb-3">
                         <label for="name">プルダウン</label>
                         <div id="LeftSide" class="list-group col sortable">
-
                             @php $n=1; @endphp
                             @foreach ($pulldowns as $pulldown)
                                 <div class="list-group-item" data-id="{{ $pulldown->id }}">{{ $pulldown->inside_name }}</div>

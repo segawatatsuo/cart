@@ -3,7 +3,7 @@
       <div class="col-12 col-md">
         <!--<img class="mb-2" src="./image/logo/logo.jpg" alt="" width="193" height="14">-->
         <h5>UNIFORMLAB</h5>
-        <small class="d-block mb-3">&copy; 2014–2024</small>
+        <small class="d-block mb-3">&copy; 2010–2024</small>
       </div>
       <div class="col-6 col-md">
         <h5>お支払い</h5>

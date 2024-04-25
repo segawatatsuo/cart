@@ -13,13 +13,13 @@ class ThanksMail extends Mailable
 {
     use Queueable, SerializesModels;
 
+    public $content;
     /**
      * Create a new message instance.
      */
-    public function __construct($name, $email)
+    public function __construct(array $content)
     {
-        $this->name = $name;
-        $this->email = $email;
+        $this->content = $content;
     }
 
     /**
@@ -29,36 +29,33 @@ class ThanksMail extends Mailable
      */
     public function build()
     {
-        return $this->to($this->email)
-            ->subject('テストタイトル')
-            ->view('mail.thanks')
-            ->with([
-                'name' => $this->name,
-            ]);
+        return $this->from('segawa82@nifty.com') // 送信元
+        ->subject('ご注文ありがとうございます') // メールタイトル
+        ->view('mail.thanks') // どのテンプレートを呼び出すか
+        ->with(['content' => $this->content]); // withオプションでセットしたデータをテンプレートへ受け渡す
     }
-
 
 
     /**
      * Get the message envelope.
      */
+    /*
     public function envelope(): Envelope
     {
         return new Envelope(
             subject: 'Thanks Mail',
         );
     }
-
+    */
     /**
      * Get the message content definition.
      */
+    /*
     public function content(): Content
     {
-        return new Content(
-            view: 'view.name',
-        );
-    }
 
+    }
+    */
     /**
      * Get the attachments for the message.
      *

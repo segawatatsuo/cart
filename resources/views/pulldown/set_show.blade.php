@@ -45,13 +45,15 @@
                                     <div class="col-6 pt-3 pb-3">
                                         <label for="LeftSide">プルダウン</label>
                                         <div id="LeftSide" class="list-group col sortable">
-                                            @if(is_array($left))
+
+
                                             @php $n=1; @endphp
-                                            @foreach ($left as $item)
-                                                <div class="list-group-item" data-id="{{ $item->id ?? 'No category, deleted ?' }}">{{ $item->name ?? 'No category name' }}</div>
+                                            @foreach ($left as $pulldown)
+                                            <div class="list-group-item" data-id="{{ $pulldown->id }}">{{ $pulldown->inside_name }}</div>
                                                 @php $n+=1; @endphp
-                                            @endforeach
-                                            @endif
+                                                @endforeach
+
+                                            
                                         </div>
                                     </div>
                 

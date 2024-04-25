@@ -56,6 +56,15 @@
                                 </div>
 
                                 <div class="form-group">
+                                <label for="">スタイル選択ボタン</label><br>
+                                <select id="with_color_button" name="with_color_button" class="form-control" v-model="params.with_color_button" >
+                                    <option value="">なし</option>
+                                    <option value="with_color_button">色選択ボタン使用</option>
+                                    <option value="character_input">文字入力欄</option>
+                                </select>
+                                </div>
+
+                                <div class="form-group">
                                     <label for="name">手入力項目1</label>
                                     <input type="text" class="form-control" v-model="params.input_column1" placeholder="">
                                 </div>

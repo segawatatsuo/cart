@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\PulldownSetController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\ListController;
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
 use App\Http\Controllers\ColorAttributionController;
+
 use App\Models\Sku;
 use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
 
@@ -153,9 +155,6 @@ Route::get('product/back', [ProductController::class,'back'])->name('product.bac
 
 //--------------------カート---------------------//
 
-
-
-
 Route::resource('ajax/products', App\Http\Controllers\Ajax\ProductController::class)->only(['index']);
 Route::resource('ajax/carts', App\Http\Controllers\Ajax\CartController::class)->only(['index', 'store', 'destroy']);
 Auth::routes();
@@ -191,17 +190,26 @@ Route::get('cartAdd/index', [CartController::class,'index'])->name('cartAdd.inde
 Route::get('cartAdd/show', [CartController::class,'show'])->name('cartAdd.show');
 
 //住所入力
+Route::post('cartAdd/address', [CartController::class,'address'])->name('cartAdd.address');
 Route::get('cartAdd/address', [CartController::class,'address'])->name('cartAdd.address');
+
 //確認画面
-Route::get('cartAdd/confirm', [CartController::class,'confirm'])->name('cartAdd.confirm');
+Route::post('cartAdd/confirm', [CartController::class,'confirm'])->name('cartAdd.confirm');
+
 //注文確定
-Route::get('cartAdd/order', [CartController::class,'order'])->name('cartAdd.order');
-//Thanksメール送信
-Route::get('/mail/send', [MailController::class,'send'])->name('mail.send');
+//Route::get('cartAdd/order', [CartController::class,'order'])->name('cartAdd.order');
+
+//サンクスメール
+Route::post('cartAdd/order',[MailController::class,'orderMail'])->name('cartAdd.order');
 
 //カート１商品づつ削除
-Route::post('cartAdd/{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
-Route::get('cartAdd/{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
+Route::post('cartAdd/destroy{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
+Route::get('cartAdd/destroy{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
 
 //カート全商品削除
-Route::get('clear', [CartController::class, 'clear'])->name('clear');
+Route::get('cartAdd/allclear', [CartController::class, 'allclear'])->name('cartAdd.allclear');
+
+Route::post('cartAdd/delete', [CartController::class, 'delete'])->name('cartAdd.delete');
+Route::get('cartAdd/delete', [CartController::class, 'delete'])->name('cartAdd.delete');
+
+

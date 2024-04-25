@@ -3,7 +3,7 @@
     <div class="col-12 col-md">
       <!--<img class="mb-2" src="./image/logo/logo.jpg" alt="" width="193" height="14">-->
       <h5>UNIFORMLAB</h5>
-      <small class="d-block mb-3">&copy; 2014–2024</small>
+      <small class="d-block mb-3">&copy; 2010–2024</small>
     </div>
     <div class="col-6 col-md">
       <h5>お支払い</h5>
@@ -65,6 +65,9 @@
 
 
 
+
+
+
 <!--色モーダル-->
 <div class="modal fade" id="ColorSelectModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
   <div class="modal-dialog modal-xl">
@@ -75,87 +78,19 @@
       </div>
 
       <div class="modal-body">
-        <form action="https://iiyama.sakura.ne.jp/cart/cartAdd/index" method="post">
+        <form action="{{ asset('/cartAdd/index') }}" method="post">
           <div class="container">
             <div class="row">
+              @foreach ( $color_array as $color )
               <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                 <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select" id="1" data-id='mk10' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/mk10.jpg" alt="">
-                    <div>mk10</div>
+                  <button type="submit" class="btn select" id="1" data-id='{{ $color->display_name }}' data-bs-dismiss="modal">
+                    <img class="card-img-top" src="{{ asset('storage') }}{{ $color->path }}/{{ $color->name }}" alt="">
+                    <div>{{ $color->display_name }}</div>
                   </button>
                 </div>
               </div>
-
-              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select" id="1" data-id='me41' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/me41.jpg" alt="">
-                    <div>me41</div>
-                  </button>
-                </div>
-              </div>
-
-              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select" id="1" data-id='mj03' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/mj03.jpg" alt="">
-                    <div>mj03</div>
-                  </button>
-                </div>
-              </div>
-
-              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select" id="1" data-id='me55' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/me55.jpg" alt="">
-                    <div>me55</div>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-
-
-            <div class="row">
-
-              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select" id="1" data-id='mj09' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/mj09.jpg" alt="">
-                    <div>mj09</div>
-                  </button>
-                </div>
-              </div>
-
-
-              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select" id="1" data-id='mj48' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/mj48.jpg" alt="">
-                    <div>mj48</div>
-                  </button>
-                </div>
-              </div>
-
-              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select" id="1" data-id='mk18' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/mk18.jpg" alt="">
-                    <div>mk18</div>
-                  </button>
-                </div>
-              </div>
-
-              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                <div class="card " style="border: 0; padding:0">
-                  <button type="submit" class="btn select item_color" id="1" data-id='mk33' data-bs-dismiss="modal">
-                    <img class="card-img-top" src="https://iiyama.sakura.ne.jp/cart/images/colors/mk33.jpg" alt="">
-                    <div>mk33</div>
-                  </button>
-                </div>
-              </div>
-
+              @endforeach
             </div>
           </div>
         </form>
@@ -169,7 +104,41 @@
 </div>
 <!--色モーダル-->
 
+<!--書体モーダル-->
+<div class="modal fade" id="FontSelectModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">書体見本</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+      </div>
 
+      <div class="modal-body">
+        <form action="{{ asset('/cartAdd/index') }}" method="post">
+          <div class="container">
+            <div class="row">
+              @foreach ( $font_array as $font )
+              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="card " style="border: 0; padding:0">
+                  <button type="submit" class="btn select" id="1" data-id='{{ $font->name }}' data-bs-dismiss="modal">
+                    <img class="card-img-top" src="{{ asset('storage') }}{{ $font->path }}/{{ $font->name }}" alt="">
+                    <div>{{ $font->name }}</div>
+                  </button>
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--書体モーダル-->
 
 
 <!--ユニフォームカラーモーダル-->
@@ -182,67 +151,24 @@
       </div>
 
       <div class="modal-body">
-        <form action="https://iiyama.sakura.ne.jp/cart/cartAdd/index" method="post">
+        <form action="{{ asset('/cartAdd/index') }}" method="post">
           <div class="row">
-
+            @foreach ($colors as $key => $data)
             <div class="col-6 col-sm-4 col-md-3 col-lg-3">
               <div class="card" style="border: 0; padding:0">
-                <button type="submit" class="btn select item_color" id="1" data-id='ネイビー' data-bs-dismiss="modal"
-                  data-sku='p175_01'>
+                <button type="submit" class="btn select item_color" id="1" data-id='{{ $data->color_display_name }}' data-bs-dismiss="modal"
+                  data-sku='{{ $data->image_name }}'>
                   <img class="card-img-top"
-                    src="https://iiyama.sakura.ne.jp/cart/storage/image/detail/p175/p175_01.png" alt="">
-                  <div>ネイビー</div>
+                  src="{{ asset('/storage/image/detail').'/'.$item->number .'/'.$data->image_name}}" alt="">
+                  <div>{{ $data->color_display_name }}</div>
                 </button>
               </div>
             </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-              <div class="card" style="border: 0; padding:0">
-                <button type="submit" class="btn select item_color" id="1" data-id='ブラック' data-bs-dismiss="modal"
-                  data-sku='p175_34'>
-                  <img class="card-img-top"
-                    src="https://iiyama.sakura.ne.jp/cart/storage/image/detail/p175/p175_34.png" alt="">
-                  <div>ブラック</div>
-                </button>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-              <div class="card" style="border: 0; padding:0">
-                <button type="submit" class="btn select item_color" id="1" data-id='ブルー' data-bs-dismiss="modal"
-                  data-sku='p175_03'>
-                  <img class="card-img-top"
-                    src="https://iiyama.sakura.ne.jp/cart/storage/image/detail/p175/p175_03.png" alt="">
-                  <div>ブルー</div>
-                </button>
-              </div>
-            </div>
-
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-              <div class="card" style="border: 0; padding:0">
-                <button type="submit" class="btn select item_color" id="1" data-id='ホワイト' data-bs-dismiss="modal"
-                  data-sku='p175_00'>
-                  <img class="card-img-top"
-                    src="https://iiyama.sakura.ne.jp/cart/storage/image/detail/p175/p175_00.png" alt="">
-                  <div>ホワイト</div>
-                </button>
-              </div>
-
-            </div>
-            <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-              <div class="card" style="border: 0; padding:0">
-                <button type="submit" class="btn select item_color" id="1" data-id='レッド' data-bs-dismiss="modal"
-                  data-sku='p175_11'>
-                  <img class="card-img-top"
-                    src="https://iiyama.sakura.ne.jp/cart/storage/image/detail/p175/p175_11.png" alt="">
-                  <div>レッド</div>
-                </button>
-              </div>
-            </div>
+            @endforeach
           </div>
         </form>
       </div>
-
+      <!--ユニフォームカラーモーダル-->
 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
@@ -287,6 +213,13 @@ $('.item_color').click(function() {
     var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
     $('#sku').val(sku); //SKUをテキストボックスに代入
 });
+
+
+$('.del-goods').click(function() {
+    var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
+    alert(sku);
+});
+
 
 //モーダル画面で画像ボタンのselectクラスを押したら
 $('.select').click(function() {

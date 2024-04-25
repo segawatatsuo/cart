@@ -44,22 +44,22 @@
 				  <div class="home-slider__mockups">
 					<img id="om-main-slider-ap-img" class="tile__image home-slider__image home-slider__image_ap" width="286"
 					  height="318" draggable="false" loading="lazy"
-					  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslideom1"
+					  src="./yimgslideom1.avif"
 					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/53926b82-24a8-4f94-10e3-05954ee3b100/yimgslideom1x2 2x"
 					  alt="Apparel PSD Mockups">
 					<img id="om-main-slider-pk-img" class="tile__image home-slider__image home-slider__image_pk d-none"
 					  width="323" height="318" draggable="false" loading="lazy"
-					  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslideom2"
+					  src="./yimgslideom2.avif"
 					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/8b9afd52-1d92-43ee-8f73-048f0eb82100/yimgslideom2x2 2x"
 					  alt="Packaging PSD Mockups">
 					<img id="om-main-slider-vh-img" class="tile__image home-slider__image home-slider__image_vh d-none"
 					  width="255" height="345" draggable="false" loading="lazy"
-					  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslideom3"
+					  src="./yimgslideom3.avif"
 					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/a30dd64c-d25d-424f-aa6f-018fcdcded00/yimgslideom3x2 2x"
 					  alt="Vehicle PSD Mockups">
 					<img id="om-main-slider-dv-img" class="tile__image home-slider__image home-slider__image_dv d-none"
 					  width="271" height="302" draggable="false" loading="lazy"
-					  src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslideom4"
+					  src="./yimgslideom4.avif"
 					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/6ad5b016-fb7c-4e27-e208-1dc20ca65000/yimgslideom4x2 2x"
 					  alt="Device PSD Mockups">
 				  </div>
@@ -80,7 +80,7 @@
 				  <div class="tile__text">online 3D visualization studio <br>you can use anywhere</div>
 				  <div class="pill pill_black">Try for free</div>
 				  <img class="tile__image" width="382" height="514" draggable="false"
-					src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslidepv"
+					src=""
 					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/29adbb3f-f093-4623-8a92-852559fa0700/yimgslidepvx2 2x"
 					alt="ProVisual.app is now available!" loading="lazy">
 				</a>
@@ -99,7 +99,7 @@
 				  </div>
 	
 				  <img class="tile__image" width="270" height="304" draggable="false"
-					src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslidepng"
+					src=""
 					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/81806073-ec60-447f-8a99-fa5b7ef2a800/yimgslidepngx2 2x"
 					alt="PNG Images 360 and Static" loading="lazy">
 				</a>
@@ -118,7 +118,7 @@
 				  </div>
 	
 				  <img class="tile__image" width="299" height="335" draggable="false"
-					src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslidecs"
+					src=""
 					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/08a6f98c-98ac-4062-0c1c-d1a897950a00/yimgslidecsx2 2x"
 					alt="Creative Store" loading="lazy">
 				</a>
@@ -137,7 +137,7 @@
 				  </div>
 	
 				  <img class="tile__image" width="225" height="303" draggable="false"
-					src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslidecf"
+					src=""
 					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/358d6282-9095-4ee1-4339-35d1d49eb800/yimgslidecfx2 2x"
 					alt="PNG Alphabets and Letters" loading="lazy">
 				</a>
@@ -161,7 +161,7 @@
 				  <div class="pill pill_black">Explore now</div>
 	
 				  <img class="tile__image" width="220" height="311" draggable="false"
-					src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgslidejobs"
+					src=""
 					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/f96b9ec9-b37b-478b-7db2-52706b176a00/yimgslidejobsx2 2x"
 					alt="Hire a pro" loading="lazy">
 				</a>
@@ -196,9 +196,9 @@
 		  <div class="d-flex column small-6 medium-6 large-3" style="padding-left: 0;">
 			<a class="tile" href="{{ route('list.index') }}">
 			  <img class="tile__image tile__image_om-packaging" width="274" height="244"
-				src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgomcatpack"
+				src=""
 				srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/62149dc9-26be-4fef-27d5-f72a60a54900/yimgomcatpackx2 2x"
-				alt="Packaging PSD Mockups">
+				alt="">
 			  <div class="tile__title">Packaging / <br>branding</div>
 			  <div class="pill pill_arrow pill_round pill_transparent">
 				<svg width="24" height="24" viewBox="0 0 24 24">
@@ -210,7 +210,7 @@
 		  <div class="d-flex column small-6 medium-6 large-3">
 			<a class="tile" href="https://yellowimages.com/mockups/category/apparel-mockups">
 			  <img class="tile__image tile__image_om-apparel" width="276" height="255"
-				src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgomcatapp"
+				src=""
 				srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/d4342511-c3ff-46d4-1b63-690c4e0d5700/yimgomcatappx2 2x"
 				alt="Clothing PSD Mockups">
 			  <div class="tile__title">Apparel / <br>sport</div>
@@ -224,7 +224,7 @@
 		  <div class="d-flex column small-6 medium-6 large-3">
 			<a class="tile" href="https://yellowimages.com/mockups/category/vehicle-mockups">
 			  <img class="tile__image tile__image_om-vehicle" width="295" height="307"
-				src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgomcatveh"
+				src=""
 				srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/d86abf10-902e-42c0-17f5-93a503367b00/yimgomcatvehx2 2x"
 				alt="Vehicle PSD Mockups">
 			  <div class="tile__title">Vehicle / <br>transportation</div>
@@ -238,7 +238,7 @@
 		  <div class="d-flex column small-6 medium-6 large-3">
 			<a class="tile" href="https://yellowimages.com/mockups/category/device-mockups">
 			  <img class="tile__image tile__image_om-device" width="232" height="255"
-				src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/yimgomcatdev"
+				src=""
 				srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/154037e4-4c6d-43e8-d131-5d0dcb94e500/yimgomcatdevx2 2x"
 				alt="Devices PSD Mockups">
 			  <div class="tile__title">Device / <br>technology</div>
@@ -252,8 +252,18 @@
 		</div>
 	  </div>
 	  <!--categories-->
+
+
+
 	
 	  <br>
+	  
+	 
+	 
+	 <!--商品アイテム一覧-->
+	 <!--{{-- route('product.index',['id'=>'1']) --}}-->
+	 <!--<a class="tile" href="{{-- route('list.index') --}}">-->
+
 	  <div class="container py-2">
 		<div class="section-header">
 		  <h2 class="section-header__title">
@@ -263,14 +273,16 @@
 		</div>
 	
 		<div class="d-flex flex-column products-wrap">
+
 		  <ul
 			class="row products products-grid small-block-grid-1 medium-block-grid-2 large-block-grid-3 xlarge-block-grid-4 xxlarge-block-grid-4">
+			
 			<li class="card card_set" data-id="4874" style="border:none;">
 			  <div class="card__inner">
-				<a class="card__link-overlay" href="{{ route('product.index',['id'=>'1']) }}"
+				<a class="card__link-overlay" href="{{ route('list.index') }}"
 				  title="T-シャツ"></a>
 	
-				<a class="card__link" href="{{ route('product.index',['id'=>'1']) }}" title="T-シャツ">
+				<a class="card__link" href="{{ route('list.index',['category'=>'34']) }}" title="T-シャツ">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -314,16 +326,18 @@
 				  </div>
 				</a>
 			  </div>
-	
 			</li>
+
+
 	
 			<li class="card card_set" data-id="1411" style="border:none;">
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/1411"
 				  title="Jackets &amp; Outerwear"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/1411"
-				  title="ポロシャツ">
+
+				<a class="card__link" href="{{ route('list.index',['category'=>'42']) }}" title="ポロシャツ">
+
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 
@@ -374,7 +388,7 @@
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/1311" title="スウェット"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/1311" title="スウェットs">
+				<a class="card__link" href="{{ route('list.index',['category'=>'35']) }}" title="スウェット">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -424,7 +438,7 @@
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2366" title="ジャージ"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/2366" title="ジャージ">
+					<a class="card__link" href="{{ route('list.index',['category'=>'42']) }}" title="ジャージ">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -476,7 +490,7 @@
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2902" title="アウター"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/2902" title="アウター">
+				<a class="card__link" href="{{ route('list.index',['category'=>'36']) }}" title="アウター">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -525,11 +539,9 @@
 
 			<li class="card card_set" data-id="1905" style="border:none;">
 			  <div class="card__inner">
-				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/1905"
-				  title="パンツ"></a>
+				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2902" title="パンツ"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/1905"
-				  title="Apple Watch Mockup Set">
+				<a class="card__link" href="{{ route('list.index',['category'=>'37']) }}" title="パンツ">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -578,7 +590,7 @@
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/3398"
 				  title="バッグ"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/3398" title="Paper Coffee Cup">
+					<a class="card__link" href="{{ route('list.index',['category'=>'38']) }}" title="バッグ">	
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -630,7 +642,7 @@
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2732" title="Face Mask"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/2732" title="Face Mask">
+				<a class="card__link" href="{{ route('list.index',['category'=>'39']) }}" title="キャップ">	
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -681,7 +693,7 @@
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2902" title="Snack Bar"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/2902" title="Snack Bar">
+					<a class="card__link" href="{{ route('list.index',['category'=>'40']) }}" title="タオル">	
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -730,8 +742,8 @@
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/1905"
 				  title="Apple Watch Mockup Set"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/1905"
-				  title="Apple Watch Mockup Set">
+
+				  <a class="card__link" href="{{ route('list.index',['category'=>'44']) }}" title="部活">	
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -783,7 +795,7 @@
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/3398"
 				  title="エンブレム・ワッペン"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/3398" title="Paper Coffee Cup">
+					<a class="card__link" href="{{ route('list.index',['category'=>'45']) }}" title="エンブレム・ワッペン">	
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -832,7 +844,8 @@
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2732" title="Face Mask"></a>
 	
-				<a class="card__link" href="https://yellowimages.com/object-mockups/set/2732" title="Face Mask">
+				<a class="card__link" href="{{ route('list.index',['category'=>'46']) }}" title="その他">	
+					<div class="card__thumbs">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"

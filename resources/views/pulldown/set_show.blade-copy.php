@@ -9,7 +9,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>プルダウン(set_show)</h1>
+                    <h1>プルダウン</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -22,7 +22,6 @@
             </div>
         </div>
     </section>
-
 
 
     <section class="content">
@@ -38,43 +37,45 @@
                                 <div class="row">
 
                                     <div class="form-group">
-                                        <label for="name">プルダウンのセット名</label>
+                                        <label for="setname">プルダウンのセット名</label>
                                         <input type="text" name="setname" class="form-control"
                                             value="{{ $name }}">
                                     </div>
 
                                     <div class="col-6 pt-3 pb-3">
-                                        <label for="name">プルダウン</label>
+                                        <label for="LeftSide">プルダウン</label>
                                         <div id="LeftSide" class="list-group col sortable">
-                
+                                            @if(is_array($left))
                                             @php $n=1; @endphp
-                                            @foreach ($leftside as $leftNo)
-                                                <div class="list-group-item" data-id="{{ $n }}">{{ $leftNo }}</div>
+                                            @foreach ($left as $item)
+                                                <div class="list-group-item" data-id="{{ $item->id ?? 'No category, deleted ?' }}">{{ $item->name ?? 'No category name' }}</div>
                                                 @php $n+=1; @endphp
                                             @endforeach
+                                            @endif
+
+                                            
                                         </div>
                                     </div>
                 
                                     <div class="col-6 pt-3 pb-3">
-                                        <label for="name">セット内容(ここにドラッグしてください)</label>
+                                        <label for="RightSide">セット内容(ここにドラッグしてください)</label>
                                         <div id="RightSide" class="list-group col sortable">
+                                            @if(is_array($right))
                                             @php $n=1; @endphp
-                                            @foreach ($rightside as $rightNo)
-                                                <div class="list-group-item" data-id="{{ $n }}">{{ $rightNo }}</div>
+                                            @foreach ($right as $item)
+                                                <div class="list-group-item" data-id="{{ $item->id ?? 'No category, deleted ?' }}">{{ $item->name ?? 'No category name' }}</div>
                                                 @php $n+=1; @endphp
                                             @endforeach
-
-
+                                            @endif
                                         </div>
+
                                         <div id="p1" class="pt-3">
+                                            <input type="hidden" name="record_id" class="record_id" value="{{ $record_id }}">
                                             <button type="button" class="btn btn-primary changebtn">保存する</button>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-                            <input type="hidden" name="record_id" class="record_id" value="">
-                            <!--<button class="changebtn">変更確定</button>-->
                         </div>
     </section>
 
@@ -123,8 +124,6 @@
                     // DBのソート順を更新する処理
                 });
             },
-
-
         });
 
         new Sortable(LeftSide, {
@@ -143,16 +142,11 @@
                 var serializedArray = JSON.stringify(from);
                 localStorage.setItem('LeftSide', serializedArray);
 
-
                 $.ajax({
                     // DBのソート順を更新する処理
                 });
             },
         });
-
-
-
-
 
 
         $('.changebtn').on('click', function() {
@@ -176,15 +170,13 @@
                 "setname": setname,
             };
             var test = JSON.stringify(obj);
-
             //{"leftside":["0","2","3","4","5","6"],"rightside":["0","1"]}
-
             $.ajax({
                 headers: {
                     'X-CSRF-TOKEN': $("[name='csrf-token']").attr("content")
                 },
-                //url: "/item/store",
-                url: "/pulldown/set_store",
+                //url: "/pulldown_set/update",
+                url: "{{ url('/pulldown/update2') }}",
                 method: "post",
                 dataType: "text",
                 data: obj,
@@ -200,7 +192,6 @@
             }).fail(function() {
                 alert('通信エラー');
             });
-
         });
     </script>
 

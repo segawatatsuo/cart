@@ -16,39 +16,25 @@
                 <div class="d-flex flex-column products-wrap">
                     <ul
                         class="row products products-grid small-block-grid-2 medium-block-grid-3 large-block-grid-4 xlarge-block-grid-6 xxlarge-block-grid-6">
-						<li class="product-impressions card card_objects" data-id="1863049" data-sku="133722"
-                            data-category="Mockups/Packaging Mockups/Bottle Mockups" data-price="14.99" style="border:none;">
+						
+                        @foreach ( $lists as $list )
+                        <li class="product-impressions card card_objects" data-id="" data-sku="" data-category="" data-price="" style="border:none;">
                             <div class="card__inner">
-                                <a class="card__link-overlay js-card-popup"
-                                    href="https://yellowimages.com/stock/amber-dropper-bottle-mockup-133722"
-                                    title="Amber Dropper Bottle Mockup"></a>
-                                <a class="card__link js-card-popup"
-                                    href="https://yellowimages.com/stock/amber-dropper-bottle-mockup-133722"
-                                    title="Amber Dropper Bottle Mockup">
-                                    <div class="card__thumb is-loaded"
-                                        data-tn1="https://yi-files.s3.eu-west-1.amazonaws.com/products/1863000/1863049/3003626-cover.jpg"
-                                        data-tn2="https://yi-files.s3.eu-west-1.amazonaws.com/products/1863000/1863049/3003625-cover.jpg">
-                                        <div class="card__background"
-                                            style="background-image: url(&quot;https://yi-files.s3.eu-west-1.amazonaws.com/products/1863000/1863049/3003625-cover.jpg&quot;);">
-                                        </div>
-      
+                                <a href="{{ route('product.index',['id'=>$list['id']]) }}" title="">
+                                    <div class="card__thumb is-loaded">
                                         <img class="card-thumb__img" width="466" height="580"
-                                            src="./Mockups by Yellow Images 😋 Download Premium PSD Product Mockups 🔥 Templates_files/3003626-cover.jpg"
-                                            alt="Amber Dropper Bottle Mockup">
+                                            src="{{ asset('storage/image/detail/') }}/{{ $list['thumbnail_folder'] }}/{{ $list['image_name'] }}" alt="">
                                     </div>
-      
                                     <div class="card__title-wrap">
-                                        <div class="card__title">Amber Dropper Bottle Mockup</div>
-                                        <div class="card__type"></div>
+                                        <div class="card__title">{{ $list['name'] }}</div>
                                     </div>
                                 </a>
-      
                             </div>
                         </li>
+                        @endforeach
       
       
-      
-      
+                        <!--
                         <li class="product-impressions card card_objects" data-id="1863038" data-sku="133720"
                             data-category="Mockups/Packaging Mockups/Jerrycan Mockups" data-price="14.99" style="border:none;">
                             <div class="card__inner">
@@ -597,6 +583,7 @@
                                     </div>
                                 </a>
                         </li>
+                    -->
                     </ul>
                 </div>
             </section>
