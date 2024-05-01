@@ -59,6 +59,13 @@
                                         @endif
                                     </select>
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="number">メーカー</label>
+                                    <input type="text" class="form-control" id="number" name="number" placeholder=""
+                                        value="{{ $item->maker }}">
+                                </div>
+
                                 <div class="form-group">
                                     <label for="number">商品番号</label>
                                     <input type="text" class="form-control" id="number" name="number" placeholder=""

@@ -49,6 +49,12 @@
                                         <tr>
                                             <td>
                                                 <a href={{ route('item.show', $line->id) }}>
+                                                {{ $line->maker }}
+                                                </a>
+                                            </td>
+
+                                            <td>
+                                                <a href={{ route('item.show', $line->id) }}>
                                                 {{ $line->number }}
                                                 </a>
                                             </td>
