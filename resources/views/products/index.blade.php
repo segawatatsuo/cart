@@ -248,7 +248,7 @@
                                 <div class="product__card">
 
 
-                                    <form action="/cartAdd/index" method="post">
+                                    <form action="{{ asset('/cartAdd/index') }}" method="post">
                                         @csrf
 
                                         <input type="hidden" name="id" value="{{ $item->id }}">
