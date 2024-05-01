@@ -1,7 +1,29 @@
 @include('parts.header')
 
 
+<style>
+.card__title {
+    overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    transition: color .2s ease;
+    white-space: wrap;
+    width: 100%;
+    height: 40px;
+    z-index: 5;
+}
+.card__title-wrap {
+    color: #000;
+    display: flex;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.429;
+    margin: 5px 0 0;
+    transition: color .2s ease;
+    width: 100%
+}
 
+</style>
 
   <div class="container py-2">
     <div class="section-header">
