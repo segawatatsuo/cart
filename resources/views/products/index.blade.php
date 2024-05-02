@@ -10,60 +10,42 @@
                         <span class="section-ttl">{{ $item->maker . ' ' . $item->number . ' ' . $item->name }}</span>
                     </h2>
 
-                    {{-- json_decode($item->category,true) --}}
-
                     <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
-                        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
-                            itemtype="https://schema.org/ListItem">
-                            <a class="breadcrumbs__link" itemprop="item" href="/" aria-label="Home page">
-                                <svg class="breadcrumbs__logo" width="16" height="16">
-                                    <use xlink:href="#logo"></use>
-                                </svg>
-                                <meta itemprop="name" content="Yellow Images" />
-                            </a>
-                            <meta itemprop="position" content="1" />
-                            <svg width="16" height="16">
-                                <use xlink:href="#arrow-breadcrumb"></use>
-                            </svg>
-                        </li>
+
                         <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                             itemtype="https://schema.org/ListItem">
                             <meta itemprop="position" content="2" />
                             <a class="breadcrumbs__link" itemscope itemtype="https://schema.org/WebPage" itemprop="item"
-                                itemid="/mockups" href="/mockups">
-                                <span itemprop="name">Mockups</span>
+                                itemid="/mockups" href="{{ asset('/') }}">
+                                <span itemprop="name">HOME</span>
                             </a>
                             <svg width="16" height="16">
                                 <use xlink:href="#arrow-breadcrumb"></use>
                             </svg>
                         </li>
-                        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
-                            itemtype="https://schema.org/ListItem">
-                            <meta itemprop="position" content="3" />
-                            <a class="breadcrumbs__link" itemscope itemtype="https://schema.org/WebPage" itemprop="item"
-                                itemid="/mockups/category/apparel-mockups" href="/mockups/category/apparel-mockups">
-                                <span itemprop="name">Apparel</span>
-                            </a>
-                            <svg width="16" height="16">
-                                <use xlink:href="#arrow-breadcrumb"></use>
-                            </svg>
-                        </li>
-                        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
-                            itemtype="https://schema.org/ListItem">
-                            <meta itemprop="position" content="4" />
-                            <a class="breadcrumbs__link" itemscope itemtype="https://schema.org/WebPage" itemprop="item"
-                                itemid="/mockups/category/jackets-mockups" href="/mockups/category/jackets-mockups">
-                                <span itemprop="name">Jackets</span>
-                            </a>
-                            <svg width="16" height="16">
-                                <use xlink:href="#arrow-breadcrumb"></use>
-                            </svg>
-                        </li>
-                        <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
-                            itemtype="https://schema.org/ListItem">
-                            <meta itemprop="position" content="5" />
-                            <span itemprop="name">Hooded Windbreaker Mockup</span>
-                        </li>
+
+                        @for ($i = 0; $i < count($category_name); $i++)
+                            @if ($i == count($category_name))
+                                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                                    itemtype="https://schema.org/ListItem">
+                                    <meta itemprop="position" content="5" />
+                                    <span itemprop="name">{{ $category_name[$i] }}</span>
+                                </li>
+                            @else
+                                <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
+                                    itemtype="https://schema.org/ListItem">
+                                    <meta itemprop="position" content="3" />
+                                    <a class="breadcrumbs__link" itemscope itemtype="https://schema.org/WebPage"
+                                        itemprop="item" itemid="/mockups/category/apparel-mockups"
+                                        href="/mockups/category/apparel-mockups">
+                                        <span itemprop="name">{{ $category_name[$i] }}</span>
+                                    </a>
+                                    <svg width="16" height="16">
+                                        <use xlink:href="#arrow-breadcrumb"></use>
+                                    </svg>
+                                </li>
+                            @endif
+                        @endfor
                     </ol>
                 </div>
             </div>
@@ -226,7 +208,7 @@
                     <div class="product__description">
                         <h3 class="h2">{{ $item->head_copy }}</h3>
                         <div class="product__description-content clearfix">
-                          <p>{!! $item->description !!}</p>
+                            <p>{!! $item->description !!}</p>
                         </div>
                     </div>
                 </div>
@@ -267,9 +249,9 @@
                                                     data-bs-target="#UnifColorModal" style="margin-right: 4px;">
                                                     色見本を開く
                                                 </button>
-                                                <input type="text" value="" class="radi select2 textbox-grow"
-                                                    id="selected_image1" name="アイテムカラー"
-                                                    style="border: 1px solid #e2e5e9;">
+                                                <input type="text" value=""
+                                                    class="radi select2 textbox-grow" id="selected_image1"
+                                                    name="アイテムカラー" style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
                                         <!-- アイテムカラー -->
@@ -297,7 +279,7 @@
                                                             name="{{ $select->name }}"
                                                             style="border: 1px solid #e2e5e9;">
                                                     </div>
-                                                <!--書体を表示 FontSelectModal-->
+                                                    <!--書体を表示 FontSelectModal-->
                                                 @elseif($select->with_font_button == 'with_font_button')
                                                     <div class="d-flex">
                                                         <button id="{{ $n }}" type="button"
@@ -313,17 +295,19 @@
                                                             style="border: 1px solid #e2e5e9;">
                                                     </div>
 
-                                                <!--文字入力欄だったらモーダル項目不要-->
+                                                    <!--文字入力欄だったらモーダル項目不要-->
                                                 @elseif($select->with_color_button == 'character_input')
                                                     <!-- character_input-->
                                                     <div class="d-flex">
-                                                        <input type="text" value="" name="{{ $select->name }}" class="inputbox select2 textbox-grow" style="border: 1px solid #e2e5e9;">
+                                                        <input type="text" value=""
+                                                            name="{{ $select->name }}"
+                                                            class="inputbox select2 textbox-grow"
+                                                            style="border: 1px solid #e2e5e9;">
                                                     </div>
-
-
                                                 @else
                                                     <!--プルダウンだったら-->
-                                                    <select class="option_select form-select" name="{{ $select->name }}">
+                                                    <select class="option_select form-select"
+                                                        name="{{ $select->name }}">
                                                         @foreach ($select->pulldown_detail as $data)
                                                             <option data-price="{{ $data->price }}">
                                                                 {{ $data->name }}@if ($data->price != 0)
@@ -557,8 +541,8 @@
                                         <div class="product__files">
                                             <div class="h4">SKU</div>
                                             <div class="d-flex">
-                                                <input type="text" class="inputbox select2 textbox-grow" id="sku"
-                                                    name="sku" value="" readonly
+                                                <input type="text" class="inputbox select2 textbox-grow"
+                                                    id="sku" name="sku" value="" readonly
                                                     style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
@@ -568,8 +552,9 @@
                                             <div class="h4">オプション単価</div>
                                             <div class="d-flex">
 
-                                                <input id="option_price" type="text" class="inputbox select2 textbox-grow"
-                                                    name="オプション単価" value="" value="0円" readonly
+                                                <input id="option_price" type="text"
+                                                    class="inputbox select2 textbox-grow" name="オプション単価"
+                                                    value="" value="0円" readonly
                                                     style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
@@ -579,8 +564,9 @@
                                         <div class="product__files">
                                             <div class="h4">数量</div>
                                             <div class="d-flex">
-                                                <input id="quantity" type="text" class="inputbox select2 textbox-grow"
-                                                    name="数量" value="" value="0円" readonly
+                                                <input id="quantity" type="text"
+                                                    class="inputbox select2 textbox-grow" name="数量"
+                                                    value="" value="0円" readonly
                                                     style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
@@ -591,8 +577,9 @@
                                             <div class="h4">合計</div>
                                             <div class="d-flex">
                                                 <input id="item_price_total" type="text"
-                                                    class="inputbox select2 textbox-grow" name="合計" value=""
-                                                    value="0円" readonly style="border: 1px solid #e2e5e9;">
+                                                    class="inputbox select2 textbox-grow" name="合計"
+                                                    value="" value="0円" readonly
+                                                    style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
 

@@ -10,6 +10,7 @@ use App\Models\Sku;
 use App\Models\Pulldown_set;
 use App\Models\Color;
 use App\Models\Font;
+use App\Models\Category;
 use Hamcrest\Arrays\IsArray;
 use Illuminate\Support\Facades\DB;
 
@@ -19,7 +20,16 @@ class ProductController extends Controller
     {
         $item = Item::find($id);
 
-        //dd($item->description);
+        $categorys = $item->category;//JSON "["33","34"]" 
+        $categorys_arr = json_decode($categorys,true);//JSONを連想配列に変換(引数trueが必要)
+
+        //カテゴリー
+        $category_name=[];
+        foreach($categorys_arr as $category){
+            $names = Category::where('id',$category)->get();
+            $name = $names[0]->name;
+            array_push($category_name,$name);
+        }
 
         $itemNo = $item->number;
         //'サイズ表用にsize'と'price'でグループ化
@@ -64,7 +74,7 @@ class ProductController extends Controller
         //書体一覧
         $font_array = Font::all();
 
-        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array'));
+        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array','category_name'));
     }
 
     public function get_size(Request $request)

@@ -11,15 +11,13 @@ class ListController extends Controller
     {
         $category = $request->query('category'); // これはクエリパラメーターに入っている値 list?category=34
         $lists_array = Item::with('skus')->where("category", "LIKE", "%".$category."%")->where("display", "=", "表示")->get();
-        #$lists_array = Item::with('skus')->where("category", "LIKE", "%".$category."%")->where("display", "=", "表示")->where("number", "=", "P10")->where("maker", "=", "WUNDOU")->get();
-        #$lists_array->dump();
-        #$query = Item::with('skus')->where("category", "LIKE", "%".$category."%")->where("display", "=", "表示")->where("number", "=", "P10")->get();
-        #$query->dd();
+
         $lists=[];
         foreach ($lists_array as $data) {
             $id = $data->id;
             $number = $data->number;
             $name = $data->name;
+            //$categorys = $data->category;
             foreach ($data->skus as $sku) {
                 $thumbnail_folder = $sku->thumbnail_folder;
                 $image_name = $sku->image_name;
@@ -32,7 +30,7 @@ class ListController extends Controller
            print("<br>");
         }
         */
- 
+
         return view('list.index', compact('lists'));
     }
 }
