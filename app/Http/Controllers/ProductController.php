@@ -26,11 +26,19 @@ class ProductController extends Controller
         //カテゴリー
         $category_name=[];
         foreach($categorys_arr as $category){
-            $names = Category::where('id',$category)->get();
-            $name = $names[0]->name;
-            array_push($category_name,$name);
+            $catg = Category::where('id',$category)->get();
+            $name = $catg[0]->name;
+            $id = $catg[0]->id;
+            $hoge=[$name=>$id];
+            array_push($category_name,$hoge);
         }
-
+        //foreach($category_name as $hoge){
+            //foreach($hoge as $key=>$val){
+                //dd($key);//アパレル
+                //dd($val);//33
+            //}
+        //}
+        
         $itemNo = $item->number;
         //'サイズ表用にsize'と'price'でグループ化
         //$sizes = Sku::where('item_number', $itemNo)->groupBy('size', 'price')->get(['size','price']);

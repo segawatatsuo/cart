@@ -29,17 +29,25 @@
                                 <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                                     itemtype="https://schema.org/ListItem">
                                     <meta itemprop="position" content="5" />
-                                    <span itemprop="name">{{ $category_name[$i] }}</span>
+                                    <span itemprop="name">
+                                      @foreach($category_name[$i] as $key=>$val)
+                                        {{ $key }}
+                                      @endforeach
+                                    </span>
                                 </li>
                             @else
                                 <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                                     itemtype="https://schema.org/ListItem">
                                     <meta itemprop="position" content="3" />
+                                    @foreach($category_name[$i] as $key=>$val)
                                     <a class="breadcrumbs__link" itemscope itemtype="https://schema.org/WebPage"
                                         itemprop="item" itemid="/mockups/category/apparel-mockups"
-                                        href="/mockups/category/apparel-mockups">
-                                        <span itemprop="name">{{ $category_name[$i] }}</span>
+                                        href="{{ asset('list?category='.$val) }}">
+                                        <span itemprop="name">
+                                            {{ $key }}
+                                        </span>
                                     </a>
+                                    @endforeach
                                     <svg width="16" height="16">
                                         <use xlink:href="#arrow-breadcrumb"></use>
                                     </svg>
