@@ -158,7 +158,7 @@
 
                     <div class="product__description">
                         <h3 class="h2">{{ $item->head_copy }}</h3>
-                        <h5>{{ $item->maker }} {{ $item->number }}</h5>
+                        <h5>{{ $item->brand }} {{ $item->maker }} {{ $item->number }}</h5>
                         <div class="product__description-content clearfix">
                             <p>{!! $item->description !!}</p>
                         </div>
