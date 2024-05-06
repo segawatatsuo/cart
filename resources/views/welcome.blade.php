@@ -657,7 +657,7 @@
 			</li>
 
 
-
+			{{-- 
 			<li class="card card_set" data-id="1905" style="border:none;">
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2902" title="パンツ"></a>
@@ -706,6 +706,11 @@
 			  </div>
 	
 			</li>
+
+			 --}}
+
+
+			 
 			<li class="card card_set" data-id="3398" style="border:none;">
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/3398"
