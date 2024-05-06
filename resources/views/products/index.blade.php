@@ -73,60 +73,6 @@
                                     </div>
                                 @endforeach
 
-                                <!--
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082208-cover.jpg"
-                      alt="" title="" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082209-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082210-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082211-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082212-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082213-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082214-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082215-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082216-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082217-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082220-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082218-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082219-cover.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="466" height="580">
-                  </div>
-                -->
                             </div>
                             <div class="swiper__button swiper__button_prev"><svg width="18" height="18">
                                     <use xlink:href="#arrow-slider-prev"></use>
@@ -135,9 +81,6 @@
                                     <use xlink:href="#arrow-slider-next"></use>
                                 </svg></div>
                         </div>
-
-
-
 
                         <div class="swiper__pagination"></div>
                         <div class="swiper product__thumbs">
@@ -215,6 +158,7 @@
 
                     <div class="product__description">
                         <h3 class="h2">{{ $item->head_copy }}</h3>
+                        <h5>{{ $item->maker }} {{ $item->number }}</h5>
                         <div class="product__description-content clearfix">
                             <p>{!! $item->description !!}</p>
                         </div>
@@ -223,26 +167,16 @@
 
 
 
-
-
-
-
-
                 <!--1/3-->
                 <div class="col-md-4">
-
-
                     <div class="product__section product__info">
                         <div class="product__info-box">
                             <div class="product__info-content">
                                 <div class="product__card">
 
-
                                     <form action="{{ asset('/cartAdd/index') }}" method="post">
                                         @csrf
-
                                         <input type="hidden" name="id" value="{{ $item->id }}">
-
                                         <!-- if is err -->
                                         <div>
                                         </div>

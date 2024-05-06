@@ -17,12 +17,17 @@ class ListController extends Controller
             $id = $data->id;
             $number = $data->number;
             $name = $data->name;
+            $material = $data->material;//素材
+            $brand = $data->brand;//ブランド名
+            $min_price = $data->skus->min('price');//各商品の最小プライス
+ 
+
             //$categorys = $data->category;
             foreach ($data->skus as $sku) {
                 $thumbnail_folder = $sku->thumbnail_folder;
                 $image_name = $sku->image_name;
             }
-            array_push($lists, ['id'=>$id,'number'=>$number,'name'=>$name,'thumbnail_folder'=>$thumbnail_folder,'image_name'=>$image_name]);
+            array_push($lists, ['id'=>$id,'number'=>$number,'name'=>$name,'thumbnail_folder'=>$thumbnail_folder,'image_name'=>$image_name,'material'=>$material,'min_price'=>$min_price,'brand'=>$brand]);
         }
         /*
         foreach($lists as $list){

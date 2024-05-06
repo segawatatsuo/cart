@@ -47,9 +47,13 @@
                                         <img class="card-thumb__img" width="466" height="580"
                                             src="{{ asset('storage/image/detail/') }}/{{ $list['thumbnail_folder'] }}/{{ $list['image_name'] }}" alt="">
                                     </div>
+
+                                    <div class="card__title-wrap">{{ $list['brand'] }}</div>
                                     <div class="card__title-wrap">
                                         <div class="card__title">{{ $list['name'] }}</div>
                                     </div>
+            
+                                    <div class="card__title-wrap">¥{{ number_format($list['min_price']) }}円〜</div>
                                 </a>
                             </div>
                         </li>

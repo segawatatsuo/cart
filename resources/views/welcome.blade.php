@@ -277,12 +277,14 @@
 		  <ul
 			class="row products products-grid small-block-grid-1 medium-block-grid-2 large-block-grid-3 xlarge-block-grid-4 xxlarge-block-grid-4">
 			
+
+
 			<li class="card card_set" data-id="4874" style="border:none;">
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="{{ route('list.index') }}"
-				  title="T-シャツ"></a>
+				  title="T-シャツ半袖"></a>
 	
-				<a class="card__link" href="{{ route('list.index',['category'=>'34']) }}" title="T-シャツ">
+				<a class="card__link" href="{{ route('list.index',['category'=>'34']) }}" title="T-シャツ半袖">
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
@@ -290,7 +292,7 @@
 	
 						<img class="card-thumb__img" width="466" height="580"
 						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}"
-						  alt="T-シャツ">
+						  alt="T-シャツ半袖">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
@@ -299,7 +301,7 @@
 	
 						<img class="card-thumb__img" width="466" height="580"
 						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}"
-						  alt="T-シャツ">
+						  alt="T-シャツ半袖">
 					  </div>
 
 					  <div class="card__thumb is-loaded"
@@ -307,7 +309,7 @@
 	
 						<img class="card-thumb__img" width="466" height="580"
 						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}"
-						  alt="T-シャツ">
+						  alt="T-シャツ半袖">
 					  </div>
 
 					  <div class="card__thumb is-loaded"
@@ -315,18 +317,80 @@
 	
 						<img class="card-thumb__img" width="466" height="580"
 						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}"
-						  alt="T-シャツ">
+						  alt="T-シャツ半袖">
 					  </div>
 					</div>
 				  </div>
 	
 				  <div class="card__title-wrap">
-					<div class="card__title">T-shirt</div>
-					<div class="card__type">T-シャツ</div>
+					<div class="card__title">T-shirt short sleeve</div>
+					<div class="card__type">T-シャツ半袖</div>
 				  </div>
 				</a>
 			  </div>
 			</li>
+
+
+
+
+
+
+			<li class="card card_set" data-id="4874" style="border:none;">
+				<div class="card__inner">
+				  <a class="card__link-overlay" href="{{ route('list.index') }}"
+					title="T-シャツ長袖"></a>
+	  
+				  <a class="card__link" href="{{ route('list.index',['category'=>'34']) }}" title="T-シャツ">
+					<div class="card__thumbs">
+					  <div class="card-thumbs__left">
+						<div class="card__thumb card__thumb_1 is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}"
+							alt="T-シャツ">
+						</div>
+					  </div>
+					  <div class="card-thumbs__right">
+						<div class="card__thumb is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}"
+							alt="T-シャツ">
+						</div>
+  
+						<div class="card__thumb is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}"
+							alt="T-シャツ">
+						</div>
+  
+						<div class="card__thumb is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}"
+							alt="T-シャツ">
+						</div>
+					  </div>
+					</div>
+	  
+					<div class="card__title-wrap">
+					  <div class="card__title">T-shirt long sleeve</div>
+					  <div class="card__type">T-シャツ長袖</div>
+					</div>
+				  </a>
+				</div>
+			  </li>
+
+
+
+
+
+
 
 
 	
@@ -431,9 +495,65 @@
 				  </div>
 				</a>
 			  </div>
-	
 			</li>
 	
+
+			<!--パンツ・スェットパンツ -->
+			<li class="card card_set" data-id="1311" style="border:none;">
+				<div class="card__inner">
+				  <a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/1311" title="パンツ/スェットパンツ"></a>
+	  
+				  <a class="card__link" href="{{ route('list.index',['category'=>'35']) }}" title="パンツ/スェットパンツ">
+					<div class="card__thumbs">
+					  <div class="card-thumbs__left">
+						<div class="card__thumb card__thumb_1 is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}"
+							alt="パンツ/スェットパンツ">
+						</div>
+					  </div>
+  
+					  <div class="card-thumbs__right">
+						<div class="card__thumb is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}"
+							alt="パンツ/スェットパンツ">
+						</div>
+						<div class="card__thumb is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}"
+							alt="パンツ/スェットパンツ">
+						</div>
+						<div class="card__thumb is-loaded"
+						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}">
+	  
+						  <img class="card-thumb__img" width="466" height="580"
+							src="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}"
+							alt="パンツ/スェットパンツ">
+						</div>
+					  </div>
+					</div>
+	  
+					<div class="card__title-wrap">
+					  <div class="card__title">pants / sweatpants</div>
+					  <div class="card__type">パンツ/スェットパンツ</div>
+					</div>
+				  </a>
+				</div>
+			  </li>
+
+
+
+
+
+
+			{{--  
 			<li class="card card_set" data-id="2366" style="border:none;">
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2366" title="ジャージ"></a>
@@ -482,6 +602,7 @@
 			  </div>
 	
 			</li>
+			--}}
 	
 	
 			<!--outer -->

@@ -98,9 +98,15 @@
                                     <textarea class="form-control" rows="3" placeholder="" name="head_copy">{{ $item->head_copy }}</textarea>
                                 </div>
                                 <div class="form-group">
+                                    <label>素材説明</label>
+                                    <textarea class="form-control" rows="3" placeholder="" name="description">{{ $item->material }}</textarea>
+                                </div>
+                                <div class="form-group">
                                     <label>商品説明</label>
                                     <textarea class="form-control" rows="3" placeholder="" name="description">{{ $item->description }}</textarea>
                                 </div>
+
+
                             </div>
                         </div>
 

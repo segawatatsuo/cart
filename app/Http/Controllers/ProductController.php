@@ -20,25 +20,19 @@ class ProductController extends Controller
     {
         $item = Item::find($id);
 
-        $categorys = $item->category;//JSON "["33","34"]" 
-        $categorys_arr = json_decode($categorys,true);//JSONを連想配列に変換(引数trueが必要)
+        $categorys = $item->category;//JSON "["33","34"]"
+        $categorys_arr = json_decode($categorys, true);//JSONを連想配列に変換(引数trueが必要)
 
         //カテゴリー
         $category_name=[];
-        foreach($categorys_arr as $category){
-            $catg = Category::where('id',$category)->get();
+        foreach ($categorys_arr as $category) {
+            $catg = Category::where('id', $category)->get();
             $name = $catg[0]->name;
             $id = $catg[0]->id;
             $hoge=[$name=>$id];
-            array_push($category_name,$hoge);
+            array_push($category_name, $hoge);
         }
-        //foreach($category_name as $hoge){
-            //foreach($hoge as $key=>$val){
-                //dd($key);//アパレル
-                //dd($val);//33
-            //}
-        //}
-        
+
         $itemNo = $item->number;
         //'サイズ表用にsize'と'price'でグループ化
         //$sizes = Sku::where('item_number', $itemNo)->groupBy('size', 'price')->get(['size','price']);
@@ -82,7 +76,7 @@ class ProductController extends Controller
         //書体一覧
         $font_array = Font::all();
 
-        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array','category_name'));
+        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array', 'category_name'));
     }
 
     public function get_size(Request $request)
