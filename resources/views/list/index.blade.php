@@ -9,7 +9,7 @@
     transition: color .2s ease;
     white-space: wrap;
     width: 100%;
-    height: 40px;
+    height: auto;
     z-index: 5;
 }
 .card__title-wrap {
@@ -17,6 +17,16 @@
     display: flex;
     font-size: 14px;
     font-weight: 600;
+    line-height: 1.429;
+    margin: 5px 0 0;
+    transition: color .2s ease;
+    width: 100%
+}
+.card__title-wrap500 {
+    color: #000;
+    display: flex;
+    font-size: 12px;
+    font-weight: 500;
     line-height: 1.429;
     margin: 5px 0 0;
     transition: color .2s ease;
@@ -43,17 +53,22 @@
                         <li class="product-impressions card card_objects" data-id="" data-sku="" data-category="" data-price="" style="border:none;">
                             <div class="card__inner">
                                 <a href="{{ route('product.index',['id'=>$list['id']]) }}" title="">
-                                    <div class="card__thumb is-loaded">
+                                    <div class="card__thumb is-loaded" style="background-color: #fff;">
+
                                         <img class="card-thumb__img" width="466" height="580"
                                             src="{{ asset('storage/image/detail/') }}/{{ $list['thumbnail_folder'] }}/{{ $list['image_name'] }}" alt="">
+
                                     </div>
 
                                     <div class="card__title-wrap">{{ $list['brand'] }}</div>
+                                    
                                     <div class="card__title-wrap">
                                         <div class="card__title">{{ $list['name'] }}</div>
                                     </div>
+                                    <div class="card__title-wrap500">¥{{ number_format($list['min_price']) }}円〜</div>
+                                    
             
-                                    <div class="card__title-wrap">¥{{ number_format($list['min_price']) }}円〜</div>
+                                    
                                 </a>
                             </div>
                         </li>

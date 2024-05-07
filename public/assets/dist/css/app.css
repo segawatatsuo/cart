@@ -9224,7 +9224,9 @@ input.tile__input:focus:-ms-input-placeholder {
 .card__thumb:before {
     content: "";
     display: block;
-    padding-top: 124.464%;
+    /*padding-top: 124.464%;*/
+    /*カードの高さを少し縮めた*/
+    padding-top: 100.464%;
     width: 100%
 }
 
