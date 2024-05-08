@@ -191,7 +191,7 @@
                                                     data-bs-target="#UnifColorModal" style="margin-right: 4px;">
                                                     色見本を開く
                                                 </button>
-                                                <input type="text" value=""
+                                                <input type="text" value="{{ old('アイテムカラー') }}"
                                                     class="radi select2 textbox-grow" id="selected_image1"
                                                     name="アイテムカラー" style="border: 1px solid #e2e5e9;">
                                             </div>
@@ -484,7 +484,7 @@
                                             <div class="h4">SKU</div>
                                             <div class="d-flex">
                                                 <input type="text" class="inputbox select2 textbox-grow"
-                                                    id="sku" name="sku" value="" readonly
+                                                    id="sku" name="sku" value="{{ old('sku') }}" readonly
                                                     style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
@@ -496,7 +496,7 @@
 
                                                 <input id="option_price" type="text"
                                                     class="inputbox select2 textbox-grow" name="オプション単価"
-                                                    value="" value="0円" readonly
+                                                    value="" readonly
                                                     style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
@@ -508,7 +508,7 @@
                                             <div class="d-flex">
                                                 <input id="quantity" type="text"
                                                     class="inputbox select2 textbox-grow" name="数量"
-                                                    value="" value="0円" readonly
+                                                    value="" readonly
                                                     style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
@@ -520,10 +520,21 @@
                                             <div class="d-flex">
                                                 <input id="item_price_total" type="text"
                                                     class="inputbox select2 textbox-grow" name="合計"
-                                                    value="" value="0円" readonly
+                                                    value="0円" readonly
                                                     style="border: 1px solid #e2e5e9;">
                                             </div>
                                         </div>
+
+
+                                        <!--要望-->
+
+                                        <div class="product__files">
+                                          <div class="h4">ご要望他</div>
+                                          <div class="d-flex">
+                                              <textarea id="customer_request" rows="5" cols="33" class="inputbox select2 textbox-grow" name="ご要望他" value="" style="border: 1px solid #e2e5e9;"></textarea>
+                                          </div>
+                                      </div>
+
 
                                         <div class="product__files d-flex justify-content-between">
                                             <button type="submit"

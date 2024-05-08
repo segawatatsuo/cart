@@ -42,6 +42,7 @@ class CartController extends Controller
         $number = $Product->number; //商品番号(画像のパスに使用)
         $sku = $_POST["sku"]; //skuなのだが画像の拡張子がついている
 
+
         //拡張子付きの画像名
         //$image = Sku::where("image_name", "LIKE", $sku.".%");//DBのSKUカラム側で拡張子を除いて登録してある場合はこっち
         $image = Sku::where("image_name", "LIKE", $sku);
@@ -53,6 +54,8 @@ class CartController extends Controller
         //$sku = preg_replace("/(.+)(\.[^.]+$)/", "$1", $sku);
 
         $name = $Product->name;
+        $brand = $Product->brand;
+        //dd($brand);
         $options = $_POST; //選択肢を含む全項目
         //dd($options);
 
@@ -74,10 +77,10 @@ class CartController extends Controller
             $size .= 'サイズ : ' . $key . ' (単価' . number_format($prices_array[$key]) . '円)' . ' × ' . $val . '点 ';
         }
         //$options['size'] = $size;
-        //dd($size);
         $quantity = $options["数量"];//全サイズの枚数の合計
         //dd($quantity);
         $price = str_replace('円', '', $options["合計"]); //小計
+  
         //ユニフォーム単価(金額/数量)
         $tanka = round($price/$quantity);
 
