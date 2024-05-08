@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="product__top">
                     <h2 class="section-header__title">
-                        <span class="section-ttl">{{ $item->maker . ' ' . $item->number . ' ' . $item->name }}</span>
+                        <span class="section-ttl">{{ $item->brand . ' ' . $item->number . ' ' . $item->name }}</span>
                     </h2>
 
                     <ol class="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList">
@@ -158,7 +158,7 @@
 
                     <div class="product__description">
                         <h3 class="h4">{{ $item->head_copy }}</h4>
-                        <h5>{{ $item->brand }} {{ $item->maker }} {{ $item->number }}</h5>
+                        <h5>{{ $item->brand }} {{ $item->number }}</h5>
                         <div class="product__description-content clearfix">
                             <p style="padding-bottom: 20px">{!! $item->description !!}</p>
                         </div>

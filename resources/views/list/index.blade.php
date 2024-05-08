@@ -18,7 +18,7 @@
     font-size: 14px;
     font-weight: 600;
     line-height: 1.429;
-    margin: 5px 0 0;
+    margin: 0px 0 0 0;
     transition: color .2s ease;
     width: 100%
 }
@@ -28,7 +28,7 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 1.429;
-    margin: 5px 0 0;
+    margin: 0px 0 0 0;
     transition: color .2s ease;
     width: 100%
 }
