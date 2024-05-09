@@ -64,7 +64,41 @@
 
 
 
+<!--プリントを追加するモーダル-->
+<div class="modal fade" id="ColorSelectModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">プリントを追加する</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+      </div>
 
+      <div class="modal-body">
+        <form action="{{ asset('/cartAdd/index') }}" method="post">
+          <div class="container">
+            <div class="row">
+              @foreach ( $color_array as $color )
+              <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                <div class="card " style="border: 0; padding:0">
+                  <button type="submit" class="btn select" id="1" data-id='{{ $color->display_name }}' data-bs-dismiss="modal">
+                    <img class="card-img-top" src="{{ asset('storage') }}{{ $color->path }}/{{ $color->name }}" alt="">
+                    <div>{{ $color->display_name }}</div>
+                  </button>
+                </div>
+              </div>
+              @endforeach
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--プリントを追加するモーダル-->
 
 
 

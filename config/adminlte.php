@@ -436,6 +436,18 @@ return [
         ],
 
         [
+            'text'    => 'トップページ',
+            'icon'    => 'fa fa-align-justify',
+            'submenu' => [
+                [
+                    'text'       => '新規登録',
+                    'url'        => 'toppage',
+                ],
+            ]
+        ],
+
+
+        [
             'text'    => 'カラー',
             'icon'    => 'fa fa-align-justify',
             'submenu' => [

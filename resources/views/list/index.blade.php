@@ -60,12 +60,12 @@
 
                                     </div>
 
-                                    <div class="card__title-wrap">{{ $list['brand'] }}</div>
+                                    <div class="card__title-wrap500">{{ $list['brand'] }}</div>
                                     
-                                    <div class="card__title-wrap">
+                                    <div class="card__title-wrap500">
                                         <div class="card__title">{{ $list['name'] }}</div>
                                     </div>
-                                    <div class="card__title-wrap500">¥{{ number_format($list['min_price']) }}円〜</div>
+                                    <div class="card__title-wrap" style="color: #e62b4f">¥{{ number_format($list['min_price']) }}円〜</div>
                                     
             
                                     

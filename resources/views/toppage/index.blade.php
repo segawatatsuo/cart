@@ -5,18 +5,29 @@
 
 
 @section('content_header')
+
+    {{-- dropzone用に追加 --}}
+    <meta name="_token" content="{{ csrf_token() }}" />
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+    {{-- dropzone用に追加 --}}
+
+
+
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>プルダウン新規登録</h1>
+                    <h1>トップページカテゴリー新規登録</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item">
                             <a href="#">Home</a>
                         </li>
-                        <li class="breadcrumb-item active">プルダウン新規登録</li>
+                        <li class="breadcrumb-item active">トップページカテゴリー新規登録</li>
                     </ol>
                 </div>
             </div>
@@ -34,28 +45,28 @@
                     <div class="card card-primary">
 
                         <div class="card-header">
-                            <h3 class="card-title">プルダウン</h3>
+                            <h3 class="card-title">カテゴリー名登録</h3>
                         </div>
 
 
                             <div class="card-body">
 
                                 <div class="form-group">
-                                    <label for="name">プルダウン名</label>
+                                    <label for="name">カテゴリー名(日本語)</label>
                                     <input type="text" class="form-control" v-model="params.name">
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="inside_name">管理名</label>
+                                    <label for="inside_name">カテゴリー名(英語)</label>
                                     <input type="text" class="form-control" v-model="params.inside_name" placeholder="">
                                 </div>
                                 <div class="form-group">
-                                    <label for="attribution">帰属先</label>
+                                    <label for="attribution">カテゴリー大分類</label>
                                     <input type="text" class="form-control" v-model="params.attribution" placeholder="">
                                 </div>
 
                                 <div class="form-group">
-                                <label for="">スタイル選択ボタン</label><br>
+                                <label for="">カテゴリー名</label><br>
                                 <select id="with_color_button" name="with_color_button" class="form-control" v-model="params.with_color_button" >
                                     <option value="">なし</option>
                                     <option value="with_color_button">色選択ボタン使用</option>
@@ -64,17 +75,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="name">手入力項目1</label>
-                                    <input type="text" class="form-control" v-model="params.input_column1" placeholder="">
+                                    <label for="attribution">表示順</label>
+                                    <input type="text" class="form-control" v-model="params.attribution" placeholder="">
                                 </div>
-                                <div class="form-group">
-                                    <label for="name">手入力項目2</label>
-                                    <input type="text" class="form-control" v-model="params.input_column2" placeholder="">
-                                </div>
-                                <div class="form-group">
-                                    <label for="name">手入力項目3</label>
-                                    <input type="text" class="form-control" v-model="params.input_column3" placeholder="">
-                                </div>
+
+
 
                             </div>
 
@@ -86,29 +91,35 @@
                 <div class="col-md-6">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">プルダウン内容</h3>
+                            <h3 class="card-title">画像登録</h3>
                         </div>
 
                         <div class="card-body">
                             
 
-                            <label for="name">名称　価格</label>
+                            <div class="form-group">
+                                <label for="name">メイン画像</label>
+                                <form method="post" action="{{ url('image/upload/store') }}" enctype="multipart/form-data" class="dropzone"
+                                id="dropzone">
+                                @csrf
+                            </form>
 
 
-                            <div class="position-relative mb-3" v-for="(ingredient,index) in params.ingredients">
-                                <div class="row">
-                                <input type="text" placeholder="名称" class="form-control col-6 col-auto" v-model="params.ingredients[index]">
-                                <input type="text" placeholder="価格" class="form-control col-6 col-auto" v-model="params.prices[index]">
-
-                                <div class="position-absolute" style="right:10px;top:8px;">
-                                    <small>
-                                        <a href="#" type="button" @click="removeIngredient(index)">削除</a>
-                                    </small>
-                                </div>
-                                </div>
                             </div>
-                            <!--追加ボタン -->
-                            <button type="button" class="btn btn-outline-primary btn-sm" @click="addIngredient">+</button>
+                            <div class="form-group">
+                                <label for="name">サブ画像１</label>
+                                <input type="text" class="form-control" v-model="params.input_column2" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">サブ画像２</label>
+                                <input type="text" class="form-control" v-model="params.input_column3" placeholder="">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">サブ画像３</label>
+                                <input type="text" class="form-control" v-model="params.input_column3" placeholder="">
+                            </div>
+
+
                         </div>
 
 

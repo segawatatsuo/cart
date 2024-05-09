@@ -20,6 +20,7 @@ use App\Http\Controllers\ListController;
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
 use App\Http\Controllers\ColorAttributionController;
+use App\Http\Controllers\ToppageCategoryController;
 
 use App\Models\Sku;
 use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
@@ -113,6 +114,11 @@ Route::middleware('auth:admin')->group(function () {
     //カテゴリー
     Route::get('category', [CategoryController::class,'index'])->name('category.index');
     Route::post('category/store', [CategoryController::class,'store'])->name('category.store');
+
+    //トップページ
+    Route::get('toppage', [ToppageCategoryController::class,'index'])->name('toppage.index');
+    Route::post('toppage/store', [ToppageCategoryController::class,'store'])->name('toppage.store');
+
 
     //商品画像アップロード(item)
     Route::post('image/upload/store', [ImageUploadController::class,'fileStore']);

@@ -92,7 +92,60 @@
                                             alt="" title="" width="100" height="124">
                                     </div>
                                 @endforeach
-
+                                <!--
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082208-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082209-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082210-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082211-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082212-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082213-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082214-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082215-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082216-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082217-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082220-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082218-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                  <div class="swiper__slide">
+                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082219-tn.jpg"
+                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
+                  </div>
+                -->
                             </div>
                         </div>
                     </div>
@@ -147,7 +200,6 @@
 
 
                                         <!-- プルダウン カウンターでid番号を作成。1は上のアイテムカラーで使用済みなので2から開始 -->
-                                        {{-- 
                                         @php $n=2; @endphp
                                         @foreach ($selecters as $select)
                                             <div class="product__files">
@@ -212,7 +264,89 @@
                                             @php $n+=1; @endphp
                                         @endforeach
 
-                                        --}}
+                                        <!--
+                      <div class="product__files">
+                        <div class="h4">マーキング左片胸</div>
+
+                        <select class="option_select form-select" name="マーキング左片胸">
+                          <option data-price="0" selected>なし</option>
+                          <option data-price="550">1色(15cm×15cm以内)¥550</option>
+                          <option data-price="880">1色(15cm×35cm以内)¥880</option>
+                          <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
+                          <option data-price="1650">フルカラー(15cm×35cm以内)¥1650</option>
+                        </select>
+                      </div>
+
+
+
+
+
+
+                      <div class="product__files">
+                        <div class="h4">左片胸色名</div>
+                        <div class="d-flex justify-content-between">
+                          <button id="2" type="button" class="btn btn-primary part" data-bs-toggle="modal"
+                            data-bs-target="#ColorSelectModal" style="margin-right: 4px;">
+                            色見本を開く
+                          </button>
+                          <input type="text" value="" data-price="0" id="selected_image2" class="select2 textbox-grow"
+                            name="左片胸色名" style="border: 1px solid #e2e5e9;">
+                        </div>
+                      </div>
+
+
+                      <div class="product__files">
+                        <div class="h4">左片胸に入れる文字</div>
+                        <div class="d-flex">
+                          <input type="text" class="select2 textbox-grow" name="左片胸に入れる文字" value=""
+                            style="border: 1px solid #e2e5e9;">
+                        </div>
+                      </div>
+
+
+                      <div class="product__files">
+                        <div class="h4">マーキング右片胸</div>
+                        <select class="option_select form-select" name="マーキング右片胸">
+                          <option data-price="0" selected>なし</option>
+                          <option data-price="550">1色(15cm×15cm以内)¥550</option>
+                          <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
+                        </select>
+                      </div>
+
+
+                      <div class="product__files">
+                        <div class="h4">右片胸色名</div>
+                        <div class="d-flex justify-content-between">
+                          <button id="3" type="button" class="btn btn-primary part" data-bs-toggle="modal"
+                            data-bs-target="#ColorSelectModal" style="margin-right: 4px;">
+                            色見本を開く
+                          </button>
+                          <input type="text" id="selected_image3" class="select2 textbox-grow" name="右片胸色名" value=""
+                            style="border: 1px solid #e2e5e9;">
+                        </div>
+                      </div>
+
+                      <div class="product__files">
+                        <div class="h4">右片胸に入れる文字</div>
+                        <div class="d-flex">
+                          <input type="text" class="select2 textbox-grow" name="右片胸に入れる文字" value=""
+                            style="border: 1px solid #e2e5e9;">
+                        </div>
+                      </div>
+
+
+                      <div class="product__files">
+                        <div class="h4">マーキング胸中央</div>
+                        <select class="option_select form-select" name="マーキング胸中央">
+                          <option data-price="0" selected>なし
+                          </option>
+                          <option data-price="550">1色(15cm×15cm以内)¥550</option>
+                          <option data-price="880">1色(15cm×35cm以内)¥880</option>
+                          <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
+                          <option data-price="1650">フルカラー(15cm×35cm以内)¥1650</option>
+                        </select>
+                      </div>
+                    -->
 
 
 
@@ -243,7 +377,99 @@
                                                     </tr>
                                                 @endforeach
 
+                                                <!--
+                          <tr>
+                            <td width="100">110</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1190" data-size="110" name="サイズ[110]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,190円</td>
+                            <input type="hidden" name="price[110]" value="1190">
+                          </tr>
 
+                          <tr>
+                            <td width="100">120</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1190" data-size="120" name="サイズ[120]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,190円</td>
+                            <input type="hidden" name="price[120]" value="1190">
+                          </tr>
+                          <tr>
+                            <td width="100">130</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1190" data-size="130" name="サイズ[130]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,190円</td>
+                            <input type="hidden" name="price[130]" value="1190">
+                          </tr>
+                          <tr>
+                            <td width="100">140</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1190" data-size="140" name="サイズ[140]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,190円</td>
+                            <input type="hidden" name="price[140]" value="1190">
+                          </tr>
+                          <tr>
+                            <td width="100">150</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1190" data-size="150" name="サイズ[150]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,190円</td>
+                            <input type="hidden" name="price[150]" value="1190">
+                          </tr>
+                          <tr>
+                            <td width="100">L</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1360" data-size="L" name="サイズ[L]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,360円</td>
+                            <input type="hidden" name="price[L]" value="1360">
+                          </tr>
+                          <tr>
+                            <td width="100">M</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1360" data-size="M" name="サイズ[M]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,360円</td>
+                            <input type="hidden" name="price[M]" value="1360">
+                          </tr>
+                          <tr>
+                            <td width="100">S</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1360" data-size="S" name="サイズ[S]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,360円</td>
+                            <input type="hidden" name="price[S]" value="1360">
+                          </tr>
+                          <tr>
+                            <td width="100">XL</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1360" data-size="XL" name="サイズ[XL]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,360円</td>
+                            <input type="hidden" name="price[XL]" value="1360">
+                          </tr>
+                          <tr>
+                            <td width="100">XXL</td>
+                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
+                                data-price="1360" data-size="XXL" name="サイズ[XXL]"
+                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                            </td>
+                            <td>1,360円</td>
+                            <input type="hidden" name="price[XXL]" value="1360">
+                          </tr>
+                        -->
                                             </tbody>
                                         </table>
                                         <!-- サイズ -->
