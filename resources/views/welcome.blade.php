@@ -246,7 +246,7 @@
 				src=""
 				srcset="{{ asset('storage/image/top_page/uniform/basketball.png') }}"
 				alt="">
-			  <div class="tile__title">バレーボール / <br>Volleyball</div>
+			  <div class="tile__title">バスケットボール / <br>Basketball</div>
 			  <div class="pill pill_arrow pill_round pill_transparent">
 				<svg width="24" height="24" viewBox="0 0 24 24">
 				  <use xlink:href="#arrow-right"></use>
