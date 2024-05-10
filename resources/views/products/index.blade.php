@@ -146,6 +146,26 @@
                                         <!-- アイテムカラー -->
 
 
+
+                                        <!-- プリントを追加 -->
+                                        <div class="product__files">
+                                            <div class="h4">プリントを追加</div>
+                                            <div class="d-flex">
+                                                <button id="1" type="button"
+                                                    class="btn btn-primary part btn-send" data-bs-toggle="modal"
+                                                    data-bs-target="#AddPrintModal" style="margin-right: 4px;">
+                                                    プリントを追加
+                                                </button>
+                                                <input type="text" value=""
+                                                    class="radi select2 textbox-grow" id="addprint1"
+                                                    name="" style="border: 1px solid #e2e5e9;">
+
+                                            </div>
+                                        </div>
+                                        <!-- プリントを追加 -->
+
+
+
                                         <!-- プルダウン カウンターでid番号を作成。1は上のアイテムカラーで使用済みなので2から開始 -->
                                         {{-- 
                                         @php $n=2; @endphp
@@ -255,7 +275,7 @@
 
 
                                         <div class="product__files">
-                                            <div class="h4">SKU</div>
+                                            <div class="h4">選択されたアイテムカラー番号</div>
                                             <div class="d-flex">
                                                 <input type="text" class="inputbox select2 textbox-grow"
                                                     id="sku" name="sku" value="{{ old('sku') }}" readonly

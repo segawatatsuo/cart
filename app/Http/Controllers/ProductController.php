@@ -11,6 +11,7 @@ use App\Models\Pulldown_set;
 use App\Models\Color;
 use App\Models\Font;
 use App\Models\Category;
+use App\Models\AddPrint;
 use Hamcrest\Arrays\IsArray;
 use Illuminate\Support\Facades\DB;
 
@@ -19,6 +20,9 @@ class ProductController extends Controller
     public function index($id)
     {
         $item = Item::find($id);
+
+        $addprint_model = new AddPrint();
+        $add_print = $addprint_model->add_print();
 
         $categorys = $item->category;//JSON "["33","34"]"
         $categorys_arr = json_decode($categorys, true);//JSONを連想配列に変換(引数trueが必要)
@@ -76,7 +80,7 @@ class ProductController extends Controller
         //書体一覧
         $font_array = Font::all();
 
-        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array', 'category_name'));
+        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array', 'category_name','add_print'));
     }
 
     public function get_size(Request $request)
