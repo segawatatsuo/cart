@@ -44,7 +44,12 @@
 <div class="footer"></div>
 </div>
 
+{{-- 
 <script src="{{ asset('/assets/dist/js/bootstrap.bundle.min.js') }}"></script>
+ --}}
+ <!-- collapse -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 <!--slickスライダー-->
 <!-- jQuery -->
 <script src="{{ asset('/assets/dist/js/jquery.min.js') }}"></script>
@@ -54,15 +59,26 @@
 <script src="{{ asset('/assets/dist/js/home.js') }}"></script>
 <script src="{{ asset('/assets/dist/js/swiper.js') }}"></script><!--app.js-->
 <script src="{{ asset('/assets/dist/js/app.js') }}"></script><!--app.js-->
+{{-- 
 <script src="{{ asset('/assets/dist/js/bootstrap.bundle.v5.0.0-beta1.min.js') }}"></script>
+ --}}
 <script src="{{ asset('/assets/dist/css/app-head.js') }}"></script>
-<!--font-awesome.min.css-->
-<!--
-<link rel="stylesheet" href="./assets/dist/css/fontawesome/font-awesome.min.css">
-<link rel="stylesheet" href="./assets/dist/css/swiper/swiper.min.css">
-<link rel="stylesheet" href="./assets/dist/css/bootstrap.min.css">
-<link rel="stylesheet" href="./assets/dist/css/swiper/for_swiper.css">
--->
+
+    {{-- dropzone用に追加 --}}
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+    {{-- 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+     --}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+    {{-- dropzone用に追加 --}}
+
+
+
+
+
+
 
 
 
@@ -103,6 +119,71 @@
     </div>
 </div>
 <!--プリントを追加するモーダル-->
+
+
+
+<!--縁取りスタイルを追加するモーダル-->
+<div class="modal fade" id="FuchiDoriModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">縁取りスタイル</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="{{ asset('/cartAdd/index') }}" method="post">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="card" style="border: 0; padding:0">
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
+                                        data-id='縁取りなし' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/fuchinashi.png"
+                                            alt="">
+                                        <div>縁取りなし</div>
+                                    </button>
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
+                                        data-id='中抜き縁取り' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/nakanuki.png" alt="">
+                                        <div>中抜き縁取り</div>
+                                    </button>
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
+                                        data-id='中抜き縁取り2色' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/nakanuki-2.png"
+                                            alt="">
+                                        <div>中抜き縁取り2色</div>
+                                    </button>
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
+                                        data-id='2重縁取り' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/nijyu.png" alt="">
+                                        <div>2重縁取り</div>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--縁取りスタイルを追加するモーダル-->
+
+
 
 
 
@@ -242,8 +323,57 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
 -->
 
 
+    {{-- dropzone用に追加 --}}
+    <!--ファイル名を変更する場合に使うオプション -->
+    <script type="text/javascript">
+        Dropzone.options.dropzone = {
+            maxFilesize: 4,
+            renameFile: function(file) {
+                var dt = new Date();
+                var time = dt.getTime();
+                return time + file.name; //日時＋fileName
+            },
+            acceptedFiles: ".jpeg,.jpg,.png,.gif,.webp",
+            addRemoveLinks: true,
+            timeout: 50000,
+            dictFileTooBig: "ファイルが大きすぎます。(@{{filesize}}MB). 最大サイズ: @{{maxFilesize}}MB.",
+            dictInvalidFileType: "画像ファイルのみアップロードが可能です。",
+            dictMaxFilesExceeded: "ファイルは4ファイルまで追加が可能です。",
+            dictDefaultMessage: "ここへファイルをドラッグ＆ドロップするとアップロードされます。<br>最大4ファイルまでアップ可能です。<br><br>（もしくはここをクリックするとファイル選択ウインドウが表示されますのでそこで選択してもアップ可能です）",
+  
+            
+            removedfile: function(file) {
+                var name = file.upload.filename;
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    },
+                    type: 'POST',
+                    url: 'http://127.0.0.1:8000/image/delete',
+                    data: {
+                        filename: name
+                    },
+                    success: function(data) {
+                        console.log("File has been successfully removed!!");
+                    },
+                    error: function(e) {
+                        console.log(e);
+                    }
+                });
+                var fileRef;
+                return (fileRef = file.previewElement) != null ?
+                    fileRef.parentNode.removeChild(file.previewElement) : void 0;
+            },
 
-
+            success: function(file, response) {
+                console.log(response);
+            },
+            error: function(file, response) {
+                return false;
+            }
+        };
+    </script>
+    {{-- dropzone用に追加 --}}
 
 
 
@@ -268,7 +398,7 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
     });
 
 
-    //モーダル画面でボタンのプリントを追加(addprintクラス)を押したら
+    //モーダル画面でボタンのプリントを追加(クラス)を押したら
     $('.addprint').click(function() {
 
         var image_name = $(this).data('id'); //data-idを取得。画像名が入っている(胸中央)
@@ -285,6 +415,31 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
         $(img[parts_id]).val(image_name);
         $(idNo[id]).text(id); //代入先
 
+    });
+
+
+    //モーダル画面でボタンの縁取りを(.fuchidori)を押したら
+    $('.fuchidori').click(function() {
+        var image_name = $(this).data('id'); //data-idを取得。中抜き縁取りなど
+        $('#fuchdori5').val(image_name); //textの#fuchdori5に中抜き縁取りを入れる
+
+        if (image_name == '縁取りなし' || image_name == '中抜き縁取り') {
+            $('.mojifuchicolor').hide();
+            $('#selected_image4').val("");
+        } else if (document.getElementById("mojifuchicolor") == null) {
+            $('.mojifuchicolor').show();
+        }
+    });
+
+    //プリントを削除
+    $('.delete').click(function() {
+        if (!confirm('このプリントを削除してよろしいですか？')) {
+            /* キャンセルの時の処理 */
+            return false;
+        } else {
+            /*　OKの時の処理 */
+            $('#wrap').remove();
+        }
     });
 
 
@@ -434,6 +589,18 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
         })
     })
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

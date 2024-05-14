@@ -30,23 +30,23 @@
                                     itemtype="https://schema.org/ListItem">
                                     <meta itemprop="position" content="5" />
                                     <span itemprop="name">
-                                      @foreach($category_name[$i] as $key=>$val)
-                                        {{ $key }}
-                                      @endforeach
+                                        @foreach ($category_name[$i] as $key => $val)
+                                            {{ $key }}
+                                        @endforeach
                                     </span>
                                 </li>
                             @else
                                 <li class="breadcrumbs__item" itemprop="itemListElement" itemscope
                                     itemtype="https://schema.org/ListItem">
                                     <meta itemprop="position" content="3" />
-                                    @foreach($category_name[$i] as $key=>$val)
-                                    <a class="breadcrumbs__link" itemscope itemtype="https://schema.org/WebPage"
-                                        itemprop="item" itemid="/mockups/category/apparel-mockups"
-                                        href="{{ asset('list?category='.$val) }}">
-                                        <span itemprop="name">
-                                            {{ $key }}
-                                        </span>
-                                    </a>
+                                    @foreach ($category_name[$i] as $key => $val)
+                                        <a class="breadcrumbs__link" itemscope itemtype="https://schema.org/WebPage"
+                                            itemprop="item" itemid="/mockups/category/apparel-mockups"
+                                            href="{{ asset('list?category=' . $val) }}">
+                                            <span itemprop="name">
+                                                {{ $key }}
+                                            </span>
+                                        </a>
                                     @endforeach
                                     <svg width="16" height="16">
                                         <use xlink:href="#arrow-breadcrumb"></use>
@@ -92,76 +92,19 @@
                                             alt="" title="" width="100" height="124">
                                     </div>
                                 @endforeach
-                                <!--
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082208-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082209-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082210-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082211-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082212-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082213-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082214-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082215-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082216-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082217-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082220-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082218-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                  <div class="swiper__slide">
-                    <img src="https://yi-files.yellowimages.com/products/1255000/1255024/2082219-tn.jpg"
-                      alt="Hooded Windbreaker Mockup" title="Hooded Windbreaker Mockup" width="100" height="124">
-                  </div>
-                -->
+
                             </div>
                         </div>
                     </div>
 
-
-
-
                     <!--左２段目説明-->
-
 
                     <div class="product__description">
                         <h3 class="h4">{{ $item->head_copy }}</h4>
-                        <h5>{{ $item->brand }} {{ $item->number }}</h5>
-                        <div class="product__description-content clearfix">
-                            <p style="padding-bottom: 20px">{!! $item->description !!}</p>
-                        </div>
+                            <h5>{{ $item->brand }} {{ $item->number }}</h5>
+                            <div class="product__description-content clearfix">
+                                <p style="padding-bottom: 20px">{!! $item->description !!}</p>
+                            </div>
                     </div>
                 </div>
 
@@ -174,7 +117,7 @@
                             <div class="product__info-content">
                                 <div class="product__card">
 
-                                    <form action="{{ asset('/cartAdd/index') }}" method="post">
+                                    <form action="{{ asset('/cartAdd/index') }}" method="post" id="form1>
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $item->id }}">
                                         <!-- if is err -->
@@ -193,13 +136,185 @@
                                                 </button>
                                                 <input type="text" value="{{ old('アイテムカラー') }}"
                                                     class="radi select2 textbox-grow" id="selected_image1"
-                                                    name="アイテムカラー" style="border: 1px solid #e2e5e9;">
+                                                    name="アイテムカラー" style="border: 1px solid #e2e5e9;" form="form1">
                                             </div>
                                         </div>
                                         <!-- アイテムカラー -->
 
 
+
+                                        <!-- プリントを追加 -->
+                                        <div class="product__files">
+                                            {{-- <div class="h4">プリントを追加</div> --}}
+                                            <div class="d-flex">
+                                                <button id="1" type="button"
+                                                    class="btn btn-warning part btn-send w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#AddPrintModal" style="margin-right: 4px;" form="form1">
+                                                    プリントを追加
+                                                </button>
+                                            </div>
+                                        </div>
+
+
+                                        <!--以下プリントを追加要素 -->
+                                        <div id="wrap">
+
+                                            <hr style="border-width: thick;">
+
+                                            <div class="product__files">
+                                                <div class="d-flex">
+                                                    <button id="1" type="button"
+                                                        class="btn btn-primary part btn-send w-50"
+                                                        data-bs-toggle="modal" data-bs-target="#AddPrintModal"
+                                                        style="margin-right: 4px;">
+                                                        プリント箇所
+                                                    </button>
+                                                    <input type="text" value=""
+                                                        class="radi select2 textbox-grow" id="addprint1"
+                                                        name="" style="border: 1px solid #e2e5e9;" form="form1">
+                                                </div>
+                                            </div>
+                                            <!-- プリントを追加 -->
+
+                                            <!-- プリントを追加が実行されたら下記を表示する -->
+                                            <div class="product__files">
+                                                <!--<div class="h4">書体見本を開く</div>-->
+                                                <div class="d-flex">
+                                                    <button id="2" type="button"
+                                                        class="btn btn-primary part btn-send w-50"
+                                                        data-bs-toggle="modal" data-bs-target="#FontSelectModal"
+                                                        style="margin-right: 4px;">
+                                                        書体(フォント)
+                                                    </button>
+                                                    <input type="text" value=""
+                                                        class="radi select2 textbox-grow" id="selected_image2"
+                                                        name="" style="border: 1px solid #e2e5e9;" form="form1">
+                                                </div>
+                                            </div>
+
+                                            <div class="product__files">
+                                                <!--<div class="h4">文字カラーを開く</div>-->
+                                                <div class="d-flex">
+                                                    <button id="3" type="button"
+                                                        class="btn btn-primary part btn-send w-50"
+                                                        data-bs-toggle="modal" data-bs-target="#ColorSelectModal"
+                                                        style="margin-right: 4px;">
+                                                        文字カラー
+                                                    </button>
+                                                    <input type="text" value=""
+                                                        class="radi select2 textbox-grow" id="selected_image3"
+                                                        name="" style="border: 1px solid #e2e5e9;" form="form1">
+                                                </div>
+                                            </div>
+
+                                            <div class="product__files" id="fuchidori_style">
+                                                <!--<div class="h4">文字縁カラーを開く</div>-->
+                                                <div class="d-flex">
+                                                    <button id="5" type="button"
+                                                        class="btn btn-primary part btn-send w-50"
+                                                        data-bs-toggle="modal" data-bs-target="#FuchiDoriModal"
+                                                        style="margin-right: 4px;">
+                                                        縁取りスタイル
+                                                    </button>
+                                                    <input type="text" value=""
+                                                        class="radi select2 textbox-grow" id="fuchdori5"
+                                                        name="" style="border: 1px solid #e2e5e9;" form="form1">
+                                                </div>
+                                            </div>
+
+                                            <div class="product__files mojifuchicolor">
+                                                <!--<div class="h4">文字縁カラーを開く</div>-->
+                                                <div class="d-flex">
+                                                    <button id="4" type="button"
+                                                        class="btn btn-primary part btn-send w-50"
+                                                        data-bs-toggle="modal" data-bs-target="#ColorSelectModal"
+                                                        style="margin-right: 4px;">
+                                                        文字縁カラー
+                                                    </button>
+                                                    <input type="text" value=""
+                                                        class="radi select2 textbox-grow" id="selected_image4"
+                                                        name="" style="border: 1px solid #e2e5e9;" form="form1">
+                                                </div>
+                                            </div>
+
+                                            <div class="product__files" id="textbox">
+                                                <div class="d-flex">
+                                                    <!--縁取りはid=5 -->
+                                                    <button id="5" type="button"
+                                                        class="btn btn-primary part w-25" data-bs-toggle=""
+                                                        data-bs-target="" style="margin-right: 4px;">
+                                                        テキスト
+                                                    </button>
+                                                    <!--縁取りはid=selected_image5 -->
+                                                    <input type="text" value=""
+                                                        class="radi select2 textbox-grow" id="selected_image5"
+                                                        name="" style="border: 1px solid #e2e5e9;" form="form1">
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+                                            <div class="product__files" id="textbox">
+                                                <p>
+                                                    <a class="btn btn-primary w-100" data-bs-toggle="collapse"
+                                                        href="#image-upload" role="button" aria-expanded="false"
+                                                        aria-controls="collapseExample">
+                                                        画像をアップロード
+                                                    </a>
+                                                </p>
+                                           
+                                                <div class="collapse" id="image-upload">
+                                                    <div class="">
+                                                        <h1>画像を上げた時点でDBに登録される</h1>
+                                                        <form method="post" action="{{ url('user/upload') }}"
+                                                            enctype="multipart/form-data" class="dropzone"
+                                                            id="dropzone" id="form2">
+                                                            @csrf
+                                                            <div class="dz-default dz-message">
+                                                                <button class="dz-button" type="button" form="form2">
+                                                                    ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                                            <div class="product__files">
+                                                <div class="d-flex">
+                                                    <button id="6" type="button"
+                                                        class="btn btn-secondary part btn-send w-100 delete"
+                                                        data-bs-toggle="modal" data-bs-target=""
+                                                        style="margin-right: 4px;">
+                                                        プリントを削除
+                                                    </button>
+                                                </div>
+                                            </div>
+
+                                        </div><!--#wrapはここまでにする -->
+
+
+
+
+
+
+
+                                        <!-- プリントを追加が実行されたら下記を表示する -->
                                         <!-- プルダウン カウンターでid番号を作成。1は上のアイテムカラーで使用済みなので2から開始 -->
+                                        {{-- 
                                         @php $n=2; @endphp
                                         @foreach ($selecters as $select)
                                             <div class="product__files">
@@ -263,90 +378,7 @@
                                             </div>
                                             @php $n+=1; @endphp
                                         @endforeach
-
-                                        <!--
-                      <div class="product__files">
-                        <div class="h4">マーキング左片胸</div>
-
-                        <select class="option_select form-select" name="マーキング左片胸">
-                          <option data-price="0" selected>なし</option>
-                          <option data-price="550">1色(15cm×15cm以内)¥550</option>
-                          <option data-price="880">1色(15cm×35cm以内)¥880</option>
-                          <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
-                          <option data-price="1650">フルカラー(15cm×35cm以内)¥1650</option>
-                        </select>
-                      </div>
-
-
-
-
-
-
-                      <div class="product__files">
-                        <div class="h4">左片胸色名</div>
-                        <div class="d-flex justify-content-between">
-                          <button id="2" type="button" class="btn btn-primary part" data-bs-toggle="modal"
-                            data-bs-target="#ColorSelectModal" style="margin-right: 4px;">
-                            色見本を開く
-                          </button>
-                          <input type="text" value="" data-price="0" id="selected_image2" class="select2 textbox-grow"
-                            name="左片胸色名" style="border: 1px solid #e2e5e9;">
-                        </div>
-                      </div>
-
-
-                      <div class="product__files">
-                        <div class="h4">左片胸に入れる文字</div>
-                        <div class="d-flex">
-                          <input type="text" class="select2 textbox-grow" name="左片胸に入れる文字" value=""
-                            style="border: 1px solid #e2e5e9;">
-                        </div>
-                      </div>
-
-
-                      <div class="product__files">
-                        <div class="h4">マーキング右片胸</div>
-                        <select class="option_select form-select" name="マーキング右片胸">
-                          <option data-price="0" selected>なし</option>
-                          <option data-price="550">1色(15cm×15cm以内)¥550</option>
-                          <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
-                        </select>
-                      </div>
-
-
-                      <div class="product__files">
-                        <div class="h4">右片胸色名</div>
-                        <div class="d-flex justify-content-between">
-                          <button id="3" type="button" class="btn btn-primary part" data-bs-toggle="modal"
-                            data-bs-target="#ColorSelectModal" style="margin-right: 4px;">
-                            色見本を開く
-                          </button>
-                          <input type="text" id="selected_image3" class="select2 textbox-grow" name="右片胸色名" value=""
-                            style="border: 1px solid #e2e5e9;">
-                        </div>
-                      </div>
-
-                      <div class="product__files">
-                        <div class="h4">右片胸に入れる文字</div>
-                        <div class="d-flex">
-                          <input type="text" class="select2 textbox-grow" name="右片胸に入れる文字" value=""
-                            style="border: 1px solid #e2e5e9;">
-                        </div>
-                      </div>
-
-
-                      <div class="product__files">
-                        <div class="h4">マーキング胸中央</div>
-                        <select class="option_select form-select" name="マーキング胸中央">
-                          <option data-price="0" selected>なし
-                          </option>
-                          <option data-price="550">1色(15cm×15cm以内)¥550</option>
-                          <option data-price="880">1色(15cm×35cm以内)¥880</option>
-                          <option data-price="1100">フルカラー(15cm×15cm以内)¥1100</option>
-                          <option data-price="1650">フルカラー(15cm×35cm以内)¥1650</option>
-                        </select>
-                      </div>
-                    -->
+                                        --}}
 
 
 
@@ -369,7 +401,7 @@
                                                                 data-price="{{ $size['price'] }}"
                                                                 data-size="{{ $size['size'] }}"
                                                                 name="サイズ[{{ $size['size'] }}]"
-                                                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
+                                                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;" form="form1">
                                                         </td>
                                                         <td>{{ number_format($size['price']) }}円</td>
                                                         <input type="hidden" name="price[{{ $size['size'] }}]"
@@ -377,99 +409,7 @@
                                                     </tr>
                                                 @endforeach
 
-                                                <!--
-                          <tr>
-                            <td width="100">110</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1190" data-size="110" name="サイズ[110]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,190円</td>
-                            <input type="hidden" name="price[110]" value="1190">
-                          </tr>
 
-                          <tr>
-                            <td width="100">120</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1190" data-size="120" name="サイズ[120]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,190円</td>
-                            <input type="hidden" name="price[120]" value="1190">
-                          </tr>
-                          <tr>
-                            <td width="100">130</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1190" data-size="130" name="サイズ[130]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,190円</td>
-                            <input type="hidden" name="price[130]" value="1190">
-                          </tr>
-                          <tr>
-                            <td width="100">140</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1190" data-size="140" name="サイズ[140]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,190円</td>
-                            <input type="hidden" name="price[140]" value="1190">
-                          </tr>
-                          <tr>
-                            <td width="100">150</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1190" data-size="150" name="サイズ[150]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,190円</td>
-                            <input type="hidden" name="price[150]" value="1190">
-                          </tr>
-                          <tr>
-                            <td width="100">L</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1360" data-size="L" name="サイズ[L]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,360円</td>
-                            <input type="hidden" name="price[L]" value="1360">
-                          </tr>
-                          <tr>
-                            <td width="100">M</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1360" data-size="M" name="サイズ[M]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,360円</td>
-                            <input type="hidden" name="price[M]" value="1360">
-                          </tr>
-                          <tr>
-                            <td width="100">S</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1360" data-size="S" name="サイズ[S]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,360円</td>
-                            <input type="hidden" name="price[S]" value="1360">
-                          </tr>
-                          <tr>
-                            <td width="100">XL</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1360" data-size="XL" name="サイズ[XL]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,360円</td>
-                            <input type="hidden" name="price[XL]" value="1360">
-                          </tr>
-                          <tr>
-                            <td width="100">XXL</td>
-                            <td><input type="number" value="" min="0" class="textBox" max="100" step="1"
-                                data-price="1360" data-size="XXL" name="サイズ[XXL]"
-                                style="width:50%;display:inline-block;border: 1px solid #e2e5e9;">
-                            </td>
-                            <td>1,360円</td>
-                            <input type="hidden" name="price[XXL]" value="1360">
-                          </tr>
-                        -->
                                             </tbody>
                                         </table>
                                         <!-- サイズ -->
@@ -481,11 +421,11 @@
 
 
                                         <div class="product__files">
-                                            <div class="h4">SKU</div>
+                                            <div class="h4">選択されたアイテムカラー番号</div>
                                             <div class="d-flex">
                                                 <input type="text" class="inputbox select2 textbox-grow"
-                                                    id="sku" name="sku" value="{{ old('sku') }}" readonly
-                                                    style="border: 1px solid #e2e5e9;">
+                                                    id="sku" name="sku" value="{{ old('sku') }}"
+                                                    readonly style="border: 1px solid #e2e5e9;" form="form1">
                                             </div>
                                         </div>
 
@@ -496,8 +436,7 @@
 
                                                 <input id="option_price" type="text"
                                                     class="inputbox select2 textbox-grow" name="オプション単価"
-                                                    value="" readonly
-                                                    style="border: 1px solid #e2e5e9;">
+                                                    value="" readonly style="border: 1px solid #e2e5e9;" form="form1">
                                             </div>
                                         </div>
 
@@ -508,8 +447,7 @@
                                             <div class="d-flex">
                                                 <input id="quantity" type="text"
                                                     class="inputbox select2 textbox-grow" name="数量"
-                                                    value="" readonly
-                                                    style="border: 1px solid #e2e5e9;">
+                                                    value="" readonly style="border: 1px solid #e2e5e9;" form="form1">
                                             </div>
                                         </div>
 
@@ -520,8 +458,7 @@
                                             <div class="d-flex">
                                                 <input id="item_price_total" type="text"
                                                     class="inputbox select2 textbox-grow" name="合計"
-                                                    value="0円" readonly
-                                                    style="border: 1px solid #e2e5e9;">
+                                                    value="0円" readonly style="border: 1px solid #e2e5e9;" form="form1">
                                             </div>
                                         </div>
 
@@ -529,11 +466,12 @@
                                         <!--要望-->
 
                                         <div class="product__files">
-                                          <div class="h4">ご要望他</div>
-                                          <div class="d-flex">
-                                              <textarea id="customer_request" rows="5" cols="33" class="inputbox select2 textbox-grow" name="ご要望他" value="" style="border: 1px solid #e2e5e9;"></textarea>
-                                          </div>
-                                      </div>
+                                            <div class="h4">ご要望他</div>
+                                            <div class="d-flex">
+                                                <textarea id="customer_request" rows="5" cols="33" class="inputbox select2 textbox-grow" name="ご要望他"
+                                                    value="" style="border: 1px solid #e2e5e9;" form="form1"></textarea>
+                                            </div>
+                                        </div>
 
 
                                         <div class="product__files d-flex justify-content-between">
@@ -558,33 +496,6 @@
     </div>
     </div>
 
-
-    <!--モーダル-->
-    <!--
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#simpleModal">
-      モーダルを開く
-    </button>
-
-    <div class="modal fade" id="simpleModal" tabindex="-1" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">モーダルタイトル</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
-          </div>
-          <div class="modal-body">
-            モーダルの本文です。
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  -->
-
-
-    <!--モーダル-->
 
 </main>
 

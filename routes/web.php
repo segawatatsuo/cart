@@ -17,10 +17,13 @@ use App\Http\Controllers\TopController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ListController;
-use App\Models\Pulldown;
-use App\Models\Pulldown_detail;
 use App\Http\Controllers\ColorAttributionController;
 use App\Http\Controllers\ToppageCategoryController;
+use App\Http\Controllers\UserUploadController;
+
+use App\Models\Pulldown;
+use App\Models\Pulldown_detail;
+
 
 use App\Models\Sku;
 use PhpOffice\PhpSpreadsheet\Shared\OLE\PPS\Root;
@@ -218,4 +221,5 @@ Route::get('cartAdd/allclear', [CartController::class, 'allclear'])->name('cartA
 Route::post('cartAdd/delete', [CartController::class, 'delete'])->name('cartAdd.delete');
 Route::get('cartAdd/delete', [CartController::class, 'delete'])->name('cartAdd.delete');
 
-
+Route::post('user/upload', [UserUploadController::class,'upload']);//UserUploadController
+Route::post('user/delete', [UserUploadController::class,'fileDestroy']);

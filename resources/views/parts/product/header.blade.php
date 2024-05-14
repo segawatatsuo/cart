@@ -25,7 +25,8 @@
     <meta property="og:type" content="website">
     <meta name="description" content="野球、サッカー、バレー、バスケットボールのユニフォーム、チームウェア、部活ユニフォームのことならユニフォームラボ">
 
-
+    <!--Dropzpne -->
+    <meta name="_token" content="{{ csrf_token() }}" />
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.0/css/all.css"><!--Font Awesome-->
     <link rel="stylesheet" href="{{ asset('/assets/dist/css/fontawesome/font-awesome.min.css') }}">
