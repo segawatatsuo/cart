@@ -1,5 +1,40 @@
 @include('parts.header')
 
+<style>
+	.soccerball{
+    width: 40px;
+    height: 40px;
+    background-image: url(http://127.0.0.1:8000/storage/image/ball/soccerball.png);
+	background-image: url(https://uniformlab.jp/cart/public/storage/image/ball/soccerball.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .volleyball{
+    width: 40px;
+    height: 40px;
+    background-image: url(http://127.0.0.1:8000/storage/image/ball/volleyball.png);
+	background-image: url(https://uniformlab.jp/cart/public/storage/image/ball/volleyball.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .basketball{
+    width: 40px;
+    height: 40px;
+    background-image: url(http://127.0.0.1:8000/storage/image/ball/basketball.png);
+	background-image: url(https://uniformlab.jp/cart/public/storage/image/ball/basketball.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .baseball{
+    width: 40px;
+    height: 40px;
+    background-image: url(http://127.0.0.1:8000/storage/image/ball/baseball.png);
+	background-image: url(https://uniformlab.jp/cart/public/storage/image/ball/baseball.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+</style>
 
     <!-- TOP -->
 	<div class="container py-3">
@@ -31,13 +66,26 @@
 					<p><span>¥623〜</span></p>
 					<p>カラー、サイズ、素材からお選びください。 <br>デザイン自由！</p>
 					<div class="d-flex home-slider__bullets">
-					  <div class="home-slider__bullet is-active" style="color: #FFA803;"
+					  <!--
+						<div class="home-slider__bullet is-active" style="color: #FFA803;"
 						data-url="/mockups/category/apparel-mockups"></div>
-					  <div class="home-slider__bullet" style="color: #F8434A;"
+						<div class="home-slider__bullet" style="color: #F8434A;"
 						data-url="/mockups/category/packaging-mockups"></div>
-					  <div class="home-slider__bullet" style="color: #7A18FF;" data-url="/mockups/category/vehicle-mockups">
+						<div class="home-slider__bullet" style="color: #7A18FF;" data-url="/mockups/category/vehicle-mockups">
 					  </div>
 					  <div class="home-slider__bullet" style="color: #3ED5F8;" data-url="/mockups/category/device-mockups">
+					  -->
+						<div class="home-slider__bullet is-active soccerball"
+						data-url=""></div>
+
+					  <div class="home-slider__bullet volleyball" style="color: #F8434A;"
+						data-url="/mockups/category/packaging-mockups"></div>
+
+					  
+						<div class="home-slider__bullet basketball" style="color: #7A18FF;" data-url="/mockups/category/vehicle-mockups">
+					  </div>
+					  
+					  <div class="home-slider__bullet baseball" style="color: #3ED5F8;" data-url="/mockups/category/device-mockups">
 					  </div>
 					</div>
 				  </div>
