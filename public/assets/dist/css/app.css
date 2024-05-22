@@ -7996,7 +7996,9 @@ only screen and (max-width:767px) {
 
     .tile__image_om-packaging {
         bottom: 11%;
-        max-width: 100px;
+        /*スマホ時のアイコンを少し大きく*/
+        /*max-width: 100px;*/
+        max-width: 130px;
         right: 9%
     }
 
@@ -9227,6 +9229,7 @@ input.tile__input:focus:-ms-input-placeholder {
     /*padding-top: 124.464%;*/
     /*カードの高さを少し縮めた*/
     padding-top: 100.464%;
+    padding-top: 124.464%;
     width: 100%
 }
 

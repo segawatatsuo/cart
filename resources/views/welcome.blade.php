@@ -18,18 +18,18 @@
 			<div class="swiper__wrapper" style="transform: translate3d(0px, 0px, 0px);">
 			  <div class="d-flex column swiper__slide swiper__slide_active" id="main-om-cat-banner">
 				<div class="tile home-slider__tile home-slider__tile_om">
-				  <div class="tile__suptitle">Ready to use</div>
+				  <div class="tile__suptitle">オリジナル各種競技Tシャツ</div>
 	
-				  <div class="tile__title">PSD Object <br>Mockups / <span id="mockups-cats" class="home-slider__cats"><span
-						id="om-main-slider-ap-title" class=" is-active" style="color: #FFA803;">Apparel</span><span
-						id="om-main-slider-pk-title" class="" style="color: #F8434A;">Packaging</span><span
-						id="om-main-slider-vh-title" class="" style="color: #7A18FF;">Vehicle</span><span
-						id="om-main-slider-dv-title" class="" style="color: #3ED5F8;">Device</span></span></div>
+				  <div class="tile__title">各種競技用 <br>チームTシャツ / <span id="mockups-cats" class="home-slider__cats"><span
+						id="om-main-slider-ap-title" class=" is-active" style="color: #FFA803;">Soccker</span><span
+						id="om-main-slider-pk-title" class="" style="color: #F8434A;">Volleyball</span><span
+						id="om-main-slider-vh-title" class="" style="color: #7A18FF;">Basketball</span><span
+						id="om-main-slider-dv-title" class="" style="color: #3ED5F8;">Baseball</span></span></div>
 	
-				  <div class="tile__text">Exclusive object mockups for <br>branding and packaging design</div>
+				  <div class="tile__text">チーム専用のオリジナルデザインTシャツ作成できます。<br>練習用、応援用に最適！</div>
 				  <div class="home-slider__middle">
-					<p><span>$1.5</span></p>
-					<p>For Membership <br><a href="https://yellowimages.com/yellow-ticket">holders</a></p>
+					<p><span>¥623〜</span></p>
+					<p>カラー、サイズ、素材からお選びください。 <br>デザイン自由！</p>
 					<div class="d-flex home-slider__bullets">
 					  <div class="home-slider__bullet is-active" style="color: #FFA803;"
 						data-url="/mockups/category/apparel-mockups"></div>
@@ -41,52 +41,64 @@
 					  </div>
 					</div>
 				  </div>
+
+
 				  <div class="home-slider__mockups">
-					<img id="om-main-slider-ap-img" class="tile__image home-slider__image home-slider__image_ap" width="286"
-					  height="318" draggable="false" loading="lazy"
-					  src="./yimgslideom1.avif"
-					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/53926b82-24a8-4f94-10e3-05954ee3b100/yimgslideom1x2 2x"
-					  alt="Apparel PSD Mockups">
-					<img id="om-main-slider-pk-img" class="tile__image home-slider__image home-slider__image_pk d-none"
-					  width="323" height="318" draggable="false" loading="lazy"
-					  src="./yimgslideom2.avif"
-					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/8b9afd52-1d92-43ee-8f73-048f0eb82100/yimgslideom2x2 2x"
-					  alt="Packaging PSD Mockups">
-					<img id="om-main-slider-vh-img" class="tile__image home-slider__image home-slider__image_vh d-none"
-					  width="255" height="345" draggable="false" loading="lazy"
-					  src="./yimgslideom3.avif"
-					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/a30dd64c-d25d-424f-aa6f-018fcdcded00/yimgslideom3x2 2x"
-					  alt="Vehicle PSD Mockups">
-					<img id="om-main-slider-dv-img" class="tile__image home-slider__image home-slider__image_dv d-none"
+
+					<img id="om-main-slider-ap-img" class="tile__image home-slider__image home-slider__image_dv" width="271"
+					  height="302" draggable="false" loading="lazy"
+					  src="{{ asset('storage/image/top_banner/READY_TO_USE/soccer.png') }}"
+					  srcset="{{ asset('storage/image/top_banner/READY_TO_USE/soccer.png') }}"
+					  alt="サッカー">
+
+					<img id="om-main-slider-pk-img" class="tile__image home-slider__image home-slider__image_dv d-none"
 					  width="271" height="302" draggable="false" loading="lazy"
-					  src="./yimgslideom4.avif"
-					  srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/6ad5b016-fb7c-4e27-e208-1dc20ca65000/yimgslideom4x2 2x"
-					  alt="Device PSD Mockups">
+					  src="{{ asset('storage/image/top_banner/READY_TO_USE/volleyball.png') }}"
+					  srcset="{{ asset('storage/image/top_banner/READY_TO_USE/volleyball.png') }}"
+					  alt="バレーボール">
+
+					<img id="om-main-slider-vh-img" class="tile__image home-slider__image home-slider__image_dv d-none"
+					  width="271" height="302" draggable="false" loading="lazy"
+					  src="{{ asset('storage/image/top_banner/READY_TO_USE/basket.png') }}"
+					  srcset="{{ asset('storage/image/top_banner/READY_TO_USE/basket.png') }}"
+					  alt="バスケットボール">
+					
+					  <img id="om-main-slider-dv-img" class="tile__image home-slider__image home-slider__image_dv d-none"
+					  width="271" height="302" draggable="false" loading="lazy"
+					  src="{{ asset('storage/image/top_banner/READY_TO_USE/baseball.png') }}"
+					  srcset="{{ asset('storage/image/top_banner/READY_TO_USE/baseball.png') }}"
+					  alt="野球">
 				  </div>
 	
 				  <a id="mockups-button" class="pill pill_black"
-					href="https://yellowimages.com/mockups/category/apparel-mockups">Explore now</a>
+					href="">こちら</a>
 				  <a id="mockups-overlay" class="home-slider__link"
-					href="https://yellowimages.com/mockups/category/apparel-mockups"
+					href=""
 					aria-label="Explore Object Mockups"></a>
 				</div>
 			  </div>
+
+
+			  
 			  <div class="d-flex column swiper__slide swiper__slide_next" id="provisual-main-slider">
-				<a href="https://provisual.app/" class="tile home-slider__tile home-slider__tile_provisual" target="_blank">
-				  <div class="tile__suptitle">Create. Visualize. Present.</div>
+				<a href="" class="tile home-slider__tile home-slider__tile_provisual" target="_blank">
+				  <div class="tile__suptitle">オリジナルイベントTシャツ</div>
 	
-				  <div class="tile__title">ProVisual.app <br>is now available!</div>
+				  <div class="tile__title">学生必見!! <br>イベントTシャツ</Table></div>
 	
-				  <div class="tile__text">online 3D visualization studio <br>you can use anywhere</div>
-				  <div class="pill pill_black">Try for free</div>
-				  <img class="tile__image" width="382" height="514" draggable="false"
-					src=""
-					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/29adbb3f-f093-4623-8a92-852559fa0700/yimgslidepvx2 2x"
+				  <div class="tile__text" style="color: white">クラT、部活T、体育祭<br>文化祭、サークル、各種イベント</div>
+				  <div class="pill pill_black">こちら</div>
+				  <img class="tile__image" width="259" height="350" draggable="false"
+					src="{{ asset('storage/image/top_banner/classt/classt.png') }}"
+					srcset="{{ asset('storage/image/top_banner/classt/classt.png') }}"
 					alt="ProVisual.app is now available!" loading="lazy">
 				</a>
 			  </div>
+
+
+
 			  <div class="d-flex column swiper__slide" id="png-main-slider">
-				<a href="https://yellowimages.com/png" class="tile home-slider__tile home-slider__tile_png">
+				<a href="" class="tile home-slider__tile home-slider__tile_png">
 				  <div class="tile__suptitle">Spin. Rotate. Create.</div>
 	
 				  <div class="tile__title">PNG Images 360° <br>and Static</div>
@@ -100,12 +112,15 @@
 	
 				  <img class="tile__image" width="270" height="304" draggable="false"
 					src=""
-					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/81806073-ec60-447f-8a99-fa5b7ef2a800/yimgslidepngx2 2x"
-					alt="PNG Images 360 and Static" loading="lazy">
+					srcset="{{ asset('storage/image/top_banner/Baseball-Jersey-Front-Three-Quarters.png') }}"
+					alt="" loading="lazy">
 				</a>
 			  </div>
+
+
+			  
 			  <div class="d-flex column swiper__slide" id="cs-main-slider">
-				<a href="https://yellowimages.com/graphic-design" class="tile home-slider__tile home-slider__tile_cs">
+				<a href="" class="tile home-slider__tile home-slider__tile_cs">
 				  <div class="tile__suptitle">Graphic assets</div>
 	
 				  <div class="tile__title">Creative <br>Store</div>
@@ -119,12 +134,16 @@
 	
 				  <img class="tile__image" width="299" height="335" draggable="false"
 					src=""
-					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/08a6f98c-98ac-4062-0c1c-d1a897950a00/yimgslidecsx2 2x"
-					alt="Creative Store" loading="lazy">
+					srcset="{{ asset('storage/image/top_banner/baseball-T.png') }}"
+					alt="" loading="lazy">
 				</a>
 			  </div>
+
+
+
+
 			  <div class="d-flex column swiper__slide" id="cf-main-slider">
-				<a href="https://yellowimages.com/png-fonts" class="tile home-slider__tile home-slider__tile_cf">
+				<a href="" class="tile home-slider__tile home-slider__tile_cf">
 				  <div class="tile__suptitle">Every letter is awesome</div>
 	
 				  <div class="tile__title">PNG Alphabets <br>and Letters</div>
@@ -136,12 +155,16 @@
 					</svg>
 				  </div>
 	
-				  <img class="tile__image" width="225" height="303" draggable="false"
+				  <img class="tile__image" width="299" height="335" draggable="false"
 					src=""
-					srcset="https://imagedelivery.net/F5KOmplEz0rStV2qDKhYag/358d6282-9095-4ee1-4339-35d1d49eb800/yimgslidecfx2 2x"
-					alt="PNG Alphabets and Letters" loading="lazy">
+					srcset="{{ asset('storage/image/top_banner/cap.png') }}"
+					alt="" loading="lazy">
 				</a>
 			  </div>
+
+
+
+
 			  <div class="d-flex column swiper__slide" id="cj-main-slider">
 				<a href="https://yellowimages.com/if-you-cannot-find-the-image-needed"
 				  class="tile home-slider__tile home-slider__tile_jobs">
@@ -211,9 +234,9 @@
 
 		  <div class="d-flex column small-6 medium-6 large-3">
 			<a class="tile" href="https://uniformlab.jp/">
-			  <img class="tile__image tile__image_om-apparel" width="276" height="255"
+			  <img class="tile__image tile__image_om-packaging" width="274" height="244"
 				src=""
-				srcset="{{ asset('storage/image/top_page/uniform/soccer.avif') }}"
+				srcset="{{ asset('storage/image/top_page/uniform/soccer.png') }}"
 				alt="Clothing PSD Mockups">
 			  <div class="tile__title">サッカー / <br>Soccer&Footsal</div>
 			  <div class="pill pill_arrow pill_round pill_transparent">
@@ -287,7 +310,7 @@
 			
 
 
-			<li class="card card_set" data-id="4874" style="border:none;">
+			<li class="card card_set" data-id="" style="border:none;">
 			  <div class="card__inner">
 				<a class="card__link-overlay" href="{{ route('list.index') }}"
 				  title="半袖T-シャツ"></a>
@@ -296,35 +319,35 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_FRONT_design.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_FRONT_design.png') }}"
 						  alt="半袖T-シャツ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_BACK.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_BACK.png') }}"
 						  alt="半袖T-シャツ">
 					  </div>
 
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/Tee-2.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/Tee-2.png') }}"
 						  alt="半袖T-シャツ">
 					  </div>
 
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_SIDE.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_SIDE.png') }}"
 						  alt="半袖T-シャツ">
 					  </div>
 					</div>
@@ -332,7 +355,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">半袖T-シャツ</div>
-					<div class="card__type">T-shirt short sleeve</div>
+					<div class="card__type tile__suptitle grey">T-shirt short sleeve</div>
 				  </div>
 				</a>
 			  </div>
@@ -343,44 +366,47 @@
 
 
 
-			<li class="card card_set" data-id="4874" style="border:none;">
+			<li class="card card_set" data-id="" style="border:none;">
 				<div class="card__inner">
 				  <a class="card__link-overlay" href="{{ route('list.index') }}"
 					title="長袖T-シャツ"></a>
 	  
 				  <a class="card__link" href="{{ route('list.index',['category'=>'34']) }}" title="長袖T-シャツ">
 					<div class="card__thumbs">
+
 					  <div class="card-thumbs__left">
 						<div class="card__thumb card__thumb_1 is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-1.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-015_M.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-1.png') }}"
 							alt="長袖T-シャツ">
 						</div>
 					  </div>
+
+
 					  <div class="card-thumbs__right">
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-back.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-020_M.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-back.png') }}"
 							alt="長袖T-シャツ">
 						</div>
   
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-2.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-025_M.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-2.png') }}"
 							alt="長袖T-シャツ">
 						</div>
   
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-3.png') }}}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/tshirts/00083-BBT-031_M.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/long/LTee-3.png') }}"
 							alt="長袖T-シャツ">
 						</div>
 					  </div>
@@ -388,7 +414,7 @@
 	  
 					<div class="card__title-wrap">
 					  <div class="card__title">長袖T-シャツ</div>
-					  <div class="card__type">T-shirt long sleeve</div>
+					  <div class="card__type tile__suptitle grey">T-shirt long sleeve</div>
 					</div>
 				  </a>
 				</div>
@@ -414,34 +440,34 @@
 					<div class="card-thumbs__left">
 
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-002_L.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01_design.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/00100-VP-002_L.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01_design.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-005_L.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Back_01.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/00100-VP-005_L.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Back_01.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-010_L.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Side_01.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/00100-VP-010_L.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Side_01.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/polo/00100-VP-011_L.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/polo/00100-VP-011_L.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					</div>
@@ -449,7 +475,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">ポロシャツ</div>
-					<div class="card__type">polo shirt</div>
+					<div class="card__type tile__suptitle grey">polo shirt</div>
 				  </div>
 				</a>
 			  </div>
@@ -464,34 +490,34 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design.png') }}"
 						  alt="スウェット">
 					  </div>
 					</div>
-
+					
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design2.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design2.png') }}"
 						  alt="スウェット">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design4.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design4.png') }}"
 						  alt="スウェット">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design5.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/hoodie/105693-hoodie_front_design5.png') }}"
 						  alt="スウェット">
 					  </div>
 					</div>
@@ -499,7 +525,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">スウェット</div>
-					<div class="card__type">sweatshirt</div>
+					<div class="card__type tile__suptitle grey">sweatshirt</div>
 				  </div>
 				</a>
 			  </div>
@@ -515,34 +541,34 @@
 					<div class="card__thumbs">
 					  <div class="card-thumbs__left">
 						<div class="card__thumb card__thumb_1 is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/sweat/00183-NSC-003_L.png')}}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 					  </div>
-  
+					  
 					  <div class="card-thumbs__right">
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view2.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/sweat/00183-NSC-005_L.png')}}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view2.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view4.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/sweat/00183-NSC-010_L.png')}}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view4.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view5.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_page/sweat/00183-NSC-015_L.png')}}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view5.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 					  </div>
@@ -550,67 +576,12 @@
 	  
 					<div class="card__title-wrap">
 					  <div class="card__title">パンツ/スェットパンツ</div>
-					  <div class="card__type">pants / sweatpants</div>
+					  <div class="card__type tile__suptitle grey">pants / sweatpants</div>
 					</div>
 				  </a>
 				</div>
 			  </li>
 
-
-
-
-
-
-			{{--  
-			<li class="card card_set" data-id="2366" style="border:none;">
-			  <div class="card__inner">
-				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2366" title="ジャージ"></a>
-	
-					<a class="card__link" href="{{ route('list.index',['category'=>'42']) }}" title="ジャージ">
-				  <div class="card__thumbs">
-					<div class="card-thumbs__left">
-					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-138_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-138_L.png')}}"
-						  alt="ジャージ">
-					  </div>
-					</div>
-					<div class="card-thumbs__right">
-					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-178_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-178_L.png')}}"
-						  alt="ジャージ">
-					  </div>
-					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-182_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-182_L.png')}}"
-						  alt="ジャージ">
-					  </div>
-					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/Jersey/00186-NSP-481_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/Jersey/00186-NSP-481_L.png')}}"
-						  alt="ジャージ">
-					  </div>
-					</div>
-				  </div>
-	
-				  <div class="card__title-wrap">
-					<div class="card__title">Jersey</div>
-					<div class="card__type">ジャージ</div>
-				  </div>
-				</a>
-			  </div>
-	
-			</li>
-			--}}
 	
 	
 			<!--outer -->
@@ -623,33 +594,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-005_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/outer/00049-FC-005_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front.png') }}"
 						  alt="アウター">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-010_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front2.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/outer/00049-FC-010_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front2.png') }}"
 						  alt="アウター">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-011_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/60110-varsity-back-5ea9e02b8eace.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/outer/00049-FC-011_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/outer/60110-varsity-back-5ea9e02b8eace.png') }}"
 						  alt="アウター">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/outer/00049-FC-015_L.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/60146-varsity-half-front.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/outer/00049-FC-015_L.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/outer/60146-varsity-half-front.png') }}"
 						  alt="アウター">
 					  </div>
 					</div>
@@ -657,65 +628,12 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">アウター</div>
-					<div class="card__type">Outer</div>
+					<div class="card__type tile__suptitle grey">Outer</div>
 				  </div>
 				</a>
 			  </div>
 	
 			</li>
-
-
-			{{-- 
-			<li class="card card_set" data-id="1905" style="border:none;">
-			  <div class="card__inner">
-				<a class="card__link-overlay" href="https://yellowimages.com/object-mockups/set/2902" title="パンツ"></a>
-	
-				<a class="card__link" href="{{ route('list.index',['category'=>'37']) }}" title="パンツ">
-				  <div class="card__thumbs">
-					<div class="card-thumbs__left">
-					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-030_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/pants/00220-MHP-030_L.png')}}"
-						  alt="パンツ">
-					  </div>
-					</div>
-					<div class="card-thumbs__right">
-					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-037_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/pants/00220-MHP-037_L.png')}}"
-						  alt="パンツ">
-					  </div>
-					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-039_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/pants/00220-MHP-039_L.png')}}"
-						  alt="パンツ">
-					  </div>
-					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/pants/00220-MHP-112_L.png')}}">
-	
-						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/pants/00220-MHP-112_L.png')}}"
-						  alt="パンツ">
-					  </div>
-					</div>
-				  </div>
-	
-				  <div class="card__title-wrap">
-					<div class="card__title">Pants</div>
-					<div class="card__type">パンツ</div>
-				  </div>
-				</a>
-			  </div>
-	
-			</li>
-
-			 --}}
 
 
 			 
@@ -728,10 +646,10 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/bag/00778-TCC-010_SM.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/bag/cotton-bag-mockup.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/bag/00778-TCC-010_SM.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/bag/cotton-bag-mockup.png') }}"
 						  alt="バッグp">
 					  </div>
 					</div>
@@ -762,7 +680,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">バッグ</div>
-					<div class="card__type">Bag</div>
+					<div class="card__type tile__suptitle grey">Bag</div>
 				  </div>
 				</a>
 			  </div>
@@ -780,33 +698,33 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-302_F.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/cap/86096-baseball-cap-mockup-half-side-navy.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/cap/00700-EVM-302_F.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/cap/86096-baseball-cap-mockup-half-side-navy.png') }}"
 						  alt="キャップ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-303_F.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/cap/purple.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/cap/00700-EVM-303_F.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/cap/purple.png') }}"
 						  alt="キャップ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-304_F.png')}}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/cap/red.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/cap/00700-EVM-304_F.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/cap/red.png') }}"
 						  alt="キャップ">
 					  </div>
 					  <div class="card__thumb is-loaded"
 						data-tn1="{{ asset('storage/image/top_page/cap/00700-EVM-305_F.png')}}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_page/cap/00700-EVM-305_F.png')}}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/cap/136148-snapback-cap2.png') }}"
 						  alt="キャップ">
 					  </div>
 					</div>
@@ -814,7 +732,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">キャップ</div>
-					<div class="card__type">Cap</div>
+					<div class="card__type tile__suptitle grey">Cap</div>
 				  </div>
 				</a>
 			  </div>
@@ -865,7 +783,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">タオル</div>
-					<div class="card__type">towel</div>
+					<div class="card__type tile__suptitle grey">towel</div>
 				  </div>
 				</a>
 			  </div>
@@ -915,7 +833,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">部活</div>
-					<div class="card__type">club activities</div>
+					<div class="card__type tile__suptitle grey">club activities</div>
 				  </div>
 				</a>
 			  </div>
@@ -967,7 +885,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">エンブレム・ワッペン</div>
-					<div class="card__type">emblem</div>
+					<div class="card__type tile__suptitle grey">emblem</div>
 				  </div>
 				</a>
 	
@@ -1017,7 +935,7 @@
 	
 				  <div class="card__title-wrap">
 					<div class="card__title">その他</div>
-					<div class="card__type">others</div>
+					<div class="card__type tile__suptitle grey">others</div>
 				  </div>
 				</a>
 			  </div>

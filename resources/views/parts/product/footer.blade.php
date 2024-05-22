@@ -47,8 +47,10 @@
 {{-- 
 <script src="{{ asset('/assets/dist/js/bootstrap.bundle.min.js') }}"></script>
  --}}
- <!-- collapse -->
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<!-- collapse -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+</script>
 
 <!--slickスライダー-->
 <!-- jQuery -->
@@ -64,25 +66,19 @@
  --}}
 <script src="{{ asset('/assets/dist/css/app-head.js') }}"></script>
 
-    {{-- dropzone用に追加 --}}
+{{-- dropzone用に追加 --}}
 
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
-    {{-- 
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
+{{-- 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
      --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
-    {{-- dropzone用に追加 --}}
-
-
-
-
-
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
+{{-- dropzone用に追加 --}}
 
 
 <!--プリントを追加するモーダル-->
+
 <div class="modal fade" id="AddPrintModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
@@ -98,7 +94,7 @@
                             @foreach ($add_print as $addp)
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                     <div class="card " style="border: 0; padding:0">
-                                        <button type="submit" class="btn addprint" id="2"
+                                        <button type="submit" class="btn addprint" id = "addprint"
                                             data-id='{{ $addp->part_name }}' data-bs-dismiss="modal">
                                             <img class="card-img-top" src="{{ asset('storage') }}/{{ $addp->image }}"
                                                 alt="">
@@ -122,110 +118,6 @@
 
 
 
-<!--縁取りスタイルを追加するモーダル-->
-<div class="modal fade" id="FuchiDoriModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">縁取りスタイル</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
-            </div>
-
-            <div class="modal-body">
-                <form action="{{ asset('/cartAdd/index') }}" method="post">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
-                                <div class="card" style="border: 0; padding:0">
-
-                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
-                                        data-id='縁取りなし' data-bs-dismiss="modal">
-                                        <img class="card-img-top"
-                                            src="{{ asset('storage') }}/image/fuchidori/fuchinashi.png"
-                                            alt="">
-                                        <div>縁取りなし</div>
-                                    </button>
-
-                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
-                                        data-id='中抜き縁取り' data-bs-dismiss="modal">
-                                        <img class="card-img-top"
-                                            src="{{ asset('storage') }}/image/fuchidori/nakanuki.png" alt="">
-                                        <div>中抜き縁取り</div>
-                                    </button>
-
-                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
-                                        data-id='中抜き縁取り2色' data-bs-dismiss="modal">
-                                        <img class="card-img-top"
-                                            src="{{ asset('storage') }}/image/fuchidori/nakanuki-2.png"
-                                            alt="">
-                                        <div>中抜き縁取り2色</div>
-                                    </button>
-
-                                    <button type="submit" class="btn fuchidori d-block mx-auto" id="5"
-                                        data-id='2重縁取り' data-bs-dismiss="modal">
-                                        <img class="card-img-top"
-                                            src="{{ asset('storage') }}/image/fuchidori/nijyu.png" alt="">
-                                        <div>2重縁取り</div>
-                                    </button>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--縁取りスタイルを追加するモーダル-->
-
-
-
-
-
-<!--色モーダル-->
-<div class="modal fade" id="ColorSelectModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
-    <div class="modal-dialog modal-xl">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">色見本</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
-            </div>
-
-            <div class="modal-body">
-                <form action="{{ asset('/cartAdd/index') }}" method="post">
-                    <div class="container">
-                        <div class="row">
-                            @foreach ($color_array as $color)
-                                <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-                                    <div class="card " style="border: 0; padding:0">
-                                        <button type="submit" class="btn select" id="1"
-                                            data-id='{{ $color->display_name }}' data-bs-dismiss="modal">
-                                            <img class="card-img-top"
-                                                src="{{ asset('storage') }}{{ $color->path }}/{{ $color->name }}"
-                                                alt="">
-                                            <div>{{ $color->display_name }}</div>
-                                        </button>
-                                    </div>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!--色モーダル-->
-
 <!--書体モーダル-->
 <div class="modal fade" id="FontSelectModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
     <div class="modal-dialog modal-xl">
@@ -242,7 +134,7 @@
                             @foreach ($font_array as $font)
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                     <div class="card " style="border: 0; padding:0">
-                                        <button type="submit" class="btn select" id="1"
+                                        <button type="submit" class="btn font" id= 1
                                             data-id='{{ $font->name }}' data-bs-dismiss="modal">
                                             <img class="card-img-top"
                                                 src="{{ asset('storage') }}{{ $font->path }}/{{ $font->name }}"
@@ -266,6 +158,160 @@
 <!--書体モーダル-->
 
 
+<!--文字色モーダル-->
+<div class="modal fade" id="ColorSelectModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">文字色見本</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="{{ asset('/cartAdd/index') }}" method="post">
+                    <div class="container">
+                        <div class="row">
+                            @foreach ($color_array as $color)
+                                <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                    <div class="card " style="border: 0; padding:0">
+                                        <button type="submit" class="btn select fontcolor" id= 1
+                                            data-id='{{ $color->display_name }}' data-bs-dismiss="modal">
+                                            <img class="card-img-top"
+                                                src="{{ asset('storage') }}{{ $color->path }}/{{ $color->name }}"
+                                                alt="">
+                                            <div>{{ $color->display_name }}</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--文字色モーダル-->
+
+
+<!--縁取りスタイルを追加するモーダル-->
+<div class="modal fade" id="FuchiDoriModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">縁取りスタイル</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="{{ asset('/cartAdd/index') }}" method="post">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12">
+                                <div class="card" style="border: 0; padding:0">
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
+                                        data-id='縁取りなし' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/fuchinashi.png"
+                                            alt="縁取りなし">
+                                        <div>縁取りなし</div>
+                                    </button>
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
+                                        data-id='中抜き縁取り' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/nakanuki.png" alt="中抜き縁取り">
+                                        <div>中抜き縁取り</div>
+                                    </button>
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
+                                        data-id='中抜き縁取り2色' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/nakanuki-2.png"
+                                            alt="中抜き縁取り2色">
+                                        <div>中抜き縁取り2色</div>
+                                    </button>
+
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
+                                        data-id='2重縁取り' data-bs-dismiss="modal">
+                                        <img class="card-img-top"
+                                            src="{{ asset('storage') }}/image/fuchidori/nijyu.png" alt="2重縁取り">
+                                        <div>2重縁取り</div>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--縁取りスタイルを追加するモーダル-->
+
+
+
+
+
+
+
+
+
+<!--ふち文字色モーダル-->
+<div class="modal fade" id="ColorSelectFontModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">文字縁色見本</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="閉じる"></button>
+            </div>
+
+            <div class="modal-body">
+                <form action="{{ asset('/cartAdd/index') }}" method="post">
+                    <div class="container">
+                        <div class="row">
+                            @foreach ($color_array as $color)
+                                <div class="col-6 col-sm-4 col-md-3 col-lg-3">
+                                    <div class="card " style="border: 0; padding:0">
+                                        <button type="submit" class="btn fontcolor_fuchidori" id= 1
+                                            data-id='{{ $color->display_name }}' data-bs-dismiss="modal">
+                                            <img class="card-img-top"
+                                                src="{{ asset('storage') }}{{ $color->path }}/{{ $color->name }}"
+                                                alt="">
+                                            <div>{{ $color->display_name }}</div>
+                                        </button>
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--ふち文字色モーダル-->
+
+
+
+
+
+
+
 <!--ユニフォームカラーモーダル-->
 <div class="modal fade" id="UnifColorModal" tabindex="-1" aria-hidden="true" style="z-index: 2147483647;">
     <div class="modal-dialog modal-xl">
@@ -281,7 +327,7 @@
                         @foreach ($colors as $key => $data)
                             <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                 <div class="card" style="border: 0; padding:0">
-                                    <button type="submit" class="btn select item_color" id="1"
+                                    <button type="submit" class="btn select item_color" id= 1
                                         data-id='{{ $data->color_display_name }}' data-bs-dismiss="modal"
                                         data-sku='{{ $data->image_name }}'>
                                         <img class="card-img-top"
@@ -308,74 +354,64 @@
 
 
 
+<script>
+//ページを開いたらセッション変数(addprint_times)を毎回初期化
+$(document).ready(function(){
+    sessionStorage.clear();
+  });
+</script>
 
-<!--
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="https://iiyama.sakura.ne.jp/cart/css/swiper.min.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-<link rel="stylesheet" href="https://iiyama.sakura.ne.jp/cart/css/swiper.min.css">
-<link rel="stylesheet" href="https://iiyama.sakura.ne.jp/cart/css/for_swiper.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.1/js/swiper.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
--->
-
-
-    {{-- dropzone用に追加 --}}
-    <!--ファイル名を変更する場合に使うオプション -->
-    <script type="text/javascript">
-        Dropzone.options.dropzone = {
-            maxFilesize: 4,
-            renameFile: function(file) {
-                var dt = new Date();
-                var time = dt.getTime();
-                return time + file.name; //日時＋fileName
-            },
-            acceptedFiles: ".jpeg,.jpg,.png,.gif,.webp",
-            addRemoveLinks: true,
-            timeout: 50000,
-            dictFileTooBig: "ファイルが大きすぎます。(@{{filesize}}MB). 最大サイズ: @{{maxFilesize}}MB.",
-            dictInvalidFileType: "画像ファイルのみアップロードが可能です。",
-            dictMaxFilesExceeded: "ファイルは4ファイルまで追加が可能です。",
-            dictDefaultMessage: "ここへファイルをドラッグ＆ドロップするとアップロードされます。<br>最大4ファイルまでアップ可能です。<br><br>（もしくはここをクリックするとファイル選択ウインドウが表示されますのでそこで選択してもアップ可能です）",
-  
-            
-            removedfile: function(file) {
-                var name = file.upload.filename;
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                    },
-                    type: 'POST',
-                    url: 'http://127.0.0.1:8000/image/delete',
-                    data: {
-                        filename: name
-                    },
-                    success: function(data) {
-                        console.log("File has been successfully removed!!");
-                    },
-                    error: function(e) {
-                        console.log(e);
-                    }
-                });
-                var fileRef;
-                return (fileRef = file.previewElement) != null ?
-                    fileRef.parentNode.removeChild(file.previewElement) : void 0;
-            },
-
-            success: function(file, response) {
-                console.log(response);
-            },
-            error: function(file, response) {
-                return false;
-            }
-        };
-    </script>
-    {{-- dropzone用に追加 --}}
+{{-- dropzone --}}
+<!--ファイル名を変更する場合に使うオプション -->
+<script type="text/javascript">
+    Dropzone.options.dropzone = {
+        maxFilesize: 4,
+        renameFile: function(file) {
+            var dt = new Date();
+            var time = dt.getTime();
+            return time + file.name; //日時＋fileName
+        },
+        acceptedFiles: ".jpeg,.jpg,.png,.gif,.webp",
+        addRemoveLinks: true,
+        timeout: 50000,
+        dictFileTooBig: "ファイルが大きすぎます。(@{{ filesize }}MB). 最大サイズ: @{{ maxFilesize }}MB.",
+        dictInvalidFileType: "画像ファイルのみアップロードが可能です。",
+        dictMaxFilesExceeded: "ファイルは4ファイルまで追加が可能です。",
+        dictDefaultMessage: "ここへファイルをドラッグ＆ドロップするとアップロードされます。<br>最大4ファイルまでアップ可能です。<br><br>（もしくはここをクリックするとファイル選択ウインドウが表示されますのでそこで選択してもアップ可能です）",
 
 
+        removedfile: function(file) {
+            var name = file.upload.filename;
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                },
+                type: 'POST',
+                url: 'http://127.0.0.1:8000/image/delete',
+                data: {
+                    filename: name
+                },
+                success: function(data) {
+                    console.log("File has been successfully removed!!");
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+            var fileRef;
+            return (fileRef = file.previewElement) != null ?
+                fileRef.parentNode.removeChild(file.previewElement) : void 0;
+        },
+
+        success: function(file, response) {
+            console.log(response);
+        },
+        error: function(file, response) {
+            return false;
+        }
+    };
+</script>
+{{-- dropzone --}}
 
 
 <script>
@@ -391,35 +427,140 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
         $('#sku').val(sku); //SKUをテキストボックスに代入
     });
 
-
     $('.del-goods').click(function() {
         var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
-        alert(sku);
+    });
+</script>
+
+<!--プリントを追加 -->
+<script>
+    $('.tsuika').click(function() {
+        //セッション変数から何回目のプリント箇所追加になるか調べる
+        var addprint_times = sessionStorage.getItem('addprint_times');
+        if (addprint_times == null) {
+            sessionStorage.setItem('addprint_times', 1); //初めてなら1
+            addprint_times = sessionStorage.getItem('addprint_times');
+        } else {
+            sessionStorage.setItem('addprint_times', Number(addprint_times) + 1);
+            addprint_times = sessionStorage.getItem('addprint_times');
+        }
+        //alert(addprint_times);
+        if( addprint_times == 1 ){
+            var template = document.getElementById("js-template1");
+            //<div id = "wrap1">
+        }else if( addprint_times >= 2 ){
+            var template = document.getElementById("js-template2");
+        }
+        // 定義したtemplate要素を複製する
+        const content = template.content.cloneNode(true);
+        // #js-contentに追加
+        document.getElementById("js-content").appendChild(content);
+        //var button_id = $(this).attr('id',addprint_times);
+        //var modal = $(this);
+        //modal.attr('id','1');
+});
+</script>
+
+
+<script>
+    $( function() {
+        $('.addprint').click( function (e) {
+            $('#AddPrintModal').modal({}, e.target);
+        });
     });
 
+    $('#AddPrintModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var recipient = button.data('recipient');
+        var modal = $(this);
+        modal.find('.modal-title').text(recipient + 'へのメッセージ');
 
-    //モーダル画面でボタンのプリントを追加(クラス)を押したら
-    $('.addprint').click(function() {
+        //モーダル画面の印字位置画像でクリックされた位置名称を取得(胸中央など)
+        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var id = $(this).attr("id") //id=*を取得。
+        alert(id);
+        //var id = button_id;
+        var target;
+        target = "#addprint" + id; //代入先id名 #addprint1 
+        $(target).val(image_name);
 
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている(胸中央)
+    });
+</script>
+
+
+
+<script>
+    //書体(フォント)
+    $('.font').click(function() {
+        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var id = $(this).attr("id") //id=*を取得。
+
+        var target;
+        target = "#font" + id; //代入先id名 #addprint1 
+
+        $(target).val(image_name);
+    });
+</script>
+
+
+<script>
+    //フォントカラー
+    $('.fontcolor').click(function() {
+        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var id = $(this).attr("id") //id=*を取得。
+
+        var target;
+        target = "#fontcolor" + id; //代入先id名 #addprint1 
+
+        $(target).val(image_name);
+    });
+</script>
+
+
+
+<script>
+    //縁取りスタイル
+    $('.fuchidori').click(function() {
+        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var id = $(this).attr("id") //id=*を取得。
+        var target;
+        target = "#fuchidori" + parts_id; //代入先id名 #addprint1
+
+        $(target).val(image_name);
+
+        if (image_name == '縁取りなし' || image_name == '中抜き縁取り') {
+            $('.fontcolor_fuchidori1').hide();
+            $('#fontcolor_fuchidori1').val("");
+        } else if (document.getElementById("fontcolor_fuchidori1") == null) {
+            $('.fontcolor_fuchidori1').show();
+        }else{
+            $('.fontcolor_fuchidori1').show();
+        }
+
+    });
+</script>
+
+
+<script>
+    //文字縁取りカラー
+    $('.fontcolor_fuchidori').click(function() {
+        
+        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        
         var id = $(this).attr("id") //id=*を取得。1か2か3か..(何番めのプルダウンかNo)
 
-        //代入先を動的に作成
-        var img = {}; //
-        img[parts_id] = "#addprint" + parts_id; //代入先id名 #addprint1 #addprint2
+        var target;
+        target = "#fontcolor_fuchidori" + parts_id; //#fontcolor_fuchidori1
 
-        var idNo = {}; //
-        idNo[parts_id] = "#addprint" + parts_id; //代入先id名 #addprint1 #addprint2
-
-        $(img[id]).text(image_name); //代入先 addprint1
-        $(img[parts_id]).val(image_name);
-        $(idNo[id]).text(id); //代入先
-
+        $(target).val(image_name);
     });
+</script>
 
 
-    //モーダル画面でボタンの縁取りを(.fuchidori)を押したら
-    $('.fuchidori').click(function() {
+
+<script>
+        //モーダル画面でボタンの縁取りを(.fuchidori)を押したら
+        $('.fuchidori').click(function() {
         var image_name = $(this).data('id'); //data-idを取得。中抜き縁取りなど
         $('#fuchdori5').val(image_name); //textの#fuchdori5に中抜き縁取りを入れる
 
@@ -430,23 +571,21 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
             $('.mojifuchicolor').show();
         }
     });
-
-    //プリントを削除
-    $('.delete').click(function() {
-        if (!confirm('このプリントを削除してよろしいですか？')) {
-            /* キャンセルの時の処理 */
-            return false;
-        } else {
-            /*　OKの時の処理 */
-            $('#wrap').remove();
-        }
-    });
+</script>
 
 
-    //モーダル画面でボタンのselectクラスを押したら
+
+{{-- テンプレート --}}
+@include('products.temp')
+
+
+
+
+<script>
+    //モーダル画面でボタンのselectクラスを押したら(書体、文字カラー)
     $('.select').click(function() {
 
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている。data-id='{{ $font->name }}'
         var id = $(this).attr("id") //id=*を取得。1か2か3か..(何番めのプルダウンかNo)
 
         //代入先を動的に作成
@@ -460,7 +599,29 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
         $(img[parts_id]).val(image_name);
         $(idNo[id]).text(id); //代入先
     });
+
+
+
+
+
+    //プリントを削除
+    $('.delete').click(function() {
+        if (!confirm('このプリントを削除してよろしいですか？')) {
+            /* キャンセルの時の処理 */
+            return false;
+        } else {
+            /*　OKの時の処理 */
+            $('#wrap').remove();
+        }
+    });
 </script>
+
+
+
+
+
+
+
 
 <!-- Json 使わなくなった-->
 
@@ -585,22 +746,9 @@ integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7
             Number(totalAmount).toLocaleString(); //3桁区切りの文字列に変換
             $("#item_price_total").val(totalAmount + "円");
 
-            //$("#item_price_total").val(totalAmount + "円");
         })
     })
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 
