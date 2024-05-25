@@ -32,11 +32,11 @@
                 <li class="mb-1"><a class="link-same-color" tel:08022829131">■TEL:080-2282-9131　(直通）</a></li>
                 <li class="mb-1"><a class="link-same-color" tel:0364582577">■TEL:03-6458-2577</a></li>
                 <li class="mb-1">■FAX:03-6240-8066</li>
-                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">■店舗運営責任者/店舗セキュリティ責任者
+                <li class="mb-1">■店舗運営責任者/店舗セキュリティ責任者
                         出水　文虎</a></li>
-                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">■特定商取引に関する法律に基づく表記</a>
-                </li>
-                <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">■お問い合わせ</a></li>
+                <li class="mb-1"><a class="link-grey text-decoration-none" href="tokutei">■特定商取引に関する法律に基づく表記</a></li>
+                <li class="mb-1"><a class="link-grey text-decoration-none" href="privacy">■プライバシーポリシー</a></li>
+                <li class="mb-1"><a class="link-grey text-decoration-none" href="contact">■お問い合わせ</a></li>
             </ul>
         </div>
     </div>

@@ -186,6 +186,8 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'contact' => '内容',
+    ],
 
 ];

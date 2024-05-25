@@ -10,7 +10,6 @@ class Item extends Model
 {
     use HasFactory;
     protected $guarded = ['id',];
-
     //castsにarrayと入れることで取り出された時に配列にキャストすることができます。
     protected $casts = [
         'category' => 'array'

@@ -20,6 +20,8 @@ use App\Http\Controllers\ListController;
 use App\Http\Controllers\ColorAttributionController;
 use App\Http\Controllers\ToppageCategoryController;
 use App\Http\Controllers\UserUploadController;
+use App\Http\Controllers\LawController;
+use App\Http\Controllers\ContactController;
 
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
@@ -147,6 +149,12 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::get('company/mail', [CompanyController::class,'mail'])->name('company.mail');
     Route::post('company/mail/update', [CompanyController::class,'mail_update'])->name('company.mail.update');
+
+    Route::get('company/law', [LawController::class,'index'])->name(('law.index'));//特定商取引法
+    Route::post('company/law/update', [LawController::class,'update'])->name('company.law.update'); //アップデート
+
+    Route::get('company/privacy', [LawController::class,'privacy'])->name(('law.privacy'));//プライバシーポリシー
+    Route::post('company/privacy/update', [LawController::class,'privacy_update'])->name('company.privacy.update'); //アップデート
 });
 
 //--------------------一覧ページ---------------------//
@@ -209,7 +217,7 @@ Route::post('cartAdd/confirm', [CartController::class,'confirm'])->name('cartAdd
 //Route::get('cartAdd/order', [CartController::class,'order'])->name('cartAdd.order');
 
 //サンクスメール
-Route::post('cartAdd/order',[MailController::class,'orderMail'])->name('cartAdd.order');
+Route::post('cartAdd/order', [MailController::class,'orderMail'])->name('cartAdd.order');
 
 //カート１商品づつ削除
 Route::post('cartAdd/destroy{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
@@ -223,3 +231,15 @@ Route::get('cartAdd/delete', [CartController::class, 'delete'])->name('cartAdd.d
 
 Route::post('user/upload', [UserUploadController::class,'upload']);//UserUploadController
 Route::post('user/delete', [UserUploadController::class,'fileDestroy']);
+
+//特定商取引法に基づく表記
+Route::get('tokutei', [TopController::class, 'tokutei'])->name('law.tokutei');
+//プライバシーポリシー
+Route::get('privacy', [TopController::class, 'privacy'])->name('law.privacy');
+
+//お問い合わせ入力フォーム
+Route::get('/contact', [ContactController::class,'index'])->name('contact.index');
+//確認ページ
+Route::post('/contact/confirm', [ContactController::class,'confirm'])->name('contact.confirm');
+//送信完了ページ
+Route::post('/contact/thanks', [ContactController::class,'send'])->name('contact.send');

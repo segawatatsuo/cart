@@ -506,6 +506,15 @@ return [
                     'text'       => 'メール',
                     'url'        => 'company/mail',
                 ],
+                [
+                    'text'       => '特定商取法',
+                    'url'        => 'company/law',
+                ],
+                [
+                    'text'       => 'プライバシーポリシー',
+                    'url'        => 'company/privacy',
+                ],
+
             ]
         ],
 

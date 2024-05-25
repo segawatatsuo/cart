@@ -367,19 +367,19 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_FRONT_design.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/Tee-1.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_FRONT_design.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/Tee-1.png') }}"
 						  alt="半袖T-シャツ">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_BACK.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/Tee-back.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_BACK.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/Tee-back.png') }}"
 						  alt="半袖T-シャツ">
 					  </div>
 
@@ -395,7 +395,7 @@
 						data-tn1="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_SIDE.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/T-Shirt_SIDE.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/Tshirts/short/Tee-f.png') }}"
 						  alt="半袖T-シャツ">
 					  </div>
 					</div>
@@ -488,10 +488,10 @@
 					<div class="card-thumbs__left">
 
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01_design.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01_design.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					</div>
@@ -505,17 +505,17 @@
 						  alt="ポロシャツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Side_01.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Side_02.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Side_01.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Side_02.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_02.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_01.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/polo/Polo_Front_02.png') }}"
 						  alt="ポロシャツ">
 					  </div>
 					</div>
@@ -589,34 +589,34 @@
 					<div class="card__thumbs">
 					  <div class="card-thumbs__left">
 						<div class="card__thumb card__thumb_1 is-loaded"
-						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/42264-sport-pants-front.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/42264-sport-pants-front.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 					  </div>
 					  
 					  <div class="card-thumbs__right">
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view2.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/42293-sport-pants-front-half-side.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view2.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/42293-sport-pants-front-half-side.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view4.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/42277-sport-pants-side.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view4.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/42277-sport-pants-side.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 						<div class="card__thumb is-loaded"
-						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view5.png') }}">
+						  data-tn1="{{ asset('storage/image/top_banner/thumbnail/pants/42264-sport-pants-front2.png') }}">
 	  
 						  <img class="card-thumb__img" width="466" height="580"
-							src="{{ asset('storage/image/top_banner/thumbnail/pants/97753-mens-pants-mockup-front-half-side-view5.png') }}"
+							src="{{ asset('storage/image/top_banner/thumbnail/pants/42264-sport-pants-front2.png') }}"
 							alt="パンツ/スェットパンツ">
 						</div>
 					  </div>
@@ -642,19 +642,19 @@
 				  <div class="card__thumbs">
 					<div class="card-thumbs__left">
 					  <div class="card__thumb card__thumb_1 is-loaded"
-						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front2.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front2.png') }}"
 						  alt="アウター">
 					  </div>
 					</div>
 					<div class="card-thumbs__right">
 					  <div class="card__thumb is-loaded"
-						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front2.png') }}">
+						data-tn1="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front.png') }}">
 	
 						<img class="card-thumb__img" width="466" height="580"
-						  src="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front2.png') }}"
+						  src="{{ asset('storage/image/top_banner/thumbnail/outer/59840-varsity-front.png') }}"
 						  alt="アウター">
 					  </div>
 					  <div class="card__thumb is-loaded"

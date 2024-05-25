@@ -164,7 +164,7 @@
             </a>
             <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">ログイン</a>
             <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">カテゴリー</a>
-            <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">お問い合わせ</a>
+            <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contact">お問い合わせ</a>
             <a class="py-2 link-body-emphasis text-decoration-none" href="#"><i class="fa fa-shopping-cart"></i></a>
           </nav>
         </div>
