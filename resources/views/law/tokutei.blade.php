@@ -17,83 +17,83 @@
                 <table>
                   <tr>
                     <th style="width: 20%;" class="f14">販売業者</th>
-                    <td class="f14">{{ $data->distributor }}</td>
+                    <td class="f14">{{ $data->distributor ? $data->distributor : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">販売責任者</th>
-                    <td class="f14">{{ $data->manager }}</td>
+                    <td class="f14">{{ $data->manager ? $data->manager : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">所在地</th>
-                    <td class="f14">{{ $data->location }}</td>
+                    <td class="f14">{{ $data->location ? $data->location :'' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">屋号</th>
-                    <td class="f14">{{ $data->trade_name }}</td>
+                    <td class="f14">{{ $data->trade_name ? $data->trade_name : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">電話番号</th>
-                    <td class="f14">{{ $data->tel }}</td>
+                    <td class="f14">{{ $data->tel ? $data->tel : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">FAX番号</th>
-                    <td class="f14">{{ $data->fax }}</td>
+                    <td class="f14">{{ $data->fax ? $data->fax : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">メールアドレス</th>
-                    <td class="f14">{{ $data->email }}</td>
+                    <td class="f14">{{ $data->email ? $data->email : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">URL</th>
-                    <td class="f14">{{ $data->url }}</td>
+                    <td class="f14">{{ $data->url ? $data->url : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">配送方法</th>
-                    <td class="f14">{{ $data->shipping_method }}</td>
+                    <td class="f14">{{ $data->shipping_method ? $data->shipping_method : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">商品代金以外の必要料金</th>
-                    <td class="f14">{{ $data->necessary_charges }}</td>
+                    <td class="f14">{{ $data->necessary_charges ? $data->necessary_charges : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">申込の有効期限</th>
-                    <td class="f14">{{ $data->expiration_date }}</td>
+                    <td class="f14">{{ $data->expiration_date ? $data->expiration_date : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">不良品</th>
-                    <td class="f14">{{ $data->defective_product }}</td>
+                    <td class="f14">{{ $data->defective_product ? $data->defective_product : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">販売数量</th>
-                    <td class="f14">{{ $data->sales_quantity }}</td>
+                    <td class="f14">{{ $data->sales_quantity ? $data->sales_quantity : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">引き渡し時期</th>
-                    <td class="f14">{{ $data->delivery_time }}</td>
+                    <td class="f14">{{ $data->delivery_time ? $data->delivery_time : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">お支払い方法 ( {{ $data->payment_method_name1 }} )</th>
-                    <td class="f14">{{ $data->payment_method1 }}</td>
+                    <td class="f14">{{ $data->payment_method1 ? $data->payment_method1 : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">お支払い方法 ( {{ $data->payment_method_name2 }} )</th>
-                    <td class="f14">{{ $data->payment_method2 }}</td>
+                    <td class="f14">{{ $data->payment_method2 ? $data->payment_method2 : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">お支払い方法 ( {{ $data->payment_method_name3 }} )</th>
-                    <td class="f14">{{ $data->payment_method3 }}</td>
+                    <td class="f14">{{ $data->payment_method3 ? $data->payment_method3 : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">お支払い期限</th>
-                    <td class="f14">{{ $data->payment_deadline }}</td>
+                    <td class="f14">{{ $data->payment_deadline ? $data->payment_deadline : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">返品期限</th>
-                    <td class="f14">{{ $data->return_period }}</td>
+                    <td class="f14">{{ $data->return_period ? $data->return_period : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">返品送料</th>
-                    <td class="f14">{{ $data->return_shipping_fee }}</td>
+                    <td class="f14">{{ $data->return_shipping_fee ? $data->return_shipping_fee : '' }}</td>
                   </tr>
 
                 </table>
