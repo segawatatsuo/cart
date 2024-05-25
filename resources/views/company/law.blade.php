@@ -150,37 +150,37 @@
 
                                             <input type="text" value="{{ isset($law->payment_method_name1) ? $law->payment_method_name1 : '' }}" class="form-control" id="payment_method_name1"
                                             name="payment_method_name1" placeholder="お支払い方法名" style="margin-bottom: 2px;">
-                                            <textarea style="height: 10em;" class="form-control" id="payment_method1" placeholder="" name="payment_method1">{{ $law->payment_method1 }}</textarea>
+                                            <textarea style="height: 10em;" class="form-control" id="payment_method1" placeholder="" name="payment_method1">{{ isset($law->payment_method1) ? $law->payment_method1 : '' }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法2</label>
                                             <input type="text" value="{{ isset($law->payment_method_name2) ? $law->payment_method_name2 : ''  }}" class="form-control" id="payment_method_name2"
                                             name="payment_method_name2" placeholder="お支払い方法名" style="margin-bottom: 2px;">
-                                            <textarea style="height: 10em;" class="form-control" id="payment_method2" placeholder="" name="payment_method2">{{ $law->payment_method2 }}</textarea>
+                                            <textarea style="height: 10em;" class="form-control" id="payment_method2" placeholder="" name="payment_method2">{{ isset($law->payment_method2) ? $law->payment_method2 : '' }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法3</label>
                                             <input type="text" value="{{ isset($law->payment_method_name3) ? $law->payment_method_name3 : '' }}" class="form-control" id="payment_method_name3"
                                             name="payment_method_name3" placeholder="お支払い方法名" style="margin-bottom: 2px;">
-                                            <textarea style="height: 10em;" class="form-control" id="payment_method3" placeholder="" name="payment_method3">{{ $law->payment_method3 }}</textarea>
+                                            <textarea style="height: 10em;" class="form-control" id="payment_method3" placeholder="" name="payment_method3">{{ isset($law->payment_method3) ? $law->payment_method3 : '' }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法4</label>
                                             <input type="text" value="{{ isset($law->payment_method_name4) ? $law->payment_method_name4 : '' }}" class="form-control" id="payment_method_name4"
                                             name="payment_method_name4" placeholder="お支払い方法名" style="margin-bottom: 2px;">
-                                            <textarea style="height: 10em;" class="form-control" id="payment_method4" placeholder="" name="payment_method4">{{ $law->payment_method4 }}</textarea>
+                                            <textarea style="height: 10em;" class="form-control" id="payment_method4" placeholder="" name="payment_method4">{{ isset($law->payment_method4) ? $law->payment_method4 : '' }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法5</label>
                                             <input type="text" value="{{ isset($law->payment_method_name5) ? $law->payment_method_name5 : '' }}" class="form-control" id="payment_method_name5"
                                             name="payment_method_name5" placeholder="お支払い方法名" style="margin-bottom: 2px;">
-                                            <textarea style="height: 10em;" class="form-control" id="payment_method5" placeholder="" name="payment_method5">{{ $law->payment_method5 }}</textarea>
+                                            <textarea style="height: 10em;" class="form-control" id="payment_method5" placeholder="" name="payment_method5">{{ isset($law->payment_method5) ? $law->payment_method5 : '' }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法6</label>
                                             <input type="text" value="{{ isset($law->payment_method_name6) ? $law->payment_method_name6 : '' }}" class="form-control" id="payment_method_name6"
                                             name="payment_method_name6" placeholder="お支払い方法名" style="margin-bottom: 2px;">
-                                            <textarea style="height: 10em;" class="form-control" id="payment_method6" placeholder="" name="payment_method6">{{ $law->payment_method6 }}</textarea>
+                                            <textarea style="height: 10em;" class="form-control" id="payment_method6" placeholder="" name="payment_method6">{{ isset($law->payment_method6) ? $law->payment_method6 : '' }}</textarea>
                                         </div>
                                     </div>
                                 </div>
