@@ -17,7 +17,7 @@
                 <table>
                   <tr>
                     <th style="width: 20%;" class="f14">販売業者</th>
-                    <td class="f14">{{ $data->distributor ?? $data->distributor }}</td>
+                    <td class="f14">{{ isset($data->distributor) ? $data->distributor : '' }}</td>
                   </tr>
                   <tr>
                     <th class="f14">販売責任者</th>
