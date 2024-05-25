@@ -72,15 +72,15 @@
                     <td class="f14">{{ isset($data->delivery_time) ? $data->delivery_time : '' }}</td>
                   </tr>
                   <tr>
-                    <th class="f14">お支払い方法 ( {{ $data->payment_method_name1 }} )</th>
+                    <th class="f14">お支払い方法 ( {{  isset($data->payment_method_name1) ? $data->payment_method_name1 : '' }} )</th>
                     <td class="f14">{{ isset($data->payment_method1) ? $data->payment_method1 : '' }}</td>
                   </tr>
                   <tr>
-                    <th class="f14">お支払い方法 ( {{ $data->payment_method_name2 }} )</th>
+                    <th class="f14">お支払い方法 ( {{ isset($data->payment_method_name2) ? $data->payment_method_name2 : '' }} )</th>
                     <td class="f14">{{ isset($data->payment_method2) ? $data->payment_method2 : '' }}</td>
                   </tr>
                   <tr>
-                    <th class="f14">お支払い方法 ( {{ $data->payment_method_name3 }} )</th>
+                    <th class="f14">お支払い方法 ( {{ isset($data->payment_method_name3) ? $data->payment_method_name3 : '' }} )</th>
                     <td class="f14">{{ isset($data->payment_method3) ? $data->payment_method3 : '' }}</td>
                   </tr>
                   <tr>
