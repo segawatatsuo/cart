@@ -21,6 +21,12 @@ class ContactController extends Controller
 
     public function send(ContactFormRequest $request)
     {
+        // 戻るボタンをクリックされた場合
+        if ($request->input('back') == 'back') {
+            return redirect('/contact')
+                ->withInput();
+        }
+
         $contact = $request->all();
         \Mail::to('info@lookingfor.jp')->send(new ContactSendmail($contact));
         $request->session()->regenerateToken();

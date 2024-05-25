@@ -45,9 +45,8 @@
 
 
                         <div class="text-center pt-4 col-md-6 offset-md-3">
-                            <!--
+
                             <button type="submit" class="btn btn-primary" name='back' value="back"> 戻 る </button>
-                            -->
                             <button type="submit" class="btn btn-primary"> 送 信 </button>
                         </div>
                     </form>

@@ -39,7 +39,7 @@
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="form-group" style="padding-top:20px;">
-                                            <textarea class="form-control ckeditor" id="privacy" placeholder="" name="privacy">{{ $privacy->privacy }}</textarea>
+                                            <textarea class="form-control ckeditor" id="privacy" placeholder="" name="privacy">{{ isset($privacy->privacy) ? $privacy->privacy : '' }}</textarea>
                                         </div>
                                     </div>
                                 </div>

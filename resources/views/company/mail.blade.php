@@ -40,17 +40,17 @@
                             <div class="card-body col-md-6">
                                 <div class="form-group">
                                     <label for="number">タイトル</label>
-                                    <input type="text" value="{{ $mail->title }}" class="form-control" id="title"
+                                    <input type="text" value="{{ isset($mail->title) ? $mail->title : '' }}" class="form-control" id="title"
                                         name="title" placeholder="">
                                 </div>
                                 <div class="form-group">
                                     <label for="name">ヘッダ</label>
-                                    <textarea style="height: 20em;" class="form-control" id="header" placeholder="" name="header">{{ $mail->header }}</textarea>
+                                    <textarea style="height: 20em;" class="form-control" id="header" placeholder="" name="header">{{ isset($mail->header) ? $mail->header : '' }}</textarea>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">フッタ</label>
-                                    <textarea style="height: 20em;" class="form-control" id="address1" placeholder="" name="footer">{{ $mail->footer }}</textarea>
+                                    <textarea style="height: 20em;" class="form-control" id="address1" placeholder="" name="footer">{{ isset($mail->footer) ? $mail->footer : '' }}</textarea>
                                 </div>
                             </div>
                         </div>

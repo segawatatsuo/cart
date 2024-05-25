@@ -38,64 +38,64 @@
                             <div class="card-body col-md-6">
                                 <div class="form-group">
                                     <label for="number">会社名</label>
-                                    <input type="text" class="form-control" id="company_name" name="company_name" placeholder="" value="{{ $company->company_name }}">
+                                    <input type="text" class="form-control" id="company_name" name="company_name" placeholder="" value="{{ isset($company->company_name) ? $company->company_name : '' }}">
                                 </div>
                                 <div class="form-group">
                                     <label for="name">郵便番号</label>
-                                    <input type="text" class="form-control" id="zip_code" placeholder="" name="zip_code" value="{{ $company->zip_code }}">
+                                    <input type="text" class="form-control" id="zip_code" placeholder="" name="zip_code" value="{{ isset($company->zip_code) ? $company->zip_code : '' }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">住所1</label>
-                                    <input type="text" class="form-control" id="address1" placeholder="" name="address1" value="{{ $company->address1 }}">
+                                    <input type="text" class="form-control" id="address1" placeholder="" name="address1" value="{{ isset($company->address1) ? $company->address1 : '' }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">住所2</label>
-                                    <input type="text" class="form-control" id="address2" placeholder="" name="address2" value="{{ $company->address2 }}">
+                                    <input type="text" class="form-control" id="address2" placeholder="" name="address2" value="{{ isset($company->address2) ? $company->address : '' }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">電話番号</label>
-                                    <input type="text" class="form-control" id="tel_number" placeholder="" name="tel_number" value="{{ $company->tel_number }}">
+                                    <input type="text" class="form-control" id="tel_number" placeholder="" name="tel_number" value="{{ isset($company->tel_number) ? $company->tel_number : '' }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">FAX番号</label>
-                                    <input type="text" class="form-control" id="fax_number" placeholder="" name="fax_number" value="{{ $company->fax_number }}">
+                                    <input type="text" class="form-control" id="fax_number" placeholder="" name="fax_number" value="{{ isset($company->fax_number) ? $company->fax_number : '' }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">受注用メールアドレス</label>
-                                    <input type="text" class="form-control" id="order_mail" placeholder="" name="order_mail" value="{{ $company->order_mail }}">
+                                    <input type="text" class="form-control" id="order_mail" placeholder="" name="order_mail" value="{{ isset($company->order_mail) ? $company->order_mail : '' }}">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="name">問合せメールアドレス</label>
-                                    <input type="text" class="form-control" id="inquiry_mail" placeholder="" name="inquiry_mail" value="{{ $company->inquiry_mail }}">
+                                    <input type="text" class="form-control" id="inquiry_mail" placeholder="" name="inquiry_mail" value="{{ isset($company->inquiry_mail) ? $company->inquiry_mail : '' }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">送信元メールアドレス</label>
-                                    <input type="text" class="form-control" id="sender_mail" placeholder="" name="sender_mail" value="{{ $company->sender_mail }}">
+                                    <input type="text" class="form-control" id="sender_mail" placeholder="" name="sender_mail" value="{{ isset($company->sender_mail) ? $company->sender_mail : ''  }}">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="name">エラーメールアドレス</label>
-                                    <input type="text" class="form-control" id="error_mail" placeholder="" name="error_mail" value="{{ $company->error_mail }}">
+                                    <input type="text" class="form-control" id="error_mail" placeholder="" name="error_mail" value="{{ isset($company->error_mail) ? $company->error_mail : '' }}">
                                 </div>
 
 
                                 <div class="form-group">
                                     <label for="name">コピーライト</label>
-                                    <input type="text" class="form-control" id="copyright" placeholder="" name="copyright" value="{{ $company->copyright }}">
+                                    <input type="text" class="form-control" id="copyright" placeholder="" name="copyright" value="{{ isset($company->copyright) ? $company->copyright : '' }}">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="name">事業者登録番号</label>
-                                    <input type="text" class="form-control" id="business_registration_number" placeholder="" name="business_registration_number" value="{{ $company->business_registration_number }}">
+                                    <input type="text" class="form-control" id="business_registration_number" placeholder="" name="business_registration_number" value="{{ isset($company->business_registration_number) ? $company->business_registration_number : '' }}">
                                 </div>
 
 

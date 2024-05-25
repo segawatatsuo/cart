@@ -48,96 +48,96 @@
 
                                         <div class="form-group">
                                             <label for="number">販売業者</label>
-                                            <input type="text" value="{{ $law->distributor }}" class="form-control" id="distributor"
+                                            <input type="text" value="{{ isset($law->distributor) ? $law->distributor : '' }}" class="form-control" id="distributor"
                                                 name="distributor" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">販売責任者</label>
-                                            <input type="text" value="{{ $law->manager }}" class="form-control" id="manager"
+                                            <input type="text" value="{{ isset($law->manager) ? $law->manager : '' }}" class="form-control" id="manager"
                                                 name="manager" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">所在地</label>
-                                            <input type="text" value="{{ $law->location }}" class="form-control" id="location"
+                                            <input type="text" value="{{ isset($law->location) ? $law->location : '' }}" class="form-control" id="location"
                                                 name="location" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">屋号</label>
-                                            <input type="text" value="{{ $law->trade_name }}" class="form-control" id="trade_name"
+                                            <input type="text" value="{{ isset($law->trade_name) ? $law->trade_name : '' }}" class="form-control" id="trade_name"
                                                 name="trade_name" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">電話番号</label>
-                                            <input type="text" value="{{ $law->tel }}" class="form-control" id="tel"
+                                            <input type="text" value="{{ isset($law->tel) ? $law->tel : '' }}" class="form-control" id="tel"
                                                 name="tel" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">FAX番号</label>
-                                            <input type="text" value="{{ $law->fax }}" class="form-control" id="fax"
+                                            <input type="text" value="{{ isset($law->fax) ? $law->fax : '' }}" class="form-control" id="fax"
                                                 name="fax" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">メールアドレス</label>
-                                            <input type="text" value="{{ $law->email }}" class="form-control" id="email"
+                                            <input type="text" value="{{ isset($law->email) ? $law->email : '' }}" class="form-control" id="email"
                                                 name="email" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">URL</label>
-                                            <input type="text" value="{{ $law->url }}" class="form-control" id="url"
+                                            <input type="text" value="{{ isset($law->url) ? $law->url : '' }}" class="form-control" id="url"
                                                 name="url" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">配送方法</label>
-                                            <input type="text" value="{{ $law->shipping_method }}" class="form-control" id="shipping_method"
+                                            <input type="text" value="{{ isset($law->shipping_method) ? $law->shipping_method : '' }}" class="form-control" id="shipping_method"
                                                 name="shipping_method1" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">商品代金以外の必要料金</label>
-                                            <input type="text" value="{{ $law->necessary_charges }}" class="form-control" id="necessary_charges"
+                                            <input type="text" value="{{ isset($law->necessary_charges) ? $law->necessary_charges : '' }}" class="form-control" id="necessary_charges"
                                                 name="necessary_charges" placeholder="">
                                         </div>
                                         <div class="form-group">
                                             <label for="name">申込の有効期限</label>
-                                            <input type="text" value="{{ $law->expiration_date }}" class="form-control" id="expiration_date"
+                                            <input type="text" value="{{ isset($law->expiration_date) ? $law->expiration_date : '' }}" class="form-control" id="expiration_date"
                                                 name="expiration_date" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">不良品</label>
-                                            <input type="text" value="{{ $law->defective_product }}" class="form-control" id="defective_product"
+                                            <input type="text" value="{{ isset($law->defective_product) ? $law->defective_product : '' }}" class="form-control" id="defective_product"
                                                 name="defective_product" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">販売数量</label>
-                                            <input type="text" value="{{ $law->sales_quantity }}" class="form-control" id="sales_quantity"
+                                            <input type="text" value="{{ isset($law->sales_quantity) ? $law->sales_quantity : '' }}" class="form-control" id="sales_quantity"
                                                 name="sales_quantity" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">引き渡し時期</label>
-                                            <input type="text" value="{{ $law->delivery_time }}" class="form-control" id="delivery_time"
+                                            <input type="text" value="{{ isset($law->delivery_time) ? $law->delivery_time : '' }}" class="form-control" id="delivery_time"
                                                 name="delivery_time" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">返品期限</label>
-                                            <input type="text" value="{{ $law->return_period }}" class="form-control" id="return_period"
+                                            <input type="text" value="{{ isset($law->return_period) ? $law->return_period : '' }}" class="form-control" id="return_period"
                                                 name="return_period" placeholder="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="name">返品送料</label>
-                                            <input type="text" value="{{ $law->return_shipping_fee }}" class="form-control" id="return_shipping_fee"
+                                            <input type="text" value="{{ isset($law->return_shipping_fee) ? $law->return_shipping_fee : '' }}" class="form-control" id="return_shipping_fee"
                                                 name="return_shipping_fee" placeholder="">
                                         </div>
 
@@ -148,37 +148,37 @@
                                         <div class="form-group">
                                             <label for="name">お支払い方法1</label>
 
-                                            <input type="text" value="{{ $law->payment_method_name1 }}" class="form-control" id="payment_method_name1"
+                                            <input type="text" value="{{ isset($law->payment_method_name1) ? $law->payment_method_name1 : '' }}" class="form-control" id="payment_method_name1"
                                             name="payment_method_name1" placeholder="お支払い方法名" style="margin-bottom: 2px;">
                                             <textarea style="height: 10em;" class="form-control" id="payment_method1" placeholder="" name="payment_method1">{{ $law->payment_method1 }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法2</label>
-                                            <input type="text" value="{{ $law->payment_method_name2 }}" class="form-control" id="payment_method_name2"
+                                            <input type="text" value="{{ isset($law->payment_method_name2) ? $law->payment_method_name2 : ''  }}" class="form-control" id="payment_method_name2"
                                             name="payment_method_name2" placeholder="お支払い方法名" style="margin-bottom: 2px;">
                                             <textarea style="height: 10em;" class="form-control" id="payment_method2" placeholder="" name="payment_method2">{{ $law->payment_method2 }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法3</label>
-                                            <input type="text" value="{{ $law->payment_method_name3 }}" class="form-control" id="payment_method_name3"
+                                            <input type="text" value="{{ isset($law->payment_method_name3) ? $law->payment_method_name3 : '' }}" class="form-control" id="payment_method_name3"
                                             name="payment_method_name3" placeholder="お支払い方法名" style="margin-bottom: 2px;">
                                             <textarea style="height: 10em;" class="form-control" id="payment_method3" placeholder="" name="payment_method3">{{ $law->payment_method3 }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法4</label>
-                                            <input type="text" value="{{ $law->payment_method_name4 }}" class="form-control" id="payment_method_name4"
+                                            <input type="text" value="{{ isset($law->payment_method_name4) ? $law->payment_method_name4 : '' }}" class="form-control" id="payment_method_name4"
                                             name="payment_method_name4" placeholder="お支払い方法名" style="margin-bottom: 2px;">
                                             <textarea style="height: 10em;" class="form-control" id="payment_method4" placeholder="" name="payment_method4">{{ $law->payment_method4 }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法5</label>
-                                            <input type="text" value="{{ $law->payment_method_name5 }}" class="form-control" id="payment_method_name5"
+                                            <input type="text" value="{{ isset($law->payment_method_name5) ? $law->payment_method_name5 : '' }}" class="form-control" id="payment_method_name5"
                                             name="payment_method_name5" placeholder="お支払い方法名" style="margin-bottom: 2px;">
                                             <textarea style="height: 10em;" class="form-control" id="payment_method5" placeholder="" name="payment_method5">{{ $law->payment_method5 }}</textarea>
                                         </div>
                                         <div class="form-group">
                                             <label for="name">お支払い方法6</label>
-                                            <input type="text" value="{{ $law->payment_method_name6 }}" class="form-control" id="payment_method_name6"
+                                            <input type="text" value="{{ isset($law->payment_method_name6) ? $law->payment_method_name6 : '' }}" class="form-control" id="payment_method_name6"
                                             name="payment_method_name6" placeholder="お支払い方法名" style="margin-bottom: 2px;">
                                             <textarea style="height: 10em;" class="form-control" id="payment_method6" placeholder="" name="payment_method6">{{ $law->payment_method6 }}</textarea>
                                         </div>
