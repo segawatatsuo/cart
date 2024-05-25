@@ -16,7 +16,7 @@
               <div class="table-wrapper-responsive">
                 <table>
                   <tr>
-                    <td style="font-size: 16px;">{!! $data->privacy !!}</td>
+                    <td style="font-size: 16px;">{!! isset($data->privacy) ? $data->privacy : '' !!}</td>
                     
                   </tr>
                 </table>
