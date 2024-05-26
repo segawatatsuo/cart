@@ -9233,6 +9233,16 @@ input.tile__input:focus:-ms-input-placeholder {
     width: 100%
 }
 
+.card__thumb_item:before {
+    content: "";
+    display: block;
+    /*padding-top: 124.464%;*/
+    /*カードの高さを少し縮めた*/
+    padding-top: 110.464%;
+    width: 100%
+}
+
+
 .card_cs .card__thumb:before,
 .card_store .card__thumb:before {
     padding-top: 66.524%

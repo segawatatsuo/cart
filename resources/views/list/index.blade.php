@@ -53,7 +53,7 @@
                         <li class="product-impressions card card_objects" data-id="" data-sku="" data-category="" data-price="" style="border:none;">
                             <div class="card__inner">
                                 <a href="{{ route('product.index',['id'=>$list['id']]) }}" title="">
-                                    <div class="card__thumb is-loaded" style="background-color: #fff;">
+                                    <div class="card__thumb_item is-loaded" style="background-color: #fff;">
 
                                         <img class="card-thumb__img" width="466" height="580"
                                             src="{{ asset('storage/image/detail/') }}/{{ $list['thumbnail_folder'] }}/{{ $list['image_name'] }}" alt="">
