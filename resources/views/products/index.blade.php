@@ -142,25 +142,6 @@
                                         </div>
                                         <!-- アイテムカラー -->
 
-
-
-
-
-
-
-                                        <!-- プリントを追加 -->
-
-                                        {{-- 
-                                        <div class="product__files">
-
-                                            <div class="d-flex">
-                                                <button id="1" type="button"
-                                                    class="btn btn-warning part btn-send w-100" data-bs-toggle="modal" data-bs-target="#AddPrintModal" style="margin-right: 4px;" form="form1">
-                                                    プリントを追加
-                                                </button>
-                                            </div>
-                                        </div>
- --}}
                                         <form id="tsuika">
                                         <div class="product__files">
                                             <div class="d-flex">

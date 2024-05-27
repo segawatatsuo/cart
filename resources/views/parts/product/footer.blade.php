@@ -33,7 +33,7 @@
                 <li class="mb-1"><a class="link-same-color" tel:0364582577">■TEL:03-6458-2577</a></li>
                 <li class="mb-1">■FAX:03-6240-8066</li>
                 <li class="mb-1">■店舗運営責任者/店舗セキュリティ責任者
-                        出水　文虎</a></li>
+                    出水　文虎</a></li>
                 <li class="mb-1"><a class="link-grey text-decoration-none" href="tokutei">■特定商取引に関する法律に基づく表記</a></li>
                 <li class="mb-1"><a class="link-grey text-decoration-none" href="privacy">■プライバシーポリシー</a></li>
                 <li class="mb-1"><a class="link-grey text-decoration-none" href="contact">■お問い合わせ</a></li>
@@ -95,7 +95,7 @@
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                     <div class="card " style="border: 0; padding:0">
                                         <button type="submit" class="btn addprint" id = "addprint"
-                                            data-id='{{ $addp->part_name }}' data-bs-dismiss="modal">
+                                            data-parts='{{ $addp->part_name }}' data-bs-dismiss="modal" >
                                             <img class="card-img-top" src="{{ asset('storage') }}/{{ $addp->image }}"
                                                 alt="">
                                             <div>{{ $addp->part_name }}</div>
@@ -134,8 +134,8 @@
                             @foreach ($font_array as $font)
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                     <div class="card " style="border: 0; padding:0">
-                                        <button type="submit" class="btn font" id= 1
-                                            data-id='{{ $font->name }}' data-bs-dismiss="modal">
+                                        <button type="submit" class="btn font" id=1 data-parts='{{ $font->name }}'
+                                            data-bs-dismiss="modal">
                                             <img class="card-img-top"
                                                 src="{{ asset('storage') }}{{ $font->path }}/{{ $font->name }}"
                                                 alt="">
@@ -174,8 +174,8 @@
                             @foreach ($color_array as $color)
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                     <div class="card " style="border: 0; padding:0">
-                                        <button type="submit" class="btn select fontcolor" id= 1
-                                            data-id='{{ $color->display_name }}' data-bs-dismiss="modal">
+                                        <button type="submit" class="btn select fontcolor" id=1
+                                            data-parts='{{ $color->display_name }}' data-bs-dismiss="modal">
                                             <img class="card-img-top"
                                                 src="{{ asset('storage') }}{{ $color->path }}/{{ $color->name }}"
                                                 alt="">
@@ -214,31 +214,31 @@
                             <div class="col-12 col-sm-12 col-md-12 col-lg-12">
                                 <div class="card" style="border: 0; padding:0">
 
-                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
-                                        data-id='縁取りなし' data-bs-dismiss="modal">
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id=1
+                                        data-parts='縁取りなし' data-bs-dismiss="modal">
                                         <img class="card-img-top"
                                             src="{{ asset('storage') }}/image/fuchidori/fuchinashi.png"
                                             alt="縁取りなし">
                                         <div>縁取りなし</div>
                                     </button>
 
-                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
-                                        data-id='中抜き縁取り' data-bs-dismiss="modal">
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id=1
+                                        data-parts='中抜き縁取り' data-bs-dismiss="modal">
                                         <img class="card-img-top"
                                             src="{{ asset('storage') }}/image/fuchidori/nakanuki.png" alt="中抜き縁取り">
                                         <div>中抜き縁取り</div>
                                     </button>
 
-                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
-                                        data-id='中抜き縁取り2色' data-bs-dismiss="modal">
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id=1
+                                        data-parts='中抜き縁取り2色' data-bs-dismiss="modal">
                                         <img class="card-img-top"
                                             src="{{ asset('storage') }}/image/fuchidori/nakanuki-2.png"
                                             alt="中抜き縁取り2色">
                                         <div>中抜き縁取り2色</div>
                                     </button>
 
-                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id= 1
-                                        data-id='2重縁取り' data-bs-dismiss="modal">
+                                    <button type="submit" class="btn fuchidori d-block mx-auto fuchidori" id=1
+                                        data-parts='2重縁取り' data-bs-dismiss="modal">
                                         <img class="card-img-top"
                                             src="{{ asset('storage') }}/image/fuchidori/nijyu.png" alt="2重縁取り">
                                         <div>2重縁取り</div>
@@ -283,8 +283,8 @@
                             @foreach ($color_array as $color)
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                     <div class="card " style="border: 0; padding:0">
-                                        <button type="submit" class="btn fontcolor_fuchidori" id= 1
-                                            data-id='{{ $color->display_name }}' data-bs-dismiss="modal">
+                                        <button type="submit" class="btn fontcolor_fuchidori" id=1
+                                            data-parts='{{ $color->display_name }}' data-bs-dismiss="modal">
                                             <img class="card-img-top"
                                                 src="{{ asset('storage') }}{{ $color->path }}/{{ $color->name }}"
                                                 alt="">
@@ -317,7 +317,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title">アイテムカラー</h5>
+                <h5 class="modal-title">アイテムカラー選択</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
 
@@ -327,14 +327,27 @@
                         @foreach ($colors as $key => $data)
                             <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                 <div class="card" style="border: 0; padding:0">
-                                    <button type="submit" class="btn select item_color" id= 1
-                                        data-id='{{ $data->color_display_name }}' data-bs-dismiss="modal"
+                                    {{-- 
+                                    <button type="submit" class="btn select item_color" id=1
+                                        data-parts='{{ $data->color_display_name }}' data-bs-dismiss="modal"
                                         data-sku='{{ $data->image_name }}'>
                                         <img class="card-img-top"
                                             src="{{ asset('/storage/image/detail') . '/' . $item->number . '/' . $data->image_name }}"
                                             alt="">
                                         <div>{{ $data->color_display_name }}</div>
                                     </button>
+                                     --}}
+                                     <button type="submit" class="btn select item_color" id= 1
+                                     data-id='{{ $data->color_display_name }}' data-bs-dismiss="modal"
+                                     data-sku='{{ $data->image_name }}'>
+                                     <img class="card-img-top"
+                                         src="{{ asset('/storage/image/detail') . '/' . $item->number . '/' . $data->image_name }}"
+                                         alt="">
+                                     <div>{{ $data->color_display_name }}</div>
+                                 </button>
+
+
+
                                 </div>
                             </div>
                         @endforeach
@@ -355,10 +368,10 @@
 
 
 <script>
-//ページを開いたらセッション変数(addprint_times)を毎回初期化
-$(document).ready(function(){
-    sessionStorage.clear();
-  });
+    //ページを開いたらセッション変数(addprint_times)を毎回初期化
+    $(document).ready(function() {
+        sessionStorage.clear();
+    });
 </script>
 
 {{-- dropzone --}}
@@ -419,12 +432,13 @@ $(document).ready(function(){
     //パーツ選択のボタン
     $('.part').on('click', function() {
         parts_id = $(this).attr("id");
-        //alert(parts_id);
     });
-
+    //Tシャツの色とSKU
     $('.item_color').click(function() {
-        var sku = $(this).data('sku'); //data-skuを取得。SKU番号が入っている
+        var sku = $(this).data('sku'); //data-sku
+        var id = $(this).data('id');//色名日本語
         $('#sku').val(sku); //SKUをテキストボックスに代入
+        $('#selected_image1').val(id); //色名をテキストボックスに代入
     });
 
     $('.del-goods').click(function() {
@@ -444,46 +458,61 @@ $(document).ready(function(){
             sessionStorage.setItem('addprint_times', Number(addprint_times) + 1);
             addprint_times = sessionStorage.getItem('addprint_times');
         }
-        //alert(addprint_times);
-        if( addprint_times == 1 ){
+
+        //テンプレートを読み込み
+        if (addprint_times == 1) {
             var template = document.getElementById("js-template1");
-            //<div id = "wrap1">
-        }else if( addprint_times >= 2 ){
+        } else if (addprint_times == 2) {
             var template = document.getElementById("js-template2");
+        } else if (addprint_times == 3) {
+            var template = document.getElementById("js-template3");
+        } else if (addprint_times == 4) {
+            var template = document.getElementById("js-template4");
+        } else if (addprint_times == 5) {
+            var template = document.getElementById("js-template5");
+        } else if (addprint_times == 6) {
+            var template = document.getElementById("js-template6");
+        } else if (addprint_times == 7) {
+            var template = document.getElementById("js-template7");
+        } else if (addprint_times == 8) {
+            var template = document.getElementById("js-template8");
+        } else if (addprint_times == 9) {
+            var template = document.getElementById("js-template9");
+        } else if (addprint_times == 10) {
+            var template = document.getElementById("js-template10");
+        } else if (addprint_times == 11) {
+            var template = document.getElementById("js-template11");
         }
+
         // 定義したtemplate要素を複製する
         const content = template.content.cloneNode(true);
         // #js-contentに追加
         document.getElementById("js-content").appendChild(content);
-        //var button_id = $(this).attr('id',addprint_times);
-        //var modal = $(this);
-        //modal.attr('id','1');
-});
+    });
 </script>
 
 
 <script>
-    $( function() {
-        $('.addprint').click( function (e) {
+
+    var block;
+    //1.プリントを追加を押したら
+    $(function() {
+        $('.addprint').click(function(e) {
             $('#AddPrintModal').modal({}, e.target);
         });
     });
-
-    $('#AddPrintModal').on('show.bs.modal', function (event) {
+    //2.モーダルを開いたら(temp.blade.php)
+    $('#AddPrintModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget);
-        var recipient = button.data('recipient');
-        var modal = $(this);
-        modal.find('.modal-title').text(recipient + 'へのメッセージ');
-
-        //モーダル画面の印字位置画像でクリックされた位置名称を取得(胸中央など)
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
-        var id = $(this).attr("id") //id=*を取得。
-        alert(id);
-        //var id = button_id;
+        block = button.data('block');// data-block 1番、２番などをグローバル変数に代入
+        //alert(block);
+    });
+    //3.モーダルのパーツボタンをクリックしたら関連するinputに右袖などを入れる
+    $('#addprint.btn').click('show.bs.modal', function(event) {
+        var image_name = $(this).data('parts');//右袖など選択パーツ名がidに入っている
         var target;
-        target = "#addprint" + id; //代入先id名 #addprint1 
+        target = "#addprint" + block; //代入先id名 #addprint1
         $(target).val(image_name);
-
     });
 </script>
 
@@ -492,12 +521,12 @@ $(document).ready(function(){
 <script>
     //書体(フォント)
     $('.font').click(function() {
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var image_name = $(this).data('parts'); //data-partsを取得。画像名が入っている
         var id = $(this).attr("id") //id=*を取得。
 
         var target;
-        target = "#font" + id; //代入先id名 #addprint1 
-
+        //target = "#font" + id; //代入先id名 #addprint1 
+        target = "#font" + block; //代入先id名 #addprint1 
         $(target).val(image_name);
     });
 </script>
@@ -506,11 +535,12 @@ $(document).ready(function(){
 <script>
     //フォントカラー
     $('.fontcolor').click(function() {
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var image_name = $(this).data('parts'); //data-partsを取得。画像名が入っている
         var id = $(this).attr("id") //id=*を取得。
 
         var target;
-        target = "#fontcolor" + id; //代入先id名 #addprint1 
+        //target = "#fontcolor" + id; //代入先id名 #addprint1 
+        target = "#fontcolor" + block; //代入先id名 #addprint1 
 
         $(target).val(image_name);
     });
@@ -521,7 +551,7 @@ $(document).ready(function(){
 <script>
     //縁取りスタイル
     $('.fuchidori').click(function() {
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
+        var image_name = $(this).data('parts'); //data-partsを取得。画像名が入っている
         var id = $(this).attr("id") //id=*を取得。
         var target;
         target = "#fuchidori" + parts_id; //代入先id名 #addprint1
@@ -533,7 +563,7 @@ $(document).ready(function(){
             $('#fontcolor_fuchidori1').val("");
         } else if (document.getElementById("fontcolor_fuchidori1") == null) {
             $('.fontcolor_fuchidori1').show();
-        }else{
+        } else {
             $('.fontcolor_fuchidori1').show();
         }
 
@@ -544,9 +574,9 @@ $(document).ready(function(){
 <script>
     //文字縁取りカラー
     $('.fontcolor_fuchidori').click(function() {
-        
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている
-        
+
+        var image_name = $(this).data('parts'); //data-partsを取得。画像名が入っている
+
         var id = $(this).attr("id") //id=*を取得。1か2か3か..(何番めのプルダウンかNo)
 
         var target;
@@ -559,9 +589,9 @@ $(document).ready(function(){
 
 
 <script>
-        //モーダル画面でボタンの縁取りを(.fuchidori)を押したら
-        $('.fuchidori').click(function() {
-        var image_name = $(this).data('id'); //data-idを取得。中抜き縁取りなど
+    //モーダル画面でボタンの縁取りを(.fuchidori)を押したら
+    $('.fuchidori').click(function() {
+        var image_name = $(this).data('parts'); //data-partsを取得。中抜き縁取りなど
         $('#fuchdori5').val(image_name); //textの#fuchdori5に中抜き縁取りを入れる
 
         if (image_name == '縁取りなし' || image_name == '中抜き縁取り') {
@@ -585,7 +615,7 @@ $(document).ready(function(){
     //モーダル画面でボタンのselectクラスを押したら(書体、文字カラー)
     $('.select').click(function() {
 
-        var image_name = $(this).data('id'); //data-idを取得。画像名が入っている。data-id='{{ $font->name }}'
+        var image_name = $(this).data('parts'); //data-partsを取得。画像名が入っている。data-parts='{{ $font->name }}'
         var id = $(this).attr("id") //id=*を取得。1か2か3か..(何番めのプルダウンかNo)
 
         //代入先を動的に作成
@@ -623,46 +653,7 @@ $(document).ready(function(){
 
 
 
-<!-- Json 使わなくなった-->
 
-<script>
-    $('#サイズ').click(function() {
-        if ($('#selected_image1').text() == '') {
-            alert('アイテムカラーを選択してください');
-        } else {
-            var itemNo = "";
-            var color = "";
-            itemNo = $('#itemNo').text();
-            color = $('#selected_image1').text();
-
-            $.ajax({
-                url: './product/get_size?itemNo=' + itemNo + '&color=' + color,
-                type: 'GET',
-                dataType: "json",
-            }).done(function(data) {
-                var data_stringify = JSON.stringify(
-                    data
-                );
-                var data_json = JSON.parse(data_stringify);
-
-
-                var formElement = document.getElementById('サイズ');
-                while (formElement.lastChild) {
-                    formElement.removeChild(formElement.lastChild);
-                }
-
-                for (var i = 0; i < data_json.length; i++) {
-                    let opt = document.createElement("option");
-                    opt.value = data_json[i]["size"]; //value値
-                    opt.text = data_json[i]["size"]; //テキスト値
-                    document.getElementById("サイズ").appendChild(opt);
-                }
-            }).fail(function(data) {
-                alert('データ取得出来ませんでした。');
-            });
-        }
-    });
-</script>
 
 
 <!--金額の計算 -->
