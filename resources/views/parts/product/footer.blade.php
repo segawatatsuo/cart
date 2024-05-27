@@ -554,7 +554,8 @@
         var image_name = $(this).data('parts'); //data-partsを取得。画像名が入っている
         var id = $(this).attr("id") //id=*を取得。
         var target;
-        target = "#fuchidori" + parts_id; //代入先id名 #addprint1
+        //target = "#fuchidori" + parts_id; //代入先id名 #addprint1
+        target = "#fuchidori" + block; 
 
         $(target).val(image_name);
 
@@ -580,7 +581,8 @@
         var id = $(this).attr("id") //id=*を取得。1か2か3か..(何番めのプルダウンかNo)
 
         var target;
-        target = "#fontcolor_fuchidori" + parts_id; //#fontcolor_fuchidori1
+        //target = "#fontcolor_fuchidori" + parts_id; //#fontcolor_fuchidori1
+        target = "#fontcolor_fuchidori" + block; //#fontcolor_fuchidori1
 
         $(target).val(image_name);
     });
