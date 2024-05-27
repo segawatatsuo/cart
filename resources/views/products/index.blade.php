@@ -170,7 +170,7 @@
                                                 @foreach ($sizes as $size)
                                                     <tr>
                                                         <td width="100">{{ $size['size'] }}</td>
-                                                        <td><input type="number" value="" min="0"
+                                                        <td><input type="number" inputmode="numeric" value="" min="0"
                                                                 class="radi-s textBox" max="100" step="1"
                                                                 data-price="{{ $size['price'] }}"
                                                                 data-size="{{ $size['size'] }}"
