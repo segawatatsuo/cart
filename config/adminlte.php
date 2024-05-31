@@ -476,6 +476,18 @@ return [
         ],
 
         [
+            'text'    => 'プリント箇所',
+            'icon'    => 'fa fa-align-justify',
+            'submenu' => [
+                [
+                    'text'       => '登録',
+                    'url'        => 'add_print/index',
+                ],
+            ]
+        ],
+
+
+        [
             'text'    => '画像',
             'icon'    => 'fa fa-align-justify',
             'submenu' => [

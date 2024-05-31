@@ -117,8 +117,6 @@
                             <div class="product__info-content">
                                 <div class="product__card">
 
-
-
                                     <form action="{{ asset('/cartAdd/index') }}" method="post" id="form1">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $item->id }}" form="form1">
@@ -137,7 +135,7 @@
                                                 </button>
                                                 <input type="text" value="{{ old('アイテムカラー') }}"
                                                     class="radi select2 textbox-grow" id="selected_image1"
-                                                    name="アイテムカラー" style="border: 1px solid #e2e5e9;" form="form1">
+                                                    name="アイテムカラー" style="border: 1px solid #e2e5e9;" form="form1" readonly>
                                             </div>
                                         </div>
                                         <!-- アイテムカラー -->
@@ -200,11 +198,11 @@
 
                                         <!--オプション代-->
                                         <div class="product__files">
-                                            <div class="h4">オプション単価</div>
+                                            <div class="h4">加工単価</div>
                                             <div class="d-flex">
 
                                                 <input id="option_price" type="text"
-                                                    class="inputbox select2 textbox-grow" name="オプション単価"
+                                                    class="inputbox select2 textbox-grow amount" name="加工単価"
                                                     value="" readonly style="border: 1px solid #e2e5e9;"
                                                     form="form1">
                                             </div>
@@ -213,10 +211,10 @@
 
                                         <!--数量-->
                                         <div class="product__files">
-                                            <div class="h4">数量</div>
+                                            <div class="h4">数量合計</div>
                                             <div class="d-flex">
                                                 <input id="quantity" type="text"
-                                                    class="inputbox select2 textbox-grow" name="数量"
+                                                    class="inputbox select2 textbox-grow amount" name="数量"
                                                     value="" readonly style="border: 1px solid #e2e5e9;"
                                                     form="form1">
                                             </div>
@@ -228,7 +226,7 @@
                                             <div class="h4">合計</div>
                                             <div class="d-flex">
                                                 <input id="item_price_total" type="text"
-                                                    class="inputbox select2 textbox-grow" name="合計"
+                                                    class="inputbox select2 textbox-grow amount" name="合計"
                                                     value="0円" readonly style="border: 1px solid #e2e5e9;"
                                                     form="form1">
                                             </div>

@@ -61,18 +61,13 @@
 <script src="{{ asset('/assets/dist/js/home.js') }}"></script>
 <script src="{{ asset('/assets/dist/js/swiper.js') }}"></script><!--app.js-->
 <script src="{{ asset('/assets/dist/js/app.js') }}"></script><!--app.js-->
-{{-- 
-<script src="{{ asset('/assets/dist/js/bootstrap.bundle.v5.0.0-beta1.min.js') }}"></script>
- --}}
 <script src="{{ asset('/assets/dist/css/app-head.js') }}"></script>
 
-{{-- dropzone用に追加 --}}
+<!--3桁区切り-->
+<script src="{{ asset('/assets/dist/js/jquery.maskMoney.js') }}"></script>
 
-<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
+{{-- dropzone用に追加 --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/min/dropzone.min.css">
-{{-- 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-     --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.4.0/dropzone.js"></script>
 {{-- dropzone用に追加 --}}
 
@@ -95,10 +90,12 @@
                                 <div class="col-6 col-sm-4 col-md-3 col-lg-3">
                                     <div class="card " style="border: 0; padding:0">
                                         <button type="submit" class="btn addprint" id = "addprint"
-                                            data-parts='{{ $addp->part_name }}' data-bs-dismiss="modal" >
+                                            data-parts='{{ $addp->part_name }}' data-bs-dismiss="modal"
+                                            data-price="{{ $addp->price }}">
                                             <img class="card-img-top" src="{{ asset('storage') }}/{{ $addp->image }}"
                                                 alt="">
                                             <div>{{ $addp->part_name }}</div>
+                                            <div>加工費用：{{ number_format($addp->price) }}円</div>
                                         </button>
                                     </div>
                                 </div>
@@ -337,14 +334,14 @@
                                         <div>{{ $data->color_display_name }}</div>
                                     </button>
                                      --}}
-                                     <button type="submit" class="btn select item_color" id= 1
-                                     data-id='{{ $data->color_display_name }}' data-bs-dismiss="modal"
-                                     data-sku='{{ $data->image_name }}'>
-                                     <img class="card-img-top"
-                                         src="{{ asset('/storage/image/detail') . '/' . $item->number . '/' . $data->image_name }}"
-                                         alt="">
-                                     <div>{{ $data->color_display_name }}</div>
-                                 </button>
+                                    <button type="submit" class="btn select item_color" id=1
+                                        data-id='{{ $data->color_display_name }}' data-bs-dismiss="modal"
+                                        data-sku='{{ $data->image_name }}'>
+                                        <img class="card-img-top"
+                                            src="{{ asset('/storage/image/detail') . '/' . $item->number . '/' . $data->image_name }}"
+                                            alt="">
+                                        <div>{{ $data->color_display_name }}</div>
+                                    </button>
 
 
 
@@ -365,14 +362,14 @@
 <!--ユニフォームカラーモーダル-->
 
 
-
-
 <script>
     //ページを開いたらセッション変数(addprint_times)を毎回初期化
     $(document).ready(function() {
         sessionStorage.clear();
     });
 </script>
+
+
 
 {{-- dropzone --}}
 <!--ファイル名を変更する場合に使うオプション -->
@@ -436,7 +433,7 @@
     //Tシャツの色とSKU
     $('.item_color').click(function() {
         var sku = $(this).data('sku'); //data-sku
-        var id = $(this).data('id');//色名日本語
+        var id = $(this).data('id'); //色名日本語
         $('#sku').val(sku); //SKUをテキストボックスに代入
         $('#selected_image1').val(id); //色名をテキストボックスに代入
     });
@@ -493,7 +490,6 @@
 
 
 <script>
-
     var block;
     //1.プリントを追加を押したら
     $(function() {
@@ -504,15 +500,67 @@
     //2.モーダルを開いたら(temp.blade.php)
     $('#AddPrintModal').on('show.bs.modal', function(event) {
         var button = $(event.relatedTarget);
-        block = button.data('block');// data-block 1番、２番などをグローバル変数に代入
+        block = button.data('block'); // data-block 1番、２番などをグローバル変数に代入
         //alert(block);
     });
     //3.モーダルのパーツボタンをクリックしたら関連するinputに右袖などを入れる
     $('#addprint.btn').click('show.bs.modal', function(event) {
-        var image_name = $(this).data('parts');//右袖など選択パーツ名がidに入っている
+        var image_name = $(this).data('parts'); //右袖など選択パーツ名がidに入っている
         var target;
+
         target = "#addprint" + block; //代入先id名 #addprint1
         $(target).val(image_name);
+
+        var price = $(this).data('price');
+        target = "#print_price" + block; //代入先id名 #addprint1
+        
+        //3桁区切り表示(toLocaleString)
+        $(target).val(price);
+        //$(target).val(Number(price).toLocaleString());
+
+        //加工単価の合計(temp.blade.php)
+        var calculated_total_sum = 0;
+        $(".processing_cost").each(function() {
+            var get_textbox_value = $(this).val();
+            //3桁区切りカンマを取り除く
+            get_textbox_value = get_textbox_value.replace(/,/g, '');
+            get_textbox_value = parseInt(get_textbox_value, 10);
+
+            if ($.isNumeric(get_textbox_value)) {
+                calculated_total_sum += parseInt(get_textbox_value);
+            }
+        });
+        //3桁区切り表示(toLocaleString)
+        $("#option_price").val(calculated_total_sum);
+        //$("#option_price").val(Number(calculated_total_sum).toLocaleString());
+
+
+        //すでに数量を入れた後で再度追加された場合に合計を再計算
+        var calculated_total_sum = 0;
+        $("#size .textBox").each(function() {
+            var get_textbox_value = $(this).val(); //数量があるところは数量、ないところは空欄
+            var get_price = $(this).data('price'); //一覧全部の単価を拾ってくる
+
+            //get_price = get_price.replace(/,/g, '');
+            //get_price = parseInt(get_price, 10);
+            
+            if ($.isNumeric(get_textbox_value)) {
+                calculated_total_sum += parseInt(get_textbox_value) * parseInt(get_price);
+            }
+        });
+
+        var kazu = parseInt($("#quantity").val());
+        var price = $("#option_price").val();
+        price = price.replace(/,/g, '');
+        price = parseInt(price, 10);
+
+        calculated_total_sum += ( kazu * price);
+
+        if (Number.isNaN(calculated_total_sum)) {
+            $("#item_price_total").val('');
+        } else {
+            $("#item_price_total").val(calculated_total_sum);
+        }
     });
 </script>
 
@@ -555,7 +603,7 @@
         var id = $(this).attr("id") //id=*を取得。
         var target;
         //target = "#fuchidori" + parts_id; //代入先id名 #addprint1
-        target = "#fuchidori" + block; 
+        target = "#fuchidori" + block;
 
         $(target).val(image_name);
 
@@ -605,11 +653,44 @@
     });
 </script>
 
+<!--数量合計-->
+<script>
+    $("#size").on('input', '.textBox', function() {
+        var calculated_total_sum = 0;
+        $("#size .textBox").each(function() {
+            var get_textbox_value = $(this).val();
+            if ($.isNumeric(get_textbox_value)) {
+                calculated_total_sum += parseInt(get_textbox_value);
+            }
+        });
+        $("#quantity").val(calculated_total_sum);
 
+        var calculated_total_sum = 0;
+        $("#size .textBox").each(function() {
+            var get_textbox_value = $(this).val(); //数量があるところは数量、ないところは空欄
+            var get_price = $(this).data('price'); //一覧全部の単価を拾ってくる
+
+            //get_price = get_price.replace(/,/g, '');
+            //get_price = parseInt(get_price, 10);
+
+            if ($.isNumeric(get_textbox_value)) {
+                calculated_total_sum += parseInt(get_textbox_value) * parseInt(get_price);
+            }
+        });
+  
+
+        //var option_price=parseInt($("#option_price").val());
+        //option_price = option_price.replace(/,/g, '');
+        //option_price = parseInt(option_price, 10);
+
+        calculated_total_sum += (parseInt($("#quantity").val()) * parseInt($("#option_price").val()) );
+        $("#item_price_total").val(calculated_total_sum);
+
+    });
+</script>
 
 {{-- テンプレート --}}
 @include('products.temp')
-
 
 
 
@@ -631,30 +712,7 @@
         $(img[parts_id]).val(image_name);
         $(idNo[id]).text(id); //代入先
     });
-
-
-
-
-
-    //プリントを削除
-    $('.delete').click(function() {
-        if (!confirm('このプリントを削除してよろしいですか？')) {
-            /* キャンセルの時の処理 */
-            return false;
-        } else {
-            /*　OKの時の処理 */
-            $('#wrap').remove();
-        }
-    });
 </script>
-
-
-
-
-
-
-
-
 
 
 
@@ -694,7 +752,7 @@
 
             var num;
             num = item_price + option_price;
-            num.toLocaleString(); //3桁区切りの文字列に変換
+            //num.toLocaleString(); //3桁区切りの文字列に変換
             $("#item_price_total").val(num + "円");
             //$("#item_price_total").val(item_price + total + "円");
         });
@@ -712,6 +770,7 @@
                 //return $(this).val();
                 return $(this).val() * $(this).data('price'); //数量*単価
             });
+
             //数量合計だけの配列
             var countSum = $(".textBox").map(function(index, el) {
                 return $(this).val();
@@ -736,7 +795,7 @@
             //総合計金額
             var totalAmount = 0;
             totalAmount = sumTotal + (totalQuantity * optionUnitPrice);
-            Number(totalAmount).toLocaleString(); //3桁区切りの文字列に変換
+            //Number(totalAmount).toLocaleString(); //3桁区切りの文字列に変換
             $("#item_price_total").val(totalAmount + "円");
 
         })

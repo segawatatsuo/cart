@@ -11,9 +11,22 @@
                     プリント箇所
                 </button>
                 <input type="text" value="" class="radi select2 textbox-grow" id="addprint1" name=""
-                    style="border: 1px solid #e2e5e9;" form="form1">
+                    style="border: 1px solid #e2e5e9;" form="form1" readonly>
             </div>
         </div>
+
+        <div class="product__files" id="textbox">
+            <div class="d-flex">
+                <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                    data-bs-target="" style="margin-right: 4px;">
+                   加工費
+                </button>
+                <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price1" data-block="1"
+                    name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+            </div>
+        </div>
+
+        
 
         <div class="product__files">
             <div class="d-flex">
@@ -22,7 +35,7 @@
                     書 体
                 </button>
                 <input type="text" value="" class="radi select2 textbox-grow" id="font1" name=""
-                    style="border: 1px solid #e2e5e9;" form="form1">
+                    style="border: 1px solid #e2e5e9;" form="form1" readonly>
             </div>
         </div>
 
@@ -33,7 +46,7 @@
                     文字カラー
                 </button>
                 <input type="text" value="" class="radi select2 textbox-grow" id="fontcolor1" name=""
-                    style="border: 1px solid #e2e5e9;" form="form1">
+                    style="border: 1px solid #e2e5e9;" form="form1" readonly>
             </div>
         </div>
 
@@ -44,7 +57,7 @@
                     縁取り
                 </button>
                 <input type="text" value="" class="radi select2 textbox-grow" id="fuchidori1" name=""
-                    style="border: 1px solid #e2e5e9;" form="form1">
+                    style="border: 1px solid #e2e5e9;" form="form1" readonly>
             </div>
         </div>
 
@@ -55,11 +68,9 @@
                     文字縁カラー
                 </button>
                 <input type="text" class="radi select2 textbox-grow" id="fontcolor_fuchidori1" name=""
-                    style="border: 1px solid #e2e5e9;" form="form1">
+                    style="border: 1px solid #e2e5e9;" form="form1" readonly>
             </div>
         </div>
-
-
 
         <div class="product__files" id="textbox">
             <div class="d-flex">
@@ -73,38 +84,15 @@
         </div>
         </form>
 
-        <div class="product__files" id="textbox">
-            <p>
-                <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload" role="button"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    画像をアップロード
-                </a>
-            </p>
-
-            <div class="collapse" id="image-upload">
-                <div class="">
-                    <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                        class="dropzone" id="dropzone">
-                        @csrf
-                        <div class="dz-default dz-message">
-                            <button class="dz-button" type="button" form="dropzone">
-                                ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <form method="post" id="form1">
+            <!--
             <div class="product__files">
                 <div class="d-flex">
-                    <button id="6" type="button" class="btn btn-secondary part btn-send w-100 delete"
-                        data-bs-toggle="modal" data-bs-target="" style="margin-right: 4px;">
+                    <button type="button" class="btn btn-secondary part btn-send w-100 delete" style="margin-right: 4px;">
                         プリントをクリア
                     </button>
                 </div>
             </div>
+        -->
     </section><!--#wrap1はここまでにする -->
 </template>
 
@@ -129,6 +117,19 @@
                     name="" style="border: 1px solid #e2e5e9;" form="form1">
             </div>
         </div>
+
+        <div class="product__files" id="textbox">
+            <div class="d-flex">
+                <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                    data-bs-target="" style="margin-right: 4px;">
+                    加工費
+                </button>
+                <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price2" data-block="1"
+                    name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+            </div>
+        </div>
+
+
 
         <div class="product__files">
             <div class="d-flex">
@@ -192,35 +193,13 @@
         </div>
         </form>
 
-        <div class="product__files" id="textbox">
-            <p>
-                <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload" role="button"
-                    aria-expanded="false" aria-controls="collapseExample">
-                    画像をアップロード
-                </a>
-            </p>
-
-            <div class="collapse" id="image-upload">
-                <div class="">
-                    <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                        class="dropzone" id="dropzone">
-                        @csrf
-                        <div class="dz-default dz-message">
-                            <button class="dz-button" type="button" form="dropzone">
-                                ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
 
         <form method="post" id="form1">
             <div class="product__files">
                 <div class="d-flex">
                     <button id="2" type="button" class="btn btn-secondary part btn-send w-100 delete"
                         data-bs-toggle="modal" data-bs-target="" style="margin-right: 4px;">
-                        プリントを削除
+                        プリントをクリア
                     </button>
                 </div>
             </div>
@@ -248,6 +227,19 @@
                         name="" style="border: 1px solid #e2e5e9;" form="form1">
                 </div>
             </div>
+
+
+            <div class="product__files" id="textbox">
+                <div class="d-flex">
+                    <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                        data-bs-target="" style="margin-right: 4px;">
+                        加工費
+                    </button>
+                    <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price3" data-block="1"
+                        name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                </div>
+            </div>
+
 
             <div class="product__files">
                 <div class="d-flex">
@@ -311,35 +303,12 @@
             </div>
             </form>
 
-            <div class="product__files" id="textbox">
-                <p>
-                    <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload" role="button"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        画像をアップロード
-                    </a>
-                </p>
-
-                <div class="collapse" id="image-upload">
-                    <div class="">
-                        <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                            class="dropzone" id="dropzone">
-                            @csrf
-                            <div class="dz-default dz-message">
-                                <button class="dz-button" type="button" form="dropzone">
-                                    ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
             <form method="post" id="form1">
                 <div class="product__files">
                     <div class="d-flex">
                         <button id="3" type="button" class="btn btn-secondary part btn-send w-100 delete"
                             data-bs-toggle="modal" data-bs-target="" style="margin-right: 4px;">
-                            プリントを削除
+                            プリントをクリア
                         </button>
                     </div>
                 </div>
@@ -367,6 +336,21 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price4" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -430,28 +414,7 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
 
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
                 <form method="post" id="form1">
                     <div class="product__files">
@@ -459,7 +422,7 @@
                             <button id="4" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>
@@ -486,6 +449,20 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price5" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -549,36 +526,13 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
-
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <form method="post" id="form1">
                     <div class="product__files">
                         <div class="d-flex">
                             <button id="5" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>
@@ -606,6 +560,21 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price6" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -669,36 +638,13 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
-
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <form method="post" id="form1">
                     <div class="product__files">
                         <div class="d-flex">
                             <button id="6" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>
@@ -726,6 +672,22 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price7" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -789,36 +751,13 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
-
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <form method="post" id="form1">
                     <div class="product__files">
                         <div class="d-flex">
                             <button id="7" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>
@@ -847,6 +786,20 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price8" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -910,36 +863,13 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
-
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <form method="post" id="form1">
                     <div class="product__files">
                         <div class="d-flex">
                             <button id="8" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>
@@ -968,6 +898,20 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price9" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -1031,36 +975,13 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
-
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <form method="post" id="form1">
                     <div class="product__files">
                         <div class="d-flex">
                             <button id="9" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>
@@ -1088,6 +1009,21 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price10" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -1151,36 +1087,13 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
-
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <form method="post" id="form1">
                     <div class="product__files">
                         <div class="d-flex">
                             <button id="10" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>
@@ -1209,6 +1122,20 @@
                             name="" style="border: 1px solid #e2e5e9;" form="form1">
                     </div>
                 </div>
+
+
+                <div class="product__files" id="textbox">
+                    <div class="d-flex">
+                        <button id="1" type="button" class="btn btn-primary part w-50" data-bs-toggle=""
+                            data-bs-target="" style="margin-right: 4px;">
+                            加工費
+                        </button>
+                        <input type="text" value="" class="radi select2 textbox-grow processing_cost" id="print_price11" data-block="1"
+                            name="" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                    </div>
+                </div>
+
+
 
                 <div class="product__files">
                     <div class="d-flex">
@@ -1272,36 +1199,13 @@
                 </div>
                 </form>
 
-                <div class="product__files" id="textbox">
-                    <p>
-                        <a class="btn btn-primary w-100" data-bs-toggle="collapse" href="#image-upload"
-                            role="button" aria-expanded="false" aria-controls="collapseExample">
-                            画像をアップロード
-                        </a>
-                    </p>
-
-                    <div class="collapse" id="image-upload">
-                        <div class="">
-                            <form method="post" action="{{ url('user/upload') }}" enctype="multipart/form-data"
-                                class="dropzone" id="dropzone">
-                                @csrf
-                                <div class="dz-default dz-message">
-                                    <button class="dz-button" type="button" form="dropzone">
-                                        ファイルをドラッグ＆ドロップまたはここをクリック(タップ)して画像選択してください。
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
                 <form method="post" id="form1">
                     <div class="product__files">
                         <div class="d-flex">
                             <button id="11" type="button"
                                 class="btn btn-secondary part btn-send w-100 delete" data-bs-toggle="modal"
                                 data-bs-target="" style="margin-right: 4px;">
-                                プリントを削除
+                                プリントをクリア
                             </button>
                         </div>
                     </div>

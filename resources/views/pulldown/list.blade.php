@@ -32,7 +32,7 @@
 
                     <!-- フラッシュメッセージ -->
                     @if (session('flash_message'))
-                        <div class="alert alert-success">
+                        <div class="alert alert-success text-center mx-auto">
                             {{ session('flash_message') }}
                         </div>
                     @endif

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreAddPrintRequest;
 use App\Http\Requests\UpdateAddPrintRequest;
 use App\Models\AddPrint;
@@ -13,7 +14,8 @@ class AddPrintController extends Controller
      */
     public function index()
     {
-        //
+        $addprints = AddPrint::all();
+        return view('add_print.index', compact('addprints'));
     }
 
     /**
@@ -51,9 +53,21 @@ class AddPrintController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateAddPrintRequest $request, AddPrint $addPrint)
+    public function update(Request $request)
     {
-        //
+        $addprint = AddPrint::all();
+
+        $kazu = count($addprint);
+
+        for ($i = 0; $i < $kazu; $i++) {
+            $addprint[$i]->part_name = $request->part_name[$i];
+            $addprint[$i]->image = $request->image[$i];
+            $addprint[$i]->price = $request->price[$i];
+            $addprint[$i]->save();
+        }
+
+        $addprints = AddPrint::all();
+        return redirect('add_print/index')->with('addprints', $addprints)->with('flash_message', '更新しました');
     }
 
     /**

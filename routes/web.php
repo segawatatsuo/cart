@@ -22,7 +22,8 @@ use App\Http\Controllers\ToppageCategoryController;
 use App\Http\Controllers\UserUploadController;
 use App\Http\Controllers\LawController;
 use App\Http\Controllers\ContactController;
-
+use App\Http\Controllers\AddPrintController;
+use App\Models\AddPrint;
 use App\Models\Pulldown;
 use App\Models\Pulldown_detail;
 
@@ -143,6 +144,9 @@ Route::middleware('auth:admin')->group(function () {
     Route::get('sku/search', [SkuController::class,'search'])->name('sku.search');
 
     Route::get('sku/excel', [SkuController::class,'excel'])->name('sku.excel');//excelテンプレートダウンロード
+
+    Route::get('add_print/index',[AddPrintController::class,'index'])->name('add_print.index');
+    Route::post('add_print/update',[AddPrintController::class,'update'])->name('add_print.update');
 
     Route::get('company/info', [CompanyController::class,'info'])->name('company.info');
     Route::post('company/info/store', [CompanyController::class,'info_store'])->name('company.info.store');
