@@ -11,43 +11,65 @@
         <div class="col-md-5 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">カート</span>
-                <span class="badge badge-secondary badge-pill">{{ $count }}</span>
+                <span class="badge badge-secondary badge-pill">{{ $cart_count }}</span>
             </h4>
+
             <ul class="list-group mb-3">
                 @foreach ($cartCollection as $cart)
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">{{ $cart->name }}{{ $cart->attributes[0]['アイテムカラー'] }}</h6>
+                            <div>
+                                <h6 class="my-0">
+                                    {{ $cart->attributes['brand_name'] }}{{ $cart->attributes['item_name'] }}{{ $cart->attributes['item_no'] }}
+                                </h6>
+                            </div>
+                            <p>{{ $cart->attributes['size_price_set'] }}</p>
                             <small class="text-muted">
-
-                                色：{{ $cart->attributes[0]["アイテムカラー"] }}<br>
-                                {{ $cart->attributes[3] }}<br>
-                                @foreach ( $cart->attributes[1] as $key=>$val )
-                                  {{ $key }}:{{ $val }}
-                                @endforeach
-
+                                @php
+                                    if(is_array($cart->attributes['print_position_array'])){
+                                        $counter = count($cart->attributes['print_position_array']);
+                                    }else{
+                                        $counter=0;
+                                    }
+                                @endphp
+                                @for ($i = 0; $i < $counter; $i++)
+                                    プリント位置：{{ $cart->attributes['print_position_array'][$i] }}
+                                    加工費用：￥{{ number_format($cart->attributes['processing_costs_array'][$i]) }}
+                                    文字：{{ $cart->attributes['fonts_text'][$i] }}
+                                    フォント：{{ $cart->attributes['fonts_array'][$i] }}
+                                    フォント色：{{ $cart->attributes['fonts_color_array'][$i] }}
+                                    縁取りスタイル：{{ $cart->attributes['fonts_border_array'][$i] }}
+                                    縁取り色：{{ $cart->attributes['fonts_border_color_array'][$i] }}
+                                    @if ($counter > 1 and $i < $counter)
+                                        <br>-----------------------------------------------------------------<br>
+                                    @endif
+                                @endfor
                             </small>
                             <div>
-                            <img width="25%" src="{{ asset('storage/image/detail')."/".$cart->attributes[5]."/".$cart->id }}">
+                                <img width="25%"
+                                    src="{{ asset('storage/image/detail') . '/' . $cart->attributes['number'] . '/' . $cart->attributes['sku'] }}">
                             </div>
                         </div>
-                        <span class="text-muted">¥{{ number_format($cart->attributes[2]['合計']) }}</span>
+                        <div class="text-muted" style="margin-top:2px">
+                            ¥{{ number_format($cart->attributes['total_purchase_amount']) }}</div>
                     </li>
                 @endforeach
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>消費税</span>
-                    <strong>¥{{ number_format($tax) }}</strong>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>送料</span>
-                    <strong>¥{{ number_format($postage) }}</strong>
-                </li>
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>合計金額</span>
-                    <strong>¥{{ number_format($total_add_tax) }}</strong>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>消費税</span>
+                        <strong>¥{{ number_format($tax) }}</strong>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>送料</span>
+                        <strong>¥{{ number_format($postage) }}</strong>
+                    </li>
+
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>合計金額</span>
+                        <strong>¥{{ number_format($total_add_tax) }}</strong>
+                    </li>
+                
             </ul>
 
         </div>
@@ -57,7 +79,7 @@
             <h4 class="mb-3">ご請求先</h4>
 
             <form class="needs-validation" method="POST" action="{{ asset('/cartAdd/confirm') }}">
-              @csrf
+                @csrf
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="firstName">名字</label>
@@ -79,7 +101,8 @@
 
                 <div class="mb-3">
                     <label for="email">メールアドレス</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com">
+                    <input type="email" class="form-control" id="email" name="email"
+                        placeholder="you@example.com">
                     <div class="invalid-feedback">
                         有効なメールアドレスを入力してください。
                     </div>
@@ -192,16 +215,16 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName2">名字</label>
-                            <input type="text" class="form-control" name="firstName2" id="firstName2" placeholder=""
-                                value="">
+                            <input type="text" class="form-control" name="firstName2" id="firstName2"
+                                placeholder="" value="">
                             <div class="invalid-feedback">
                                 名字を入力してください。
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="lastName2">名前</label>
-                            <input type="text" class="form-control" name="lastName2" id="lastName2" placeholder="" value=""
-                                >
+                            <input type="text" class="form-control" name="lastName2" id="lastName2"
+                                placeholder="" value="">
                             <div class="invalid-feedback">
                                 名前を入力してください。
                             </div>
@@ -221,8 +244,7 @@
                         <div class="col-md-3 mb-3">
                             <label for="zip2">郵便番号</label>
                             <input type="text" class="form-control" id="zip01_2" name="zip01_2" maxlength="8"
-                                placeholder=""
-                                onKeyUp="AjaxZip3.zip2addr(this,'','pref01_2','addr01_2');">
+                                placeholder="" onKeyUp="AjaxZip3.zip2addr(this,'','pref01_2','addr01_2');">
                             <div class="invalid-feedback">
                                 郵便番号を入力してください。
                             </div>
@@ -231,8 +253,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label for="state">都道府県</label>
-                            <select class="custom-select d-block w-100" id="state"
-                                name="pref01_2">
+                            <select class="custom-select d-block w-100" id="state" name="pref01_2">
                                 <option value="">-- 選択してください --</option>
                                 <option value="北海道">北海道</option>
                                 <option value="青森県">青森県</option>
@@ -290,8 +311,7 @@
 
                     <div class="mb-3">
                         <label for="address">送り先住所1</label>
-                        <input type="text" class="form-control" id="addr01_2" name="addr01_2" placeholder=""
-                            >
+                        <input type="text" class="form-control" id="addr01_2" name="addr01_2" placeholder="">
                         <div class="invalid-feedback">
                             送り先住所を入力してください。
                         </div>
@@ -383,15 +403,15 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-$(function(){
-  $('input#foo[type=checkbox]').click(function() {
-    if ($(this).prop('checked')) {
-      $('#bar').show();
-    } else {
-      $('#bar').hide();
-    }
-  });
-});
+    $(function() {
+        $('input#foo[type=checkbox]').click(function() {
+            if ($(this).prop('checked')) {
+                $('#bar').show();
+            } else {
+                $('#bar').hide();
+            }
+        });
+    });
 </script>
 
 

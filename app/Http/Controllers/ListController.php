@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use Darryldecode\Cart\CartCondition;
 
 class ListController extends Controller
 {
@@ -29,13 +30,14 @@ class ListController extends Controller
             }
             array_push($lists, ['id'=>$id,'number'=>$number,'name'=>$name,'thumbnail_folder'=>$thumbnail_folder,'image_name'=>$image_name,'material'=>$material,'min_price'=>$min_price,'brand'=>$brand]);
         }
-        /*
-        foreach($lists as $list){
-           print($list['thumbnail_folder']);
-           print("<br>");
+        //カート商品数
+        if(\Cart::isEmpty()){
+            $cart_count = 0;
+        }else{
+            $cartCollection = \Cart::getContent();
+            $cart_count = $cartCollection->count();
         }
-        */
 
-        return view('list.index', compact('lists'));
+        return view('list.index', compact('lists','cart_count'));
     }
 }

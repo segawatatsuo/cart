@@ -14,6 +14,7 @@ use App\Models\Category;
 use App\Models\AddPrint;
 use Hamcrest\Arrays\IsArray;
 use Illuminate\Support\Facades\DB;
+use Darryldecode\Cart\CartCondition;
 
 class ProductController extends Controller
 {
@@ -80,7 +81,15 @@ class ProductController extends Controller
         //書体一覧
         $font_array = Font::all();
 
-        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array', 'category_name','add_print'));
+        //カート商品数
+        if(\Cart::isEmpty()){
+            $cart_count = 0;
+        }else{
+            $cartCollection = \Cart::getContent();
+            $cart_count = $cartCollection->count();
+        }
+
+        return view('products.index', compact('item', 'sizes', 'colors', 'images', 'thumbnail_folder', 'selecters', 'color_array', 'font_array', 'category_name','add_print','cart_count'));
     }
 
     public function get_size(Request $request)

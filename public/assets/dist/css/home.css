@@ -914,7 +914,7 @@
         flex-flow: column;
         margin: 0 0 25px;
         padding: 0;
-        text-align: center
+        /*text-align: center*/
     }
 
     .section-header .section-header__title {
@@ -1027,4 +1027,28 @@
 
 .f14 {
     font-size: 14px !important;;
+}
+
+/*赤マルカート数量*/
+.navCart{
+	position: relative;
+} 
+.navCartIcon{
+	position: absolute;
+    /*
+	right: 12px;
+	top: 8px;
+    */
+	width: 17px;
+	height: 17px;
+	font-size: 11px;
+	border-radius: 9px;
+	background: #c7004c;/*商品数〇色の指定 */
+	box-shadow: 0px 1px 2px #ccc;
+	line-height: 17px;
+	color: #fff;/*商品数文字色の指定 */
+	font-family: Arial, Helvetica, "sans-serif";
+
+    text-align:center;
+    line-height: 17px;
 }

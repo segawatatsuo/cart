@@ -7,17 +7,19 @@ use App\Models\Item;
 use App\Models\Sku;
 use Darryldecode\Cart\CartCondition;
 use Illuminate\Support\Str;
-
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
+
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ThanksMail;
+use App\Models\Company;
 
 class CartController extends Controller
 {
     public function index(Request $request)
     {
         //カートに入る前のページのURL
-        //$prevUrl = url()->previous();
         session(['prevUrl' => url()->previous()]);
         $prevUrl = session('prevUrl');
 
@@ -34,133 +36,129 @@ class CartController extends Controller
                 ->withErrors($validator);
         }
 
-        /*商品番号*/
         $productId = $request->id;
         $rowId = $productId;
 
+        //1つだけの要素を取り出し
+        $item_color = $request->アイテムカラー;
+        $sku = $request->sku;
+        $item_no = preg_replace("/(.+)(\.[^.]+$)/", "$1", $sku);//商品番号(画像の拡張子を取る)
+        $Product = Item::find($productId);
+        $item_number = $Product->number; //商品番号(画像のパスに使用)"00083-BBT"
+        $item_name = $Product->name;//商品名 4.0オンス ライトウェイトTシャツ
+        $brand_name = $Product->brand;//ブランド名 Printstar
+        $processing_unit_price = $request->加工単価;//加工単価
+        $quantity_total = $request->数量;//数量合計
+        $total_purchase_amount = $request->合計;//合計金額
+        $customer_requests = $request->ご要望他;//ご要望他
+
+        //配列の要素を取り出し
+        $print_position_array = $request->プリント箇所;
+        $size_array = $request->サイズ; //["８０ｃｍ" => "2" "９０ｃｍ" => "1"]
+        $price_array = $request->price;//全部のサイズと単価 "１５０ｃｍ" => "623""１６０ｃｍ" => "623" "Ｌ" => "700"
+        $processing_costs_array = $request->プリント加工費;//[  0 => "990"]
+        $fonts_array = $request->書体;//[0 => "Font-2.gif"]
+        $fonts_color_array = $request->文字カラー;
+        $fonts_border_array = $request->縁取り;
+        $fonts_border_color_array = $request->文字縁カラー;
+
+        $fonts_text = $request->テキスト;
+
+        $sizeNoEmpty = array_filter($size_array);
+        $size_price_set = "";
+        foreach ($sizeNoEmpty as $key => $val) {
+            $size_price_set .= 'サイズ : ' . $key . ' (単価' . number_format($price_array[$key]) . '円)' . ' × ' . $val . '点 ';
+        }
+        //dd($size_price_set);//"サイズ : １５０ｃｍ (単価623円) × 1点 サイズ : １６０ｃｍ (単価623円) × 1点 サイズ : ＸＸＬ (単価847円) × 1点 "
+
         $Product = Item::find($productId);
         $number = $Product->number; //商品番号(画像のパスに使用)
-        $sku = $_POST["sku"]; //skuなのだが画像の拡張子がついている
 
+        //ユニフォーム単価(合計金額/数量)
+        $unit_price = round($total_purchase_amount/$quantity_total);
 
-        //拡張子付きの画像名
-        //$image = Sku::where("image_name", "LIKE", $sku.".%");//DBのSKUカラム側で拡張子を除いて登録してある場合はこっち
-        $image = Sku::where("image_name", "LIKE", $sku);
-        $picture = $image->first();
-        $pic = $picture['image_name'];
-        //dd($pic);//00103-CBT-037_90.jpg
-
-        //拡張子を取り除く
-        //$sku = preg_replace("/(.+)(\.[^.]+$)/", "$1", $sku);
-
-        $name = $Product->name;
-        $brand = $Product->brand;
-        //dd($brand);
-        $options = $_POST; //選択肢を含む全項目
-        //dd($options);
-
-        //価格の一覧表の配列を取り出す
-        $prices_array = $options["price"];
-
-        //表示に不要な_tokenと配列price(bladeで配列なのでこのままだとループに支障をきたす)を配列から削除
-        unset($options['_token']);
-        unset($options['price']);
-        //optionsの全項目数。まとめる際に使用。
-        $count = count($options);
-
-        //空欄の配列要素を削除
-        $NoEmpty = array_filter($options["サイズ"]);
-
-        //サイズと枚数が配列なのでそれに単価を加えたセットを１つの文字列にする
-        $size = "";
-        foreach ($NoEmpty as $key => $val) {
-            $size .= 'サイズ : ' . $key . ' (単価' . number_format($prices_array[$key]) . '円)' . ' × ' . $val . '点 ';
-        }
-        //$options['size'] = $size;
-        $quantity = $options["数量"];//全サイズの枚数の合計
-        //dd($quantity);
-        $price = str_replace('円', '', $options["合計"]); //小計
-  
-        //ユニフォーム単価(金額/数量)
-        $tanka = round($price/$quantity);
-
-
-        //選択肢の部分を3つの配列に分けてoptions配列にする
-        //一番下、一番上の順で切り取る
-        //切り取られた値 = array_splice(削除対象配列, 切り取り開始Index, 切り取り数);
-        $select_options3 = array_splice($options, $count - 3, 3); //アイテム価格 オプション代 合計が入っている
-        $select_options3 =str_replace('円', '', $select_options3);
-        //"オプション単価" => "2530円"
-        //"数量" => "2"
-        //"合計" => "7610円"
-        $select_options1 = array_splice($options, 0, 2); //id,アイテムカラー
-        //"id" => "1"
-        //"アイテムカラー" => "レッド"
-        $select_options2 = $options; //切り抜かれた残り(選択オプション)を2に入れる
-        //"左片胸色名" => "Nオレンジ"
-        //"チーム名書体" => "Font-3.gif"
-        //"マーキング右袖（右肩）" => "フルカラー (15cm×35cm以内) ¥1650"
-        //"マーキング背面衿下" => "1色 (15cm×35cm以内) ¥880"
-        //"サイズ" => array:10 [▶]
-        //"sku" => "p175_11.png"
-
-        $a=$select_options2["sku"];
-        $b=preg_replace("/(.+)(\.[^.]+$)/", "$1", $a);
-        $select_options2["sku"]=$b;
-
-        //元のサイズは配列なので削除して文字列$sizeで別に渡す
-        unset($select_options2['サイズ']);
-
-        $options = [];
-        //$options[0]と$options[1]と$options[3]を１つに
-        $options = [$select_options1, $select_options2, $select_options3, $size, $pic, $number, $tanka];
-
-        //総合計金額
+        $attributes = [
+            "item_color" => $item_color,
+            "sku" => $sku,
+            "item_no" => $item_no,
+            "unit_price" => $unit_price,
+            "number" => $number,
+            "item_name" => $item_name,
+            "brand_name" => $brand_name,
+            "processing_unit_price" => $processing_unit_price,
+            "quantity_total" => $quantity_total,
+            "total_purchase_amount" => $total_purchase_amount,
+            "customer_requests" => $customer_requests,
+            "print_position_array" => $print_position_array,
+            "size_array" => $size_array,
+            "price_array" => $price_array,
+            "processing_costs_array" => $processing_costs_array,
+            "fonts_array" => $fonts_array,
+            "fonts_color_array" => $fonts_color_array,
+            "fonts_border_array" => $fonts_border_array,
+            "fonts_border_color_array" => $fonts_border_color_array,
+            "fonts_text" => $fonts_text,
+            "size_price_set" => $size_price_set,
+            "postage" => '',
+            "tax" => '',
+            "total_add_tax" => '',
+        ];
 
         //カートに追加
         \Cart::add(array(
-            'id' => $sku,
-            'name' => $name,
-            'price' => $price,
-            'quantity' => $quantity,
-            'attributes' => $options
+            'id' => $item_no,
+            'name' => $item_name,
+            'price' => $unit_price,
+            'quantity' => $quantity_total,
+            'attributes' => $attributes
         ));
 
-        /*
-        \Cart::session($userID)->add(array(
-            'id' => $sku,
-            'name' => $name,
-            'price' => $price,
-            'quantity' => $quantity,
-            'attributes' => $options,
-            'associatedModel' => $Product
-        ));
-        */
         $cartCollection = \Cart::getContent();
-        //dd($cartCollection);
-        //商品合計
-        $total = 0;
-        foreach ($cartCollection as $data) {
-            $total += $data["price"];
+
+        //カート商品数
+        if (\Cart::isEmpty()) {
+            $cart_count = 0;
+        } else {
+            $cartCollection = \Cart::getContent();
+            $cart_count = $cartCollection->count();
         }
-        //送料
-        if ($total>=11000) {
+
+        //総合計
+        $sum_total=0;
+        foreach ($cartCollection as $cart) {
+            $sum=$cart->attributes['total_purchase_amount'];
+            $sum_total+=$sum;
+        }
+
+        //送料計算
+        if ($sum_total>=11000) {
             $postage=0;
-        } elseif ($total>=1 and $total <11000) {
+        } elseif ($sum_total>=1 and $sum_total <11000) {
             $postage=770;
         } else {
             $postage=0;
         }
         //消費税
-        $tax = round($total * 0.1);
-        //総合計
-        $total_add_tax = $total + $tax + $postage;
+        $tax = round($sum_total * 0.1);
 
-        //以降使い回すのでセッションcartsに入れる
-        $carts = ['total' => $total, 'tax' => $tax, 'total_add_tax' => $total_add_tax, 'cartCollection' => $cartCollection];
-        session(['carts' => $carts]);
-        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'prevUrl', 'postage'));
-        //return view('/cartAdd/index');
+        //総合計
+        $total_add_tax = $sum_total + $tax + $postage;
+
+        $item = \Cart::get($item_no);
+
+        $option = $item->attributes->merge(['postage' => $postage,'tax' => $tax,'total_add_tax' => $total_add_tax,'total_product_amount' => $sum_total]);
+
+        \Cart::update(
+            $item_no,
+            [
+                'id' => $item_no,
+                'name' => $item_name,
+                'price' => $unit_price,
+                'quantity' => $quantity_total,
+                'attributes' => $option
+            ]
+        );
+        return view('/cartAdd/index', compact('cartCollection', 'prevUrl', 'cart_count'));
     }
 
 
@@ -168,13 +166,21 @@ class CartController extends Controller
     public function address()
     {
         $cartCollection = \Cart::getContent();
-        //数量
-        $count = $cartCollection->count();
+
+        //カート商品数
+        if (\Cart::isEmpty()) {
+            $cart_count = 0;
+        } else {
+            $cartCollection = \Cart::getContent();
+            $cart_count = $cartCollection->count();
+        }
+
         //商品合計
         $total = 0;
         foreach ($cartCollection as $data) {
             $total += $data["price"];
         }
+
         //送料
         if ($total>=11000) {
             $postage=0;
@@ -183,11 +189,13 @@ class CartController extends Controller
         } else {
             $postage=0;
         }
+
         //消費税
         $tax = round($total * 0.1);
+
         //総合計
         $total_add_tax = $total + $tax + $postage;
-        return view('/cartAdd/address', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'postage', 'count'));
+        return view('/cartAdd/address', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'postage', 'cart_count'));
     }
 
 
@@ -199,8 +207,13 @@ class CartController extends Controller
         session(['all_request' => $all_request]); //セッション化
         //dd($all_request);
         $cartCollection = \Cart::getContent();
-        //数量
-        $count = $cartCollection->count();
+        //カート商品数
+        if (\Cart::isEmpty()) {
+            $cart_count = 0;
+        } else {
+            $cartCollection = \Cart::getContent();
+            $cart_count = $cartCollection->count();
+        }
         //商品合計
         $total = 0;
         foreach ($cartCollection as $data) {
@@ -219,40 +232,61 @@ class CartController extends Controller
         //総合計
         $total_add_tax = $total + $tax + $postage;
 
-        return view('/cartAdd/confirm', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'postage', 'count', 'all_request'));
+        return view('/cartAdd/confirm', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'postage', 'cart_count', 'all_request'));
     }
-    //注文確定
-    public function order()
+    //注文確定画面とメール送信
+    public function order(Request $request)
     {
-        dd("order");
-        return view('/cartAdd/order');
+        $cart_count = 0;
+        $content= $request->all();
+        /* $content　顧客住所と送付先
+        "firstName" => "達男"
+        "lastName" => "瀬川達男"
+        "email" => "segawa@lookingfor.jp"
+        "phone" => "09091496802"
+        "zip01" => "206-0823"
+        "pref01" => "東京都"
+        "addr01" => "稲城市平尾"
+        "addr02" => "3-1-1"
+        "firstName2" => null
+        "lastName2" => null
+        "phone2" => null
+        "zip01_2" => null
+        "pref01_2" => null
+        "addr01_2" => null
+        "addr02_2" => null
+        "paymentMethod" => "クレジットカード"
+        */
+        $cartCollection = \Cart::getContent();
+        foreach ($cartCollection as $cart) {
+            $cart->attributes['brand_name'];
+            $cart->attributes['item_name'];
+            $cart->attributes['item_no'];
+            $cart->attributes['size_price_set'];
+            if(is_array($cart->attributes['print_position_array'])){
+                $counter = count($cart->attributes['print_position_array']);
+            }else{
+                $counter=0;
+            }
+        }
+
+        return view('/cartAdd/order', compact('cart_count'));
     }
 
 
     public function show()
     {
-        $items = \Cart::getContent();
-        $cart = [];
-        foreach ($items as $item) {
-            $data = [];
-            $id = $item->id; // the Id of the item
-            $name = $item->name; // the name
-            $price = $item->price; // the single price without conditions applied
-            $item->getPriceSum(); // the subtotal without conditions applied
-            $item->getPriceWithConditions(); // the single price with conditions applied
-            $item->getPriceSumWithConditions(); // the subtotal with conditions applied
-            $quantity = $item->quantity; // the quantity
-            $attributes = $item->attributes; // the attributes
-            $data = array($id, $name, $price, $quantity, $attributes);
-            array_push($cart, $data);
+        $cartCollection = \Cart::getContent();
 
-            // Note that attribute returns ItemAttributeCollection object that extends the native laravel collection
-            // so you can do things like below:
+        //カート商品数
+        if (\Cart::isEmpty()) {
+            $cart_count = 0;
+        } else {
+            $cartCollection = \Cart::getContent();
+            $cart_count = $cartCollection->count();
         }
 
-        dd($cart);
-
-        return redirect()->route('cartAdd.show');
+        return view('/cartAdd/index', compact('cartCollection', 'cart_count'));
     }
 
     public function destroy(Request $request)
@@ -317,11 +351,46 @@ class CartController extends Controller
     {
         //$userId = Auth::id();
         \Cart::clear();
-        return redirect()->route('cartAdd.index', ['message' => 'cart reset to empty']);
+        //return redirect()->route('cartAdd.index', ['message' => 'cart reset to empty']);
+        $cartCollection="";
+        $total=0;
+        $tax=0;
+        $total_add_tax=0;
+        $prevUrl="";
+        $cart_count=0;
+        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'prevUrl', 'cart_count'));
     }
 
-    public function hoge()
+    public function cartBack($request)
     {
-        return view('/cartAdd/hoge');
+        if($request->input('back') == 'back'){
+            return redirect('/form/')
+                        ->withInput();
+         }
+    }
+
+
+    public function remove_item(Request $request)
+    {
+        $prevUrl = session('prevUrl');
+        $id = $request->id;
+        \Cart::remove($id);
+        $cartCollection = \Cart::getContent();
+        $total = 0;
+        foreach ($cartCollection as $data) {
+            $total += $data["price"];
+        }
+        $tax = round($total * 0.1);
+        $total_add_tax = $total + $tax;
+
+        //カート商品数
+        if (\Cart::isEmpty()) {
+            $cart_count = 0;
+        } else {
+            $cartCollection = \Cart::getContent();
+            $cart_count = $cartCollection->count();
+        }
+
+        return view('/cartAdd/index', compact('cartCollection', 'total', 'tax', 'total_add_tax', 'prevUrl', 'cart_count'));
     }
 }

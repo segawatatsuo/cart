@@ -48,7 +48,7 @@ Route::get('/', function () {
 */
 
 Route::get('/', [TopController::class, 'index'])->name('welcome');
-Route::get('/flush', [TopController::class, 'flush'])->name('flish');
+Route::get('/flush', [TopController::class, 'flush'])->name('flush');
 
 // 管理ログイン画面
 Route::get('/admin-login', [AdminLoginController::class, 'create'])->name('admin.login');
@@ -145,8 +145,8 @@ Route::middleware('auth:admin')->group(function () {
 
     Route::get('sku/excel', [SkuController::class,'excel'])->name('sku.excel');//excelテンプレートダウンロード
 
-    Route::get('add_print/index',[AddPrintController::class,'index'])->name('add_print.index');
-    Route::post('add_print/update',[AddPrintController::class,'update'])->name('add_print.update');
+    Route::get('add_print/index', [AddPrintController::class,'index'])->name('add_print.index');
+    Route::post('add_print/update', [AddPrintController::class,'update'])->name('add_print.update');
 
     Route::get('company/info', [CompanyController::class,'info'])->name('company.info');
     Route::post('company/info/store', [CompanyController::class,'info_store'])->name('company.info.store');
@@ -183,25 +183,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-//--------------------------------//
-Route::get('test', function () {
-    \Cart::add('293ad', 'Product 1', 1, 9.99, ['size' => 'large']);
-});
-
-Route::get('test2', function () {
-    Cart::add('1001-B', '山田うどん', 5, 380);
-});
-
-Route::get('test3', function () {
-    Cart::add('1001-C', 'Apple', 100, 3);
-});
-
-//--------------------------------//
-/*
-Route::get('cart', function () {
-    return Cart::getContent();
-});
-*/
 
 //カートに入れる
 Route::post('cartAdd/index', [CartController::class,'index'])->name('cartAdd.index');
@@ -218,10 +199,10 @@ Route::get('cartAdd/address', [CartController::class,'address'])->name('cartAdd.
 Route::post('cartAdd/confirm', [CartController::class,'confirm'])->name('cartAdd.confirm');
 
 //注文確定
-//Route::get('cartAdd/order', [CartController::class,'order'])->name('cartAdd.order');
+Route::post('cartAdd/order', [CartController::class,'order'])->name('cartAdd.order');
 
 //サンクスメール
-Route::post('cartAdd/order', [MailController::class,'orderMail'])->name('cartAdd.order');
+Route::post('cartAdd/orderMail', [MailController::class,'orderMail'])->name('cartAdd.orderMail');
 
 //カート１商品づつ削除
 Route::post('cartAdd/destroy{id}', [CartController::class, 'destroy'])->name('cartAdd.destroy');
@@ -232,6 +213,11 @@ Route::get('cartAdd/allclear', [CartController::class, 'allclear'])->name('cartA
 
 Route::post('cartAdd/delete', [CartController::class, 'delete'])->name('cartAdd.delete');
 Route::get('cartAdd/delete', [CartController::class, 'delete'])->name('cartAdd.delete');
+
+Route::get('cartAdd/cartBack', [CartController::class, 'cartBack'])->name('cartAdd.cartBack');
+
+//1アイテム削除
+Route::post('cartAdd/remove_item', [CartController::class,'remove_item'])->name('cartAdd.remove_item');
 
 Route::post('user/upload', [UserUploadController::class,'upload']);//UserUploadController
 Route::post('user/delete', [UserUploadController::class,'fileDestroy']);

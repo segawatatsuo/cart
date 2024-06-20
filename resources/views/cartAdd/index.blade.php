@@ -1,147 +1,209 @@
 @include('parts.header')
 
 <main>
+
     <div class="container py-3">
-      <div class="section-header" style="padding-top: 0px;">
-        <!-- BEGIN CONTENT -->
-        <div class="col-md-12 col-sm-12">
-          <!--<h1>ショッピングカート</h1>-->
-            <h2 class="section-header__title">
-              <span class="icon-market icon-market_om section-header__icon"></span>
-              <span class="section-ttl">ショッピングカート</span>
-            </h2>
+        <div class="section-header" style="padding-top: 0px;">
 
-          <div class="goods-page">
-            <div class="goods-data clearfix">
-              <div class="table-wrapper-responsive">
-                <table summary="Shopping cart">
-                  <tr>
-                    <th class="goods-page-image">&nbsp;</th>
-                    <th class="goods-page-description">商品内容</th>
-                    <!--<th class="goods-page-ref-no">商品番号</th>-->
-                    <th class="goods-page-quantity">数量</th>
-                    <th class="goods-page-price">小計</th>
-                    <th class="goods-page-total" colspan="2">削除</th>
-                  </tr>
 
-                  @foreach ( $cartCollection as $cart ) 
-                  <tr class="cart">
-                    <td class="goods-page-image">
-                      <a href="javascript:;">
-                        <img src="{{ asset('storage/image/detail')."/".$cart->attributes[5]."/".$cart->id }}" alt="">
-                      </a>
-                    </td>
-                    <td class="goods-page-description">
-                      <!--<h3><a href="javascript:;">Cool green dress with red bell</a></h3>-->
-                      <p><strong>{{ $cart->name }}</strong></p>
-                      <div style="width: 80%">
-                      <em>
-                        色：{{ $cart->attributes[0]["アイテムカラー"] }}<br>
-                        {{ $cart->attributes[3] }}<br>
-                        @foreach ( $cart->attributes[1] as $key=>$val )
-                          {{ $key }}:{{ $val }}
+            <!-- BEGIN CONTENT -->
+            <div class="col-md-12 col-sm-12">
+
+                <h1 class="title">ショッピングカート</h1>
+
+                @if (Cart::isEmpty())
+                    <div class="box" style="border: 1px solid #e8e8e8;">
+                        カート内に商品がありません
+                        <div class="cart-content-buttons">
+                            <button type="button"
+                                class="button m-size-xl m-full cart-button moveShipping"
+                                onclick="location.href='{{ route('welcome') }}'">お買い物を続ける</button>
+                        </div>
+
+                    </div>
+
+
+                @else
+
+
+
+                    <div class="box" style="border: 1px solid #e8e8e8;">
+                        @foreach ($cartCollection as $cart)
+                            <div class="cart-product">
+                                <div class="row">
+                                    <!--画像-->
+                                    <div class="col-2">
+                                        <img src="{{ asset('storage/image/detail') . '/' . $cart->attributes['number'] . '/' . $cart->attributes['sku'] }}"
+                                            alt="">
+                                    </div>
+
+
+                                    <!--右側-->
+                                    <div class="col-10">
+
+                                        <div class="cart-product-row">
+                                            <span class="sku-code">{{ $cart->attributes['item_no'] }}</span>
+                                        </div>
+
+                                        <div class="cart-product-row product-name">
+                                            <a class="link" href="">{{ $cart->attributes['brand_name'] }}
+                                                {{ $cart->attributes['item_name'] }}</a>
+                                        </div>
+
+                                        <div class="cart-product-row product-price unit-price">
+                                            <span class="product-price_item">
+                                                単価：
+                                                ¥{{ number_format($cart->attributes['unit_price']) }}（税込）
+                                            </span>
+                                        </div>
+
+                                        <div class="cart-product-row product-price unit-price">
+                                            <span class="product-price_item">
+                                                数量：
+                                                {{ number_format($cart->attributes['quantity_total']) }}
+                                            </span>
+                                        </div>
+
+
+
+                                        <div class="cart-product-row variation">
+
+                                            <p>カラー：
+                                                <span
+                                                    class="variation_value">{{ $cart->attributes['item_color'] }}</span>
+                                            </p>
+
+                                            <p>{{ $cart->attributes['size_price_set'] }}</p>
+
+                                            @if (is_countable($cart->attributes['print_position_array']) && count($cart->attributes['print_position_array']) > 0)
+                                                @for ($i = 0; $i < count($cart->attributes['print_position_array']); $i++)
+                                                    <div class="cart-divider"></div>
+                                                    <p>プリント位置：{{ $cart->attributes['print_position_array'][$i] }}
+                                                        ¥{{ number_format($cart->attributes['processing_costs_array'][$i]) }}
+                                                    </p>
+
+                                                    <p>フォント：{{ $cart->attributes['fonts_array'][$i] }}</p>
+
+                                                    <p>フォント色：{{ $cart->attributes['fonts_color_array'][$i] }}</p>
+
+                                                    <p>縁取りスタイル：{{ $cart->attributes['fonts_border_array'][$i] }}</p>
+
+                                                    <p>縁取り色：{{ $cart->attributes['fonts_border_color_array'][$i] }}</p>
+
+                                                    <p>文字：{{ $cart->attributes['fonts_text'][$i] }}</p>
+                                                @endfor
+                                            @endif
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="box m-primary order-info">
+                                        <div class="order-qty">
+                                        </div>
+                                        <div class="sub-total sub-total_price"><span class="spr868_yen"><span
+                                                    class="spr868_yen">¥</span></span>{{ number_format($cart->attributes['total_purchase_amount']) }}
+                                        </div>
+                                    </div>
+
+
+                                    <div class="cart-product-buttons">
+                                        <form method="POST"
+                                            action="{{ route('cartAdd.remove_item', ['id' => $cart->id]) }}">
+                                            @csrf
+                                            <input type="submit" class="button m-size-m deleteCommodity" value="削除"
+                                                onclick='return confirm("この商品をカートから削除します。よろしいですか？")'>
+                                        </form>
+                                    </div>
+                                </div><!--<div class="col-10">-->
+                                <hr class="hr1">
+                            </div><!--row-->
                         @endforeach
-                      </em>
-                      </div>
-                      
-                    </td>
-                    <!--
-                    <td class="goods-page-ref-no">
-                      {{ $cart->id }}
-                    </td>
-                  -->
+                    </div>
 
-                    <td class="goods-page-quantity">
-                      <div class="product-quantity">
-                        <input id="product-quantity" type="text" value="{{ $cart->attributes[2]["数量"] }}" readonly class="form-control input-sm">
-                      </div>
-                    </td>
-                    <!--
-                    <td class="goods-page-price">
-                      <strong><span>¥</span>
-                        @if(isset( $cart->attributes[6]) and $cart->attributes[6]!="" )
-                          {{ round($cart->attributes[6]) }}
-                        @endif
-                      </strong>
-                    </td>
-                  -->
-                    <td class="goods-page-total"><!--小計-->
-                      <strong><span>¥</span>{{ $cart->attributes[2]["合計"] }}</strong>
-                    </td>
-                    <td class="del-goods-col">
-                      <a class="del-goods" href="{{ asset('/cartAdd/delete') }}?id={{ $cart->id }}" onclick="return confirm('カートから削除します')" data-sku="{{ $cart->id }}">&nbsp;</a>
-                    </td>
-                  </tr>
-                  @endforeach
 
-                  <!--
-                  <tr>
-                    <td class="goods-page-image">
-                      <a href="javascript:;"><img src="./image/top_page/cap/1.jpg" alt="Berry Lace Dress"></a>
-                    </td>
-                    <td class="goods-page-description">
-                      <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
-                      <p><strong>Item 1</strong> - Color: Green; Size: S</p>
-                      <em>More info is here</em>
-                    </td>
-                    <td class="goods-page-ref-no">
-                      javc2133
-                    </td>
-                    <td class="goods-page-quantity">
-                      <div class="product-quantity">
-                        <input id="product-quantity2" type="text" value="1" readonly class="form-control input-sm">
-                      </div>
-                    </td>
-                    <td class="goods-page-price">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="goods-page-total">
-                      <strong><span>$</span>47.00</strong>
-                    </td>
-                    <td class="del-goods-col">
-                      <a class="del-goods" href="javascript:;">&nbsp;</a>
-                    </td>
-                  </tr>
-                -->
-                </table>
-              </div>
 
-              <div class="shopping-total">
-                <ul>
-                  <li>
-                    <em>小計</em>
-                    <strong class="price"><span>¥</span>{{ number_format($total) }}</strong>
-                  </li>
-                  <li>
-                    <em>送料</em>
-                    <strong class="price"><span>¥</span>{{ number_format($postage) }}</strong>
-                  </li>
+                    <div class="row" style="margin-top: 5px;">
+                        <div class="section">
+                            <div class="box m-primary total-amount-box">
+                                <div class="total-amount-header">
+                                    <div class="total-amount_title">合計数量</div>
+                                    <div class="total-amount_qty">
+                                        {{ number_format($cart->attributes['quantity_total']) }}
+                                        点のお買い上げ
+                                    </div>
+                                </div>
+                                <div class="box total-amount-price">
+                                    <div class="total-amount-price_label">ご注文金額</div>
+                                    <div class="total-amount-price_number"><span
+                                            class="spr868_yen">¥</span>{{ number_format($cart->attributes['total_add_tax']) }}
+                                    </div>
+                                </div>
+                                <div class="amount-table">
+                                    <div class="cart-divider">
+                                        <div class="amount-table-row">
+                                            <div class="amount-table_label">商品合計金額(税抜)</div>
+                                            <div class="amount-table_body">
+                                                ¥{{ number_format($cart->attributes['total_product_amount']) }}
+                                            </div>
+                                        </div>
+                                        <div class="amount-table-row">
+                                            <div class="amount-table_label">消費税</div>
+                                            <div class="amount-table_body">
+                                                ¥{{ number_format($cart->attributes['tax']) }}
+                                            </div>
+                                        </div>
+                                        <div class="amount-table-row">
+                                            <div class="amount-table_label">送料</div>
+                                            <div class="amount-table_body">
+                                                ¥{{ number_format($cart->attributes['postage']) }}
+                                            </div>
+                                        </div>
 
-                  <li>
-                    <em>消費税</em>
-                    <strong class="price"><span>¥</span>{{ number_format($tax) }}</strong>
-                  </li>
-                  <li class="shopping-total-price">
-                    <em>総合計</em>
-                    <strong class="price"><span>¥</span>{{ number_format($total_add_tax) }}</strong>
-                  </li>
-                </ul>
-              </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="cart-content-buttons">
+                                <button type="button"
+                                    class="button m-size-xl m-full m-warning-fill cart-button moveShipping"
+                                    data-data1="cartForm_0"
+                                    onclick="location.href='{{ route('cartAdd.address') }}'">注文へ進む</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="section">
+                            <div class="cart-buttons">
+                                <a class="button m-size-l clearCommodity" onclick="location.href='{{ route('cartAdd.allclear') }}'">カートからすべて削除する</a>
+                            </div>
+                            <div class="cart-buttons">
+
+                                <a class="button m-size-l" onclick="cartBack()" name='back' value="back">
+                                    <span>戻る</span>
+                                </a>
+                                {{-- 
+                                <form method="post">
+                                    @csrf
+                                    <button type="submit" class="button m-size-l" name='back' value="back">修正する</button>
+                                </form>
+                                 --}}
+                                <a class="button m-size-l" onclick="location.href='{{ route('welcome') }}'">お買い物を続ける</a>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <button class="btn btn-default" type="submit">買い物を続ける <i class="fa fa-shopping-cart"></i></button>
-            
-            <form method="POST" action="{{ asset('/cartAdd/address') }}">
-              @csrf
-              <button class="btn btn-primary" type="submit">注文する<i class="fa fa-check"></i></button>
-            </form>
-          </div>
+            @endif
+
         </div>
         <!-- END CONTENT -->
-      </div>
-      <!-- END SIDEBAR & CONTENT -->
     </div>
+    <!-- END SIDEBAR & CONTENT -->
     </div>
 
-  </main>
+
+</main>
 
 @include('parts.footer')

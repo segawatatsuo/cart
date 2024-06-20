@@ -60,6 +60,17 @@
             <!--ヘッダー-->
 
             <div class="row">
+
+                @if ($errors->any())
+                    <div class="alert-danger">
+                        <ul style="margin: 4px">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <!--左2/3-->
                 <div class="col-md-8">
                     <div id="product-media" class="product__media">
@@ -119,7 +130,8 @@
 
                                     <form action="{{ asset('/cartAdd/index') }}" method="post" id="form1">
                                         @csrf
-                                        <input type="hidden" name="id" value="{{ $item->id }}" form="form1">
+                                        <input type="hidden" name="id" value="{{ $item->id }}"
+                                            form="form1">
                                         <!-- if is err -->
                                         <div></div>
                                         <!-- if is err-->
@@ -135,20 +147,22 @@
                                                 </button>
                                                 <input type="text" value="{{ old('アイテムカラー') }}"
                                                     class="radi select2 textbox-grow" id="selected_image1"
-                                                    name="アイテムカラー" style="border: 1px solid #e2e5e9;" form="form1" readonly>
+                                                    name="アイテムカラー" style="border: 1px solid #e2e5e9;" form="form1"
+                                                    readonly>
                                             </div>
                                         </div>
                                         <!-- アイテムカラー -->
 
                                         <form id="tsuika">
-                                        <div class="product__files">
-                                            <div class="d-flex">
-                                                <button id="1" type="button"
-                                                    class="btn btn-warning tsuika btn-send w-100" style="margin-right: 4px;" form="tsuika">
-                                                    プリントを追加
-                                                </button>
+                                            <div class="product__files">
+                                                <div class="d-flex">
+                                                    <button id="1" type="button"
+                                                        class="btn btn-warning tsuika btn-send w-100"
+                                                        style="margin-right: 4px;" form="tsuika">
+                                                        プリントを追加
+                                                    </button>
+                                                </div>
                                             </div>
-                                        </div>
                                         </form>
 
                                         <!-- テンプレートが表示される場所 -->
@@ -168,13 +182,13 @@
                                                 @foreach ($sizes as $size)
                                                     <tr>
                                                         <td width="100">{{ $size['size'] }}</td>
-                                                        <td><input type="number" inputmode="numeric" value="" min="0"
-                                                                class="radi-s textBox" max="100" step="1"
-                                                                data-price="{{ $size['price'] }}"
+                                                        <td><input type="number" inputmode="numeric" value="{{ old("サイズ.".$size['size']) }}"
+                                                                min="0" class="radi-s textBox" max="100"
+                                                                step="1" data-price="{{ $size['price'] }}"
                                                                 data-size="{{ $size['size'] }}"
                                                                 name="サイズ[{{ $size['size'] }}]"
                                                                 style="width:50%;display:inline-block;border: 1px solid #e2e5e9;"
-                                                                form="form1">
+                                                                form="form1" pattern="[0-9]*">
                                                         </td>
                                                         <td>{{ number_format($size['price']) }}円</td>
                                                         <input type="hidden" name="price[{{ $size['size'] }}]"
@@ -188,7 +202,7 @@
 
 
                                         <div class="product__files">
-                                            <div class="h4">選択されたアイテムカラー番号</div>
+                                            <div class="h4">商品番号</div>
                                             <div class="d-flex">
                                                 <input type="text" class="inputbox select2 textbox-grow"
                                                     id="sku" name="sku" value="{{ old('sku') }}"
@@ -203,19 +217,19 @@
 
                                                 <input id="option_price" type="text"
                                                     class="inputbox select2 textbox-grow amount" name="加工単価"
-                                                    value="" readonly style="border: 1px solid #e2e5e9;"
+                                                    value="{{ old('加工単価') }}" readonly style="border: 1px solid #e2e5e9;"
                                                     form="form1">
                                             </div>
                                         </div>
 
 
-                                        <!--数量-->
+                                        <!--数量合計-->
                                         <div class="product__files">
                                             <div class="h4">数量合計</div>
                                             <div class="d-flex">
                                                 <input id="quantity" type="text"
                                                     class="inputbox select2 textbox-grow amount" name="数量"
-                                                    value="" readonly style="border: 1px solid #e2e5e9;"
+                                                    value="{{ old('数量') }}" readonly style="border: 1px solid #e2e5e9;"
                                                     form="form1">
                                             </div>
                                         </div>
@@ -227,7 +241,7 @@
                                             <div class="d-flex">
                                                 <input id="item_price_total" type="text"
                                                     class="inputbox select2 textbox-grow amount" name="合計"
-                                                    value="0円" readonly style="border: 1px solid #e2e5e9;"
+                                                    value="{{ old('合計') }}" readonly style="border: 1px solid #e2e5e9;"
                                                     form="form1">
                                             </div>
                                         </div>
@@ -239,7 +253,7 @@
                                             <div class="h4">ご要望他</div>
                                             <div class="d-flex">
                                                 <textarea id="customer_request" rows="5" cols="33" class="inputbox select2 textbox-grow" name="ご要望他"
-                                                    value="" style="border: 1px solid #e2e5e9;" form="form1"></textarea>
+                                                    value="{{ old('ご要望他') }}" style="border: 1px solid #e2e5e9;" form="form1"></textarea>
                                             </div>
                                         </div>
 

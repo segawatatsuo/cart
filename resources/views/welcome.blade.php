@@ -66,15 +66,7 @@
 					<p><span>¥623〜</span></p>
 					<p>カラー、サイズ、素材からお選びください。 <br>デザイン自由！</p>
 					<div class="d-flex home-slider__bullets">
-					  <!--
-						<div class="home-slider__bullet is-active" style="color: #FFA803;"
-						data-url="/mockups/category/apparel-mockups"></div>
-						<div class="home-slider__bullet" style="color: #F8434A;"
-						data-url="/mockups/category/packaging-mockups"></div>
-						<div class="home-slider__bullet" style="color: #7A18FF;" data-url="/mockups/category/vehicle-mockups">
-					  </div>
-					  <div class="home-slider__bullet" style="color: #3ED5F8;" data-url="/mockups/category/device-mockups">
-					  -->
+
 						<div class="home-slider__bullet is-active soccerball"
 						data-url=""></div>
 
@@ -339,9 +331,9 @@
 	  
 	 
 	 
-	 <!--商品アイテム一覧-->
-	 <!--{{-- route('product.index',['id'=>'1']) --}}-->
-	 <!--<a class="tile" href="{{-- route('list.index') --}}">-->
+
+
+
 
 	  <div class="container py-2">
 		<div class="section-header">

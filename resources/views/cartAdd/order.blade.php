@@ -1,4 +1,4 @@
-@include('parts.header2')
+@include('cartAdd.header')
 
 <div id="content" class="content-area page home"><!-- margin-top: 222px  -->
     <div class="container">
@@ -11,7 +11,11 @@
                     <form class="box-shipping-wrap pt-0 cf" method="？">
                         <div class="box-shipping">
                             <div class="box-shipping-main">
-
+                                ご注文ありがとうございました。<br>
+                                
+                                ただいま、ご注文の確認メールをお送りさせていただきました。<br>
+                                万一、ご確認メールが届かない場合は、トラブルの可能性もありますので大変お手数ではございますがもう一度お問い合わせいただくか、お電話にてお問い合わせくださいませ。<br>
+                                今後ともご愛顧賜りますようよろしくお願い申し上げます。<br><br>
                             </div>
                             <div class="box-shipping-sub box-cart-sub">
 

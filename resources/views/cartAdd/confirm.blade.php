@@ -11,165 +11,194 @@
         <div class="col-md-5 order-md-2 mb-4">
             <h4 class="d-flex justify-content-between align-items-center mb-3">
                 <span class="text-muted">カート</span>
-                <span class="badge badge-secondary badge-pill">{{ $count }}</span>
+                <span class="badge badge-secondary badge-pill">{{ $cart_count }}</span>
             </h4>
-            <ul class="list-group mb-3">
-                @foreach ($cartCollection as $cart)
-                    <li class="list-group-item d-flex justify-content-between lh-condensed">
-                        <div>
-                            <h6 class="my-0">{{ $cart->name }}{{ $cart->attributes[0]['アイテムカラー'] }}</h6>
-                            <small class="text-muted">
-
-                                色：{{ $cart->attributes[0]["アイテムカラー"] }}<br>
-                                {{ $cart->attributes[3] }}<br>
-                                @foreach ( $cart->attributes[1] as $key=>$val )
-                                  {{ $key }}:{{ $val }}
-                                @endforeach
-
-
-                            </small>
+            <form method="POST" action="{{ asset('cartAdd/order') }}" class="needs-validation" novalidate="">
+                @csrf
+                <ul class="list-group mb-3">
+                    @foreach ($cartCollection as $cart)
+                        <li class="list-group-item d-flex justify-content-between lh-condensed">
                             <div>
-                            <img width="25%" src="{{ asset('storage/image/detail')."/".$cart->attributes[5]."/".$cart->id }}">
+                                <div>
+                                    <h6 class="my-0">
+                                        {{ $cart->attributes['brand_name'] }}{{ $cart->attributes['item_name'] }}{{ $cart->attributes['item_no'] }}
+                                    </h6>
+                                </div>
+                                <p>{{ $cart->attributes['size_price_set'] }}</p>
+                                <small class="text-muted">
+                                    @php
+                                    if(is_array($cart->attributes['print_position_array'])){
+                                        $counter = count($cart->attributes['print_position_array']);
+                                    }else{
+                                        $counter=0;
+                                    }
+                                @endphp
+                                    @for ($i = 0; $i < $counter; $i++)
+                                        プリント位置：{{ $cart->attributes['print_position_array'][$i] }}
+                                        加工費用：￥{{ number_format($cart->attributes['processing_costs_array'][$i]) }}
+                                        文字：{{ $cart->attributes['fonts_text'][$i] }}
+                                        フォント：{{ $cart->attributes['fonts_array'][$i] }}
+                                        フォント色：{{ $cart->attributes['fonts_color_array'][$i] }}
+                                        縁取りスタイル：{{ $cart->attributes['fonts_border_array'][$i] }}
+                                        縁取り色：{{ $cart->attributes['fonts_border_color_array'][$i] }}
+                                        @if ($counter > 1 and $i < $counter)
+                                            <br>-----------------------------------------------------------------<br>
+                                        @endif
+                                    @endfor
+                                </small>
+                                <div>
+                                    <img width="25%"
+                                        src="{{ asset('storage/image/detail') . '/' . $cart->attributes['number'] . '/' . $cart->attributes['sku'] }}">
+                                </div>
                             </div>
-                        </div>
-                        <span class="text-muted">¥{{ number_format($cart->attributes[2]['合計']) }}</span>
+                            <div class="text-muted" style="margin-top:2px">
+                                ¥{{ number_format($cart->attributes['total_purchase_amount']) }}</div>
+                        </li>
+                    @endforeach
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>消費税</span>
+                        <strong>¥{{ number_format($tax) }}</strong>
                     </li>
-                @endforeach
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>送料</span>
+                        <strong>¥{{ number_format($postage) }}</strong>
+                    </li>
 
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>消費税</span>
-                    <strong>¥{{ number_format($tax) }}</strong>
-                </li>
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>送料</span>
-                    <strong>¥{{ number_format($postage) }}</strong>
-                </li>
-
-                <li class="list-group-item d-flex justify-content-between">
-                    <span>合計金額</span>
-                    <strong>¥{{ number_format($total_add_tax) }}</strong>
-                </li>
-            </ul>
-
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span>合計金額</span>
+                        <strong>¥{{ number_format($total_add_tax) }}</strong>
+                    </li>
+                </ul>
         </div>
 
 
 
         <div class="col-md-7 order-md-1">
             <h4 class="mb-3">ご請求先</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="firstName">名字</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName"
+                        value="{{ $all_request['firstName'] }}" readonly>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="lastName">名前</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName"
+                        value="{{ $all_request['lastName'] }}" readonly>
+                </div>
+            </div>
 
-            <form method="POST" action="{{ asset('/cartAdd/order') }}" class="needs-validation" novalidate="">
-                @csrf
+            <div class="mb-3">
+                <label for="email">メールアドレス</label>
+                <input type="email" class="form-control" id="email" name="email"
+                    value="{{ $all_request['email'] }}" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label for="phone">電話番号</label>
+                <input type="phone" class="form-control" id="phone" name="phone"
+                    value="{{ $all_request['phone'] }}" readonly>
+            </div>
+
+            <div class="row">
+                <div class="col-md-3 mb-3">
+                    <label for="zip">郵便番号</label>
+                    <input type="text" class="form-control" id="zip01" name="zip01"
+                        value="{{ $all_request['zip01'] }}" readonly>
+                </div>
+
+
+                <div class="col-md-4 mb-3">
+                    <label for="state">都道府県</label>
+                    <input type="text" class="form-control" id="pref01" name="pref01"
+                        value="{{ $all_request['pref01'] }}" readonly>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="address">送り先住所1</label>
+                <input type="text" class="form-control" id="addr01" name="addr01"
+                    value="{{ $all_request['addr01'] }}" readonly>
+            </div>
+
+            <div class="mb-3">
+                <label for="address2">送り先住所2 </label>
+                <input type="text" class="form-control" id="address2" name="addr02"
+                    value="{{ $all_request['addr02'] }}" readonly>
+            </div>
+
+            <hr class="mb-4">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" id="foo" name="foo">
+                <label class="custom-control-label" for="otherAddress">お届け先が請求先と異なる</label>
+            </div>
+
+            <div id="bar">
+                <br><br>
+                <h4 class="mb-3">お届け先住所</h4>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="firstName">名字</label>
-                        <input type="text" class="form-control" id="firstName" name="firstName" value="{{ $all_request['firstName'] }}" readonly>
+                        <label for="firstName2">名字</label>
+                        <input type="text" class="form-control" id="firstName2" name="firstName2"
+                            value="{{ $all_request['firstName2'] }}" readonly>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="lastName">名前</label>
-                        <input type="text" class="form-control" id="lastName" name="lastName" value="{{ $all_request['lastName'] }}" readonly>
+                        <label for="lastName2">名前</label>
+                        <input type="text" class="form-control" id="lastName2" name="lastName2"
+                            value="{{ $all_request['lastName2'] }}">
                     </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="email">メールアドレス</label>
-                    <input type="email" class="form-control" id="email" name="email" value="{{ $all_request['email'] }}" readonly>
-                </div>
 
                 <div class="mb-3">
-                    <label for="phone">電話番号</label>
-                    <input type="phone" class="form-control" id="phone" name="phone" value="{{ $all_request['phone'] }}" readonly>
+                    <label for="phone2">電話番号</label>
+                    <input type="phone2" class="form-control" id="phone2" name="phone2"
+                        value="{{ $all_request['phone2'] }}">
                 </div>
 
                 <div class="row">
                     <div class="col-md-3 mb-3">
-                        <label for="zip">郵便番号</label>
-                        <input type="text" class="form-control" id="zip01" name="zip01" value="{{ $all_request['zip01'] }}" readonly>
+                        <label for="zip2">郵便番号</label>
+                        <input type="text" class="form-control" id="zip01_2-2" name="zip01_2"
+                            value="{{ $all_request['zip01_2'] }}">
                     </div>
 
 
                     <div class="col-md-4 mb-3">
                         <label for="state">都道府県</label>
-                        <input type="text" class="form-control" id="pref01" name="pref01" value="{{ $all_request['pref01'] }}" readonly>
+                        <input type="text" class="form-control" id="pref01_2" name="pref01_2"
+                            value="{{ $all_request['pref01_2'] }}" readonly>
+
                     </div>
                 </div>
 
                 <div class="mb-3">
                     <label for="address">送り先住所1</label>
-                    <input type="text" class="form-control" id="addr01" name="addr01" value="{{ $all_request['addr01'] }}" readonly>
+                    <input type="text" class="form-control" id="address" name="addr01_2"
+                        value="{{ $all_request['addr01_2'] }}" readonly>
                 </div>
 
                 <div class="mb-3">
                     <label for="address2">送り先住所2 </label>
-                    <input type="text" class="form-control" id="address2" name="addr02" value="{{ $all_request['addr02'] }}" readonly>
+                    <input type="text" class="form-control" id="addr02_2" name="addr02_2"
+                        value="{{ $all_request['addr02_2'] }}" readonly>
                 </div>
-
-                <hr class="mb-4">
-                <div class="custom-control custom-checkbox">
-                    <input type="checkbox" class="custom-control-input" id="foo" name="foo">
-                    <label class="custom-control-label" for="otherAddress">お届け先が請求先と異なる</label>
-                </div>
-
-                <div id="bar">
-                    <br><br>
-                    <h4 class="mb-3">お届け先住所</h4>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <label for="firstName2">名字</label>
-                            <input type="text" class="form-control" id="firstName2" name="firstName2" value="{{ $all_request['firstName2'] }}" readonly>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <label for="lastName2">名前</label>
-                            <input type="text" class="form-control" id="lastName2" name="lastName2" value="{{ $all_request['lastName2'] }}">
-                        </div>
-                    </div>
-
-
-                    <div class="mb-3">
-                        <label for="phone2">電話番号</label>
-                        <input type="phone2" class="form-control" id="phone2" name="phone2" value="{{ $all_request['phone2'] }}">
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-3 mb-3">
-                            <label for="zip2">郵便番号</label>
-                            <input type="text" class="form-control" id="zip01_2-2" name="zip01_2" value="{{ $all_request['zip01_2'] }}">
-                        </div>
-
-
-                        <div class="col-md-4 mb-3">
-                            <label for="state">都道府県</label>
-                            <input type="text" class="form-control" id="pref01_2" name="pref01_2" value="{{ $all_request['pref01_2'] }}" readonly>
-
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="address">送り先住所1</label>
-                        <input type="text" class="form-control" id="address" name="addr01_2" value="{{ $all_request['addr01_2'] }}" readonly>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="address2">送り先住所2 </label>
-                        <input type="text" class="form-control" id="addr02_2" name="addr02_2" value="{{ $all_request['addr02_2'] }}" readonly>
-                    </div>
-                </div>
+            </div>
 
 
 
-                <hr class="mb-4">
+            <hr class="mb-4">
 
-                <h4 class="mb-3">支払い方法</h4>
-                <input type="text" class="form-control" id="paymentMethod" name="paymentMethod" value="{{ $all_request['paymentMethod'] }}" readonly>
+            <h4 class="mb-3">支払い方法</h4>
+            <input type="text" class="form-control" id="paymentMethod" name="paymentMethod"
+                value="{{ $all_request['paymentMethod'] }}" readonly>
 
-                <hr class="mb-4">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">ご注文確定</button>
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">ご注文確定</button>
 
             </form>
         </div>
     </div>
-
-
 </div>
 
 <script src="./css/holder.min.js"></script>
@@ -212,15 +241,15 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>
-$(function(){
-  $('input#foo[type=checkbox]').click(function() {
-    if ($(this).prop('checked')) {
-      $('#bar').show();
-    } else {
-      $('#bar').hide();
-    }
-  });
-});
+    $(function() {
+        $('input#foo[type=checkbox]').click(function() {
+            if ($(this).prop('checked')) {
+                $('#bar').show();
+            } else {
+                $('#bar').hide();
+            }
+        });
+    });
 </script>
 
 

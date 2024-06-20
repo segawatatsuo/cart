@@ -513,7 +513,7 @@
 
         var price = $(this).data('price');
         target = "#print_price" + block; //代入先id名 #addprint1
-        
+
         //3桁区切り表示(toLocaleString)
         $(target).val(price);
         //$(target).val(Number(price).toLocaleString());
@@ -543,7 +543,7 @@
 
             //get_price = get_price.replace(/,/g, '');
             //get_price = parseInt(get_price, 10);
-            
+
             if ($.isNumeric(get_textbox_value)) {
                 calculated_total_sum += parseInt(get_textbox_value) * parseInt(get_price);
             }
@@ -554,7 +554,7 @@
         price = price.replace(/,/g, '');
         price = parseInt(price, 10);
 
-        calculated_total_sum += ( kazu * price);
+        calculated_total_sum += (kazu * price);
 
         if (Number.isNaN(calculated_total_sum)) {
             $("#item_price_total").val('');
@@ -604,16 +604,18 @@
         var target;
         //target = "#fuchidori" + parts_id; //代入先id名 #addprint1
         target = "#fuchidori" + block;
+        hide_target = "#hide"+ block;
+        var replace_text = '#fontcolor_fuchidori' + block;
 
         $(target).val(image_name);
 
         if (image_name == '縁取りなし' || image_name == '中抜き縁取り') {
-            $('.fontcolor_fuchidori1').hide();
-            $('#fontcolor_fuchidori1').val("");
+            $(replace_text).val("");
+            $(hide_target).hide();
         } else if (document.getElementById("fontcolor_fuchidori1") == null) {
-            $('.fontcolor_fuchidori1').show();
+            $(hide_target).show();
         } else {
-            $('.fontcolor_fuchidori1').show();
+            $(hide_target).show();
         }
 
     });
@@ -677,13 +679,16 @@
                 calculated_total_sum += parseInt(get_textbox_value) * parseInt(get_price);
             }
         });
-  
+
 
         //var option_price=parseInt($("#option_price").val());
         //option_price = option_price.replace(/,/g, '');
         //option_price = parseInt(option_price, 10);
-
-        calculated_total_sum += (parseInt($("#quantity").val()) * parseInt($("#option_price").val()) );
+        if ($("#option_price").val() >= 1) {
+            calculated_total_sum += (parseInt($("#quantity").val()) * parseInt($("#option_price").val()));
+        } else {
+            calculated_total_sum += (parseInt($("#quantity").val()));
+        }
         $("#item_price_total").val(calculated_total_sum);
 
     });
@@ -763,7 +768,7 @@
 <!-- ユニフォームの枚数＊単価で総合計 -->
 <script type="text/javascript">
     $(document).ready(function() {
-        //$("#Button1").click(function() {
+
         $(".product__info-content").change(function() {
             //数量*単価の配列
             var inputText = $(".textBox").map(function(index, el) {
@@ -801,6 +806,7 @@
         })
     })
 </script>
+
 
 </body>
 

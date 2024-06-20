@@ -201,8 +201,11 @@
                         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">ログイン</a>
                         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">カテゴリー</a>
                         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="contact">お問い合わせ</a>
-                        <a class="py-2 link-body-emphasis text-decoration-none" href="#"><i
-                                class="fa fa-shopping-cart"></i></a>
+                        <a class="py-2 link-body-emphasis text-decoration-none navCart" href="{{ route('cartAdd.show') }}"><i class="fa fa-shopping-cart"></i>
+                            @if($cart_count>=1)
+                            <span class="navCartIcon">{{ $cart_count }}</span>
+                            @endif
+                          </a>
                     </nav>
                 </div>
             </div><!--container END-->
